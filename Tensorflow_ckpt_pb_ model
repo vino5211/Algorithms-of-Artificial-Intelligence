@@ -43,9 +43,11 @@ for op in tf.get_default_graph().get_operations(): #打印模型节点信息
 checkpoint ： 记录目录下所有模型文件列表
 ckpt.data ： 保存模型中每个变量的取值
 ckpt.meta ： 保存整个计算图的结构
-保存为 PB 格式模型
 
-2\定义运算过程
+
+2\保存为 PB 格式模型
+
+定义运算过程
 通过 get_default_graph().as_graph_def() 得到当前图的计算节点信息
 通过 graph_util.convert_variables_to_constants 将相关节点的values固定
 通过 tf.gfile.GFile 进行模型持久化
