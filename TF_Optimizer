@@ -1,0 +1,12 @@
+GradientDescentOptimizer 
+AdagradOptimizer 
+AdagradDAOptimizer 
+MomentumOptimizer 
+AdamOptimizer 
+FtrlOptimizer 
+RMSPropOptimizer
+
+GradientDescentOptimizer使用广泛，但收敛也最慢，不过稳定性较好
+AdadeltaOptimizer和RMSPropOptimizer两个优化器收敛速度快同时也稳定
+阿尔法-go用的优化器是RMSPropOptimizer
+MomentumOptimizer速度最快，不过初始值不好时会向错误的方向搜索
