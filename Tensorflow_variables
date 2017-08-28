@@ -1,14 +1,138 @@
-tf.placeholder在声明的时候不需要初始化的数值，只需要声明类型和维数，例如
-x = tf.placeholder(tf.float32, shape=(None, 1024))
-tf.placeholder是为了方便定义神经网络结构，所以可以看作是符号变量。tf.placeholder通常是在训练session开始后，存放输入样本的。
+TensorFlow用张量这种数据结构来表示所有的数据。
+用一阶张量来表示向量，如：v = [1.2, 2.3, 3.5] 
+如二阶张量表示矩阵，如：m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]，可以看成是方括号嵌套的层数。
 
+1、编辑器
+
+anaconda自带不错的编辑器，名叫spyder，用起来和matlab差不多，还可以在右上角查看变量的值。
+启动方式:终端输入spyder。
+
+2、常量
+
+我们一般引入tensorflow都用语句
+
+import tensorflow as tf
+
+因此，以后文章中我就直接用tf来表示tensorflow了。
+
+在tf中，常量的定义用语句：
+
+a=tf.constant(10)
+这就定义了一个值为10的常量a
+
+3、变量
+
+变量用Variable来定义, 并且必须初始化，如：
+
+x=tf.Variable(tf.ones([3,3]))
+y=tf.Variable(tf.zeros([3,3]))
+分别定义了一个3x3的全1矩阵x，和一个3x3的全0矩阵y，0和1的值就是初始化。
+
+变量定义完后，还必须显式的执行一下初始化操作，即需要在后面加上一句：
+
+init=tf.global_variables_initializer()
+这句可不要忘了，否则会出错。
+
+例：自定义一个拉普拉斯的W变量：
+
+复制代码
+import tensorflow as tf
+import numpy as np
+x=np.array([[1,1,1],[1,-8,1],[1,1,1]])
+w=tf.Variable(initial_value=x)
+sess=tf.Session()
+sess.run(tf.global_variables_initializer())
+print(sess.run(w))
+复制代码
+===
 tf.Variable在声明的时候必须要有初始的数值。例如
 weights = tf.Variable(tf.random_normal([784, 200], stddev=0.35),name="weights")
 biases = tf.Variable(tf.zeros([200]), name="biases")
 tf.Variable通常是存放weight和bias，然后会不停地被更新，所以说是variable。
 
-
 tf.Variable适合一些需要初始化或被训练而变化的权重或参数，而tf.placeholder适合通常不会改变的被训练的数据集。
+
+4、占位符
+
+变量在定义时要初始化，但是如果有些变量刚开始我们并不知道它们的值，无法初始化，那怎么办呢？
+
+那就用占位符来占个位置，如：
+
+x = tf.placeholder(tf.float32, [None, 784])
+指定这个变量的类型和shape，以后再用feed的方式来输入值。
+===
+tf.placeholder在声明的时候不需要初始化的数值，只需要声明类型和维数，例如
+x = tf.placeholder(tf.float32, shape=(None, 1024))
+tf.placeholder是为了方便定义神经网络结构，所以可以看作是符号变量。tf.placeholder通常是在训练session开始后，存放输入样本的。
+
+5、图(graph)
+
+如果把下面的python语句改在tf语句，该怎么写呢：
+
+x=3
+y=2
+z=x+y
+print(z)
+定义两个变量，并将两个数相加，输出结果。如果在tf中直接像上面这样写，那就错了。x,y,z分别是三个tensor对象，对象间的运算称之为操作(op), tf不会去一条条地执行各个操作，而是把所有的操作都放入到一个图(graph）中，图中的每一个结点就是一个操作。然后行将整个graph 的计算过程交给一个 TensorFlow 的Session, 此 Session 可以运行整个计算过程，比起操作(operations)一条一条的执行效率高的多。
+
+执行代码如下：
+
+复制代码
+import tensorflow as tf
+
+x = tf.Variable(3)
+y = tf.Variable(5)
+z=x+y
+init =tf.global_variables_initializer()
+ with tf.Session() as sess: 
+sess.run(init) 
+print(sess.run(z))
+复制代码
+其中sess.run()即是执行，注意要先执行变量初始化操作，再执行运算操作。
+
+Session需要先创建，使用完后还需要释放。因此我们使用with...as..语句，让系统自动释放。
+
+例子1：hello world
+
+import tensorflow as tf
+word=tf.constant('hello,world!')
+with tf.Session() as sess:
+    print(sess.run(word))
+例子2：加法和乘法
+
+复制代码
+import tensorflow as tf 
+a = tf.placeholder(tf.int16)
+b = tf.placeholder(tf.int16)
+add = tf.add(a, b)
+mul = tf.mul(a, b)
+
+with tf.Session() as sess:
+    print('a+b=',sess.run(add, feed_dict={a: 2, b: 3}))
+    print('a*b=',sess.run(mul, feed_dict={a: 2, b: 3}))
+复制代码
+此处使用feed_dict以字典的方式对多个变量输入值。
+
+例子3： 矩阵乘法
+
+复制代码
+import tensorflow as tf 
+a=tf.Variable(tf.ones([3,2]))
+b=tf.Variable(tf.ones([2,3]))
+product=tf.matmul(5*a,4*b)
+init=tf.initialize_all_variables()
+
+with tf.Session() as sess:
+    sess.run(init)
+    print(sess.run(product))
+复制代码
+ 其中
+
+product=tf.matmul(5*a,4*b)
+也可以改成 
+
+product=tf.matmul(tf.mul(5.0,a),tf.mul(4.0,b))
+定义变量时，没有指定数据类型，则默认为float32，因此是5.0而不是5
 
 =============================================================================================
  tf.get_variable 和tf.variable_scope
