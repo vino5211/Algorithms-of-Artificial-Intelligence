@@ -1,0 +1,16 @@
+VSM在文本中的叫法：BOW
+
+===========================
+
+The bag-of-words model is a simplifying assumption used in natural language processing and information retrieval. In this model, a text (such as a sentence or a document) is represented as an unordered collection of words, disregarding grammar and even word order.
+词袋模型是在自然语言处理和信息检索中的一种简单假设。在这种模型中，文本（段落或者文档）被看作是无序的词汇集合，忽略语法甚至是单词的顺序。
+
+The bag-of-words model is used in some methods of document classification. When a Naive Bayes classifier is applied to text, for example, the conditional independence assumption leads to the bag-of-words model. [1] Other methods of document classification that use this model are latent Dirichlet allocation and latent semantic analysis.[2]
+词袋模型被用在文本分类的一些方法当中。当传统的贝叶斯分类被应用到文本当中时，贝叶斯中的条件独立性假设导致词袋模型。另外一些文本分类方法如LDA和LSA也使用了这个模型。
+  
+Example: Spam filtering 
+In Bayesian spam filtering, an e-mail message is modeled as an unordered collection of words selected from one of two probability distributions: one representing spam and one representing legitimate e-mail ("ham"). Imagine that there are two literal bags full of words. One bag is filled with words found in spam messages, and the other bag is filled with words found in legitimate e-mail. While any given word is likely to be found somewhere in both bags, the "spam" bag will contain spam-related words such as "stock", "Viagra", and "buy" much more frequently, while the "ham" bag will contain more words related to the user's friends or workplace. 
+在贝叶斯垃圾邮件过滤中，一封邮件被看作无序的词汇集合，这些词汇从两种概率分布中被选出。一个代表垃圾邮件，一个代表合法的电子邮件。这里假设有两个装满词汇的袋子。一个袋子里面装的是在垃圾邮件中发现的词汇。另一个袋子装的是合法邮件中的词汇。尽管给定的一个词可能出现在两个袋子中，装垃圾邮件的袋子更有可能包含垃圾邮件相关的词汇，如股票，伟哥，“买”，而合法的邮件更可能包含邮件用户的朋友和工作地点的词汇。
+
+To classify an e-mail message, the Bayesian spam filter assumes that the message is a pile of words that has been poured out randomly from one of the two bags, and uses Bayesian probability to determine which bag it is more likely to be.
+为了将邮件分类，贝叶斯邮件分类器假设邮件来自于两个词袋中中的一个，并使用贝叶斯概率条件概率来决定那个袋子更可能产生这样的一封邮件。
