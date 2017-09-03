@@ -1,4 +1,16 @@
+||||Plan A|||| 
+===python===
+builder = tf.saved_model.builder.SavedModelBuilder("/tmp/model" )
+builder.add_meta_graph_and_variables(
+  sess,
+  [tf.saved_model.tag_constants.SERVING]
+)
+builder.save()
+===Java===
+SavedModelBundle b = SavedModelBundle.load("/tmp/model", "serve");
 
+
+=============================================
 import tensorflow as tf
 # good idea
 # https://stackoverflow.com/documentation/tensorflow/10718/save-tensorflow-model-in-python-and-load-with-java#t=201709030336395954421
@@ -66,3 +78,29 @@ public class LoadModel {
         System.out.println(y[0]);
     }
 }
+
+||||Plan B|||| {only in python , only import}
+On the Python side, Tensorflow suggests to use a Saver object to save a model to disk. It creates a .meta file that has the definition and has .data files for the weights. In Python, I use new_saver=tf.train.import_meta_graph(var_filename)
+new_saver.restore(sess, model_filename) to read the model from the disk.
+
+||||Plan C|||| {only in python, only save}
+tf.train.write_graph(sess.graph_def, "./data", "aaa.pb");
+this aaa.pb contains graph and variables , not like Plan A(that pb only contain graph)
+
+||||Plan D|||| {only in python, only save , import and perdict have error}
+//https://github.com/jiegzhan/multi-class-text-classification-cnn-rnn
+saver = tf.train.Saver(tf.all_variables())
+
+error===
+saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file[:-5]))
+			saver.restore(sess, checkpoint_file)
+path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+
+||||Plan E||||
+https://stackoverflow.com/questions/43598953/loading-sklearn-model-in-java-model-created-with-dnnclassifier-in-python
+
+classifier = learn.DNNClassifier(hidden_units=[10, 20, 5], n_classes=5,feature_columns=feature_columns)
+A model_saved.pbtxt file is created.
+
+ SavedModelBundle bundle=SavedModelBundle.load("/java/.../ModelSave","serve");
+
