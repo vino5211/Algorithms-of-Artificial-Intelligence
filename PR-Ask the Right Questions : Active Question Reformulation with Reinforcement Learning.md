@@ -1,4 +1,4 @@
-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning(用强化学习激活问题再形成)
+Ask the Right Questions : Active Question Reformulation with Reinforcement Learning(用强化学习进行 主动问题重新生成 )
 
 + Abstract
 	+ an approach that call Active Question Answering
@@ -44,4 +44,25 @@ Ask the Right Questions : Active Question Reformulation with Reinforcement Learn
     BiDAF
     ```
 + Active Question Answering
-	+  
+	+ **The Agent-Environment Framework**
+	+ The major departure(偏离) from the standard MT setting is that our model reformulates utterances(重新表述) in the same language.
+	+ Unlike in MT, there is little high quality training data available for monolingual paraphrasing(单语释义)
+	+ We address this first by pre-training the model on a related task and second, by utilizing the end-to-end **signals** produced though the interaction with the QA environment(与QA环境的交互中产生的端到端信号)
+	+ In the downward pass in Figure 1 the reformulator transforms the original question into one or many alternative questions used to probe the environment for candidate answers.
+	+ **Active Question Answering Agent**
+	+ The reformulator is trained end-to-end, using an answer quality metric(答案质量度量) as the objective(目标) 
+	+ This sequence-level loss is non-differentiable(序列级损失是不可微的), so the model is trained using Reinforcement Learning
+	+ In the upward pass in Figure 1, the aggregator selects the best answer. For this we use an additional neural network. The aggregator’s task is to evaluate the candidate answers returned by the environment and select the one to return 
+	+ Here, we assume that there is a single best answer, as is the case in our evaluation setting;returning multiple answers is a straightforward extension of the model. The aggregator is trained with supervised learning.
+	+ **Question-Answering Environment** 
+	+ Finally, we require an environment to interact with. For this we use a competitive neural question answering model,BiDirectional Attention Flow (BiDAF)
+	```
+	M. Seo, A. Kembhavi, A. Farhadi, and H. Hajishirzi. Bidirectional Attention Flow for Machine
+Comprehension. In Proceedings of ICLR, 2017a.
+	```
+	+ BiDAF is an extractive QA system. It takes as input a question and a document and returns as answer a continuous span(连续跨域) from the document 
+	+ The model contains a bidirectional attention mechanism to score document snippets with respect to the question, implemented with multi-layer LSTMs and other components. 
+	+ The environment is opaque, the agent has no access to its internals: parameters, activations,gradients, etc. AQA may only send questions to it, and receive answers.(这个场景使我们能够设计一个允许使用任何后端的通用框架。)
+	+ However, it means that feedback on the quality of the question reformulations is noisy and indirect(然而，这意味着对问题重新制定的质量的反馈是嘈杂和间接的)
+	
+	
