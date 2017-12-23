@@ -1,0 +1,16 @@
+remarkabel &
+gnome-screenshot -a
+
+Linux command
+- apt-get -f
++ ps elf
+
+http://blog.csdn.net/jesse_mx/article/details/52816928
+
+ 	 sudo add-apt-repository ppa:plushuang-tw/uget-stable
+	 sudo apt-get update
+	 sudo apt-get install uget
+	 
+	 sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor 
+	 sudo apt-get update  
+	 sudo apt-get install indicator-sysmonitor  
