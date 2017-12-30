@@ -1,2 +1,33 @@
-# Knowledge
-Knowledge repository for current work
+Knowledge
+
+- This repository is used to organize past knowledge into a knowledge tree and to add new content to the tree of knowledge, constantly improve, and constantly modify
+- What content is to be sorted into this repository:
+  - Original resources
+    - http://blog.csdn.net/sinat_32292481/article/details/78268553
+    - Views
+  - Resources after process
+    - Book Note 
+    - Paper Review
+    - Video Note
+    - Clear up(Next Item)
+  - Clear up
+    - NLP
+      - Sequence Labeling
+      - Text CLF
+      - QA
+    - ML
+    - DL
+    - RL
+  - Others
+    - After clear up, the documents will publish in CSDN
+      - http://blog.csdn.net/sinat_32292481
+    - Github projects review not contains in this repository,  that contains in 
+      - python
+        - https://github.com/Apollo2Mars/TrainModels
+      - java 
+        - https://github.com/Apollo2Mars/Friday
+- To better distinguish file types, the abbreviations in filenames have the following meanings:
+  - BN ：Book Note
+  - PR : Paper Review
+  - CU : Clear up, this means that the content in this file is relatively mature
+
