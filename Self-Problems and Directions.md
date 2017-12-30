@@ -25,13 +25,7 @@ Books | Evening
 Videos | Evening
 train models |Night
 
-Current Achievements
----
-
-Theory Directions
----
-
-Tmp Plan
+Temp Plan
 ---
 Make more time for code, algorithm, information
 Make a paper
@@ -54,32 +48,3 @@ Key Points
 ---
 * Algorithm first
 * Build Knowledge Tree
-
-Deep Learning Repository
----
-+ + (15) represent learning
- + Share statistical information in diff models 
- + 分布式表示学习
- 	+ 聚类
- 	+ K-近邻
- 	+ 决策树
- 	+ 高斯混合体和专家混合体
- 	+ 具有高斯核的核机器
- 	+ 基于n-gram的语言或翻译模型
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-Reinforcement Learning Repository
