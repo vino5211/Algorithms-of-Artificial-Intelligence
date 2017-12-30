@@ -11,7 +11,7 @@ Knowledge
     - Video Note
     - Clear up(Next Item)
   - Operation Record
-  - Clear up
+  - Self Knowledge Repository
     - NLP
       - Sequence Labeling
       - Text CLF
