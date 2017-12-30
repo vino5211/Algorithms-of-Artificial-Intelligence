@@ -10,7 +10,8 @@ Knowledge
     - Paper Review
     - Video Note
     - Clear up(Next Item)
-  - Clear up
+  - Operation Record
+  - Clear up
     - NLP
       - Sequence Labeling
       - Text CLF
@@ -30,4 +31,5 @@ Knowledge
   - BN ：Book Note
   - PR : Paper Review
   - CU : Clear up, this means that the content in this file is relatively mature
+  - OR : Operation Record
 
