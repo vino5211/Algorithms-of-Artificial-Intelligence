@@ -10,7 +10,7 @@ Knowledge
     - Paper Review
     - Video Note
     - Clear up(Next Item)
-  - Operation Record
+  - Operation Record
   - Clear up
     - NLP
       - Sequence Labeling
