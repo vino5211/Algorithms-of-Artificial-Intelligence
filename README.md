@@ -7,7 +7,7 @@ Knowledge
     - Views
   - Resources after process
     - Book Note 
-    - Paper Review
+    - Paper Note
     - Video Note
     - Clear up(Next Item)
   - Operation Record
@@ -29,7 +29,8 @@ Knowledge
         - https://github.com/Apollo2Mars/Friday
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
   - BN ：Book Note
-  - PR : Paper Review
+  - PN : Paper Note
+  - VN : Video Note
   - CU : Clear up, this means that the content in this file is relatively mature
   - OR : Operation Record
 
