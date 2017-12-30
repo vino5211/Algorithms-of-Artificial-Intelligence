@@ -57,3 +57,28 @@ Ask the Right Questions : Active Question Reformulation with Reinforcement Learn
 		- Afterwards(然后),BiDAF becomes part of the environment and its parameters are not updated while training the AQA agent
 		- In principle, we could train both the agent and the environment jointly to further improve performance. However, this is not our desired task: our aim is for the agent to learn to communicate using natural language with an environment over which is has no control(不受控制)
 		- This setting generalizes（概括） to interaction（交互） with arbitrary(任意) information sources(这个设置概括了与任意信息源的交互)
+	- 3.2 Policy Gradient() Training of the Reformulation Model
+	    - For a given question q 0 , we want to return the best possible answer a, maximizing a reward R(a|q 0 )
+	    - Typically, R is the token level F1 score on the answer.(???)
+	    - The answer a = f (q) is an unknown function of a question q, computed by the environment
+	    - Note, that the reward is computed with respect to the original question q 0 while the answer is produced using a question q.(???)
+
+	- 3.3 Intialization of the Reformulation Model
+    	- We pre-train the question reformulation model by building a paraphrasing Neural MT model, i.e. a model that can translate English to English.
+    	- While parallel corpora(平行语料库) are available for many language pairs, English-English corpora are scarce(缺少的), so we cannot train monolingual model(单语的) directly
+    	- Instead, we first produce a multilingual translation system that translates between several languages [Johnson et al., 2016].
+    	- This allows us to use available bilingual corpora(双语语料).
+    	- Multilingual training requires nothing more than adding two special tokens to the data indicating the source and target languages
+    	- The encoder-decoder architecture of the translation model remains unchanged.
+    	- As Johnson et al. [2016] show, this model can be used for zero-shot translation(无显式的语言对), i.e. to translate between language pairs for which it has seen no training examples
+			- Zero shot translation
+				- Zero-Shot翻译是指对不存在显式训练或者映射的语言对之间短语的翻译
+				- http://www.infoq.com/cn/news/2017/02/zero-shot-translation
+		- For example after training English-Spanish, English-French, French-English, and Spanish-English the model has learned a single encoder that encodes English, Spanish, and French and a decoder for the same three languages. Thus, we can use the same model for French-Spanish, Spanish-French and also English-English translation by adding the respective tokens, e.g. 
+		- Johnson et al. [2016] note that zero-shot translation is generally worse than bridging, an approach that uses the model twice: first, to translate into a pivot language, and then into the target language.(经过一种中间语言中转)
+		- However, the performance gap can be closed by running a few training steps for the desired language pair(期望的语料对). Thus, we first train on multilingual data（多语言）, then on a small corpus of monolingual data（单语言）.
+	- 3.4 Answer Selection
+		- With either beam search or sampling we can produce many rewrites of a single question from our reformulation system(产生许多重新构造的问题)
+			- beam search
+			- sampling
+		- We issue each rewrite to the QA environment, yielding(产生) a set of (query, rewrite, answer) tuples from which we need to pick the best instance.
