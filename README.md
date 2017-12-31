@@ -7,38 +7,38 @@ Knowledge
     - Views
   - Resources after process
     - Book Note 
+            
+            
     - Paper Note
-      - |PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Done |
-        ---
-        | *** | *** |
+            
+            
     - Video Note
-    - Clear up(Next Item)
-  - Operation Record
-    - A-DoOnMars.md
-  - Self Knowledge Repository
-    - NLP
-      - Sequence Labeling
-      - Text CLF
-      - QA
-    - ML
-    - DL
-    - RL
-  - Others
-    - After clear up, the documents will publish in CSDN
-      - http://blog.csdn.net/sinat_32292481
-    - Github projects review not contains in this repository,  that contains in 
-      - python : train model
-        - https://github.com/Apollo2Mars/TrainModels
-      - java : collect data/invoke model/supply service 
-        - https://github.com/Apollo2Mars/Friday
+    - Clear up Note to Self Knowledge Repository
+      - NLP
+        - Sequence Labeling
+        - Text CLF
+        - QA
+      - ML
+      - DL
       - RL
-        - https://github.com/Apollo2Mars/DRL
-      - CodeSnippet
-        - include some excellent code snippet
-- To better distinguish file types, the abbreviations in filenames have the following meanings:
-  - BN ：Book Note
-  - PN : Paper Note
-  - VN : Video Note
-  - CU : Clear up, this means that the content in this file is relatively mature
-  - OR : Operation Record
-
+    - - 
+- Others
+  - Operation Record
+    - A-DoOnMars.md
+  - After clear up, the documents will publish in CSDN
+    - http://blog.csdn.net/sinat_32292481
+  - This repository only contain pure knowledge(before and after), projects and code snippet contain in the fellow repositories: 
+    - python : train model
+      - https://github.com/Apollo2Mars/TrainModels
+    - java : collect data/invoke model/supply service 
+      - https://github.com/Apollo2Mars/Friday
+    - RL
+      - https://github.com/Apollo2Mars/DRL
+    - CodeSnippet
+      - include some excellent code snippet
+  - To better distinguish file types, the abbreviations in filenames have the following meanings:
+    - BN ：Book Note
+    - PN : Paper Note
+    - VN : Video Note
+    - CU : Clear up, this means that the content in this file is relatively mature
+    - OR : Operation Record
