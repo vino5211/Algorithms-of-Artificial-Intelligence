@@ -7,17 +7,10 @@ Knowledge
     - Views
   - Resources after process
     - Book Note 
-      Name                | Status 
-      ---
-      BN-Deep Learning.md | Doing    
+            
             
     - Paper Note
-      | Name                                     | Status |
-      | ---------------------------------------- | ------ |
-      | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
-      |                                          |        |
-      |                                          |        |
-      |                                          |        |  
+            
             
     - Video Note
     - Clear up Note to Self Knowledge Repository
