@@ -7,12 +7,9 @@ Knowledge
     - Views
   - Resources after process
     - Book Note 
-      | Name                | Status |
-      | ------------------- | ------ |
-      | BN-Deep Learning.md | Doing  |
-      |                     |        |
-      |                     |        |
-      |                     |        |  
+      Name                | Status 
+      ---
+      BN-Deep Learning.md | Doing    
             
     - Paper Note
       | Name                                     | Status |
