@@ -8,7 +8,7 @@ Knowledge https://jbt.github.io/markdown-editor/
 - This repository contains the following
   - Operation Record
     - A-DoOnMars.md
-  - Original resources
+  - Original resources
     - http://blog.csdn.net/sinat_32292481/article/details/78268553
     - Views
   - Resources after process
