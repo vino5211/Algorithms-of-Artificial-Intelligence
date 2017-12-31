@@ -1,10 +1,10 @@
 Knowledge https://jbt.github.io/markdown-editor/
 
 - There are three functions of this repository:
- - organize the require knowledge(math, classical ml/dl/rl/nlp theory, code snippet)
- - build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
- - make cool things
-  
+  - organize the require knowledge(math, classical ml/dl/rl/nlp theory, code snippet)
+  - build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
+  - make cool things
+
 - What content is to be sorted into this KD:
   - Original resources
     - http://blog.csdn.net/sinat_32292481/article/details/78268553
