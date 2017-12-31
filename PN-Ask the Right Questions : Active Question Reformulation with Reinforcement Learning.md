@@ -17,7 +17,7 @@ Ask the Right Questions : Active Question Reformulation with Reinforcement Learn
   - Such search sessions may require multiple iterations(迭代), critical assessment（关键评估） and synthesis（综合）
        G. Marchionini. Exploratory search: From finding to understanding. Commun. ACM, 49(4):41–46, 2006. 
       
-  - The productivity（生产力） of natural language yields a myriad of ways to formulate（表述） a question + In the face of complex information needs, humans overcome uncertainty by (1)reformulating questions(重新表述问题), (2)issuing multiple searches（多重搜索）, and (3)aggregating responses（聚合响应） 
+  - The productivity（生产力） of natural language yields a myriad of ways to formulate（表述） a question + In the face of complex information needs, humans overcome uncertainty by (1)reformulating questions(重新表述问题), (2)issuing multiple searches（多重搜索）, and (3)aggregating responses（聚合响应）
   - Inspired by humans’ ability to ask the right questions, we present an agent that learns to carry out this process for the user. 
   - The agent aims to maximize the chance of getting the correct answer by reformulating and reissuing a user’s question to the environment.The agent comes up with a single best answer by asking many pertinent(有关) questions and aggregating the returned evidence.
   - The internals of the environment are not available to the agent, so it must learn to probe a black-box optimally using only natural language.（环境的内部不能提供给代理, 所以它必须学会使用只用一个黑盒自然语言。）
@@ -62,6 +62,9 @@ Ask the Right Questions : Active Question Reformulation with Reinforcement Learn
 	    - Typically, R is the token level F1 score on the answer.(???)
 	    - The answer a = f (q) is an unknown function of a question q, computed by the environment
 	    - Note, that the reward is computed with respect to the original question q 0 while the answer is produced using a question q.(???)
+	    - Add
+	    - Add
+	    - Add
 
 	- 3.3 Intialization of the Reformulation Model
     	- We pre-train the question reformulation model by building a paraphrasing Neural MT model, i.e. a model that can translate English to English.
@@ -82,3 +85,17 @@ Ask the Right Questions : Active Question Reformulation with Reinforcement Learn
 			- beam search
 			- sampling
 		- We issue each rewrite to the QA environment, yielding(产生) a set of (query, rewrite, answer) tuples from which we need to pick the best instance.
+		- We train another neural network to pick the best answer from the candidates.
+			- CNN
+		- While this is a ranking problem, we frame it as binary classification, distinguishing between above and below average performance(区分平均水平的上方和下方)
+		- In training, we compute the F1 score of the answer for every instance
+			- F1 score
+		- If the rewrite produces an answer with an F1 score greater than the average score of the other rewrites the instance is assigned a positive label
+			- assigned a positive label
+		- We ignore questions where all rewrites yield equally good/bad answers(产生相同好的/坏的结果的问题会被忽略)
+		- For the classifier we evaluated FFNNs, LSTMs and CNNs and found that the performance of all systems was comparable. Since the inputs are triples of variable length sequences the latter two allow us to incorporate the tokens directly without the need for feature engineering.(由于输入是可变长度序列的三元组, 后两个允许我们直接合并令牌, 而无需进行特征工程)
+		-  We choose a CNN for computational efficiency.
+
+		-  Select Answer
+		-  In particular, we use pre-trained embeddings for the tokens of query, rewrite, and answer.
+		-  For each, we add a 1-D CNN followed by max-pooling.
