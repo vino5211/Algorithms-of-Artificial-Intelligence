@@ -3,6 +3,8 @@
     - QA
   - 算法的背景
   - 数学推理过程 
+- Change
+
 - ML
   - Book
     - 统计学习方法-李航
@@ -20,7 +22,9 @@
       - GAN
       - https://www.bilibili.com/video/av9770302/
 - Corpus
-  - Existing Corpus
+  - 将网上见到的资源整合到数据库中
+  - Make a data list 
+  - Existing Corpus
   - Crawler from web
 - Blog
   - CSDN
