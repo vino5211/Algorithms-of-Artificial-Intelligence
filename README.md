@@ -12,25 +12,17 @@ Knowledge
       | ------------------- | ------ |
       | BN-Deep Learning.md | Doing  |
       |                     |        |
-      |                     |        |
-      |                     |        |
 
     - Paper Note
+    
       | Name                                     | Status |
       | ---------------------------------------- | ------ |
       | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
       |                                          |        |
-      |                                          |        |
-      |                                          |        |
 
     - Video Note
-    - Book Note 
             
-            
-    - Paper Note
-            
-            
-    - Video Note
+   
     - Clear up Note to Self Knowledge Repository
       - NLP
         - Sequence Labeling
