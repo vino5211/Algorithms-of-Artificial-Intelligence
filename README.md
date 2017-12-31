@@ -5,8 +5,10 @@ Knowledge https://jbt.github.io/markdown-editor/
   - build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
   - make cool things
 
-- What content is to be sorted into this KD:
-  - Original resources
+- This repository contains the following
+  - Operation Record
+    - A-DoOnMars.md
+  - Original resources
     - http://blog.csdn.net/sinat_32292481/article/details/78268553
     - Views
   - Resources after process
@@ -37,8 +39,6 @@ Knowledge https://jbt.github.io/markdown-editor/
       - RL
     - - 
 - Others
-  - Operation Record
-    - A-DoOnMars.md
   - After clear up, the documents will publish in CSDN
     - http://blog.csdn.net/sinat_32292481
   - This repository only contain pure knowledge(before and after), projects and code snippet contain in the fellow repositories: 
