@@ -1,26 +1,32 @@
-- In ahead
+- # In ahead
   - 当前需求
     - QA
   - 算法的背景
   - 数学推理过程 
 - Change
 
-- ML
-  - Book
-    - 统计学习方法-李航
-    - 机器学习-周志华
-- NLP
-  - Blue Book
-    - 第一期：深度学习与文本分析
-    - 第二期：深度学习与NLP应用
-- DL 
-  - Book
-    - Deep Learning-Ian Goodfellow, Yoshua Bengio, Aaron Courville
-  - Video
-    - 李宏毅深度学习(2017)
-      - Attention
-      - GAN
-      - https://www.bilibili.com/video/av9770302/
+- Outline
+  - DL
+    - 迁移学习
+    - 对抗训练
+
+- KD feed
+  - ML
+    - Book
+      - 统计学习方法-李航
+      - 机器学习-周志华
+  - NLP
+    - Blue Book
+      - 第一期：深度学习与文本分析
+      - 第二期：深度学习与NLP应用
+  - DL 
+    - Book
+      - Deep Learning-Ian Goodfellow, Yoshua Bengio, Aaron Courville
+    - Video
+      - 李宏毅深度学习(2017)
+        - Attention
+        - GAN
+        - https://www.bilibili.com/video/av9770302/
 - Corpus
   - 将网上见到的资源整合到数据库中
   - Make a data list 
