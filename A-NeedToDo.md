@@ -3,14 +3,13 @@
     - QA
   - 算法的背景
   - 数学推理过程 
-- Change
-
-- Outline
+  
+- # Outline
   - DL
     - 迁移学习
     - 对抗训练
 
-- KD feed
+- ＃ KD feed
   - ML
     - Book
       - 统计学习方法-李航
@@ -27,18 +26,18 @@
         - Attention
         - GAN
         - https://www.bilibili.com/video/av9770302/
-- Corpus
+- # Dataset
   - 将网上见到的资源整合到数据库中
   - Make a data list 
   - Existing Corpus
   - Crawler from web
-- Blog
+- # Blog
   - CSDN
   - Github
-- Projects
+- # Projects
   - train models
   - Friday
-- Basic skill
+- # Basic skill
   - math
   - English
   - code
@@ -46,7 +45,7 @@
 
 ---
 
-- Target
+- # Target
   - change
   - paper
   - build knowledge base
