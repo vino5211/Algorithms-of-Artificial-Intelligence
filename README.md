@@ -27,8 +27,6 @@ Knowledge https://jbt.github.io/markdown-editor/
       |                                          |        |
 
     - Video Note
-            
-   
     - Clear up Note to Self Knowledge Repository
       - NLP
         - Sequence Labeling
@@ -37,7 +35,6 @@ Knowledge https://jbt.github.io/markdown-editor/
       - ML
       - DL
       - RL
-    - - 
 - Others
   - After clear up, the documents will publish in CSDN
     - http://blog.csdn.net/sinat_32292481

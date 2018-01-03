@@ -23,7 +23,7 @@
       - https://www.bilibili.com/video/av9770302/
 - Corpus
   - 将网上见到的资源整合到数据库中
-  - Make a data list 
+  - Make a data list
   - Existing Corpus
   - Crawler from web
 - Blog
