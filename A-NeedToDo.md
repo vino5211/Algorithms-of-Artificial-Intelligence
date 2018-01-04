@@ -1,6 +1,8 @@
 - # In ahead
   - 当前需求
     - QA
+    - RL experiments
+    - train models and use models in basic works
   - 算法的背景
   - 数学推理过程 
    
