@@ -17,7 +17,7 @@ Knowledge https://jbt.github.io/markdown-editor/
       | Name                | Status |
       | ------------------- | ------ |
       | BN-Deep Learning.md | Doing  |
-      |                     |        |
+      | Reinforce Learning：An Introduction | preparing  |
 
     - Paper Note
     
