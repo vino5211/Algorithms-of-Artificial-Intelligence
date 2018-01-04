@@ -1,4 +1,4 @@
-Knowledge https://jbt.github.io/markdown-editor/
+Knowledge 
 
 - There are three functions of this repository:
   - organize the require knowledge(math, classical ml/dl/rl/nlp theory, code snippet)
