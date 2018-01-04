@@ -17,14 +17,14 @@ Knowledge
       | Name                | Status |
       | ------------------- | ------ |
       | BN-Deep Learning.md | Doing  |
-      | Reinforce Learning：An Introduction | preparing  |
+      | Reinforce Learning：An Introduction | preparing |
 
     - Paper Note
     
       | Name                                     | Status |
       | ---------------------------------------- | ------ |
       | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
-      | PN-Human-level control through deep reinforcement.md                                        |  Doing |
+      | PN-Human-level control through deep reinforcement.md                                      |  Doing |
 
     - Video Note
     - Clear up Note to Self Knowledge Repository
