@@ -12,7 +12,7 @@ Knowledge
     - http://blog.csdn.net/sinat_32292481/article/details/78268553
     - Views
   - Resources after process
-    - Book Note 
+    - Book Note
 
       | Name                | Status |
       | ------------------- | ------ |
@@ -20,13 +20,17 @@ Knowledge
       | Reinforce Learning：An Introduction | preparing |
 
     - Paper Note
-    
+
       | Name                                     | Status |
       | ---------------------------------------- | ------ |
       | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
       | PN-Human-level control through deep reinforcement.md                                      |  Doing |
 
     - Video Note
+      | Name                | Links | Status |
+      | ------------------- | ------ | ------ |
+      | 李宏毅深度学习| https://www.bilibili.com/video/av9770302/#page=24 | Doing  |
+      |  |  | |
     - Clear up Note to Self Knowledge Repository
       - NLP
         - Sequence Labeling
