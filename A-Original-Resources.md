@@ -1,4 +1,136 @@
-- Views
+- 重现DeepMind星际争霸强化学习算法
+  - https://zhuanlan.zhihu.com/p/29246185
+- 迈向通用人工智能：星际争霸2人工智能研究环境SC2LE完全入门指南
+  - https://zhuanlan.zhihu.com/p/28434323
+
+---
+
+
+
+- 概要：NIPS 2017 Deep Learning for Robotics Pieter Abbeel
+  - https://zhuanlan.zhihu.com/p/32089849
+  - Meta Learning Shared Hierarchies
+  - Imitation Learning
+    - One Shot Imitation Learning
+      - 这篇论文提出一个比较通用的模仿学习的方法。这个方法在运行时，需要一个完成当前任务的完整演示，和当前状态。假设我要机器人搭方块，那么我给它一个完整的把方块搭好的视频演示，再告诉他当前方块都在哪里。这个模型会用CNN和RNN来处理任务的演示，这样，它就有一个压缩过的演示纲要。模型再用CNN处理当前状态，得到一个压缩过的当前状态信息。利用Attention Model来扫描演示纲要，我们就得到了“与当前状态最有关的演示的步骤”，再将这些信息全部传递给一个决策器。然后输出决策。具体的模型有很多细节，但大致流程如下
+- Alpha
+  - AlphaZero实战：从零学下五子棋（附代码）
+    - https://zhuanlan.zhihu.com/p/32089487
+    - https://github.com/junxiaosong/AlphaZero_Gomoku
+  - AlphaZero: Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
+  - AlphaGo Zero: Mastering the game of Go without human knowledge
+
+---
+
+- 纯干货18 - 2016-2017深度学习-最新-必读-经典论文
+  - https://zhuanlan.zhihu.com/p/32287815
+  - 问答系统
+    - IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models
+      在现代信息检索领域一直是两大学派之争的局面。一方面，经典思维流派是假设在文档和信息需求（由查询可知）之间存在着一个独立的随机生成过程。另一方面，现代思维流派则充分利用机器学习的优势，将文档和搜索词联合考虑为特征，并从大量训练数据中预测其相关性或排序顺序标签。
+      本篇 SIGIR2017 的满分论文则首次提出将两方面流派的数据模型通过一种对抗训练的方式统一在一起，使得两方面的模型能够相互提高，最终使得检索到的文档更加精准。文章的实验分别在网络搜索、推荐系统以及问答系统三个应用场景中实现并验证了结果的有效性。
+  - 代码生成
+    -     DeepAM: Migrate APIs with Multi-modal Sequence to Sequence Learning 25 apr 2017
+          A Syntactic Neural Model for General-Purpose Code Generation 6 apr 2017
+          RobustFill: Neural Program Learning under Noisy I/O 21 mar 2017
+          DeepFix: Fixing Common C Language Errors by Deep Learning 12 feb 2017
+          DeepCoder: Learning to Write Programs 7 nov 2016
+          Neuro-Symbolic Program Synthesis 6 nov 2016
+          Deep API Learning 27 may 2016
+      
+
+---
+
+- Attention Mechanism
+  - https://zhuanlan.zhihu.com/p/31547842
+- (*)Meta Learning
+  - https://zhuanlan.zhihu.com/p/32270990
+
+---
+
+- 【2018年深度学习十大警告性预测：DL硬件企业面临倒闭、元学习取代SGD、生成模型成主流、自实践自动知识构建、直觉机弥合语义鸿沟、可解释性仍不可及、缺少理论深度的DL论文继续井喷、打造学习环境以实现产业化、会话认知、AI伦理运用】《10 Alarming Predictions for Deep Learning in 2018》by Carlos E. Perez O网页链接
+- 《Learning More Universal Representations for Transfer-Learning》Y Tamaazousti, H L Borgne, C Hudelot, M E A Seddik, M Tamaazousti [CEA & University of Paris-Saclay] (2017) O网页链接 
+  - Universal Representations
+  - Transfer-Learning
+- 《Letter-Based Speech Recognition with Gated ConvNets》V Liptchinsky, G Synnaeve, R Collobert [Facebook AI Research] (2017) O网页链接 GitHub: https:\//github.com\/facebookresearch/wav2letter 
+  - Letter-Based Speech Recognition 字符表示
+  - Gated ConvNets
+
+- 【Xi(Peter) Chen主讲的深度增强学习课程(Videos/Slides)】“Deep Reinforcement Learning” by Xi(Peter) Chen OpenAI/Berkeley AI Research Lab(http://t.cn/RHWQreD) via@数急 
+
+---
+
+【AI与深度学习2017年度综述】《AI and Deep Learning in 2017 – A Year in Review | WildML》by Denny Britz O网页链接 
+
+【20行Python代码实现马尔科夫链生成鸡汤文字】《How I generated inspirational quotes with less than 20 lines of python code》by Ramtin Alami O网页链接 pdf:O网页链接 
+
+“实用脚本：Ubuntu 16上全自动安装Nvidia驱动程序, Anaconda, CUDA, fastai等” O网页链接 
+
+---
+
+
+
+- Face Recognition
+  #世界上最简单的人脸识别库
+  本项目号称世界上最简单的人脸识别库，可使用 Python 和命令行进行调用。该库使用 dlib 顶尖的深度学习人脸识别技术构建，在户外脸部检测数据库基准（Labeled Faces in the Wild benchmark）上的准确率高达 99.38%。
+  项目链接：https://github.com/ageitgey/face_recognition
+  MUSE
+  #多语言词向量 Python 库
+  由 Facebook 开源的多语言词向量 Python 库，提供了基于 fastText 实现的多语言词向量和大规模高质量的双语词典，包括无监督和有监督两种。其中有监督方法使用双语词典或相同的字符串，无监督的方法不使用任何并行数据。
+  无监督方法具体可参考 Word Translation without Parallel Data 这篇论文。
+  论文链接：https://www.paperweekly.site/papers/1097
+  项目链接：https://github.com/facebookresearch/MUSE
+  FoolNLTK
+  #中文处理工具包
+  本项目特点：
+  • 可能不是最快的开源中文分词，但很可能是最准的开源中文分词
+  • 基于 BiLSTM 模型训练而成
+  • 包含分词，词性标注，实体识别，都有比较高的准确率
+  • 用户自定义词典
+  项目链接：https://github.com/rockyzhengwu/FoolNLTK
+  Arnold
+  #最擅长玩《毁灭战士》的游戏AI
+  本项目来自卡耐基梅隆大学，是 2017 年 VizDoom《毁灭战士》AI 死亡竞赛冠军 Arnold 的 PyTorch 开源代码。
+  论文链接：https://www.paperweekly.site/papers/1440
+  项目链接：https://github.com/glample/Arnold
+  Bottom-Up Attention VQA
+  #2017 VQA Challenge 第一名
+  本项目是 2017 VQA Challenge 第一名团队两篇论文的 PyTorch 复现。
+  ■ 论文 | Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering
+  ■ 链接 | https://www.paperweekly.site/papers/754
+  ■ 论文 | Tips and Tricks for Visual Question Answering: Learnings from the 2017 Challenge
+  ■ 链接 | https://www.paperweekly.site/papers/1441
+  报告解读：2017 VQA Challenge 第一名技术报告
+  项目链接：https://github.com/hengyuan-hu/bottom-up-attention-vqa
+  YOLOv2 - PyTorch
+  #PyTorch 版 YOLOv2
+  著名物体检测库 YOLOv2 的 PyTorch 版本，本项目还可以将训练好的 model 转换为适配 Caffe 2。
+  项目链接：https://github.com/ruiminshen/yolo2-pytorch
+  Simple Railway Captcha Solver
+  #基于 CNN 的台铁订票验证码辨识
+  本项目利用简单的 Convolutional Neural Network 来实作辨识台铁订票网站的验证码，训练集的部分以模仿验证码样式的方式来产生、另外验证集的部分则自台铁订票网站撷取，再以手动方式标记约 1000 笔。
+  目前验证集对于 6 码型态的验证码的单码辨识率达到 98.84%，整体辨识成功率达到 91.13%。
+  项目链接：https://github.com/JasonLiTW/simple-railway-captcha-solver
+  AlphaZero-Gomoku
+  #用 AlphaZero 下五子棋
+  这是一个将 AlphaZero 算法应用在五子棋的实现，由于五子棋相比围棋或国际象棋简单得多，所以只需几个小时就可以训练出一个不错的 AI 模型。
+  ■ 论文 | AlphaZero: Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
+  ■ 链接 | https://www.paperweekly.site/papers/1297
+  ■ 论文 | AlphaGo Zero: Mastering the game of Go without human knowledge
+  ■ 链接 | https://www.paperweekly.site/papers/942
+  项目链接：https://github.com/junxiaosong/AlphaZero_Gomoku
+  gym-extensions
+  #OpenAI Gym 扩展集
+  这是一个 OpenAI Gym 库的扩展包，实现了包括：多任务学习、迁移学习、逆增强学习等功能。
+  项目链接：https://github.com/Breakend/gym-extensions
+  Myia
+  #Python 深度学习框架
+  Myia 是一个全新的 Python 深度学习框架，具有使用简单、自动微分和性能优化的特点。
+  项目链接：https://github.com/mila-udem/myia
+  
+
+---
+
+
 
 - QA && KB Repository
   - 怎么利用知识图谱构建智能问答系统？
