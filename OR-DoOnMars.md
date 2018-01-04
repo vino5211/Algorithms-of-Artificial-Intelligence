@@ -14,6 +14,8 @@ Make this to a scripts
 + Andconda3
 + Haroopad
 	+ http://www.bubuko.com/infodetail-2013827.html
+	+ 在线Markdown 编辑器
+		+ http://latex.codecogs.com/eqneditor/editor.php
 + pycharm
 	+ tar -zxvf pycharm-communi
 	+ pycharm settings
@@ -55,3 +57,4 @@ Make this to a scripts
 	+ http://blog.csdn.net/striker_v/article/details/51914637
 		+ 配置输入法需要重启 
 	+ 切换输入法 Ctrl + Shift 或者 Shift
+---
