@@ -9,29 +9,22 @@
   - DL
     - 迁移学习
     - 对抗训练
-
-<<<<<<< HEAD
-- ML
-  - Book
-    - 统计学习方法-李航
-    - 机器学习-周志华
-- NLP
-  - Blue Book
-    - 第一期：深度学习与文本分析
-    - 第二期：深度学习与NLP应用
-- DL 
-  - Book
-    - Deep Learning-Ian Goodfellow, Yoshua Bengio, Aaron Courville
+  - ML
+    - Book
+      - 统计学习方法-李航
+      - 机器学习-周志华
+  - NLP
+    - Blue Book
+      - 第一期：深度学习与文本分析
+      - 第二期：深度学习与NLP应用
+  - DL 
+    - Book
+      - Deep Learning-Ian Goodfellow, Yoshua Bengio, Aaron Courville
   - Video
     - 李宏毅深度学习(2017)
       - Attention
       - GAN
       - https://www.bilibili.com/video/av9770302/
-- Corpus
-  - 将网上见到的资源整合到数据库中
-  - Make a data list
-  - Existing Corpus
-=======
 - # KD feed
   - ML
     - Book
@@ -53,7 +46,6 @@
   - 将网上见到的资源整合到数据库中
   - Make a data list 
   - Existing Corpus
->>>>>>> 51fd012729985030c3ae826606717918f88e07a0
   - Crawler from web
 - # Blog
   - CSDN
