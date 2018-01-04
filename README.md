@@ -51,5 +51,5 @@ Knowledge
     - BN ：Book Note
     - PN : Paper Note
     - VN : Video Note
-    - CU : Clear up, this means that the content in this file is relatively mature
+    - CU : Self Clear up
     - OR : Operation Record
