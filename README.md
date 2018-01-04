@@ -24,7 +24,7 @@ Knowledge https://jbt.github.io/markdown-editor/
       | Name                                     | Status |
       | ---------------------------------------- | ------ |
       | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
-      |                                          |        |
+      | PN-Human-level control through deep reinforcement.md                                        |  Doing |
 
     - Video Note
     - Clear up Note to Self Knowledge Repository
