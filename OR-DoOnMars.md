@@ -14,7 +14,9 @@ Make this to a scripts
 + Andconda3
 + Haroopad
 	+ http://www.bubuko.com/infodetail-2013827.html
-	+ 在线Markdown 编辑器
+	+ 在线Markdown 编辑器, 可用于测试markdown 格式（列表，图片等）的正确写法
+		+ https://jbt.github.io/markdown-editor/
+	+ 在线Markdown 公式编辑器，可用于产生正确的 markdown 公式（操作类似 Word 的公式编辑器），复制其结果到Markdown中即可，而不用记忆Markdown公式编辑器的语法
 		+ http://latex.codecogs.com/eqneditor/editor.php
 + pycharm
 	+ tar -zxvf pycharm-communi
