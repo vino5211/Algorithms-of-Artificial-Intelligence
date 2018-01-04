@@ -54,7 +54,7 @@ Make this to a scripts
 + Chrome
 	+ https://jingyan.baidu.com/article/335530da98061b19cb41c31d.html 
 + kanbanflow
-	+  Apollo2Mars@gmail.com/ kanban123456
+	+  gmail kanban123456
 + Ubuntu 16.04 安装 google 输入法
 	+ http://blog.csdn.net/striker_v/article/details/51914637
 		+ 配置输入法需要重启 
