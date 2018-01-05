@@ -67,5 +67,5 @@ Make this to a scripts
 	+ Draw Diagrams With Markdown
 		+ http://support.typora.io/Draw-Diagrams-With-Markdown/
 	+ js-sequence-diagrams 
-		+　https://bramp.github.io/js-sequence-diagram
+		+ https://bramp.github.io/js-sequence-diagram
 + Markdown UML 作图
