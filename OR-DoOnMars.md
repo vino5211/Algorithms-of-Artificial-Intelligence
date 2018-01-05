@@ -63,4 +63,9 @@ Make this to a scripts
 + 在线UML作图
 	+ 介绍：http://www.heqiangfly.com/2017/07/08/development-tool-markdown-plant-uml/ 
 	+ 网址：http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
++ 在线作图
+	+ Draw Diagrams With Markdown
+		+ http://support.typora.io/Draw-Diagrams-With-Markdown/
+	+ js-sequence-diagrams 
+		+　https://bramp.github.io/js-sequence-diagram
 + Markdown UML 作图
