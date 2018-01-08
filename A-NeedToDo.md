@@ -6,9 +6,12 @@
   - 算法的背景
   - 数学推理过程 
    
+- Structure FlowChart
+- Important
    
 - # Outline
-  - DL
+  - Next Target
+    - 强化学习
     - 迁移学习
     - 对抗训练
   - ML
@@ -53,6 +56,7 @@
   - CSDN
   - Github
 - # Projects
+  - RL Demo
   - train models
   - Friday
 - # Basic skill
@@ -69,5 +73,3 @@
   - build knowledge base
   - implement existing algorithm
   - build huge corpus dataset
-
-
