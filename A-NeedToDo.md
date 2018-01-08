@@ -6,12 +6,12 @@
   - 算法的背景
   - 数学推理过程 
    
-- Structure FlowChart
-- Important
+- # Structure FlowChart
+  - Important
    
 - # Outline
   - Next Target
-    - 强化学习
+    - 强化学习
     - 迁移学习
     - 对抗训练
   - ML
