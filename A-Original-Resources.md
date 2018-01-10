@@ -1,5 +1,7 @@
 - mdp
-- Attention is all you need 
+- Attention
+	- Attention is all you need
+	- https://zhuanlan.zhihu.com/p/31547842
 ---
 
 - 重现DeepMind星际争霸强化学习算法
