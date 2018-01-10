@@ -1,11 +1,13 @@
+- mdp
+- Attention is all you need 
+---
+
 - 重现DeepMind星际争霸强化学习算法
   - https://zhuanlan.zhihu.com/p/29246185
 - 迈向通用人工智能：星际争霸2人工智能研究环境SC2LE完全入门指南
   - https://zhuanlan.zhihu.com/p/28434323
 
 ---
-
-
 
 - 概要：NIPS 2017 Deep Learning for Robotics Pieter Abbeel
   - https://zhuanlan.zhihu.com/p/32089849
