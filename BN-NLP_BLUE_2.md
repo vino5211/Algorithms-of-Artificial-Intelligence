@@ -102,3 +102,85 @@
 		+ 完形填空
 	+ 挑战
 	+ 典型数据集
+		|名称|描述|类型|规模|创建者|
+        |---|
+		|MCTest|
+        |bAbi|
+        |CNN/DailyMail|新闻|完形填空|93K/220K|DeepMind|
+        |SAuAD|维基百科|问答|10W|Standford|
+        |bAbi|
+        |MCTest|
+    	+ bAbi
+    		+ 由Facebook创建，验证实现语言理解所需的推理能力
+    		+ 主要是虚拟场景下的动作情节
+    		+ 训练1000个问题，测试1000个问题
+    		+ 答案：一个词或几个词
+    	+ MCTest
+    		+ 由MSR构建(Microsoft Resrerch)
+    		+ http://www.microsoft.com/en-us/research/publication/mctest-challenge-dataset-open-domain-machine-comprehension-text/
+    		+ 短片小说 + 选择题
+    			+ 共650篇
+    			+ 单选+多选/盲选
+    		+ 利用众包平台进行标注
+    			+ Amazon Mechanical Turk
+    	+ SQuAD
+    		+ 由斯坦福大学从维基百科中构建(LeaderBorad)
+    + 传统方法
+    	+ 典型的两步框架
+    	+ 片段检索
+    		+ P(片段|问题，文档)
+    	+ 答案生成
+    		+ 通常定义为文本蕴含(???)
+    		+ P(答案|问题，片段)
+    	+ 最终
+    		+ P(片段|问题，文档)×P(答案|问题，片段)、
+    		+ 首先确定片段，在确定片段中寻找答案
+    + 特征
+    	+ 挖掘隐性文本蕴含的特征，如词级别的对应特征
+    		+ Sachan,et al.ACL 2015
+    + 传统方法蕴含的困难
+    	+ 对**篇章**理解建模能力有限
+    	+ 对深层次的推理需求无能为力
+    	+ 外部资源和工具带来的错误传递和积累
+    
+    
++ ##深度学习
+	+ 方法
+		+ LSTM
+		+ Attention Mechanism
+		+ Memory Network
+		+ Hierarchical CNN
+		+ Hierarchical Attention
+		+ Pointer Network
+		+ Attention Over Attention
+		+ Self-Matching Network
+	+ LSTM
+		+ LSTM 对较长词串具有抽象(浓缩)能力
+		+ 缺点：对距离较远的关键词缺乏足够的关联建模
+	+ LSTM + Attention
+		+ Attentive Reader
+		+ 双向LSTM + Attention
+		+ 找到最有支持度的句子
+	+ LSTM + Attentions
+		+ Impatient Reader
+		+ 在处理文档中的单词时，通过注意力机制令模型能重新阅读文档句子
+		+ 逐步处理问题，反复阅读句子，产生更好的文档表示
+		+ 例子在CNN/DialyMail
+	+ **Memory** Networks
+		+ I(Input feature map):将输入转化为**内部特征**表示
+		+ G(Generalization):根据输入**更新**当前Memory
+		+ O(Oputput feature map):根据**输入**和**当前Memory状态**，生成**输出向量**
+		+ R(Response):根据**输出向量**，产生答案
+		+ 例子：Memory Network for bAbi
+		+ 改进：
+			+ 自适应记忆单元
+			+ 记忆单元使用Ngram
+			+ 匹配函数非线性化
+			+ End2End MN
+	+ Attention over Attention
+    + Match LSTM
+    + Bi-direction Attention Flow
+    + DocRetriever-DocReader
+    	+ Open-domain QA
+    + Mnemonic Reader
+    + R-Net
