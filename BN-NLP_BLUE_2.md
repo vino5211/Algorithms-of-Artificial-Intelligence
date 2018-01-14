@@ -107,7 +107,7 @@
 		|MCTest|
         |bAbi|
         |CNN/DailyMail|新闻|完形填空|93K/220K|DeepMind|
-        |SAuAD|维基百科|问答|10W|Standford|
+        |SQuAD|维基百科|问答|10W|Standford|
         |bAbi|
         |MCTest|
     	+ bAbi
