@@ -28,9 +28,8 @@ Knowledge
 
     - Video Note
       | Name                | Links | Status |
-      | ------------------- | ------ | ------ |
-      | 李宏毅深度学习| https://www.bilibili.com/video/av9770302/#page=24 | Doing  |
-      |  |  | |
+      | ------------          | ------ | ------ | 
+      | 李宏毅深度学习         | https://www.bilibili.com/video/av9770302/#page=24 | Doing  |
     - Clear up Note to Self Knowledge Repository
       - NLP
         - Sequence Labeling
@@ -57,3 +56,4 @@ Knowledge
     - VN : Video Note
     - CU : Self Clear up
     - OR : Operation Record
+    - VW : View
