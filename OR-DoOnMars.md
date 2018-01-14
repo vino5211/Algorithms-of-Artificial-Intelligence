@@ -11,6 +11,9 @@ Make this to a scripts
  	sudo apt-get install cuda
     ```
 + (Undo) cudnn
++ pytorch
+	+ pip install http://download.pytorch.org/whl/cu80/torch-0.1.11.post5-cp36-cp36m-linux_x86_64.whl 
+	+ pip install torchvision
 + Andconda3
 + Haroopad
 	+ http://www.bubuko.com/infodetail-2013827.html
