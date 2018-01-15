@@ -27,6 +27,7 @@ Knowledge
       | PN-Human-level control through deep reinforcement.md                                      |  Doing |
 
     - Video Note
+      
       | Name                | Links | Status |
       | ------------          | ------ | ------ | 
       | 李宏毅深度学习         | https://www.bilibili.com/video/av9770302/#page=24 | Doing  |
