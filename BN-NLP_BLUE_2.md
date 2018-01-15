@@ -143,44 +143,74 @@
     	+ 对深层次的推理需求无能为力
     	+ 外部资源和工具带来的错误传递和积累
     
-    
-+ ##深度学习
-	+ 方法
-		+ LSTM
-		+ Attention Mechanism
-		+ Memory Network
-		+ Hierarchical CNN
-		+ Hierarchical Attention
-		+ Pointer Network
-		+ Attention Over Attention
-		+ Self-Matching Network
+##深度学习
++ 方法
 	+ LSTM
-		+ LSTM 对较长词串具有抽象(浓缩)能力
-		+ 缺点：对距离较远的关键词缺乏足够的关联建模
-	+ LSTM + Attention
-		+ Attentive Reader
-		+ 双向LSTM + Attention
-		+ 找到最有支持度的句子
-	+ LSTM + Attentions
-		+ Impatient Reader
-		+ 在处理文档中的单词时，通过注意力机制令模型能重新阅读文档句子
-		+ 逐步处理问题，反复阅读句子，产生更好的文档表示
-		+ 例子在CNN/DialyMail
-	+ **Memory** Networks
-		+ I(Input feature map):将输入转化为**内部特征**表示
-		+ G(Generalization):根据输入**更新**当前Memory
-		+ O(Oputput feature map):根据**输入**和**当前Memory状态**，生成**输出向量**
-		+ R(Response):根据**输出向量**，产生答案
-		+ 例子：Memory Network for bAbi
-		+ 改进：
-			+ 自适应记忆单元
-			+ 记忆单元使用Ngram
-			+ 匹配函数非线性化
-			+ End2End MN
-	+ Attention over Attention
-    + Match LSTM
-    + Bi-direction Attention Flow
-    + DocRetriever-DocReader
-    	+ Open-domain QA
-    + Mnemonic Reader
-    + R-Net
+	+ Attention Mechanism
+	+ Memory Network
+	+ Hierarchical CNN
+	+ Hierarchical Attention
+	+ Pointer Network
+	+ Attention Over Attention
+	+ Self-Matching Network
++ LSTM
+	+ LSTM 对较长词串具有抽象(浓缩)能力
+	+ 缺点：对距离较远的关键词缺乏足够的关联建模
++ LSTM + Attention
+	+ Attentive Reader
+	+ 双向LSTM + Attention
+	+ 找到最有支持度的句子
++ LSTM + Attentions
+	+ Impatient Reader
+	+ 在处理文档中的单词时，通过注意力机制令模型能重新阅读文档句子
+	+ 逐步处理问题，反复阅读句子，产生更好的文档表示
+	+ 例子在CNN/DialyMail
++ **Memory** Networks
+	+ I(Input feature map):将输入转化为**内部特征**表示
+	+ G(Generalization):根据输入**更新**当前Memory
+	+ O(Oputput feature map):根据**输入**和**当前Memory状态**，生成**输出向量**
+	+ R(Response):根据**输出向量**，产生答案
+	+ 例子：Memory Network for bAbi
+	+ 改进：
+		+ 自适应记忆单元
+		+ 记忆单元使用Ngram
+		+ 匹配函数非线性化
+		+ End2End MN
++ Attention over Attention
++ Match LSTM
++ Bi-direction Attention Flow
++ DocRetriever-DocReader
+	+ Open-domain QA
++ Mnemonic Reader
++ R-Net
+
+---
+# Part I : Network Embedding: Recent Progress and Applications
++ Traditional Network Representation
++ Concepts
+	+ Representation learning
+	+ Distributed representation
+	+ Embedding
++ Network Embedding
+	+ Map the nodes in a network **into** a low dimensional space
+		+ Distributed representation for nodes
+		+ Similarity between nodes indicate the link strength(节点间的相似性表示链路强度)
+		+ Encode network information and generate node representation
++ Problems with previous Models
+	+ Classical graph embedding algorithms
+		+ MDS,IsoMap,LLE,Laplacian Eigenmap(???)
+		+ Most of them follow a matrix factorization(矩阵分解) or computation approach(???)
+		+ Hard to scale up(难以扩展)
+		+ Diffcult to extend to new settings
++ Outline
+	+ Preliminaries(初步措施)
+		+ word2vec
+	+ Basic Network Embedding Models
+		+ DeepWalk,Node2Vec,LINE,GrapRep,SDNE
+	+ Advanced Network Embedding Models
+		+ Beyond embedding,vertex information,edge information(超越嵌入, 顶点信息, 边缘信息)
+	+ Applications of Network Embedding
+		+ Basic applications
+		+ visualization
+		+ text classification
+		+ recommendation
