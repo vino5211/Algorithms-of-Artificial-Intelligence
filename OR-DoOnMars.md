@@ -10,7 +10,45 @@ Make this to a scripts
  	sudo apt-get update
  	sudo apt-get install cuda
     ```
-+ (Undo) cudnn
++ cudnn
+	+ problem : ImportError: libcudnn.so.6: cannot open shared object file: No such file or directory
+	+ step
+		+ download cudnn6.0 or /home/apollo/craft/Packages/cudnn-8.0-linux-x64-v6.0.tgz
+		+ tar -zxvf cudnn-8.0-linux-x64-v6.0.tgz
+		+ cd cuda (folder after tar)
+		+ delete old cudnn and copy new file
+			+ sudo cp include/cudnn.h /usr/local/cuda/include/
+			+ sudo cp lib64/lib* /usr/local/cuda/lib64/
+		+ build soft link
+
+			```
+			cd  /usr/local/cuda/lib64/
+			sudo chmod +r libcudnn.so.6.0.20
+			sudo ln -sf libcudnn.so.6.0.20 libcudnn.so.6
+			sudo ln -sf libcudnn.so.6 libcudnn.so
+			sudo ldconfig
+			```
+         + check
+
+         ```
+         	cd /usr/local/cuda/lib64/
+			ll libcudnn*
+
+			lrwxrwxrwx 1 root root        13 1月  15 23:34 libcudnn.so -> libcudnn.so.6*
+			lrwxrwxrwx 1 root root        18 1月  15 23:34 libcudnn.so.6 -> libcudnn.so.6.0.20*
+			-rwxr-xr-x 1 root root 154317424 1月  15 23:11 libcudnn.so.6.0.20*
+			-rw-r--r-- 1 root root 143843792 1月  15 23:11 libcudnn_static.a
+
+         ```
+
++ (Undo) sudo apt install nvidia-cuda-toolkit
++ nltk
+	+ install nltk
+	+ download nltk_data
+		```
+        import nltk
+		nltk.download()
+        ```
 + pytorch
 	+ pip install http://download.pytorch.org/whl/cu80/torch-0.1.11.post5-cp36-cp36m-linux_x86_64.whl 
 	+ pip install torchvision

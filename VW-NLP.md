@@ -13,8 +13,16 @@
   - 无监督方法具体可参考 Word Translation without Parallel Data 这篇论文。
   - 论文链接：https://www.paperweekly.site/papers/1097
   - 项目链接：https://github.com/facebookresearch/MUSE
-  
-  ---
+
+- Supervised Learning of Universal Sentence Representations from Natural Language Inference Data
+  + 本文来自 Facebook AI Research。本文研究监督句子嵌入，作者研究并对比了几类常见的网络架构（LSTM，GRU，BiLSTM，BiLSTM with self attention 和 Hierachical CNN）, 5 类架构具很强的代表性。
+  + 论文链接：https://www.paperweekly.site/papers/1332
+  + 代码链接：https://github.com/facebookresearch/InferSent
+- Multilingual Hierarchical Attention Networks for Document Classification
+  + 本文使用两个神经网络分别建模句子和文档，采用一种自下向上的基于向量的文本表示模型。	首先使用 CNN/LSTM 来建模句子表示，接下来使用双向 GRU 模型对句子表示进行编码得到文档表示。
+  + 论文链接：https://www.paperweekly.site/papers/1152
+  + 代码链接：https://github.com/idiap/mhan
+---
   Temp Paper Repository
 
 - NLP Task
