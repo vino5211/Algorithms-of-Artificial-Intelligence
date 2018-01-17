@@ -1,16 +1,12 @@
 + git rm 
   + git rm  bnlp-zh-hk-trainer/resources/ -rf
 + gitignore
-  ···
+  ```
   在项目工程中，常会生成一些运行缓存，而这些是不能 push 的，所以需要 .gitignore 配置规则来过滤。
-
- 
 
 配置规则：
 
 以 # 开头行为注释  
-
- 
 
 以斜杠“/”开头表示目录；
 
@@ -76,5 +72,4 @@
     /TODO            # 只忽略此目录下 TODO 文件，子目录的 TODO 不忽略 
     build/               # 忽略所有的 build/ 目录下文件
     doc/*.txt           # 忽略如 doc/notes.txt, 但是不忽略如 doc/server/arch.txt 
-
-  ···
+  ```
