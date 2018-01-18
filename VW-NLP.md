@@ -192,18 +192,5 @@ aspect level情感分析相关工作
 
 ---
 
-- ToDo Next-3 Days
-  - change
-  - habbit formation
-  - crf -zh train
-  - Neural CRF
-    - 
-  - Attention
-    - ABCNN: Attention-Based Convolutional Neural Network for Modeling Sentence Pairs
-  - leetcode
-    - Dynamic Programming
-      - https://www.zhihu.com/question/23995189
-  - DRL4NLP
-    - Agent
-      - Ask the Right Questions: Active Question Reformulation with Reinforcement Learning
+
 
