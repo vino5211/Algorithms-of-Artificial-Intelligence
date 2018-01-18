@@ -214,3 +214,12 @@
 		+ visualization
 		+ text classification
 		+ recommendation
++ Preliminaries
+	+ Softmax functions
+		+ sigmoid function
+			$$ \phi(x) = \frac{1}{1 + e^{-x}}$$
+		+ 
+	+ Distributional semantics
+	+ Word2Vec
+		+ CROW
+		+ Skip-gram
