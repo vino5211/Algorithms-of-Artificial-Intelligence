@@ -112,3 +112,6 @@ Make this to a scripts
 	+ js-sequence-diagrams 
 		+ https://bramp.github.io/js-sequence-diagram
 + Markdown UML 作图
++ 屏幕截图
+	+ gnome-screenshot -h
+	+ http://www.cnblogs.com/imqsl/p/6612370.html
