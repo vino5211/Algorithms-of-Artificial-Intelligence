@@ -62,6 +62,11 @@
 	+ https://github.com/deepmind/narrativeqa
 	+ DeepMind认为目前的阅读理解数据集均存在着一定的局限性，包括：数据集小、不自然、只需要一句话定位回答的必须信息，等等。因而 Deepmind 认为，在这些数据集上的测试可能都是一个不能真实反映机器阅读理解能力的伪命题。
 
++ The NarrativeQA Reading Comprehension Challenge
+	+ 由 DeepMind 发布的全新机器阅读理解数据集 NarrativeQA，其难度和复杂度都进行了全面升级。
+	+ 论文链接：https://www.paperweekly.site/papers/1397
+	+ 代码链接：https://github.com/deepmind/narrativeqa
+
 ---
 #Knowledge Base
 + 怎么利用知识图谱构建智能问答系统？
