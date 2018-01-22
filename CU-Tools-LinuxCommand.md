@@ -108,19 +108,20 @@
           7、恢复vim状态 :source name.vim
           8、启动vim时恢复状态 vim -S name.vim
       
-    - 
-  - 全选
-    - 全选（高亮显示）：按esc后，然后ggvG或者ggVG
-      全部复制：按esc后，然后ggyG
-      全部删除：按esc后，然后dG
-      解析：
-      gg：是让光标移到首行，在vim才有效，vi中无效 
-      v ： 是进入Visual(可视）模式 
-      G ：光标移到最后一行 
-      选中内容以后就可以其他的操作了，比如： 
-      d  删除选中内容 
-      y  复制选中内容到0号寄存器 
-      "+y  复制选中内容到＋寄存器，也就是系统的剪贴板，供其他程序用 
+      ![img](http://roclinux.cn/wp-content/uploads/2010/04/vi_tutorial.png)
+
+- 全选
+  - 全选（高亮显示）：按esc后，然后ggvG或者ggVG
+    全部复制：按esc后，然后ggyG
+    全部删除：按esc后，然后dG
+    解析：
+    gg：是让光标移到首行，在vim才有效，vi中无效 
+    v ： 是进入Visual(可视）模式 
+    G ：光标移到最后一行 
+    选中内容以后就可以其他的操作了，比如： 
+    d  删除选中内容 
+    y  复制选中内容到0号寄存器 
+    "+y  复制选中内容到＋寄存器，也就是系统的剪贴板，供其他程序用 
 - 查找
   - find 和 grep 的区别：
     - find命令是根据文件的属性进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。
@@ -185,9 +186,15 @@
     - -s 或 --squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行
     - -v 或 --show-nonprinting
   - 例：
-    - 把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里
+
+    + 把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里
+
       	cat -n textfile1 > textfile2
-    - 把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。
+
+    + 把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。
+
       	cat -b textfile1 textfile2 >> textfile3
-    - 把test.txt文件扔进垃圾箱，赋空值test.txt
+
+    + 把[**test**](http://www.cnblogs.com/perfy/admin/).txt文件扔进垃圾箱，赋空值test.txt
+
       	cat /dev/null > /etc/test.txt  
