@@ -48,3 +48,65 @@
         ```
 + ###Figure 1 gives an illustration of DrQA.
 ![An overview of our question answering system DrQA.png](/home/apollo/Pictures/An overview of our question answering system DrQA.png)
+
++ experiment
+	+ Our experiments show that Document Retriever outperforms the built-in Wikipedia search engine and that Document Reader reaches state-of-the-art results on the very competitive SQuAD bench-mark (Rajpurkar et al., 2016). 
+	+ Finally, our full system is evaluated using multiple benchmarks. In particular, we show that performance is improved across all datasets through the use of **multitask learning** and **distant supervision** compared to single task training.
+
+
++ ## Related Work
++ Open-domain QA Define
+	+ Open-domain QA was originally defined as finding answers in collections of unstructured documents, following the setting of the annual TREC competitions
+		+ TREC competitions
+		+ unstructured documents
++ KB
+	+ With the development of KBs, many recent innovations have occurred in the context of QA from KBs with the creation of resources like **WebQuestions** (Berant et al., 2013) and **SimpleQuestions** (Bordes et al., 2015) based on the **Freebase KB** (Bollacker et al., 2008), or on automatically extracted KBs, e.g., **OpenIE triples and NELL (Fader et al., 2014)**.
+	+ inherent limitations
+		+ incompleteness
+		+ fixed schemas
++ motivated researchers to return to original setting of **answering from raw text**
+	+ KB inherent limitations
+	+ deep learning architectures like attention-based and memory augmented neural networks
+		+ Bahdanau et al.,2015; Weston et al., 2015; Graves et al., 2014
+	+ release of new training and evaluation datasets like QuizBowl (Iyyer et al., 2014), CNN/Daily Mail based on news articles (Hermann et al., 2015), CBT based on children books (Hill et al., 2016), or SQuAD (Rajpurkar et al., 2016) and WikiReading (Hewlett et al., 2016), both based on Wikipedia.
++ Target
+	+ An objective of this paper is to test how such new methods can perform in an open-domain QA framework.
++ QA using Wikipedia as a resource has been explored previously
+	+ Ryu et al. (2014) perform open-domain QA using a Wikipedia-based knowledge model. They **combine** article content with multiple other answer matching modules based on different types of semi-structured knowledge such as infoboxes, article structure, category structure,and definitions
+	+ Ahn et al. (2004) also **combine** Wikipedia as a text resource with other resources, in this case with information retrieval over other documents
+	+ Buscaldi and Rosso (2006) also mine knowledge from Wikipedia for QA. Instead of using it as a resource for seeking answers to questions, they focus on validating answers returned by their QA system, and use Wikipedia categories for determining a set of patterns that should fit with the expected answer(找到答案的模式)
++ This work
+	+ In our work,we consider the comprehension of text only, and use Wikipedia text documents as the sole resource in order to emphasize the task of machine reading at scale, as described in the introduction.(强调机器阅读)
+	+ Comparing against these methods provides a useful datapoint for an “upper bound” benchmark on performance.
+		+ 与这些方法进行比较为性能上限基准提供了一个有用的数据点。
++ Highly developed full pipeline QA
+	+ AskMSR:Microsoft
+	+ DeepQA:IBM
+	+ YodaQA
+		+ open source
+		+ combining websites,information extraction, databases and Wikipedia in particular
++ Multitask learning (Caruana, 1998) and task transfer
+	+ **Multitask learning (Caruana, 1998)** and **task transfer** have a rich history in machine learning(e.g., using ImageNet in the computer vision community (Huh et al., 2016)), as well as in NLP in particular (Collobert and Weston, 2008).
+	+ Several works have attempted to combine multiple QA training datasets via multitask learning to 
+		+ (i)achieve improvement across the datasets via tasktransfer;
+		+ (ii) provide a single general system capable of asking different kinds of questions due to the inevitably different data distributions across the source datasets.
+	+ Fader et al. (2014) used WebQuestions, TREC and WikiAnswers with four KBs as knowledge sources and reported improvement on the latter two datasets through multitask learning.
+	+ Bordes et al. (2015) combined WebQuestions and SimpleQuestions using distant supervision with Freebase as the KB to give slight improvements on both datasets, although poor performance was reported when training on only one dataset and testing on the other, showing that task transfer is indeed a challenging subject
+	+ see also (Kadlec et al., 2016) for a similar conclusion.
+	+ Our work follows similar themes, but in the setting of having to retrieve and then read text documents(先检索后阅读)，rather than using a KB, with positive results(取得了很好的结果).
+
+
+
++ ## Our System:DrQA
++ In the following we describe our system DrQA for MRS which consists of two components:
+	+ (1) the Document Retriever module for finding relevant articles
+	+ (2) a machine comprehension model, Document Reader, for extracting answers from a single document or a small collection of documents.
++ ### Document Retriever
++ ### Document Reader
+	+ Parapragh encoding
+	+ Question encoding
+	+ Prediction
+
++ ## Data
++ ## Experiments
++ ## Conslusion
