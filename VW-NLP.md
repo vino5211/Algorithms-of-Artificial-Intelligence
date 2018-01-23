@@ -1,4 +1,7 @@
-- NLP
+##NLP
+- Fast.ai推出NLP最新迁移学习方法「微调语言模型」，可将误差减少超过20%！
+	- Fine-tuned Language Models for Text Classification
+
 - FoolNLTK
   - 中文处理工具包
   - 本项目特点：

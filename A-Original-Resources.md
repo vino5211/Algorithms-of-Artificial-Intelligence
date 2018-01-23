@@ -1,3 +1,5 @@
++ 贝叶斯机器学习前沿进展
+	+ http://chuansong.me/n/2152434851911
 - Imitation Learning
 	- One Shot Imitation Learning
    	- 这篇论文提出一个比较通用的模仿学习的方法。这个方法在运行时，需要一个完成当前任务的完整演示，和当前状态。假设我要机器人搭方块，那么我给它一个完整的把方块搭好的视频演示，再告诉他当前方块都在哪里。这个模型会用CNN和RNN来处理任务的演示，这样，它就有一个压缩过的演示纲要。模型再用CNN处理当前状态，得到一个压缩过的当前状态信息。利用Attention Model来扫描演示纲要，我们就得到了“与当前状态最有关的演示的步骤”，再将这些信息全部传递给一个决策器。然后输出决策。
@@ -62,7 +64,7 @@ Papers:
   - key point:
     - unsup learn for pre train
     - train by layers
-    - sup learn for tuning weight between layers 
+    - sup learn for tuning weight between layers
 
 Office sites:
 
