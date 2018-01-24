@@ -103,9 +103,34 @@
 	+ (2) a machine comprehension model, Document Reader, for extracting answers from a single document or a small collection of documents.
 + ### Document Retriever
 + ### Document Reader
-	+ Parapragh encoding
-	+ Question encoding
-	+ Prediction
+	+ Insired by:
+    ```
+	Karl Moritz Hermann, Tomáš Kočiský, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil 	Blunsom. 2015. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems (NIPS)
+    ```
+    + Given a question q consisting of l tokens{q 1 , . . . , q l } and a document or a small set of documents of n paragraphs where a single paragraph p consists of m tokens {p 1 , . . . , p m }, we develop an RNN model that we apply to each paragraph in turn and then finally aggregate the predicted answers. Our method works as follows:
+		+ Parapragh encoding
+			+ put all tokens $ p_{i} $ in a paragraph $p$ as a sequence of feature vectors $\tilde{p} \in R^{d}$
+			+ put feature vectors as the input to a recurrent neural network and thus obtain:
+				$$
+                	{p_{1},...,p_{n}} = RNN({\tilde{p_{1}},...,\tilde{p_{n}}})
+                $$
+            + $\tilde{p_{i}}$ is comprised of the following parts：
+            	+ word embeddings
+            	+ exact match
+            	+ token features
+            		+ POS
+            		+ NER
+            		+ TF
+            	+ Aligned question embedding (对齐的问题) -- Attention
+            		+ ```
+            		Felix Hill, Antoine Bordes, Sumit Chopra, and Jason Weston. 2016. The Goldilocks Principle: Reading children’s books with explicit memory representations. In International Conference on Learning Representations (ICLR).
+   					```
+                    + $f_{align}(p_i) = \sum_j a_{i,j}E(q_j)$
+                    + $a_{i,j} = \frac{exp(\alpha (E(p_i)) * \alpha(E(q_j)))}{\sum_{j^`} exp(\alpha(E(p_i)) * \alpha(E(q_{j^`})))}$
+                    + $\alpha()$ is single dense layer with ReLU nonlinearity
+                    + compared to the exact match features, these features add soft alignments between similar but non(与完全匹配功能相比，这些功能可以在相似但不相同的单词之间添加软对齐)
+		+ Question encoding
+		+ Prediction
 
 + ## Data
 + ## Experiments
