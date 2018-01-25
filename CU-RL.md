@@ -1,3 +1,9 @@
+- # value function
+- # policy gradient
+
+
+---
+
 - http://www.algorithmdog.com/series/rl-series
 - 一、马尔可夫决策过程(Markov Decision Processes, MDP)
 - 组成
