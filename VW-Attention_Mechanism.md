@@ -1,4 +1,0 @@
-- Attention is all you need
-  - https://zhuanlan.zhihu.com/p/31547842
-- Attention Mechanism
-  - https://zhuanlan.zhihu.com/p/31547842
