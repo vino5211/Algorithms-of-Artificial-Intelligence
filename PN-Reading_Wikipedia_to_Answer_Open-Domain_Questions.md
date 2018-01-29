@@ -1,7 +1,6 @@
 + #Reading Wikipedia to Answer Open-Domain Quesitons
 + ## Abstract
-+ This paper proposes to tackle open-domain question answering using Wikipedia as the unique knowledge source: the answer to any factoid question is a text span in a Wikipedia article.
-	+ 何真实性问题的答案是维基百科文章中的文本跨度)
++ This paper proposes to tackle open-domain question answering using Wikipedia as the unique knowledge source: the answer to any factoid question is a text span in a Wikipedia article.(问题的答案是维基百科中文本按照一定跨度截取)
 + This task of machine reading at scale combines the challenges of document re-trieval (finding the relevant articles) with that of machine comprehension of text (identifying the answer spans from those articles)
 	+ 大规模机器阅读的任务将文件重新找到（找到相关文章）和机器理解文本（识别这些文章的答案）的挑战相结合
 + Our approach combines a search component based on bigram hashing and TF-IDF matching with a multi-layer recurrent neural network model trained to detect answers in Wikipedia paragraphs
@@ -33,15 +32,13 @@
 			+ CBT
 + However, those machine comprehension resources typically assume that a short piece of relevant text is already identified and given to the model, which is not realistic for building an open domain QA system(对开放领域的QA系统是不现实的)
 + In sharp contrast:
-	+ methods that use KBs or information retrieval over documents have to employ search as an integral part ofthe solution.
-		+ 使用KB或通过文档进行信息检索的方法必须将搜索作为解决方案的一个组成部分
-	+ Instead MRS is focused on simultaneously maintaining the challenge of **machine comprehension, which requires the deep understanding of text**, while keeping the realistic constraint(现实的约束) of searching over a large open resource.
+	+ methods that use KBs or information retrieval over documents have to employ search as an integral part of the solution.（使用KB或通过文档进行信息检索的方法必须将搜索作为解决方案的一个组成部分）
+	+ Instead MRS is focused on simultaneously(同时) maintaining the challenge of **machine comprehension, which requires the deep understanding of text**, while keeping the realistic constraint(现实的约束) of searching over a large open resource.
 + Key algorithm fo this paper
-	+ In this paper, we show how multiple existing QA datasets can be used to evaluate MRS by requiring an open-domain system to perform well on all of them at once.
-		+ 评估MRS: 要求在所有数据集上均表现良好
+	+ In this paper, we show how multiple existing QA datasets can be used to evaluate MRS by requiring an open-domain system to perform well on all of them at once.（评估MRS: 要求在所有数据集上均表现良好）
 	+  We develop DrQA, a strong system for question answering from Wikipedia composed of:
 		+   (1) Document Retriever, a module using bigram hashing and TF-IDF matching designed to, given a question, efficiently return a subset of relevant articles and
-		+   (2) Document Reader, a multi-layer recurrent neural network machine comprehension model trained to detect answer spans in those few returned documents.
+		+   (2) Document Reader, a **multi-layer** recurrent neural network **machine comprehension model** trained to detect answer spans in those few returned documents.
 		```
         （1）文档检索器，使用二元散列和TF-IDF匹配的模块，用于给出问题，有效地返回相关文章的子集，
   		（2）文献阅读器是一种多层递归神经网络机器理解模型，用于检测返回的文档中的回答跨度。
@@ -50,7 +47,7 @@
 ![An overview of our question answering system DrQA.png](/home/apollo/Pictures/An overview of our question answering system DrQA.png)
 
 + experiment
-	+ Our experiments show that Document Retriever outperforms the built-in Wikipedia search engine and that Document Reader reaches state-of-the-art results on the very competitive SQuAD bench-mark (Rajpurkar et al., 2016). 
+	+ Our experiments show that Document Retriever outperforms the built-in Wikipedia search engine and that Document Reader reaches state-of-the-art results on the very competitive SQuAD bench-mark (Rajpurkar et al., 2016).
 	+ Finally, our full system is evaluated using multiple benchmarks. In particular, we show that performance is improved across all datasets through the use of **multitask learning** and **distant supervision** compared to single task training.
 
 
@@ -102,19 +99,28 @@
 	+ (1) the Document Retriever module for finding relevant articles
 	+ (2) a machine comprehension model, Document Reader, for extracting answers from a single document or a small collection of documents.
 + ### Document Retriever
+	+ Pending to be added
+
+
 + ### Document Reader
 	+ Insired by:
     ```
 	Karl Moritz Hermann, Tomáš Kočiský, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil 	Blunsom. 2015. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems (NIPS)
     ```
-    + Given a question q consisting of l tokens{q 1 , . . . , q l } and a document or a small set of documents of n paragraphs where a single paragraph p consists of m tokens {p 1 , . . . , p m }, we develop an RNN model that we apply to each paragraph in turn and then finally aggregate the predicted answers. Our method works as follows:
+    + Brief description of the method:
+    	+ **Token Level word** :Given a question q consisting of l tokens {${tq}_1,...{tq}_l$} ("Who is the American President?" to 'Who','is','the','American','President')
+    	+ **Token Level word** : and a document or a small set of documents of n paragraphs where **a single paragraph p consists of m tokens {${tp}_1,...{tp}_m$}**
+    	+ develop an RNN model that we apply to **each paragraph in turn** and then finally aggregate the predicted answers.(最后汇总预测的答案)
+    + Method works as follows:
 		+ Parapragh encoding
-			+ put all tokens $ p_{i} $ in a paragraph $p$ as a sequence of feature vectors $\tilde{p} \in R^{d}$
-			+ put feature vectors as the input to a recurrent neural network and thus obtain:
-				$$
-                	{p_{1},...,p_{n}} = RNN({\tilde{p_{1}},...,\tilde{p_{n}}})
-                $$
-            + $\tilde{p_{i}}$ is comprised of the following parts：
+			+ **represent** all tokens $ {tp}_{i} $ **in a paragraph** as a sequence of feature vectors $\tilde{p} \in R^{d}$
+			+ ${tp_i}$ => represent by ${rep-tp_i}$
+			  ${tp_{i+1}}$ => represent by ${rep-tp_{i+1}}$
+              ${tp_{i+2}}$ => represent by ${rep-tp_{i+2}}$
+
+              Then,  $\tilde{p}$ consist of {${rep-tp_1}$,...${rep-tp_i}$, ${rep-tp_{i+1}}$, ${rep-tp_{i+2}}$,...}
+              $\tilde{p}$ is similar to a two-dimensional matrix
+            + **How to represent in token vectors $\tilde{p}$?** ($\tilde{p}$ contain many token vector)
             	+ word embeddings
             	+ exact match
             	+ token features
@@ -129,8 +135,46 @@
                     + $a_{i,j} = \frac{exp(\alpha (E(p_i)) * \alpha(E(q_j)))}{\sum_{j^`} exp(\alpha(E(p_i)) * \alpha(E(q_{j^`})))}$
                     + $\alpha()$ is single dense layer with ReLU nonlinearity
                     + compared to the exact match features, these features add soft alignments between similar but non(与完全匹配功能相比，这些功能可以在相似但不相同的单词之间添加软对齐)
+
+            + **How to use  $\tilde{p}$?**
+            	+ put feature vectors as the input to a recurrent neural network and thus obtain:
+				$$
+                	{p_{1},...,p_{n}} = RNN({\tilde{p_{1}},...,\tilde{p_{n}}})
+                $$
+                + **How to design RNN?**
+                	+ where $p_i$is expected to encode useful context information around token $tp_i$ .
+                	+ Specifically, we choose to use a multi-layer bidirectional long short-term memory network (LSTM)
+                	+ take $p_i$ as the concatenation(级联) of each layer’s hidden units in the end.（把$p_i$作为每层隐藏单元的连接）
+            + **${p_{1},...,p_{m}}$ is the paragraph encoding**
 		+ Question encoding
-		+ Prediction
+			+ simpler
+			+ make tokens {$q_i,...,q_l$} to vector $q$ by
+			$$
+            	q = \sum_j b_j q_j
+            $$
+            + where $b_j$ encodes the importance of each question word:
+            $$
+            	b_j = \frac{exp(w*q_j)}{\sum_{j`} exp(w*q^{j`})}
+            $$
+            + **w is a weight vector to learn**
+            + ** {$q_i,...,q_l$} ** is questiong encoding
+
+     + Prediction
+     	+ *single paragraph*
+     		+ At the paragraph level, the goal is to predict the span of tokens that is most likely the correct answer. We take the the paragraph vectors {p_1,...,p_m } and the question vector q as input
+     		+ simply train two classifiers independently for predicting the two ends of the span.
+			+ Concretely,we use a bilinear term（双线性项） to capture the similarity between $p_i$ and q and **compute the probabilities of each token being start and end** as:
+			$$
+            	P_{start}(i) \propto exp(p_i W_s q)
+            $$
+            $$
+                P_{end}(i) \propto exp(p_i W_e q)
+            $$
+
+			+ During prediction, choose the best span from token i to token $i^`$ such that $i ≤ i^` ≤ i + 15$ and
+$P start (i) × P end (i 0 )$ is maximized
+		+ *Multi paragraph*
+			+ **Multi Paragraphs(single docs and multi docs) result contrast : ** To make scores compatible across paragraphs in one or several retrieved documents, we use the unnormalized exponential and take argmax over all considered paragraph spans for our final prediction.(我们使用非规范化的指数，并对所有考虑的段跨度进行最终预测的argmax)
 
 + ## Data
 + ## Experiments
