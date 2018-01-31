@@ -1,4 +1,9 @@
 # Clear NLTK
++ Installing Third Party Software
+	+ https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software
++ corenlp nltk
+	+ standford parser and nltk
+		+ https://stackoverflow.com/questions/13883277/stanford-parser-and-nltk
 + 常用函数
 	+ 关键词的上下文
 	+ 相似上下文
