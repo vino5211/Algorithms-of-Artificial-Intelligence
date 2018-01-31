@@ -1,9 +1,16 @@
 # Clear NLTK
 + Installing Third Party Software
 	+ https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software
++ standford nltk API
+	+ nltk.parse.stanford.module
+	+ nltk.tag.stanford.module
+	+ nltk.tokenize.stanford.module
+	+ nltk.tokenize.stanford_segmenter_module
 + corenlp nltk
 	+ standford parser and nltk
 		+ https://stackoverflow.com/questions/13883277/stanford-parser-and-nltk
+	+ 解压jar
+		+ http://blog.csdn.net/appleml/article/details/53589081 
 + 常用函数
 	+ 关键词的上下文
 	+ 相似上下文
