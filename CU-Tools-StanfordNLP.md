@@ -21,3 +21,8 @@
 + Temporal Tagger(SUIime)
 + Pattern-based information Extraction and Diagnostics(SPIED)
 + Relation Extractor
+
+---
+- Semgrex 
+- TokensRegex 
+- SemanticGraph
