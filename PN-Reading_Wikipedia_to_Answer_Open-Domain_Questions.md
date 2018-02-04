@@ -26,8 +26,8 @@
 		+ Large-scale QA systems like **IBM’s DeepQA**(Ferrucci et al., 2010) rely on multiple sources to answer: besides Wikipedia, it is also **paired with KBs**, dictionaries, and even news articles,books, etc. As a result, such systems heavily rely on information redundancy among the sources（信息源冗余） to answer correctly.
 	+ Single information source:
 		+ Having a single knowledge source forces the model to be very precise while searching for an answer as the evidence might appear only once.
-		+ This challenge thus encourages research in the ability of a machine to read,a key motivation for the machine comprehension subfield and the creation of datasets such as SQuAD (Rajpurkar et al., 2016), CNN/Daily Mail (Hermann et al., 2015) and CBT (Hill et al.,2016).
-			+ SQuAD
+		+ This challenge thus encourages research in the ability of a machine to read,a key motivation for the machine comprehension subfield and the creation of datasets such as **SQuAD** (Rajpurkar et al., 2016), CNN/Daily Mail (Hermann et al., 2015) and CBT (Hill et al.,2016).
+			+ **SQuAD**
 			+ CNN/Daily Mail
 			+ CBT
 + However, those machine comprehension resources typically assume that a short piece of relevant text is already identified and given to the model, which is not realistic for building an open domain QA system(对开放领域的QA系统是不现实的)
@@ -47,7 +47,7 @@
 ![An overview of our question answering system DrQA.png](/home/apollo/Pictures/An overview of our question answering system DrQA.png)
 
 + experiment
-	+ Our experiments show that Document Retriever outperforms the built-in Wikipedia search engine and that Document Reader reaches state-of-the-art results on the very competitive SQuAD bench-mark (Rajpurkar et al., 2016).
+	+ Our experiments show that Document Retriever outperforms the built-in Wikipedia search engine and that Document Reader reaches state-of-the-art results on the very competitive bench-mark (Rajpurkar et al., 2016).
 	+ Finally, our full system is evaluated using multiple benchmarks. In particular, we show that performance is improved across all datasets through the use of **multitask learning** and **distant supervision** compared to single task training.
 
 
@@ -65,7 +65,7 @@
 	+ KB inherent limitations
 	+ deep learning architectures like attention-based and memory augmented neural networks
 		+ Bahdanau et al.,2015; Weston et al., 2015; Graves et al., 2014
-	+ release of new training and evaluation datasets like QuizBowl (Iyyer et al., 2014), CNN/Daily Mail based on news articles (Hermann et al., 2015), CBT based on children books (Hill et al., 2016), or SQuAD (Rajpurkar et al., 2016) and WikiReading (Hewlett et al., 2016), both based on Wikipedia.
+	+ release of new training and evaluation datasets like QuizBowl (Iyyer et al., 2014), CNN/Daily Mail based on news articles (Hermann et al., 2015), CBT based on children books (Hill et al., 2016), or (Rajpurkar et al., 2016) and WikiReading (Hewlett et al., 2016), both based on Wikipedia.
 + Target
 	+ An objective of this paper is to test how such new methods can perform in an open-domain QA framework.
 + QA using Wikipedia as a resource has been explored previously
@@ -161,7 +161,7 @@
 
      + Prediction
      	+ *single paragraph*
-     		+ At the paragraph level, the goal is to predict the span of tokens that is most likely the correct answer. We take the the paragraph vectors {p_1,...,p_m } and the question vector q as input
+     		+ At the paragraph level, the **goal** is to predict the **span** of tokens that is most likely the correct answer. We take the the paragraph vectors {p_1,...,p_m } and the question vector q as input
      		+ simply train two classifiers independently for predicting the two ends of the span.
 			+ Concretely,we use a bilinear term（双线性项） to capture the similarity between $p_i$ and q and **compute the probabilities of each token being start and end** as:
 			$$
@@ -177,5 +177,22 @@ $P start (i) × P end (i 0 )$ is maximized
 			+ **Multi Paragraphs(single docs and multi docs) result contrast : ** To make scores compatible across paragraphs in one or several retrieved documents, we use the unnormalized exponential and take argmax over all considered paragraph spans for our final prediction.(我们使用非规范化的指数，并对所有考虑的段跨度进行最终预测的argmax)
 
 + ## Data
+	+ Wikipedia
+		+ Knowledge source
+	+ SQuAD
+		+ train data
+			+ EM
+			+ F1
+	+ three more data QA dataset
+		+ CuratedTREC
+		+ WebQuestions
+		+ WikiMovies
+	+ Distantly Supervised Data
+		+ All the QA datasets presented above contain train-ing portions, but CuratedTREC, WebQuestions and WikiMovies only contain question-answer pairs, and not an associated document or paragraph as in SQuAD, and hence cannot be used for training Document Reader directly. 
+		+ Following previous work on distant supervision (DS) for relation extraction (Mintz et al., 2009), we use a procedure to automatically associate paragraphs to such training examples, and then add these examples to our training set.
 + ## Experiments
+	+ Finding Rlevant Articles
+	+ Reader Evaluation on SQuAD
+		+ We use 3-layer bidirectional LSTMs with h = 128 hidden units for both paragraph and question encoding. We apply the Stanford CoreNLP toolkit (Manning et al., 2014) for tokenization and also generatin
+	+ Full Wikipedia Question Answering
 + ## Conslusion

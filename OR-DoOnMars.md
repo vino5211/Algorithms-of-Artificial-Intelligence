@@ -70,6 +70,9 @@ Make this to a scripts
 + Shackshaows
 	+ http://blog.csdn.net/sinat_32292481/article/details/78597067 
 	+ sslocal -c /home/apollo/settings/shadowsocks/config.json &
++ json
+	+ http://blog.chinaunix.net/uid-24774106-id-3830242.html
+	+ cat json_raw.txt | jq .
 + terminator
 	+ sudo apt-get install terminator
 	+ http://blog.csdn.net/loveaborn/article/details/21511869

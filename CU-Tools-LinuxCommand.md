@@ -198,3 +198,9 @@
     + 把[**test**](http://www.cnblogs.com/perfy/admin/).txt文件扔进垃圾箱，赋空值test.txt
 
       	cat /dev/null > /etc/test.txt  
+
+---
+
++ echo
+	+ echo ".gitignore" >> .gitignore 
+		+ 追加某一行到某个文件
