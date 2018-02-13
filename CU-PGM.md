@@ -9,3 +9,4 @@
 
 ## undirected graphical model
 + Alos known as Markov Random Field
+
