@@ -1,4 +1,4 @@
-#Probabilistic Graph Model
+# Probabilistic Graph Model
 
 ## Reference websites
 + https://www.zhihu.com/question/23255632
