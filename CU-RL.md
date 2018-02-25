@@ -4,7 +4,7 @@
 	+ Learning an Actor（学习动作来执行）
 	+ on-policy : the agent learned and the agent interacting with the environment is the same(自己打篮球)
  	+ off-policy : the agent learned and the agent interacting with the environment is the different（看别人打篮球）
-+ Value-based
++ Value-based 
 	+ Learning a critic(对现在的状况给予评价)
 + Policy-based && Value-based
 	+ Actor + Critic
@@ -53,8 +53,16 @@
 				+ $V^{\pi}(s_a)$ + $r_t$ = $V^{\pi}(s_b)$
 				+ Some applications have very long episodes, so htat delaying all learning until an episode's end is too low
 			+ MC v.s. TD
-
-
+	+ Pathwise derivative policy gradient
+		+ 不仅仅评价当前状态的好坏，而且会指出下一步该如何做
+		+ Another Critic(Q-Learning )
+			+ state-action value function $Q^\pi(s,a)$
+				+ when using actor $\pi$, the cumulated reward expects to be obtained after seeing observation s and taking a
+				+ $Q^\pi(s,a)$ 与 $V^\pi(s)$ 不同的的是，V 仅仅考虑s(state), Q 不经考虑s(state)而且考虑a(action)
+			+ 不适用于连续的情况
+			+ Estimate $Q^\pi(s,a)$ by TD
+	+ Dueling DQN
+	+ DDPG
 
 ## Model-based Approach
 + Less used
