@@ -1,5 +1,5 @@
 + 清理缓存
-        + apollo@Mars:~/craft/projects/QA-Craft$ git clean -df
+	+ apollo@Mars:~/craft/projects/QA-Craft$ git clean -df
         Removing .idea/
         Removing drqa/__pycache__/
         Removing drqa/reader/__pycache__/
