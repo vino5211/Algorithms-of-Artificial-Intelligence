@@ -1,9 +1,9 @@
 + 清理缓存
 	+ apollo@Mars:~/craft/projects/QA-Craft$ git clean -df
-        Removing .idea/
-        Removing drqa/__pycache__/
-        Removing drqa/reader/__pycache__/
-        Removing drqa/tokenizers/__pycache__/
+	Removing .idea/
+	Removing drqa/__pycache__/
+	Removing drqa/reader/__pycache__/
+	Removing drqa/tokenizers/__pycache__/
 
 + git rm 
   + git rm  bnlp-zh-hk-trainer/resources/ -rf
