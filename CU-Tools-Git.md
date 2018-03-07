@@ -1,3 +1,10 @@
++ 清理缓存
+        + apollo@Mars:~/craft/projects/QA-Craft$ git clean -df
+        Removing .idea/
+        Removing drqa/__pycache__/
+        Removing drqa/reader/__pycache__/
+        Removing drqa/tokenizers/__pycache__/
+
 + git rm 
   + git rm  bnlp-zh-hk-trainer/resources/ -rf
   + 当我们需要删除暂存区或分支上的文件, 同时工作区也不需要这个文件了, 可以使用
