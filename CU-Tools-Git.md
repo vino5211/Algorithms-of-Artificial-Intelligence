@@ -1,3 +1,13 @@
++ git stash
+	+ git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+	+ git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+	+ git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+	+ git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
++ git reset
+	+ http://www.cnblogs.com/craftor/archive/2012/11/04/2754140.html
+	+ git reset –mixed 默认方式，不带任何参数的git reset,只保留源码，回退commit和index 信息。
+	+ git reset –soft 回退到某个版本，只回退了commit，不会恢复index file一级，如果需要提交直接commit就好。
+	+ git reset –hard 回退到某个版本，文件全部回退到当前版本，不可恢复。慎用！！！
 + 版本恢复
 	+ git Log log命令可以显示所有**提交过的**版本信息
 	+ 如果觉得信息显示太繁琐  可以加上参数  --pretty=oneline[只会留下commit  id (版本号 (用SHA1字串表示))和 提交版本时的描述信息] 显示效果如下:
