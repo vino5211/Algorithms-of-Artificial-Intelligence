@@ -1,3 +1,27 @@
++ 强制提交：
+	+ error
+	```
+	$ git push -u origin master
+	To git@github.com:******/Demo.git
+	 ! [rejected]        master -> master (non-fast-forward)
+	error: failed to push some refs to 'git@github.com:******/Demo.git'
+	hint: Updates were rejected because the tip of your current branch is behind
+	hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+	hint: before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+	```
+	+ 方法
+	1. 使用强制push的方法：
+	$ git push -u origin master -f 
+	这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。
+	2. push前先将远程repository修改pull下来
+	$ git pull origin master
+	$ git push -u origin master
+	3.若不想merge远程和本地修改，可以先创建新的分支：
+	$ git branch [name]
+	然后push
+
+$ git push -u origin [name]
 + git stash
 	+ git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
 	+ git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
