@@ -1,3 +1,9 @@
++ 版本恢复
+	+ git reset --hard commitid  //本地代码回到指定的commitid
+	+ git push -f origin branchname//git服务器代码回到指定的commitid
+	+ git reflog命令可以对git误操作进行数据恢复。
+	如不小心用git commit --amend当成git commit覆盖当前的commit，或不小心把当前的commit给搞没了（reset --hard）。 都可以通过git reflog恢复。
+	Git记录每次修改HEAD的操作，git reflog/git log -g可以查看所有的历史操作记录，然后通过git reset命令进行恢复。
 + 清理缓存
 	+ apollo@Mars:~/craft/projects/QA-Craft$ git clean -df
 	Removing .idea/
