@@ -1,4 +1,11 @@
 + 版本恢复
+	+ git Log log命令可以显示所有**提交过的**版本信息
+	+ 如果觉得信息显示太繁琐  可以加上参数  --pretty=oneline[只会留下commit  id (版本号 (用SHA1字串表示))和 提交版本时的描述信息] 显示效果如下:
+	```
+	8e27eb62309a1e7aa2b6c348f6dfa595bcb09898 append GPL  
+	dae675a9170a2d60855a6d9f56268f42d9114f40 add distributed  
+	c412f7ee690fc80906670c38a762e815abd5e1be wrote a readme file  
+	```
 	+ git reset --hard commitid  //本地代码回到指定的commitid
 	+ git push -f origin branchname//git服务器代码回到指定的commitid
 	+ git reflog命令可以对git误操作进行数据恢复。
