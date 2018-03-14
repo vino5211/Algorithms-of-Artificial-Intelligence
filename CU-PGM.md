@@ -21,7 +21,7 @@
 
 
 
-## Hidden Markov Model(HMM)
+## HMM
 
 ## MEMM
 +  用一个分布P(yi | yi-1,xi)来替代HMM中的两个条件概率分布，它表示从先前状态yi-1，在观察值xi下得到当前状态的概率，即根据前一状态和当前观察预测当前状态。每个这样的分布函数都是一个服从最大熵的指数模型。
@@ -30,9 +30,49 @@
 ## MRF
 + 马尔可夫性：对Markov随机场中的任何一个随机变量，给定场中其他所有变量下该变量的分布，等同于给定场中该变量的邻居节点下该变量的分布
 
-## Conditional Random Field
+## CRF
 + 一阶链式CRF示意图（不同于隐马尔科夫链，条件随机场中的xi **除了依赖于当前状态，还可能与其他状态有关**
 ![](http://s6.sinaimg.cn/mw690/001LIdk2gy6FzSV0xh3b5&690)
++ 全局最优体现在
+	+ https://www.zhihu.com/question/53458773 
+	+ CRF和HMM都有全局最优。这个全局最优和两者的区别是两件事情。你写下两者的loss function就能看到两个都是convex的，所以存在全局最优解。
++ crf++里的特征模板得怎么理解？
+	+ https://www.zhihu.com/question/20279019
+	```
+	Unigram和Bigram模板分别生成CRF的状态特征函数  和转移特征函数  。
+	其中  是标签，  是观测序列，  是当前节点位置。每个函数还有一个权值，具体请参考CRF相关资料。
+    crf++模板定义里的%x[row,col]，即是特征函数的参数  。
+    举个例子。假设有如下用于分词标注的训练文件：
+    北    N    B
+    京    N    E
+    欢    V    B
+    迎    V    M
+    你    N    E
+    其中第3列是标签，也是测试文件中需要预测的结果，有BME3种状态。
+    第二列是词性，不是必须的。
+    特征模板格式：%x[row,col]。x可取U或B，对应两种类型。
+    方括号里的编号用于标定特征来源，row表示相对当前位置的行，0即是当前行；col对应训练文件中的列。
+    这里只使用第1列（编号0），即文字。
+    1、Unigram类型
+    每一行模板生成一组状态特征函数，数量是L*N 个，L是标签状态数，N是模板展开后的特征数，也就是训练文件中行数， 这里L*N = 3*5=15。
+    例如：
+    U01:%x[0,0]，生成如下15个函数：
+    func1 = if (output = B and feature=U01:"北") return 1 else return 0
+    func2 = if (output = M and feature=U01:"北") return 1 else return 0
+    func3 = if (output = E and feature=U01:"北") return 1 else return 0
+    func4 = if (output = B and feature=U01:"京") return 1 else return 0
+    ...
+    func13 = if (output = B and feature=U01:"你") return 1 else return 0
+    func14 = if (output = M and feature=U01:"你") return 1 else return 0
+    func15 = if (output = E and feature=U01:"你") return 1 else return 0
+    这些函数经过训练后，其权值表示函数内文字对应该标签的概率（形象说法，概率和可大于1）。
+    又如
+    U02:%x[-1,0]，训练后，该组函数权值反映了句子中上一个字对当前字的标签的影响。
+
+    2、Bigram类型与Unigram不同的是，Bigram类型模板生成的函数会多一个参数：上个节点的标签  。生成函数类似于：func1 = if (prev_output = B and output = B and feature=B01:"北") return 1 else return 0这样，每行模板则会生成 L*L*N 个特征函数。经过训练后，这些函数的权值反映了上一个节点的标签对当前节点的影响。每行模版可使用多个位置。例如：U18:%x[1,1]/%x[2,1]字母U后面的01，02是唯一ID，并不限于数字编号。如果不关心上下文，甚至可以不要这个ID。
+    参考：CRF++: Yet Another CRF toolkit
+	```
+
 
 
 ## Diff
