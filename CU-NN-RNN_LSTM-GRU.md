@@ -1,4 +1,5 @@
-# Clear LSTM,GRU,RNN
+# Recurrent Neural Network
+
 ## RNN
 
 
@@ -18,3 +19,19 @@
 + 为什么在CNN等结构中将原先的sigmoid、tanh换成ReLU可以取得比较好的效果？
   为什么在RNN中，将tanh换成ReLU不能取得类似的效果？
   + https://www.zhihu.com/question/61265076
+
+## LSTM
+
+## BiLSTM
+
+## Tree LSTM
+
+## Grid LSTM
+
+## GRU
+
+## Stacked(???)
+
+## AT-LSTM
++ Attention LSTM
++ https://zhuanlan.zhihu.com/p/23615176
