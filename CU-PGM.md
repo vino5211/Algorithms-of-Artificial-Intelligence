@@ -6,6 +6,8 @@
 + http://blog.sina.com.cn/s/blog_4b1645570102vk3d.html
 + 较好：
 	+ https://flystarhe.github.io/2016/07/13/hmm-memm-crf/
++ LSTM+CRF:
+	+ https://createmomo.github.io/2018/01/27/Table-of-Contents/
 
 
 ## Structure
