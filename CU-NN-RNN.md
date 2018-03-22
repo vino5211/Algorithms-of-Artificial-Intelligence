@@ -1,9 +1,15 @@
 # Recurrent Neural Network
 
+## papers
+- Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN
+	- 本文使用 ReLU 等非饱和激活函数使网络变得更具有鲁棒性，可以处理很长的序列（超过 5000 个时间步），可以构建很深的网络（实验中用了 21 层）。在各种任务中取得了比 LSTM 更好的效果。
+	- 论文链接：https://www.paperweekly.site/papers/1757
+	- 代码链接：https://github.com/batzner/indrnn
+
+---
 ## RNN
 
-
-## RNN 梯度爆炸/梯度消失 
+## RNN 梯度爆炸/梯度消失
 + https://www.zhihu.com/question/34878706
 + LSTM只能避免RNN的梯度消失（gradient vanishing）
 	+ 将求导链式法则中的连乘部分变成累加部分
