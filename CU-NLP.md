@@ -1,5 +1,7 @@
 # NLP
 ## Seg
++ 常用分词方法总结分析
+	+ https://blog.csdn.net/cuixianpeng/article/details/43234235
 + 分词：最大匹配算法（Maximum Matching）
 	+ refer:
 		+ http://blog.csdn.net/yangyan19870319/article/details/6399871
@@ -14,6 +16,10 @@
 			由此可见，最大匹配出的词必须保证下一个扫描不是词表中的词或词的前缀才可以结束。
 
 ## Pos
++ NLP第八篇-词性标注
+	+ https://www.jianshu.com/p/cceb592ceda7
+	+ 基于统计模型的词性标注方法
+	+ 基于规则的词性标注方法
 ## NER
 
 ## stem and lemma
