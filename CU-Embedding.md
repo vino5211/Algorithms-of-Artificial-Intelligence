@@ -3,6 +3,10 @@
 - A Survey of Word Embeddings Evaluation Methods
 	- https://arxiv.org/abs/1801.09536
 
+## fine tune
+- http://www.cnblogs.com/iloveai/p/word2vec.html
+	- 无监督或弱监督的预训练以word2vec和auto-encoder为代表。这一类模型的特点是，不需要大量的人工标记样本就可以得到质量还不错的embedding向量。不过因为缺少了任务导向，可能和我们要解决的问题还有一定的距离。因此，我们往往会在得到预训练的embedding向量后，用少量人工标注的样本去fine-tune整个模型。
+
 ## word2vec 原理
 - word2vec原理(一) CBOW与Skip-Gram模型基础
 	- http://www.cnblogs.com/pinard/p/7160330.html
