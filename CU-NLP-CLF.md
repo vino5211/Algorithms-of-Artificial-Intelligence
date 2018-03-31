@@ -1,5 +1,9 @@
 ## Text Classification
 
+## 学员分享 | 一篇文章带你看懂 Keras 文本分类实现
+- http://www.sohu.com/a/196194216_704222
+	- 
+
 ## pagerank && textrank
 
 ## Andraw Ng
