@@ -8,6 +8,7 @@
 
 ---
 ## RNN
+![](https://pic4.zhimg.com/80/2a37bd4e9b12bcc19e045eaf22fea4e5_hd.jpg)
 
 ## RNN 梯度爆炸/梯度消失
 + https://www.zhihu.com/question/34878706
@@ -26,7 +27,29 @@
   为什么在RNN中，将tanh换成ReLU不能取得类似的效果？
   + https://www.zhihu.com/question/61265076
 
+## units/输出维度/隐藏大小
++ 输入：每个时刻的输入都是一个向量，它的长度是输入层神经元的个数（units）。在你的问题中，这个向量就是embedding向量。它的长度与时间步的个数（即句子的长度）没有关系。
++ 输出：每个时刻的输出是一个概率分布向量，其中最大值的下标决定了输出哪个词。
++ units 含义:Keras中使用LSTM层时设置的units参数是什么
+	+ https://www.cnblogs.com/bnuvincent/p/8280541.html
+	```
+    keras.layers.recurrent.LSTM(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', unit_forget_bias=True, kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0)
+    ```
+    ```
+    model = Sequential()
+
+    model.add(LSTM(32, return_sequences=True, stateful=True,batch_input_shape=(batch_size, timesteps, data_dim)))
+    model.add(LSTM(32, return_sequences=True, stateful=True))
+    model.add(LSTM(32, stateful=True))
+    model.add(Dense(num_classes, activation='softmax'))
+
+ 	类似上述代码中，数字'32'的含义。
+    ```
+
+
 ## LSTM
++ 有详细的数学推到：零基础入门深度学习(6) - 长短时记忆网络(LSTM)
+	+ https://www.zybuluo.com/hanbingtao/note/581764
 
 ## BiLSTM
 

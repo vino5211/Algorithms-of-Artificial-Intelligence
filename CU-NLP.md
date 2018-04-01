@@ -1,4 +1,9 @@
 # NLP
+## Methods
++ Co-occurrence matrix
++ Word bag model
++ TF-IDF
+
 ## Seg
 + 常用分词方法总结分析
 	+ https://blog.csdn.net/cuixianpeng/article/details/43234235
