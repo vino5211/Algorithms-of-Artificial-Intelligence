@@ -61,7 +61,9 @@ Make this to a scripts
 		+ http://mohu.org/info/symbols/symbols.htm
 	+ 在线Markdown 公式编辑器，可用于产生正确的 markdown 公式（操作类似 Word 的公式编辑器），复制其结果到Markdown中即可，而不用记忆Markdown公式编辑器的语法
 		+ http://latex.codecogs.com/eqneditor/editor.php
-+ pycharm
++ jupyter notebook
+	+ 启动  run in command line : jupyter notebook
++  pycharm
 	+ tar -zxvf pycharm-communi
 	+ pycharm settings
 		+ File-Settings-Project:Name-Project Interpreter-Select Python 3
