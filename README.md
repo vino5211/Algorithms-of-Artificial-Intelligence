@@ -12,7 +12,9 @@ Knowledge
       | Name                | Status |
       | ------------------- | ------ |
       | BN-Deep Learning.md | Doing  |
-      | Reinforce Learning：An Introduction | preparing |
+      | 统计学习方法 | Doing |
+      | 统计自然语言处理 | preparing |
+      | Reinforce Learning：An Introduction | preparing |
 
     - Paper Note
 
