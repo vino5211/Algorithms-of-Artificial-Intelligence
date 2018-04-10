@@ -25,6 +25,15 @@
 
 ## HMM
 - 定义
+	- HMM 是关于时序的概率模型，描述一个隐藏的马尔可夫链随机**生成**不可观测的状态随机序列，再由各个状态生成一个观测而产生的观测随机序列的过程
+	- state sequence => observation sequence
+	- Q 是所有状态可能的集合 $Q = {q_1,q_2,...,q_N}, V={v_1,v_2,...,v_M}$
+	- state sequence $I = (i_1,i_2,...,i_T)$
+	- observation sequence $O =(o_1,0_2,...0_T)$, T 是序列长度
+	- A 是状态转移矩阵：
+		$$ 	A = [a_ij]_{N*N} $$
+        $$ a_ij = P(i_{t+1} = q_j | i_t = q_i ) $$
+        $a_ij$ 表示 t 时刻 q_i 向 t+1 时刻 q_j 转移的概率
 	- HMM 的三个基本问题：
 		- 概率计算问题
 		- 学习问题
