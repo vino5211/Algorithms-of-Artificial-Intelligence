@@ -67,11 +67,6 @@ Papers:
     - sup learn for tuning weight between layers
 
 Office sites:
-
--
-
-- Kaggle
-  - https://www.kaggle.com/
 - pygame
   - http://www.pygame.org/news
 - Deep Reinforcement Learning for Keras.
@@ -183,15 +178,3 @@ Other Resources:
   - https://arxiv.org/pdf/1712.01815.pdf
   - https://www.reddit.com/r/chess/comments/7hvbaz/mastering_chess_and_shogi_by_selfplay_with_a/
   - https://zhuanlan.zhihu.com/p/31749249
-
----
-
-Corpus:
-
--
-
-- 国家语委
-- 国内可用免费语料库
-  - http://www.cnblogs.com/mo-wang/p/4444858.html
-- 总词汇量在7400W+，可以用于训练很多模型例如Max Entropy、CRF、HMM......，优点是这份语料在分词基础上还做了词性标注，至于准确性还有待考究。
-  https://github.com/liwenzhu/corpusZh
