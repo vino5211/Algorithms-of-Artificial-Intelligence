@@ -1,15 +1,11 @@
 Knowledge 
 
 - There are three functions of this repository:
-  - organize the require knowledge(math, classical ml/dl/rl/nlp theory, code snippet)
+  - organize the require knowledge(math, ml, dl, rl, nlp, cv theory)
   - build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
   - make cool things
 
 - This repository contains the following
-  - Operation Record
-    - A-DoOnMars.md
-  - Original resources
-    - Views
   - Resources after process
     - Book Note
 
@@ -25,19 +21,6 @@ Knowledge
       | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
       | PN-Human-level control through deep reinforcement.md                                      |  Doing |
 
-    - Video Note
-      
-      | Name                | Links | Status |
-      | ------------          | ------ | ------ | 
-      | 李宏毅深度学习         | https://www.bilibili.com/video/av9770302/#page=24 | Doing  |
-    - Clear up Note to Self Knowledge Repository
-      - NLP
-        - Sequence Labeling
-        - Text CLF
-        - QA
-      - ML
-      - DL
-      - RL
 - Others
   - This repository only contain pure knowledge(before and after), projects and code snippet contain in the fellow repositories: 
     - python : train model
@@ -48,8 +31,5 @@ Knowledge
       - include some excellent code snippet
   - To better distinguish file types, the abbreviations in filenames have the following meanings:
     - BN ：Book Note
-    - PN : Paper Note
-    - VN : Video Note
     - CU : Self Clear up
     - OR : Operation Record
-    - VW : View
