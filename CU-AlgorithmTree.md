@@ -36,6 +36,8 @@
     - 朴素贝叶斯分类器 Naive Bayes classifier
     - 感知 Perceptron
     - 支持向量机 Support vector machine
+  - 非线性分类器
+  	- K近邻 K Nearest Neighbor
 - 无监督学习 Unsupervised learning
   - 人工神经网络 Artificial neural network
     - 对抗生成网络

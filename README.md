@@ -1,37 +1,78 @@
-Knowledge 
+## Knowledge
 
 - There are three functions of this repository:
-  - organize the require knowledge(math, ml, dl, rl, nlp, cv theory)
-  - build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
-  - make cool things
+	- organize the require knowledge(math, ml, dl, rl, nlp, cv theory)
+	- build a knowledge base of state of art artifical intelligence work，understand the boundaries of current research
+	- make cool things
 
-- This repository contains the following
-  - Resources after process
-    - Book Note
-    
-      | Name                | Status |
-      | ------------------- | ------ |
-      | BN-Deep Learning.md | Doing  |
-      | 统计学习方法 | Doing |
-      | 统计自然语言处理 | preparing |
-      | Reinforce Learning：An Introduction | preparing |
-
-    - Paper Note
-
-      | Name                                     | Status |
-      | ---------------------------------------- | ------ |
-      | PN-Ask the Right Questions : Active Question Reformulation with Reinforcement Learning.md | Doing  |
-      | PN-Human-level control through deep reinforcement.md                                      |  Doing |
-
-- Others
-  - This repository only contain pure knowledge(before and after), projects and code snippet contain in the fellow repositories: 
-    - python : train model
-      - https://github.com/Apollo2Mars/TrainModels
-    - java : collect data/invoke model/supply service 
-      - https://github.com/Apollo2Mars/Friday
-    - CodeSnippet
-      - include some excellent code snippet
-  - To better distinguish file types, the abbreviations in filenames have the following meanings:
-    - BN ：Book Note
-    - CU : Self Clear up
+- To better distinguish file types, the abbreviations in filenames have the following meanings:
+	- BN ：Book Note
+    - CU : Self Clear up（default）
     - OR : Operation Record
+
+- This repository contains following files:
+	- AlgorithmTree
+		- The curent summary of the algorithm encountered
+		- update new algorithm to this file
+		- maintain levle : A
+		- strength : medium
+	- Genetic Algorithm
+		- Chinese Name : 遗传算法
+		- strength : weak
+		- problem : 算法原理和应用场景不清楚，感觉有一定的可解释性
+	- Machine Learning
+		- tips : Implement following method in (a cool name)
+		- Basic
+			- 
+		- Cluster
+			- Undo
+		- Ensemble
+			- 需要重新整理
+			- Bagging
+			- Boosting
+			- RF
+			- 提升树
+			- GBDT
+			- XGboost
+			- LightGBM
+		- KNN
+			- weak
+		- LR
+			- Undo
+		- Regression
+			- Undo
+		- SVM
+			- Undo
+	- NLP
+		- Basic (emnlp 2017 rebuild)
+			- Co-occurrence matrix
+			- TF-IDF
+			- stem(词干提取)
+			- lemma(词型还原)
+		- CLF（ a cool name）
+			- implemented by (a cool name)
+		- Embedding
+			- fine tune
+			- word2vec
+			- glove
+			- Document Represent
+			- Network Embedding
+		- Knowledge Extract
+		- Language Model
+		- RC(QA)
+		- S2S-AT
+		- Semantic Analysis
+		- Sentiment Analysis
+		- Sequence Label
+			- Seg
+			- Pos
+			- NER
+		- SyntaxAnalysis
+	- NN
+		- Capsule
+		- CNN
+		- Optimizer
+		- RNN
+		- Tune
+	- PGM
+	- RL
