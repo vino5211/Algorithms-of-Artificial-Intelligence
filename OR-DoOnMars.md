@@ -1,6 +1,25 @@
 Do on Mars 
 
 Make this to a scripts
++ Linux System
+	+ kill task
+		+ ps -ef|grep weibo|awk '{print $2}'|xargs kill -9
+
++ Add Disks && Mount
+	+ Add Disk : https://jingyan.baidu.com/article/2f9b480d5c67dd41cb6cc2ef.html
+	+ Mount : http://winhyt.iteye.com/blog/980749
+		+ sudo vim /etc/fstab
+		+ /dev/sdb /craft ext4 defaults 0 0
+		```
+        第一列为设备号或该设备的卷标
+        第二列为挂载点
+        第三列为文件系统
+        第四列为文件系统参数
+        第五列为是否可以用demp命令备份。0：不备份，1：备份，2：备份，但比1重要性小。设置了该参数后，Linux中使用dump命令备份系统的时候就可以备份相应设置的挂载点了。
+        第六列为是否在系统启动的时候，用fsck检验分区。因为有些挂载点是不需要检验的，比如：虚拟内存swap、/proc等。0：不检验，1：要检验，2要检验，但比1晚检验，一般根目录设置为1，其他设置为2就可以了。 
+        ```
+    + sudo chown -R  apollo:apollo craft/
+    + suod chmod 775 craft -R
 
 + CUDA install
 	+ Three Monitor Displays
@@ -79,21 +98,7 @@ Make this to a scripts
 	+ sudo apt-get install terminator
 	+ http://blog.csdn.net/loveaborn/article/details/21511869
 	+ search it in Left top
-+ Add Disks && Mount
-	+ Add Disk : https://jingyan.baidu.com/article/2f9b480d5c67dd41cb6cc2ef.html
-	+ Mount : http://winhyt.iteye.com/blog/980749
-		+ sudo vim /etc/fstab
-		+ /dev/sdb /craft ext4 defaults 0 0
-		```
-        第一列为设备号或该设备的卷标
-        第二列为挂载点
-        第三列为文件系统
-        第四列为文件系统参数
-        第五列为是否可以用demp命令备份。0：不备份，1：备份，2：备份，但比1重要性小。设置了该参数后，Linux中使用dump命令备份系统的时候就可以备份相应设置的挂载点了。
-        第六列为是否在系统启动的时候，用fsck检验分区。因为有些挂载点是不需要检验的，比如：虚拟内存swap、/proc等。0：不检验，1：要检验，2要检验，但比1晚检验，一般根目录设置为1，其他设置为2就可以了。 
-        ```
-    + sudo chown -R  apollo:apollo craft/
-    + suod chmod 775 craft -R
+
 + 网易云音乐
 	+ http://music.163.com/#/download
 	+ sudo dpkg -i netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb Or Install in Ubuntu Software Center

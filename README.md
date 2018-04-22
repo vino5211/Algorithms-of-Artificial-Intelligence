@@ -23,11 +23,15 @@
 	- Machine Learning
 		- tips : Implement following method in (a cool name)
 		- Basic
-			- 
+			- MLE,MAE
+			- Evaluate
+				- accuracy
+				- P,R,F1
+			- Generating Model
+			- Disccriminating Model
 		- Cluster
 			- Undo
 		- Ensemble
-			- 需要重新整理
 			- Bagging
 			- Boosting
 			- RF
@@ -59,8 +63,8 @@
 			- Network Embedding
 		- Knowledge Extract
 		- Language Model
+		- Recommended System
 		- RC(QA)
-		- S2S-AT
 		- Semantic Analysis
 		- Sentiment Analysis
 		- Sequence Label
@@ -73,6 +77,8 @@
 		- CNN
 		- Optimizer
 		- RNN
+		- S2S-AT
+		- ResNet
 		- Tune
 	- PGM
 	- RL
