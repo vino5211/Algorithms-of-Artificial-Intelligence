@@ -1,4 +1,4 @@
-# Probabilistic Graph Model
+# Probabilistic Graph Model(Structure Learning)
 
 ## Reference websites
 + https://www.zhihu.com/question/23255632
@@ -10,21 +10,38 @@
 	+ https://createmomo.github.io/2018/01/27/Table-of-Contents/
 
 
-## Structure
-### directed graphical model
-+ Also known as Bayesian Network
+## Classification of PGM
++ directed graphical model
+	+ Also known as Bayesian Network
 
-### undirected graphical model
-+ Alos known as Markov Random Field
++ undirected graphical model
+	+ Alos known as Markov Random Field
 
++ Structure Diagram
 
-## 结构图
 ![](https://pic2.zhimg.com/v2-48dd591b8bc4775b95dd032983c5e729_r.jpg)
 
 
+## Structure Learing
++ Input and output are both objects with structures
++ object : sequence, list, tree, bounding box
+$$
+	f : X \rightarrow Y
+$$
 
-## HMM
-- 定义
+
+## Three Basic question of PGM/Structure Learning
+
+
+## Static Bayesian networks
+
+## Dynamic Bayesian networks - Hidden Markov Model
+- Application scenario
+	- Sequence task
+		- Speech Recognition
+		- Sequence Labeling
+
+- Definition
 	- HMM 是关于时序的概率模型，描述一个隐藏的马尔可夫链随机**生成**不可观测的状态随机序列，再由各个状态生成一个观测而产生的观测随机序列的过程
 	- state sequence => observation sequence
 	- Q 是所有状态可能的集合 $Q = {q_1,q_2,...,q_N}, V={v_1,v_2,...,v_M}$
@@ -160,3 +177,4 @@
 			+ CRF在给定了观察序列的情况下，对整个的序列的联合概率有一个统一的指数模型，它具备一个比较吸引人的特性就是其损失函数的凸面性；
 			+ CRF具有很强的推理能力，并且能够使用复杂、有重叠性和非独立的特征进行训练和推理，能够充分地利用上下文信息作为特征，还可以任意地添加其他外部特征，使得模型能够获取的信息非常丰富；
 			+ CRF解决了MEMM中的标记偏置问题，这也正是CRF与MEMM的本质区别所在。最大熵模型在每个状态都有一个概率模型，在每个状态转移时都要进行归一化。如果某个状态只有一个后续状态，那么该状态到后续状态的跳转概率即为1。这样，不管输入为任何内容，它都向该后续状态跳转。而CRF是在所有的状态上建立一个统一的概率模型，这样在进行归一化时，即使某个状态只有一个后续状态，它到该后续状态的跳转概率也不会为1。
+

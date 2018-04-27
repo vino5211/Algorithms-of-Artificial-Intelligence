@@ -19,8 +19,8 @@ Make this to a scripts
         第六列为是否在系统启动的时候，用fsck检验分区。因为有些挂载点是不需要检验的，比如：虚拟内存swap、/proc等。0：不检验，1：要检验，2要检验，但比1晚检验，一般根目录设置为1，其他设置为2就可以了。 
         ```
     + sudo chown -R  apollo:apollo craft/
-    + suod chmod 775 craft -R
-
+    + suod chmod 775 craft -R 
++ 
 + CUDA install
 	+ Three Monitor Displays
 	```
@@ -82,13 +82,13 @@ Make this to a scripts
 		+ http://latex.codecogs.com/eqneditor/editor.php
 + jupyter notebook
 	+ 启动  run in command line : jupyter notebook
-+  pycharm
++ pycharm
 	+ tar -zxvf pycharm-communi
 	+ pycharm settings
 		+ File-Settings-Project:Name-Project Interpreter-Select Python 3
 		+ 改变编辑器颜色
 			+ Settngs-Editor-Colors&Fonts-Change Scheme to Darcula 
-+ Shackshaows
++ Shadowsocks
 	+ http://blog.csdn.net/sinat_32292481/article/details/78597067 
 	+ sslocal -c /home/apollo/settings/shadowsocks/config.json &
 + json
@@ -121,7 +121,6 @@ Make this to a scripts
 		+ http://support.typora.io/Draw-Diagrams-With-Markdown/
 	+ js-sequence-diagrams 
 		+ https://bramp.github.io/js-sequence-diagram
-+ Markdown UML 作图
 + 屏幕截图
 	+ gnome-screenshot -h
 	+ http://www.cnblogs.com/imqsl/p/6612370.html
