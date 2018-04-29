@@ -14,7 +14,10 @@
 			(4) 当扫描content[5]的时候，发现"中华民族从"并不是词表中的词，也不是词的前缀。因此可以切分出前面最大的词——"中华民族"。
 			由此可见，最大匹配出的词必须保证下一个扫描不是词表中的词或词的前缀才可以结束。
 
-## Pos
+## Pochangjaing
++ Label set
+	+ https://www.biaodianfu.com/pos-tagging-set.html
+
 + NLP第八篇-词性标注
 	+ https://www.jianshu.com/p/cceb592ceda7
 	+ 基于统计模型的词性标注方法

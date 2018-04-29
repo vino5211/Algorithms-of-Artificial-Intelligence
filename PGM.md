@@ -1,71 +1,193 @@
 # Probabilistic Graph Model(Structure Learning)
 
-## Reference websites
-+ https://www.zhihu.com/question/23255632
-+ (很好) https://zhuanlan.zhihu.com/p/33397147
-+ http://blog.sina.com.cn/s/blog_4b1645570102vk3d.html
-+ 较好：
-	+ https://flystarhe.github.io/2016/07/13/hmm-memm-crf/
-+ LSTM+CRF:
-	+ https://createmomo.github.io/2018/01/27/Table-of-Contents/
-
-
+# Part I Define 
 ## Classification of PGM
-+ directed graphical model
-	+ Also known as Bayesian Network
-
-+ undirected graphical model
-	+ Alos known as Markov Random Field
++ directed graphical model (Also known as Bayesian Network)
+    + Static Bayesian networks
+    + Dynamic Bayesian networks
+        + Hidden Markov Model
+        + Kalman filter
++ Undirection graphical models
+    + Markov networks
+        + Gibbs Boltzman machine
+        + Conditional random field
 
 + Structure Diagram
 
 ![](https://pic2.zhimg.com/v2-48dd591b8bc4775b95dd032983c5e729_r.jpg)
 
-
-## Structure Learing
+## Define of Structure Learing
 + Input and output are both objects with structures
-+ object : sequence, list, tree, bounding box
++ objects : sequence, list, tree, bounding box, **not vectors**
++ find function f 
 $$
 	f : X \rightarrow Y
 $$
++ Example Application
+    + Speech recognition
+        + X : speech signal(sequence) $\rightarrow$ Y : text(sequence)
+    + Translation
+        + 
+    + Syntactic Parsing
+        + X : sentence $\rightarrow$  Y : parsing tree(tree structure)
+    + Object Detection
+        + X : image $\rightarrow$ Y : bounding box
+    + Summarization
+        + X : long ducument $\rightarrow$ summary (short paragraph)
+    + Retrieval
+        + X : keyword $\rightarrow$ Y : search result(a list of webpage)
+
+## Basic question of Structure Learning
++ Define
+    + What does $ F(X,Y) $ look like ?
+    + Also can be considered as probability $P(X,Y)$
+        + MRF
+        + Belief
+        + Energy base model
++ Training
+    + Find a function F, input is X, Y, output is a real number(R)
+    $$ F : X * Y \rightarrow R$$
++ Inference
+    + Given an object x, find $ \hat y $ as follow
+    $$ \hat y = arg\ \underset{y \epsilon Y }{max} \  F(X,Y)$$ 
++ Detail example of Object Detection
 
 
-## Three Basic question of PGM/Structure Learning
-
+# Part II Detail
 
 ## Static Bayesian networks
+- pass
 
 ## Dynamic Bayesian networks - Hidden Markov Model
-- Application scenario
-	- Sequence task
-		- Speech Recognition
-		- Sequence Labeling
-
 - Definition
-	- HMM 是关于时序的概率模型，描述一个隐藏的马尔可夫链随机**生成**不可观测的状态随机序列，再由各个状态生成一个观测而产生的观测随机序列的过程
-	- state sequence => observation sequence
-	- Q 是所有状态可能的集合 $Q = {q_1,q_2,...,q_N}, V={v_1,v_2,...,v_M}$
-	- state sequence $I = (i_1,i_2,...,i_T)$
-	- observation sequence $O =(o_1,0_2,...0_T)$, T 是序列长度
-	- A 是状态转移矩阵：
-		$$ 	A = [a_ij]_{N*N} $$
-        $$ a_ij = P(i_{t+1} = q_j | i_t = q_i ) $$
-        $a_ij$ 表示 t 时刻 q_i 向 t+1 时刻 q_j 转移的概率
-	- HMM 的三个基本问题：
-		- 概率计算问题
-		- 学习问题
-		- 预测问题
-- 概率计算方法
-	- 前向计算方法
-	- 后向计算方法
-	- 一些概率与期望值的计算
-- 学习算法
-	- 监督学习方法
-	- Baum-Welch 算法
-	- Baum-Welch 模型参数估计公式
-- 预测算法
-	- 近似算法
-	- 维特比算法
+	- Two basic assumption：
+        1. Homogeneous markov assumption
+            - The current state is only related to the previous state
+        2. Observational independence assumption
+            - The current observation is only related to the current state
+
+    - parameters of HMM
+        - Initial state probability vector : $\pi$
+        - State transition probability matrix : A
+        - Observation probability matrix ： B
+        - HMM can be expressed as $\lambda = (\pi, A, B)$
+    - example of Pos tagging
+        - first generate pos sequence, then generate word based on current status
+        + $\pi = [0.4, 0, 0.2, 0.3]$ means the probability of nd, v, p, ns as the initial state is 0.4, 0, 0.2, 0.3
+        + transition probability A 
+        
+            |       | nd    | v | p | nt |
+            | -     | --- | -- |---|-----|
+            | nd    |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | v     |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | p     |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | nt    |   0.25 | 0.25 | 0.25 | 0.25 | 
+
+        + observation probability matrix B
+        
+            |       |  北航  | 坐落 | 在 | 北京 |
+            | -     | --- | -- |---|-----|
+            | nd    |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | v     |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | p     |   0.25 | 0.25 | 0.25 | 0.25 | 
+            | nt    |   0.25 | 0.25 | 0.25 | 0.25 | 
+   
+        ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShBBqbLo4bDAx4ABaa4CeDJ2qjJyv9JkJIqD1LqYpBJCqfqxHIKybAKk12yCcHE0J8dhrY9YmkaMa4t9Ryy3oJqj6VwYuvLIaWs-ISLfnQL9PPavkSXx5CgGzOpTyAB2NkLk9GAa0Ndh02Av1MZclrarngWbGwfUIb0xm00)
+
+        - probability algorithm
+            - direct calculation
+                - Given $\lambda = (\pi, A, B)$ and observation sequence $O =(o_1, o_2, ..., o_T)$, Calculate the probability of $O =(o_1, o_2, ..., o_T)$'s occurrence
+                - Probability of state sequence  $I =(i_1, i_2, ..., i_T)$ is as follow :
+                $$ P( I | \lambda) = \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}$$
+                - Given state sequence $I =(i_1, i_2, ..., i_T)$, probability of observation sequence $O =(o_1, o_2, ..., o_T)$ is as follow:
+                $$ P( O | I, \lambda) = b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)$$
+                - Joint probability that state sequence and obserbvation sequence generate together :
+                $$ P( O, T | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
+                    \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}
+                    b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)
+                $$
+                - Drawback of this method
+                    - A large amount of calculation : $O(TN^T)$
+                    - forward-backward algorithm will be more effective
+            - forward-backward algorithm
+                - forward algorithm
+                    - Definition 
+                    $$\alpha_t(i) = P(o_1, o_2,...,o_t,i_t=q_i|\lambda)$$
+                    - forward algorithm of observation sequence 
+                        - input : $\lambda$ and O
+                        - output : $P(O|\lambda)$
+                        1. Initval value
+                            $$ \alpha_1(i) = \pi_ib_i(o_1)$$
+                            $ o_1 $ is fixed by observation sequence
+                        2. Recursive
+                            - as t = 1, 2,...,T-1
+                            $$ \alpha_{t+1}(i) = [ \sum_{j=1}^{N} \alpha_t(j) \alpha_{ji}]b_i(o_{t+1})\  ,\ i=1,2,...,N $$
+
+                        3. Termination
+                            $$ P(O|\lambda) = \sum_{j=1}^{N} \alpha_T(i)$$
+
+                    - advantage
+                        - A less amount of calculation $O(N^2 T)$, not $O(TN^T)
+                
+                - example
+                    - ball and box model, $\lambda = (\pi, A, B)$, state set = {1,2,3}, obversivation set = {red, white}
+                    
+                    - Three different boxes and different ratios of red balls and white balls in each box
+
+                    ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShBBqbLo4bDAx4ABaa4CeDJ2qjJyv9JkJIqD1LqYpBJCqfqxHIKCWsLk91uHYWyOoKkBf0A1TsK_F8yaD3pNOkKa8psJofEBIfBBCdCpqDO03G5MSVClKf08MDKGnAKk1nIyrA03WK0)
+
+                    - transition matrix A : $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
+                    - obversition matrix B : $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
+                        0.7 \ 0.3 &  & \end{bmatrix} $$
+                    - T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
+                    - calculation process:
+                        - initval value
+                            - observe red
+                            - choose box 1 : $\alpha_1(1)$ = 02 * 0.5 = 0.10
+                            - choose box 2 : $\alpha_1(2)$ = 0.4 * 0.4 = 0.16
+                            - choose box 3 : $\alpha_1(3)$ = 0.4 * 0.7 = 0.28
+                        - Recursive
+                            - demo 
+                                
+                                $(\alpha_1(1)*a_{11}$  means from box 1 to box 1
+                                
+                                $(\alpha_1(2)*a_{21}$  means from box 2 to box 1
+                                
+                                $(\alpha_1(3)*a_{31}$  means from box 3 to box 1
+                                
+                                $b_{11}$ means in box 1 (first 1) select red(second 1)
+                                
+                                $b_{12}$ means in box 1 (1) select white(2)
+                                $b_{32}$ means in box 3 (3) select white(2)
+
+
+                            - T=2, observed = white
+                                + T=2, box(state)=1
+                                
+                                $\alpha_2(1) = (\alpha_1(1)*a_{11}+\alpha_1(2)*a_{21}+\alpha_1(3)*a_{31})*b_{12}$ = (0.10*0.5 + 0.16*0.3 + 0.28*0.3)*0.5 = 0.077
+
+                                + T=2, box(state)=2
+                                 $\alpha_2(2) = (\alpha_1(1)*a_{12}+\alpha_1(2)*a_{22}+\alpha_1(3)*a_{32})*b_{22}$ = (0.10*0.2 + 0.16*0.5 + 0.28*0.3)*0.6 = 0.1104
+                                + T=2, box(state)=3 : $\alpha_2(1)$ = 0.0606
+                            - T=3, observed = red
+                                + T=3, box(state)=1 : $\alpha_3(1)$ = 0.04187
+                                + T=3, box(state)=2 : $\alpha_3(1)$ = 0.03551
+                                + T=3, box(state)=3 : $\alpha_3(1)$ = 0.05284
+                        
+                        + Termination
+                            
+                            $P(O|\lambda) = sum_{i=1}^{3} \alpha_3(i)$ = 0.13022
+
+            - backward algorithm
+            - 一些概率与期望值的计算
+
+- Train
+    - 监督学习方法
+    - Baum-Welch 算法
+    - Baum-Welch 模型参数估计公式 
+- Inference            
+    - 近似算法
+    - 维特比算法
 
 ## CRF
 - MRF
@@ -178,3 +300,14 @@ $$
 			+ CRF具有很强的推理能力，并且能够使用复杂、有重叠性和非独立的特征进行训练和推理，能够充分地利用上下文信息作为特征，还可以任意地添加其他外部特征，使得模型能够获取的信息非常丰富；
 			+ CRF解决了MEMM中的标记偏置问题，这也正是CRF与MEMM的本质区别所在。最大熵模型在每个状态都有一个概率模型，在每个状态转移时都要进行归一化。如果某个状态只有一个后续状态，那么该状态到后续状态的跳转概率即为1。这样，不管输入为任何内容，它都向该后续状态跳转。而CRF是在所有的状态上建立一个统一的概率模型，这样在进行归一化时，即使某个状态只有一个后续状态，它到该后续状态的跳转概率也不会为1。
 
+
+---
+
+## Reference websites
++ https://www.zhihu.com/question/23255632
++ (很好) https://zhuanlan.zhihu.com/p/33397147
++ http://blog.sina.com.cn/s/blog_4b1645570102vk3d.html
++ 较好：
+    + https://flystarhe.github.io/2016/07/13/hmm-memm-crf/
++ LSTM+CRF:
+    + https://createmomo.github.io/2018/01/27/Table-of-Contents/
