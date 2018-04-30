@@ -72,7 +72,7 @@ Make this to a scripts
 	+ pip install http://download.pytorch.org/whl/cu80/torch-0.1.11.post5-cp36-cp36m-linux_x86_64.whl 
 	+ pip install torchvision
 + Andconda3
-+ Haroopad
++ Markdown
 	+ http://www.bubuko.com/infodetail-2013827.html
 	+ 在线Markdown 编辑器, 可用于测试markdown 格式（列表，图片等）的正确写法
 		+ https://jbt.github.io/markdown-editor/
