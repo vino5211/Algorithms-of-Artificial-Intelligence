@@ -55,10 +55,10 @@ $$
 
 # Part II Algorithm
 
-## Static Bayesian networks
+## Static Bayesian Networks
 - pass
 
-## Dynamic Bayesian networks - Hidden Markov Model
+## Dynamic Bayesian Networks - Hidden Markov Model
 - Definition
 	- Two basic assumption：
         1. Homogeneous markov assumption
@@ -207,13 +207,110 @@ $$
     - Unsuperised learning methods (Unknown label is a hidden variable， EM)
         - Baum-Welch algorithm(Also known as expectation maximization algorithm (EM))
         - Estimation formula of Baum-Welch model parameters 
-- Inference            
+        1. Determine the log-likelihood function of complete data
+            + observation data $O=(o_1,o_2,...o_T)$
+            + hidden data $I=(i_1,i_2,...,i_T)$
+            + complete data $(O,I)={o_1,o_2,...o_T,i_1,i_2,...,i_T}$
+            + log-likelihood function of complete data $log P(O,I|\lambda)$
+        2. E-Step
+            + Find Q function 
+                $$Q(\lambda, \bar{\lambda}) = \sum_I logP(O,I|\lambda)P(O,I|\bar(\lambda))$$
+                + $\bar{\lambda}$ is the current estimate of the hmm parameter
+                + $\lambda$ is the hmm parameter to maximize
+            + Due to 
+                $$ P( O, T | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
+                    \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}
+                    b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)
+                $$
+            + So
+                $$Q(\lambda, \bar{\lambda}) = \sum_{I}log\pi_{i_1}P(O,I|\lambda)) + \sum_{I}\{\sum_{t=1}^{T-1}log a_{i_ti_{t+1}}\}P(O,I|\lambda)) + \sum_{I}\{\sum_{t=1}^{T-1}log b_{i_t}(o_t)\}P(O,I|\lambda))\ \ \ (1-1)$$
+        3. M-Step
+            + Maximize Q Function to Find Model Parameters $\pi, A, B$
+            + Maximize the three terms above
+                + First Item 
+                    + $\sum_{I}log\pi_{i_1}P(O,I|\lambda)) = \sum_{i=1}^{N}log\pi_iP(O,i_1=i|\bar\lambda )$
+                    + Constraints are $\sum_{i=1}^{N} \pi_i =1$
+                    + Lagrangian multiplier method
+                        $$ L =  \sum_{i=1}^{N}log\pi_iP(O,i_1=i|\bar\lambda ) + \gamma\{\sum_{i=1}^{N} \pi_i =1\}$$
+                        + Get Partial derivative
+                        $$ \frac{\partial L}{\partial \pi_i} = 0 \ \ \ (1-2)$$
+                        + Get 
+                        $$ P(O,i_1=i|\bar\lambda ) + \gamma\pi_i $$
+                        + Sum i then get
+                        $$ \gamma = - P(O|\bar\lambda) $$
+                        + Bring into Formula 1-2 then get
+                        $$ \pi_i = \frac{P(O,i_1=i| \bar\lambda )}{P(O|\bar\lambda))}\ \ \ (1-3)$$
+                + Second Item
+                    + Constraints are $\sum_{j=1}^N a_{ij} =1$
+                    + Get 
+                        $$ a_{ij} = \frac{ \sum_{t=1}^{T-1} P(O,i_t=i,i_t+1 =j | \bar\lambda )}{P(O,i_t = i|\bar\lambda))}\ \ \ (1-4)$$
+                + Third Item
+                    + Constraints are $\sum_{j=1}^{N} b_j(k) =1$
+                        $$ b_{j}(k) = \frac{ \sum_{t=1}^{T-1} P(O,i_t=j | \bar\lambda ) I(o_t = v_k)}{P(O,i_t = j|\bar\lambda))}\ \ \ (1-5)$$
+        4. Baum-Welch model parameter estimation formula
+            
+- Inference             
     - Approximation algorithm
+        - The idea of this algorithm is Select the most likely state $i^{*}_{t}$ at each time t
+                + Given O and $\lambda$, then the probability of being in state q_i at time t is
+                $$\gamma_{t}(i) = \frac{\alpha_t(i) \beta_t(i)}{P(O|\lambda)} = \frac{\alpha_t(i) \beta_t(i)}{\sum_{j=1}^{N}\alpha_t(j) \beta_t(j)}$$
+                + The most likely state $i^{*}_{t}$ is
+                $$ i^{*}_{t} = arg\ \underset{1\leq i \leq N}{max} [\gamma_t(i)], t = 1,2,...,T$$
     - Viterbi algorithm
-
-
-
-
+        - Overview
+            - The viterbi algorithm uses dynamic programming to solve the HMM inference problem
+            - The path with the greatest probability, which corresponds to a sequence of states
+            - 根据这一原理，从t=1时刻开始，递推的计算在时刻状态为i的各条路径的最大概率，直到时刻t=T状态为i的各条路径的最大概率
+            - 时刻t=T的最大概率即最有路径的概率$p^*$ ，最优路径的终止节点为$i^*_T$ 
+            - 从终止节点开始由后向前得到各个节点，进而得到最有路径
+        - Detail
+            - Define variable $\delta$
+                - The time is t, the state is i, the maximum value of the path (path consisit of $i_1,...,i_{t_1}$), variable is $i_1,...,i_{t_1}$
+                $$\delta_t(i) = \underset{i_1,i_2,...,i_{t-1}}{max} P(i_t=i,i_{t-1}...,i_1,o_t,...,o_1|\lambda) $$
+                $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
+            - Define variable $\varphi $
+                - The time is t, the state is i, maximum probability path is $i_1,...,i_{t_1}$
+                - the value fo state t-1 is as follow, the range of values is $1\leq j \leq N$
+                $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
+        - Summary of viterbi
+            - input : $\lambda = (A, B, \pi)$ and O
+            - output : Optimal path
+            1. initial
+                $\delta_1(i) = \pi_i b_i(o_1)$
+                $\varphi_1(i) = 0$
+            2. Recursive
+                $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
+                $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
+            3. Termination
+                $$ P^{\star} = \underset{1\leq j \leq N}{max} \delta_T(i)$$
+                $$ i_T^{\star} = arg \underset{1\leq j \leq N}{max} [\delta_T(i)]$$
+        - Example
+            - condition 
+                - $\lambda = (A, B, \pi)$
+                - A : $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
+                - B : $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
+                        0.7 \ 0.3 &  & \end{bmatrix} $$
+                - $\pi = [0.2, 0.4, 0.4]$ 
+                - T = 3
+                - O = {red, white, red}
+            - question : Finding the optimal state sequence?
+            - process
+                - initial
+                    - $\delta_1(1)$, $\delta_1(2)$, $\delta_1(3)$
+                    - $\varphi_1(1)$, $\varphi_1(2)$, $\varphi_1(3)$
+                - resursive
+                    - $\delta_2(1)$, $\varphi_2(1)$
+                    - $\delta_2(2)$, $\varphi_2(2)$
+                    - $\delta_2(3)$, $\varphi_2(3)$
+                    - $\delta_3(1)$, $\varphi_3(1)$
+                    - $\delta_3(2)$, $\varphi_3(2)$
+                    - $\delta_3(3)$, $\varphi_3(3)$
+                - termination
+                    - $P^{\star} = \delta_3(3)$
+                    - $i_3^{\star} = 3$
+                        - t=2, $i_2^{\star} = 3$
+                        - t=1, $i_1^{\star} = 3$
+                    - optimal state sequence is (3,3,3)
 ## CRF
 - MRF
 	- 模型定义

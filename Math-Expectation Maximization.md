@@ -1,5 +1,0 @@
-# Math-Expectation Maximization
-
-## Reference:
-
-## 
