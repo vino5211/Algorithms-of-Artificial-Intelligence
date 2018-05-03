@@ -124,3 +124,8 @@ Make this to a scripts
 + 屏幕截图
 	+ gnome-screenshot -h
 	+ http://www.cnblogs.com/imqsl/p/6612370.html
+
++ github
+	+ show online pictures
+	+ show latex formula 
+		+ add this plugin : https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima?utm_source=chrome-app-launcher-info-dialog
