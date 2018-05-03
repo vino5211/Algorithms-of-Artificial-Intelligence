@@ -343,40 +343,40 @@ $$
             + $\sum_{l=1}^{L} logP(x_l|y_l)$ = \sum_{s,t} log P(s|t) \times N_{s,t}(x,y)$
             + $log P(s|t)$ : Log probability of word given tag s ()
             + $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
-            ![](/home/apollo/Pictures/PGM1.png)
-            ![](/home/apollo/Pictures/PGM2.png)
-            ![](/home/apollo/Pictures/PGM3.png)
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png)
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM2.png)
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM3.png)
         + Define Feature Vector
-            ![](/home/apollo/Pictures/PGM4.png)
-            ![](/home/apollo/Pictures/PGM5.png)
-            ![](/home/apollo/Pictures/PGM6.png) 
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM4.png)
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM5.png)
+            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM6.png) 
 
 - Training
     - cost function like crosss entropy
-    ![](/home/apollo/Pictures/PGM7.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM7.png)
         - Maximize what we boserve in training data
         - Minimize what we dont observe in training data
     - gredient Assent
-    ![](/home/apollo/Pictures/PGM8.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM8.png)
     - process
-    ![](/home/apollo/Pictures/PGM9.png)
-    ![](/home/apollo/Pictures/PGM10.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM9.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM10.png)
     - right - wrong
-    ![](/home/apollo/Pictures/PGM11.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM11.png)
 
 
 - Inference
-    ![](/home/apollo/Pictures/PGM12.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM12.png)
 - CRF v.s. HMM
     - adjust P(a|V) -> 0.1
-    ![](/home/apollo/Pictures/PGM13.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM13.png)
 - Synthetic Data
     - First paper purpose CRF
     - comparing HMM and CRF
-    ![](/home/apollo/Pictures/PGM14.png)
+    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM14.png)
 
 - CRF Summary
-   ![](/home/apollo/Pictures/PGM15.png) 
+   ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM15.png) 
 
 - CRF的定义与形式
 	- 定义
