@@ -179,7 +179,7 @@ $$
                         
                         + Termination
                             
-                            $P(O|\lambda) = sum_{i=1}^{3} \alpha_3(i)$ = 0.13022
+                            $P(O|\lambda) = \sum_{i=1}^{3} \alpha_3(i)$ = 0.13022
 
             - backward algorithm
                 - Definition
@@ -329,9 +329,9 @@ $$
 - Benefit
     - Suitable for training data is small 
 
-## CRF
+## Markov networks - CRF
 - Define and Probability calculation
-    + $P(x,y)\ \epsilon \ exp(w \phi (x,y) )$
+    + $P(x,y)\ \epsilon \ exp(w\ \cdot\ \phi (x,y) )$
         + $\phi$ (x,y) is a feature vector
         + w is the weight vector to be learned from training data
     + $P(y\ |\ x) = \frac{P(x,y)} { \sum_{y'} P(x, y')}$ 
