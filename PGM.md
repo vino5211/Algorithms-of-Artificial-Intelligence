@@ -83,7 +83,7 @@ $$
             | p     |   0.25 | 0.25 | 0.25 | 0.25 | 
             | nt    |   0.25 | 0.25 | 0.25 | 0.25 | 
 
-        + emission matrix B
+        + Observation probability matrix B
         
             |       |  北航  | 坐落 | 在 | 北京 |
             | -     | --- | -- |---|-----|
