@@ -137,11 +137,15 @@ $$
                     ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuIh8LD2rKr3AD5JYqYtAJCye0VECK7Z6IbnS81KAkYdvvNaWeUUx5Ya1XOoGXMRk1GaPewfAKE9oICrB0Te40000)
 
                     - transition matrix A : 
-                    $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
-                    - obversition matrix B : 
-                    $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
+                    
+		    $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
+                    
+		    - obversition matrix B : 
+                    
+		    $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
                         0.7 \ 0.3 &  & \end{bmatrix} $$
-                    - T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
+                    
+		    - T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
                     - calculation process:
                         - initval value
                             - observe red
