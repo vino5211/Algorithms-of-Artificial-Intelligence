@@ -134,7 +134,7 @@ $$
                     
                     - Three different boxes and different ratios of red balls and white balls in each box
 
-                    ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShBBqbLo4bDAx7ovD8joapFAD6rKr3AD592vXahSN4fPHegAUYcv9VdWOIUxrga11GoGXQQkHSaP8ogAa69oo4rBmLe5G00)
+                    ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuIh8LD2rKr3AD5JYqYtAJCye0VECK7Z6IbnS81KAkYdvvNaWeUUx5Ya1XOoGXMRk1GaPewfAKE9oICrB0Te40000)
 
                     - transition matrix A : 
                     $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
