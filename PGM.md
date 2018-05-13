@@ -127,7 +127,7 @@ $$
                             $$ P(O|\lambda) = \sum_{j=1}^{N} \alpha_T(i)$$
 
                     - advantage
-                        - A less amount of calculation $O(N^2 T)$, not $O(TN^T)
+                        - A less amount of calculation $O(N^2 T)$, not $O(TN^T)$
                 
                 - example
                     - ball and box model, $\lambda = (\pi, A, B)$, state set = {1,2,3}, obversivation set = {red, white}
