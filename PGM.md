@@ -102,7 +102,7 @@ $$
                 - Given state sequence $I =(i_1, i_2, ..., i_T)$, probability of observation sequence $O =(o_1, o_2, ..., o_T)$ is as follow:
                 $$ P( O | I, \lambda) = b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)$$
                 - Joint probability that state sequence and obserbvation sequence generate together :
-                $$ P( O, T | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
+                $$ P( O, I | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
                     \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}
                     b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)
                 $$
