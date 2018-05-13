@@ -137,11 +137,11 @@ $$
                         ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuIh8LD2rKr3AD5JYqYtAJCye0VECK7Z6IbnS81KAkYdvvNaWeUUx5Ya1XOoGXMRk1GaPewfAKE9oICrB0Te40000)
                         
                         + transition matrix A : 
-                         $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2\\ 0.2 \ 0.3 \ 0.5 \end{bmatrix}$$
+                         $$A = \begin{bmatrix} 0.5 \ 0.2 \ 0.3;\\ 0.3 \ 0.5 \ 0.2;\\ 0.2 \ 0.3 \ 0.5; \end{bmatrix}$$
 
                         + obversition matrix B : 
-                         $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6\\ 
-                            0.7 \ 0.3\end{bmatrix} $$
+                         $$ B = \begin{bmatrix} 0.5 \ 0.5;\\ 0.4 \ 0.6;\\ 
+                            0.7 \ 0.3;\end{bmatrix} $$
                 
                         + T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
                 
@@ -163,19 +163,21 @@ $$
                                     
                                     $b_1(o_1)$ means in box 1 select red(o_1)
                                     
-                                    $b_2(1o_3)$ means in box 1 select red(o_3)
+                                    $b_1(o_3)$ means in box 1 select red(o_3)
                                     
                                     $b_3(o_2)$ means in box 3 select white(o_2)
 
                                 + T=2, observed = white
-                                    * T=2, box(state)=1
+                                    - T=2, box(state)=1
                                     
-                                    $\alpha_2(1) = (\alpha_1(1)*a_{11}+\alpha_1(2)*a_{21}+\alpha_1(3)*a_{31})*b_1(o_2)$ = (0.10*0.5 + 0.16*0.3 + 0.28*0.3)*0.5 = 0.077
+                                    $$\alpha_2(1) = (\alpha_1(1)*a_{11}+\alpha_1(2)*a_{21}+\alpha_1(3)*a_{31})*b_1(o_2) = (0.10*0.5 + 0.16*0.3 + 0.28*0.3)*0.5 = 0.077$$
 
-                                    * T=2, box(state)=2
+                                    - T=2, box(state)=2
                                      
-                                     $\alpha_2(2) = (\alpha_1(1)*a_{12}+\alpha_1(2)*a_{22}+\alpha_1(3)*a_{32})*b_2(o_2)$ = (0.10*0.2 + 0.16*0.5 + 0.28*0.3)*0.6 = 0.1104
-                                    * T=2, box(state)=3 : $\alpha_2(1)$ = 0.0606
+                                    $$\alpha_2(2) = (\alpha_1(1)*a_{12}+\alpha_1(2)*a_{22}+\alpha_1(3)*a_{32})*b_2(o_2) = (0.10*0.2 + 0.16*0.5 + 0.28*0.3)*0.6 = 0.1104$$
+                                    
+                                    - T=2, box(state)=3 
+                                    $$\alpha_2(1) = 0.0606$$
                                             
                                 + T=3, observed = red
                                     * T=3, box(state)=1 : $\alpha_3(1)$ = 0.04187
