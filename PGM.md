@@ -136,8 +136,10 @@ $$
 
                     ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShBBqbLo4bDAx4ABaa4CeDJ2qjJyv9JkJIqD1LqYpBJCqfqxHIKCWsLk91uHYWyOoKkBf0A1TsK_F8yaD3pNOkKa8psJofEBIfBBCdCpqDO03G5MSVClKf08MDKGnAKk1nIyrA03WK0)
 
-                    - transition matrix A : $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
-                    - obversition matrix B : $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
+                    - transition matrix A : 
+                    $$A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  & \\ 0.2 \ 0.3 \ 0.5 &  & \end{bmatrix}$$
+                    - obversition matrix B : 
+                    $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6 & \\ 
                         0.7 \ 0.3 &  & \end{bmatrix} $$
                     - T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
                     - calculation process:
@@ -189,7 +191,7 @@ $$
                     - output : $P(O|\lambda)$
                     1. initial value
                         $$\beta_T(i)=1,\ i=1,2,...,N$$
-                    2. - as t = T-1, T-2,...,1
+                    2. as t = T-1, T-2,...,1
                         $$ \beta_{t}(i) = \sum_{j=1}^{N} a_{ij}\ b_j(o_{t+1}) \ \beta_{t+1}(j),\ i=1,2,...,N $$
                     3. Termination
                         $$ P(O|\lambda) = sum_{i=1}^{N} \pi_{i} \ b_i(o_1) \ \beta_1(i)$$
@@ -212,8 +214,12 @@ $$
             + complete data $(O,I)={o_1,o_2,...o_T,i_1,i_2,...,i_T}$
             + log-likelihood function of complete data $log P(O,I|\lambda)$
         2. E-Step
-            + Find Q function 
-                $$Q(\lambda, \bar{\lambda}) = \sum_I logP(O,I|\lambda)P(O,I|\bar(\lambda))$$
+        	+ reference : cross entropy
+             
+                ![](https://images2015.cnblogs.com/blog/517947/201702/517947-20170223095747882-1710070465.png) 
+            
+            + Find Q function(Why define like this?) 
+                $$Q(\lambda, \bar{\lambda}) = \sum_I logP(O,I|\lambda)P(O,I|\bar\lambda)$$
                 + $\bar{\lambda}$ is the current estimate of the hmm parameter
                 + $\lambda$ is the hmm parameter to maximize
             + Due to 
