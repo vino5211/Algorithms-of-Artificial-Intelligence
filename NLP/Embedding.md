@@ -81,12 +81,44 @@
 
 
 ---
+## LHY
++ 1 of N Encoding
++ How to exploit the context
+	+ count based
+		+  if two words $w_i$ and $w_j$ frequently co-occur, V($w_i$) and V($w_j$) would be close to each other
+		+  Eg
+			+ glove
+				+ find $v(w_i)$ and $v(w_i)$, inner product $v(w_i)$ and $v(w_i)$, the result should be Positive correlation to $N_{i,j}$
+			![](/home/apollo/Pictures/Emb1.png)
+	+ Perdition based
+		+ 1-of-N encoding
+		+ Training
+		+ Language Modeling(Machine Translate/Speech recognize)
+			![](/home/apollo/Pictures/Emb2.png)
+        + Reasoning process
+        	+ 不同的词，他们的输入都是 1-of-N encoding(图中的黄色块），经过一步变化后，变成的向量会尽可能相似（绿色块）
+        	+ 获得的embedding就是绿色块
+        	+ 输出的是每一个词作为下一个词的概率
+        	![](/home/apollo/Pictures/Emb3.png)
+		+ Sharing Parameters
+			+ 类似CNN
+			+ 不管输入单词数量是多少，参数的个数不会增加
+			![](/home/apollo/Pictures/Emb4.png)
+        + Various Architectures
+			+ CBOW
+			+ Skip-gram
+		+ build analogy
+			![](/home/apollo/Pictures/Emb6.png)
+		+ Multi-lingual Embedding
+			+ 不同的embedding无法同时使用，不同embedding 的不同维度代表的信息不一样（例如emb1 的第一维代表动物，emb2 的第7维代表动物）
+			+ 找一些不同语言的匹配词，使用这些匹配词去推导其他词的匹配关系
 
-## 常见降维算法
-- PCA
++ Documnet Embedding
+	+ the vector represent the meaning of the word sequence
+	+ A word sequence can be a document and a paragraph
+	+ word sequence with different lengths
+	+ Semantic Embedding
+		+ Bag-of-word + Auto encoder
+		+ Beyond Bag of word
+			+ need to be added
 
-- LDA (Linear Discriminant Analysis)
-	- http://www.cnblogs.com/LeftNotEasy/archive/2011/01/08/lda-and-pca-machine-learning.html
-- AutoEncoder
-- LLE
-- t-SNE

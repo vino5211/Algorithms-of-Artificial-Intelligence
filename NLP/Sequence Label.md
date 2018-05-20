@@ -1,3 +1,8 @@
+# Sequence Labeling
+
+## Reference
++ 统计自然语言处理了 Chapter 7
+
 ## Seg
 + 常用分词方法总结分析
 	+ https://blog.csdn.net/cuixianpeng/article/details/43234235
@@ -14,7 +19,7 @@
 			(4) 当扫描content[5]的时候，发现"中华民族从"并不是词表中的词，也不是词的前缀。因此可以切分出前面最大的词——"中华民族"。
 			由此可见，最大匹配出的词必须保证下一个扫描不是词表中的词或词的前缀才可以结束。
 
-## Pochangjaing
+## Pos tagging
 + Label set
 	+ https://www.biaodianfu.com/pos-tagging-set.html
 
@@ -22,6 +27,7 @@
 	+ https://www.jianshu.com/p/cceb592ceda7
 	+ 基于统计模型的词性标注方法
 	+ 基于规则的词性标注方法
+
 ## NER
 
 ## BiLSTM+CRF

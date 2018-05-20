@@ -32,6 +32,7 @@ Training Neural Networks with Very Little Data - A Draft -arxiv,2017.08
 ## 判别模型和生成模型
 + Reference 
 	+ http://www.cnblogs.com/zhangchaoyang/articles/7100083.html
+	+ http://www.cnblogs.com/kaituorensheng/p/3379170.html
 + 生成模型：
 	+ 直接求联合概率p(x,y)，得到p(x,y)后就可以去生成样本。
 	+ HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes都属于生成模型。
@@ -53,5 +54,6 @@ Training Neural Networks with Very Little Data - A Draft -arxiv,2017.08
 	+ 比如LDA中得到了p(zk|di)就相当于得到了文档向量，可以去计算向量之间的相似度。
 + 当含有隐含变量时，也可以用生成模型，但不能用判别模型。比如HMM、GMM、LDA、PLSA模型都可以用EM算法求解。
 
-## loos function
-+ 最小二乘法
+## loss function
++ 机器学习部分参照 svm 中得loss
++ PGM 部分参照 PGM 中得推导
