@@ -9,3 +9,9 @@
 
 ## Some blogs
 + https://blog.csdn.net/u012526120/article/list/2?
+
+
+## Basic Problems
+- 网络结构
+- loss 函数
+- 参数求解

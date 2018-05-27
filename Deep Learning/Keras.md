@@ -1,16 +1,19 @@
+[TOC]
+
 # Keras
 
-## Blog
-- https://blog.keras.io/
-- https://github.com/fchollet/keras-blog
+## Reference
+- Blog
+	- https://blog.keras.io/
+	- https://github.com/fchollet/keras-blog
 
-## Demo
 + Emedding Demo
 	- https://yq.aliyun.com/articles/221681
 + https://github.com/fchollet/deep-learning-models
 - Keras as a simplified interface to TensorFlow: tutorial
 - https://blog.keras.io/keras-as-a-simplified-interface-to-tensorflow-tutorial.html
-
+- Keras 源码分析
+	- https://www.jianshu.com/p/8dcddbc1c6d4**
 
 ## Embedding
 + https://blog.csdn.net/jiangpeng59/article/details/77533309
@@ -18,10 +21,6 @@
 + 在Keras模型中使用预训练的词向量
 	+ https://github.com/MoyanZitto/keras-cn/blob/master/docs/legacy/blog/word_embedding.md
 	+ https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
-
-## 源码分析
-- Keras 源码分析
-	- https://www.jianshu.com/p/8dcddbc1c6d4
 
 
 ## API Documents
