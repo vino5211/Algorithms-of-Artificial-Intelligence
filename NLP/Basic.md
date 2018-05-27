@@ -1,8 +1,12 @@
 # NLP
-## Methods
-+ Co-occurrence matrix
-+ Word bag model
-+ TF-IDF
+
+## Tasks
+
+![](https://mmbiz.qpic.cn/mmbiz_png/KmXPKA19gWibt9rkyqib37KkCF45lBNmGXgc2QrxlrYtKxR8JPIWd4iaicPtQrcSWibmVodtGKttv91H6AwvJZGxbvA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+
+- NLP 主要任务 ： 分类、匹配、翻译、结构化预测、与序贯决策过程
+- 对于前四个任务，深度学习方法的表现优于或显著优于传统方法
+
 
 ## stem and lemma
 + 词干提取(stemming)和词型还原(lemmatization)

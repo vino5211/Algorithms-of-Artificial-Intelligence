@@ -5,7 +5,7 @@
 	- build a knowledge base of state of art artifical intelligence work，reach the boundaries of current research
 
 - Target
-	- make cool thins
+	- make cool things
 
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
     - CU : Self Clear up（default）
@@ -39,14 +39,17 @@
 		- Basic
 			- MLE,MAE
 			- Evaluate
-				- (???) accuracy
+				- accuracy
 				- P,R,F1
 				- ROC,AUC
 			- Generating Model
 				- HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
 			- Disccriminating Model
 				- SVM,NN,LR,CRF
-		- Cluster
+		- Bayes（Plan）
+            - ZZH C7
+            - 
+        - Cluster
 			- (U)性能度量
 			- 距离计算
 			- 原型聚类
@@ -58,19 +61,19 @@
 				- (U)HAC
 		- Dimension Reduction(有点乱，需要整理)
 			- PCA
-				- (U) code
+				- code
 			- Manifold Learning
 				- LLE
 					- (U) code
 				- t-SNE
-					- (U) code
+					- code
 				- (U) Laplacian Eigenmaps
-			- (U)Auto Encoder
+			- Auto Encoder
 		- Ensemble
 			- Bagging
 			- Boosting
 			- RF
-			- 提升树
+			- Adaboost
 			- GBDT
 			- XGboost
 			- LightGBM

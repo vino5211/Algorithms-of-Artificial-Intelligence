@@ -10,8 +10,8 @@
 	- 机器之心
 
 + Feature extraction and Feature selection
-	+ extraction : 用映射或者变换的方法把原始特征变换为较少的新特征
-	+ selection : 从原始特征中挑选出一些最有代表性，分类性能最好的额特征
+	+ extraction : 用映射或者变换的方法把原始特征变换为较少的新特征(降维)
+	+ selection : 从原始特征中挑选出一些最有代表性，分类性能最好的额特征(TFIDF)
 
 ## Evaluate
 + https://www.zhihu.com/question/30643044
@@ -30,7 +30,7 @@ Training Neural Networks with Very Little Data - A Draft -arxiv,2017.08
 
 
 ## 判别模型和生成模型
-+ Reference 
++ Reference
 	+ http://www.cnblogs.com/zhangchaoyang/articles/7100083.html
 	+ http://www.cnblogs.com/kaituorensheng/p/3379170.html
 + 生成模型：
@@ -57,3 +57,17 @@ Training Neural Networks with Very Little Data - A Draft -arxiv,2017.08
 ## loss function
 + 机器学习部分参照 svm 中得loss
 + PGM 部分参照 PGM 中得推导
+
+## 参数估计
++ MLE
++ EM
+
+## 训练方法
++ 梯度下降
++ 拟牛顿
+
+## 优化方法（数值计算，代替求导）
++ 参考 统计学习方法 P88
++ 对似然函数进行优化
+	+ IIS 改进得迭代尺度
+	+ 拟牛顿
