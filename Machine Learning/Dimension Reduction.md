@@ -2,6 +2,16 @@
 
 # Maching Learning - Dimension Reduction
 
+## next to do
++ 图片大小
+
+## 为什么要进行降维
++ https://blog.csdn.net/xiongpai1971/article/details/79915047
+	+ 降维的目的有二，一个是为了对数据进行可视化，以便对数据进行观察和探索
+	+ 另外一个目的是简化机器学习模型的训练和预测。
+	+ tsne mnist demo
+
+
 ## Reference
 + LHY ML 2017 Video 24
 + sklearn manifold example

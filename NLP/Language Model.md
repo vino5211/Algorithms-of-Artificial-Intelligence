@@ -9,3 +9,6 @@
 + https://blog.csdn.net/shiwei1003462571/article/details/43482881
 + 如何使用N-gram语言模型来进行篇章单元分类？
 	+ https://www.imooc.com/article/20929
+
+## 代码实现
++ 见 sentiment analysis 中的代码, sklearn 实现
