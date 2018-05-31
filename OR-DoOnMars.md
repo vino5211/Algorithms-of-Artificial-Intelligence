@@ -126,6 +126,8 @@ Make this to a scripts
 	+ http://www.cnblogs.com/imqsl/p/6612370.html
 
 + github
+    + git 配置
+        +https://jingyan.baidu.com/article/066074d645c224c3c21cb081.html
 	+ show online pictures
 	+ show latex formula 
 		+ add this plugin : https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima?utm_source=chrome-app-launcher-info-dialog
