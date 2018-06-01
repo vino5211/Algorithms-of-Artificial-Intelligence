@@ -1,7 +1,7 @@
 # Sequence Labeling
 
 ## Reference
-+ 统计自然语言处理了 Chapter 7
++ 统计自然语言处理 Chapter 7
 
 ## Seg
 + 常用分词方法总结分析

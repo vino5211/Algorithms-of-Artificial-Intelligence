@@ -1,5 +1,3 @@
-[TOC]
-
 # Sample Problem
 
 ## 小样本不平衡样本

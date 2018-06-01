@@ -1,31 +1,8 @@
 ## Reference links
-+ 阅读理解与问答数据集 https://zhuanlan.zhihu.com/p/30308726
-+ https://zhuanlan.zhihu.com/p/33124445
-
-# Dataset
-## MS MARCO
-+ 相比SQuAD，MARCO的挑战难度更大，因为它需要测试者提交的模型具备理解复杂文档、回答复杂问题的能力。
-+ 据了解，对于每一个问题，MARCO 提供多篇来自搜索结果的网页文档，系统需要通过阅读这些文档来回答用户提出的问题。但是，文档中是否含有答案，以及答案具体在哪一篇文档中，都需要系统自己来判断解决。更有趣的是，有一部分问题无法在文档中直接找到答案，需要阅读理解模型自己做出判断；MARCO 也不限制答案必须是文档中的片段，很多问题的答案必须经过多篇文档综合提炼得到。这对机器阅读理解提出了更高的要求，需要机器具备综合理解多文档信息、聚合生成问题答案的能力。
-## NarrativeQA
-+ Deepmind 最新阅读理解数据集 NarrativeQA ，让机器挑战更复杂阅读理解问题
-	+ https://www.leiphone.com/news/201712/mjCYZ8WTiREqja6L.html
-	+ https://github.com/deepmind/narrativeqa
-	+ DeepMind认为目前的阅读理解数据集均存在着一定的局限性，包括：数据集小、不自然、只需要一句话定位回答的必须信息，等等。因而 Deepmind 认为，在这些数据集上的测试可能都是一个不能真实反映机器阅读理解能力的伪命题。
-
-+ The NarrativeQA Reading Comprehension Challenge
-	+ 由 DeepMind 发布的全新机器阅读理解数据集 NarrativeQA，其难度和复杂度都进行了全面升级。
-	+ 论文链接：https://www.paperweekly.site/papers/1397
-	+ 代码链接：https://github.com/deepmind/narrativeqa
-
-## SQuAD
-+ Hybrid AoA Reader (ensemble)
-	+ Joint Laboratory of HIT and iFLYTEK Research
-+ r-net + 融合模型
-	+ Microsoft Research Asia
-+ SLQA + 融合模型
-	+ Alibaba iDST NLP
-
----
++ 阅读理解与问答数据集 
+	+ https://zhuanlan.zhihu.com/p/30308726
++ 机器这次击败人之后，争论一直没平息 | SQuAD风云
+	+ https://zhuanlan.zhihu.com/p/33124445
 
 ## Current QA Plan
 ### 语义分析类方案
@@ -107,7 +84,8 @@
 	+ 2）在线服务收到 query 后，初步召回一批候选回复；
 	+ 3）matching 和 ranking 模型对候选列表做 rerank 并返回 top K。
 + NN 实现语义匹配的典型工作
-1. Po-Sen Huang, et al., 2013, Learning Deep Structured Semantic Models for Web Search using Clickthrough Data
+
+### 1. Po-Sen Huang, et al., 2013, Learning Deep Structured Semantic Models for Web Search using Clickthrough Data
 + 相似性问题： 计算 Quary 和 Doc 的相似性
 + **这篇博客讲的很好： https://cloud.tencent.com/developer/article/1005600**
 + From UIUC 和 Microsoft Research
@@ -126,7 +104,7 @@
 	+ 计算(D, Q)的 cosinesimilarity 后
 	+ 用 softmax 做归一化得到的概率值是整个模型的最终输出，该值作为监督信号进行有监督训练
 
-2. Yelong Shen, et al, 2014, A Latent Semantic Model with Convolutional-Pooling Structure for Information Retrieval
+### 2. Yelong Shen, et al, 2014, A Latent Semantic Model with Convolutional-Pooling Structure for Information Retrieval
 + 这篇文章出自 Microsoft Research，是对上述 DSSM 模型的改进工作
 + 在 DSSM 模型中，输入层是文本的 bag-of-words 向量，**丢失词序特征，无法捕捉前后词的上下文信息**
 + 基于此，本文提出一种基于卷积的隐语义模型（convolutional latent semantic model, CLSM）
@@ -144,14 +122,16 @@
 	+ BM25、PLSA、LDA、DSSM
 	+ NDCG@N 指标表明，CLSM 模型在语义匹配上达到了新的 SOTA 水平
 	+ 文中的实验和结果分析详细且清晰，很赞的工作
-3. Zhengdong Lu & Hang Li, 2013, A Deep Architecture for Matching Short Texts
+
+### 3. Zhengdong Lu & Hang Li, 2013, A Deep Architecture for Matching Short Texts
 + From : 这篇文章出自华为诺亚方舟实验室
 + Scenario : 针对短文本匹配问题
 + 提出一个被称为 DeepMatch 的神经网络语义匹配模型
 + 该模型的提出基于文本匹配过程的两个直觉：
 	+ 1）Localness，也即，两个语义相关的文本应该存在词级别的共现模式（co-ouccurence pattern of words）；
 	+ 2）Hierarchy，也即，共现模式可能在不同的词抽象层次中出现。
-4. Zongcheng Ji, et al., 2014, An Information Retrieval Approach to Short Text Conversation
+
+### 4. Zongcheng Ji, et al., 2014, An Information Retrieval Approach to Short Text Conversation
 + From : 这篇文章出自华为诺亚方舟实验室
 + Scenario : 针对的问题是基于检索的短文本对话，但也可以看做是基于**检索的问答系统**
 + Step:
@@ -164,7 +144,8 @@
 		+ 5）Deep MatchingModel；
 		+ 6）Topic-Word Model；
 			+ 7）其它匹配特征。
-5. Baotian Hu, et al., 2015, Convolutional Neural Network Architectures for Matching Natural Language Sentences
+
+### 5. Baotian Hu, et al., 2015, Convolutional Neural Network Architectures for Matching Natural Language Sentences
 + From : 华为诺亚方舟实验室
 + 采用 CNN 模型来解决语义匹配问题，文中提出 2 种网络架构，分别为 ARC-I 和 ARC-II
 + ARC-I
@@ -177,7 +158,8 @@
 		+ 作者认为 ARC-I 的监督信号在最后的输出层才出现，**在这之前，X 和 Y 的隐语义向量相互独立生成，可能会丢失语义相关信息，于是提出 ARC-II 架构**。
 + ARC-II
 	+ (to be continued)
-6. Lei Yu, et al., 2014, Deep Learning for Answer Sentence Selection
+
+### 6. Lei Yu, et al., 2014, Deep Learning for Answer Sentence Selection
 + From : University of Oxford 和 DeepMind
 + 提出基于 unigram 和 bigram 的语义匹配模型
 + Step :
@@ -194,8 +176,8 @@
 	![](https://pic3.zhimg.com/80/v2-cd4c9f238689d0412754b3761b84a6af_hd.jpg)
 + 文中用 TREC QA 数据集测试了提出的 2 个模型，实验结果的 MAP 和 MRR 指标表明，unigram 和 bigram 模型都有不错的语义匹配效果，其中 bigram 模型要优于 unigram 模型。
 + 特别地，在语义向量基础上融入 idf-weighted word co-occurence count 特征后，语义匹配效果会得到明显提升。文中还将提出的 unigram 和 bigram 模型与几个已有模型进行了效果对比，结果表明在同样的数据集上，融入共现词特征的 bigram 模型达到了 SOTA 的效果。
-7. Aliaksei Severyn, et al., 2015, Learning to Rank Short Text Pairs with Convolutional Deep Neural Networks
-8. Ryan Lowe, et al., 2016, The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems
+### 7. Aliaksei Severyn, et al., 2015, Learning to Rank Short Text Pairs with Convolutional Deep Neural Networks
+### 8. Ryan Lowe, et al., 2016, The Ubuntu Dialogue Corpus: A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems
 + From : McGill 和 Montreal 两所大学
 + Scenario : 针对基于检索的多轮对话问题，提出了 **dual-encoder** 模型对 context 和 response 进行语义表示，该思路也可用于检索式问答系统
 + Structure :
@@ -205,4 +187,5 @@
 	+ 然后通过 M 矩阵变换计算语义相似度，
 	+ 相似度得分作为监督信号在标注数据集上训练模型。
 		+ 文中在 Ubuntu 对话语料库上的实验结果表明，dual-encoder 模型在捕捉文本语义相似度上的效果相当不错。
-9. 从上面 8 篇论文可知，与关键词匹配（如 TF-IDF 和 BM25）和浅层语义匹配（如隐语义模型，词向量直接累加构造的句向量）相比，基于深度学习的文本语义匹配模型在问答系统的匹配效果上有明显提升。
+
+### 9. 从上面 8 篇论文可知，与关键词匹配（如 TF-IDF 和 BM25）和浅层语义匹配（如隐语义模型，词向量直接累加构造的句向量）相比，基于深度学习的文本语义匹配模型在问答系统的匹配效果上有明显提升。

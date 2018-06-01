@@ -1,3 +1,11 @@
+# Convolution Neural Network
+
+## Reference
+
+## Unread
++ 变形卷积核、可分离卷积？卷积神经网络中十大拍案叫绝的操作。
+	+ https://zhuanlan.zhihu.com/p/28749411
+
 重要的论文：
 
 1. Very deep convolutional networks for large-scale image recognition (VGG-net) (2014)
