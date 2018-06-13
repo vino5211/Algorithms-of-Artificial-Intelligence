@@ -1,8 +1,10 @@
 # NLP
 ## Data
-+　超链接待添加
++　[相关NLP数据集](https://github.com/Apollo2Mars/View/blob/master/List-Data.md)
 
-## Paper
+## Tmp Paper (未添加到下边的子分类中)
+- QA相关资源/数据集/论文列表
+	- https://blog.csdn.net/amds123/article/details/72758936
 - 2017年值得读的NLP论文
     - Attention is all you need
     - Reinforcement Learning for Relation Classification from Noisy Data
@@ -21,9 +23,7 @@
     - 第二种方法ABCNN-2是在池化时进行attention，通过attention对卷积后的表达重新加权，然后再进行池化
     - 第三种就是把前两种方法一起用到CNN中
 
-## Projects
-
-## Tools
+## Tmp Project and Tool (未添加到下边的子分类中)
 - 语义分析
     - https://bosonnlp.com/
 - NLPIR
@@ -78,35 +78,11 @@
         output is :'wolf'
         ```
 
-
 ### Grammer Model
 - Deep AND-OR Grammar Networks for Visual Recognition
 	- AOG 的全称叫 AND-OR graph，是一种语法模型（grammer model）。在人工智能的发展历程中，大体有两种解决办法：一种是自底向上，即目前非常流形的深度神经网络方法，另一种方法是自顶向下，语法模型可以认为是一种自顶向下的方法。
 	- 把语法模型和深度神经网络模型结合起来，设计的模型同时兼顾特征的 exploration and exploitation（探索和利用），并在网络的深度和宽度上保持平衡；
 	- 设计的网络结构，在分类任务和目标检测任务上，都比基于残差结构的方法要好。
-
-### Information Retrieval
-+ IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models
-	+ 在现代信息检索领域一直是两大学派之争的局面。一方面，经典思维流派是假设在文档和信息需求（由查询可知）之间存在着一个独立的随机生成过程。另一方面，现代思维流派则充分利用机器学习的优势，将文档和搜索词联合考虑为特征，并从大量训练数据中预测其相关性或排序顺序标签。
-	+ 本篇 SIGIR2017 的满分论文则首次提出将两方面流派的数据模型通过一种对抗训练的方式统一在一起，使得两方面的模型能够相互提高，最终使得检索到的文档更加精准。文章的实验分别在网络搜索、推荐系统以及问答系统三个应用场景中实现并验证了结果的有效性。
-
-### Question && Answer
-- 12 papers to understand QA system with Deep Learning
-    - http://blog.csdn.net/abcjennifer/article/details/51232645
-- A Question-Focused Multi-Factor Attention Network for Question Answering
-	- https://www.paperweekly.site/papers/1597
-	- https://github.com/nusnlp/amanda
-- PaperWeekly 第37期 | 论文盘点：检索式问答系统的语义匹配模型（神经网络篇）
-	- https://zhuanlan.zhihu.com/p/26879507
-- Fast and Accurate Reading Comprehension by Combining Self-Attention and Convolution
-	- 本文是 CMU 和 Google Brain 发表于 ICLR 2018 的文章，论文改变了以往机器阅读理解均使用 RNN 进行建模的习惯，使用卷积神经网络结合自注意力机制，完成机器阅读理解任务。
-	- 其中作者假设，卷积神经网络可建模局部结构信息，而自注意力机制可建模全文互动（Interaction）关系，这两点就足以完成机器阅读理解任务。
-	- 论文链接
-	- https://www.paperweekly.site/papers/1759
-- Attentive Recurrent Tensor Model for Community Question Answering
-	- 社区问答有一个很主要的挑战就是句子间词汇与语义的鸿沟。本文使用了 phrase-level 和 token-level 两个层次的 attention 来对句子中的词赋予不同的权重，并参照 CNTN 模型用神经张量网络计算句子相似度的基础上，引入额外特征形成 3-way 交互张量相似度计算。
-	- 围绕答案选择、最佳答案选择、答案触发三个任务，论文提出的模型 RTM 取得了多个 state-of-art 效果。
-	- 论文链接 : https://www.paperweekly.site/papers/1741
 
 ### Dialog Systems
 - Feudal Reinforcement Learning for Dialogue Management in Large Domains
@@ -116,7 +92,44 @@
 	- 一篇基于强化学习的端到端对话系统研究工作，来自 CMU 和 Google。
 	- 论文链接：http://www.paperweekly.site/papers/1257
 
-### Reading and Comprehension
+### Reading and Comprehension (Information Retrieval, Question and Answering)
++ 【学习】QA相关资源/数据集/论文列表 (2017-5-25)
+	+ https://blog.csdn.net/amds123/article/details/72758936
++ IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models
+	+ 在现代信息检索领域一直是两大学派之争的局面。一方面，经典思维流派是假设在文档和信息需求（由查询可知）之间存在着一个独立的随机生成过程。另一方面，现代思维流派则充分利用机器学习的优势，将文档和搜索词联合考虑为特征，并从大量训练数据中预测其相关性或排序顺序标签。
+	+ 本篇 SIGIR2017 的满分论文则首次提出将两方面流派的数据模型通过一种对抗训练的方式统一在一起，使得两方面的模型能够相互提高，最终使得检索到的文档更加精准。文章的实验分别在网络搜索、推荐系统以及问答系统三个应用场景中实现并验证了结果的有效性。
+
+- LSTM 中文
+	- https://github.com/S-H-Y-GitHub/QA
+	- 本项目通过建立双向长短期记忆网络模型，实现了在多个句子中找到给定问题的答案所在的句子这一功能。在使用了互联网第三方资源的前提下，用training.data中的数据训练得到的模型对develop.data进行验证，MRR可达0.75以上
+	- MRR
+		- 是一个国际上通用的对搜索算法进行评价的机制，即第一个结果匹配，分数为1，第二个匹配分数为0.5，第n个匹配分数为1/n，如果没有匹配的句子分数为0。最终的分数为所有得分之和
+
++ `基于知识的智能问答技术　冯岩松
++ 基于深度学习的阅读理解　冯岩松
++ 机器这次击败人之后，争论一直没平息 | SQuAD风云
+	+ https://zhuanlan.zhihu.com/p/33124445
++ **检索式问答系统的语义匹配模型（神经网络篇） **
+	+ https://zhuanlan.zhihu.com/p/26879507
+- 12 papers to understand QA system with Deep Learning
+    - http://blog.csdn.net/abcjennifer/article/details/51232645
+- A Question-Focused Multi-Factor Attention Network for Question Answering
+	- https://www.paperweekly.site/papers/1597
+	- https://github.com/nusnlp/amanda
+- PaperWeekly 第37期 | 论文盘点：检索式问答系统的语义匹配模型（神经网络篇）
+	- https://zhuanlan.zhihu.com/p/26879507
+- Fast and Accurate Reading Comprehension by Combining Self-Attention and Convolution
+	-《Fast and Accurate Reading Comprehension by Combining Self-attention and Convolution》阅读笔记
+	 
+	- 本文是 CMU 和 Google Brain 发表于 ICLR 2018 的文章，论文改变了以往机器阅读理解均使用 RNN 进行建模的习惯，使用卷积神经网络结合自注意力机制，完成机器阅读理解任务。
+	- 其中作者假设，卷积神经网络可建模局部结构信息，而自注意力机制可建模全文互动（Interaction）关系，这两点就足以完成机器阅读理解任务。
+	- 论文链接
+	- https://www.paperweekly.site/papers/1759
+- Attentive Recurrent Tensor Model for Community Question Answering
+	- 社区问答有一个很主要的挑战就是句子间词汇与语义的鸿沟。本文使用了 phrase-level 和 token-level 两个层次的 attention 来对句子中的词赋予不同的权重，并参照 CNTN 模型用神经张量网络计算句子相似度的基础上，引入额外特征形成 3-way 交互张量相似度计算。
+	- 围绕答案选择、最佳答案选择、答案触发三个任务，论文提出的模型 RTM 取得了多个 state-of-art 效果。
+	- 论文链接 : https://www.paperweekly.site/papers/1741
+ 
 - 百度 2018 机器阅读理解竞赛
 - 搜狗 问答竞赛
 - 机器阅读理解相关论文汇总（截止2017年底）
@@ -202,6 +215,9 @@
 - Fast.ai推出NLP最新迁移学习方法「微调语言模型」，可将误差减少超过20%！
     - Fine-tuned Language Models for Text Classification
 
+
+---
+
 ## DL4NLP
 - https://zhuanlan.zhihu.com/p/28710886
 	- 信息抽取/
@@ -248,7 +264,7 @@
         - weston_nips16: Dialog-based Language Learning [arXiv] [code]
         - nogueira_nips16: End-to-End Goal-Driven Web Navigation [arXiv] [code]
 
-# ViewPoints
+# ViewPoint
 + https://www.wxwenku.com/d/100329482
 	- 但是由于语言本身已经是一种高层次的表达，深度学习在 NLP 中取得的成绩并不如在视觉领域那样突出。尤其是在 NLP 的底层任务中，基于深度学习的算法在正确率上的提升并没有非常巨大，但是速度却要慢许多，这对于很多对 NLP 来说堪称基础的任务来说，是不太能够被接受的，比如说分词
 	- 在完形填空类型的阅读理解（cloze-style machine reading comprehension）上，基于 attention 的模型也取得了非常巨大的突破（在 SQuAD 数据集上，2016 年 8 月的 Exact Match 最好成绩只有 60%，今年 3 月已经接近 77%，半年时间提升了接近 20 个点，这是极其罕见的）
@@ -270,13 +286,12 @@
 	- 大规模知识图谱的构建与应用
 		- “知识图谱”是谷歌推出的产品名，现在已经成为对大规模知识库的通用说法。如果说深度学习是机器大脑的学习机制，那么知识图谱可以看做机器大脑的知识库。知识图谱是问答系统的重要信息来源，也是阅读理解、机器翻译、文档摘要等任务进一步发展的重要支撑。目前，知识图谱从构建到应用都仍有很多问题亟待解决，例如新概念、新知识的自动学习，如何基于知识图谱实现智能推理，等等。在这方面，我一直关注知识的分布式表示学习，能够建立统一的语义表示空间，有效解决大规模知识图谱的数据稀疏问题，有望在知识获取、融合和推理方面发挥重要作用[6]。
 
-- pass
-	- 端到端训练与表征学习是深度学习的核心特征，这使其成为 NLP 的强大工具。但深度学习并非万能，它在对解决**多轮对话**等复杂任务异常关键的**推断和决策**上表现欠佳。此外，如何结合符号处理与神经处理、如何应对长尾现象等问题依然是深度学习 NLP 面临的挑战[1]。
-	- 自然语言处理领域有很多复杂任务，这些任务可能无法仅使用深度学习来轻松完成。例如，多轮对话是一个非常复杂的过程，涉及语言理解、语言生成、对话管理、知识库访问和推断。对话管理可以正式作为序贯决策过程，其中强化学习发挥关键作用。很明显，把深度学习和强化学习结合起来可能有利于完成任务。
-	- 总之，深度学习 NLP 仍然面临许多待解决的挑战。深度学习与其他技术（强化学习、推断、知识）结合起来将会进一步扩展 NLP 的边界[1]。
-
 - 一文概述2017年深度学习NLP重大进展与趋势
     		- http://www.qingpingshan.com/bc/jsp/361202.html
 - 李航NSR论文：深度学习NLP的现有优势与未来挑战
 	- Deep Learning for Natural Language Processing: Advantages and Challenges
+- pass
+	- 端到端训练与表征学习是深度学习的核心特征，这使其成为 NLP 的强大工具。但深度学习并非万能，它在对解决**多轮对话**等复杂任务异常关键的**推断和决策**上表现欠佳。此外，如何结合符号处理与神经处理、如何应对长尾现象等问题依然是深度学习 NLP 面临的挑战[1]。
+	- 自然语言处理领域有很多复杂任务，这些任务可能无法仅使用深度学习来轻松完成。例如，多轮对话是一个非常复杂的过程，涉及语言理解、语言生成、对话管理、知识库访问和推断。对话管理可以正式作为序贯决策过程，其中强化学习发挥关键作用。很明显，把深度学习和强化学习结合起来可能有利于完成任务。
+	- 总之，深度学习 NLP 仍然面临许多待解决的挑战。深度学习与其他技术（强化学习、推断、知识）结合起来将会进一步扩展 NLP 的边界[1]。
 

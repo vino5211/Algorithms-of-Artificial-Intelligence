@@ -2,6 +2,8 @@
 # Embedding
 
 ## Reference
+- [1] Part I : : Network Embedding: Recent Progress and Applications ( CIPS ATT6)
+- https://blog.csdn.net/gdh756462786/article/details/79082893
 - A Survey of Word Embeddings Evaluation Methods
 	- https://arxiv.org/abs/1801.09536
 - CS224n笔记3 高级词向量表示
@@ -109,6 +111,45 @@
         - fasttext则充分利用了h-softmax的分类功能，遍历分类树的所有叶节点，找到概率最大的label（一个或者N个）
     - http://nbviewer.jupyter.org/github/jayantj/gensim/blob/683720515165a332baed8a2a46b6711cefd2d739/docs/notebooks/Word2Vec_FastText_Comparison.ipynb#
 
+---
 
+# # Part I : Network Embedding: Recent Progress and Applications
++ Traditional Network Representation
++ Concepts
+	+ Representation learning
+	+ Distributed representation
+	+ Embedding
++ Network Embedding
+	+ Map the nodes in a network **into** a low dimensional space
+		+ Distributed representation for nodes
+		+ Similarity between nodes indicate the link strength(节点间的相似性表示链路强度)
+		+ Encode network information and generate node representation
++ Problems with previous Models
+	+ Classical graph embedding algorithms
+		+ MDS,IsoMap,LLE,Laplacian Eigenmap(???)
+		+ Most of them follow a matrix factorization(矩阵分解) or computation approach(???)
+		+ Hard to scale up(难以扩展)
+		+ Diffcult to extend to new settings
++ Outline
+	+ Preliminaries(初步措施)
+		+ word2vec
+	+ Basic Network Embedding Models
+		+ DeepWalk,Node2Vec,LINE,GrapRep,SDNE
+	+ Advanced Network Embedding Models
+		+ Beyond embedding,vertex information,edge information(超越嵌入, 顶点信息, 边缘信息)
+	+ Applications of Network Embedding
+		+ Basic applications
+		+ visualization
+		+ text classification
+		+ recommendation
++ Preliminaries
+	+ Softmax functions
+		+ sigmoid function
+			$$ \phi(x) = \frac{1}{1 + e^{-x}}$$
+		+ 
+	+ Distributional semantics
+	+ Word2Vec
+		+ CROW
+		+ Skip-gram
 
 

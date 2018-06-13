@@ -1,9 +1,7 @@
-[TOC]
-
 # Keras
-
 ## Reference
-- Blog
+- https://zhuanlan.zhihu.com/p/22129301
+- - Blog
 	- https://blog.keras.io/
 	- https://github.com/fchollet/keras-blog
 
@@ -22,6 +20,8 @@
 	+ https://github.com/MoyanZitto/keras-cn/blob/master/docs/legacy/blog/word_embedding.md
 	+ https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
 
+
+## 自定义层
 
 ## API Documents
 - https://keras.io/getting-started/sequential-model-guide/

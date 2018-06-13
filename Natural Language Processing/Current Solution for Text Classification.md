@@ -1,6 +1,4 @@
-[TOC]
-
-# Text Classification
+# Current Solution for Text Classification
 
 ## Others
 + Co-occurrence matrix
