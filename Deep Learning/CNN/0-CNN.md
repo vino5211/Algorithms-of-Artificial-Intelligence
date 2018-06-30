@@ -1,12 +1,13 @@
 # Convolution Neural Network
 
 ## Reference
-
-## Unread
++ http://www.hackcv.com/index.php/archives/104/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
 + 变形卷积核、可分离卷积？卷积神经网络中十大拍案叫绝的操作。
 	+ https://zhuanlan.zhihu.com/p/28749411
++ https://www.cnblogs.com/yelbosh/p/5808706.html
++ https://blog.csdn.net/wangyangzhizhou/article/details/79675278
 
-重要的论文：
+## 重要的论文：
 
 1. Very deep convolutional networks for large-scale image recognition (VGG-net) (2014)
 
@@ -44,7 +45,7 @@
 
 
 
-经典的文章：
+## 经典的文章：
 
 18. mageNet Classification with Deep Convolutional Neural Networks (AlexNet) (2012)
 
@@ -52,7 +53,7 @@
 
 
 
-重要的理论：
+## 重要的理论：
 
 20. Deep Neural Networks are Easily Fooled High Confidence Predictions for Unrecognizable Images (2015)
 
@@ -62,7 +63,7 @@
 
 
 
-重要的书籍：
+## 重要的书籍：
 
 23. Deep Learning Textbook - An MIT Press book (2016)
 
@@ -72,7 +73,7 @@
 
 
 
-重要的课程/Tutorial：
+## 重要的课程/Tutorial：
 
 26. Caffe Tutorial (CVPR 2015)
 
@@ -98,7 +99,7 @@
 
 
 
-重要的资源/模型：
+## 重要的资源/模型：
 
 37. VGG-net
 
@@ -161,7 +162,3 @@
 64. Brainstorm by Istituto Dalle Molle di Studi sull’Intelligenza Artificiale (IDSIA) [Python]
 
 65. Matconvnet by Andrea Vedaldi [Matlab]
-
-链接版文章下载地址：
-
-链接: https://pan.baidu.com/s/1dGpAC97 密码: t4dd

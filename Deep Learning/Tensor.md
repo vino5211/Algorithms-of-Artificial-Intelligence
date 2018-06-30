@@ -1,3 +1,0 @@
-# Tensor Operation
-## Reference
-+ 

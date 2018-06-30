@@ -12,7 +12,8 @@
 - https://blog.keras.io/keras-as-a-simplified-interface-to-tensorflow-tutorial.html
 - Keras 源码分析
 	- https://www.jianshu.com/p/8dcddbc1c6d4**
-
+- keras的主要模块介绍
+	- https://blog.csdn.net/lk7688535/article/details/52862377
 ## Embedding
 + https://blog.csdn.net/jiangpeng59/article/details/77533309
 + 如果输入数据不需要词的语义特征语义，简单使用Embedding层就可以得到一个对应的词向量矩阵，但如果需要语义特征，我们大可把以及训练好的词向量权重直接扔到Embedding层中即可

@@ -1,5 +1,3 @@
-[TOC]
-
 # Sentiment Analysis
 
 ## Reference

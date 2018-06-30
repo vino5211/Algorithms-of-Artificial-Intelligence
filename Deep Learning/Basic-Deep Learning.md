@@ -1,7 +1,20 @@
 # Deep Learning Basic
 
+## 使用情况
+＋数据量大,数据比较规范,但是决策函数高度非线性的问题
+## 浅层模型
++ 浅层模型：含有一个隐层的叫做多层感知机，又叫BP神经网络。
++ 20世纪90年代，出现了各种浅层学习模型，包括：SVM、Boosting、最大熵方法（LR）。它们都可以看做只有一层隐层或没有隐层的神经网络。
++ 浅层模型的问题是：
+	1.特征的提取与选择。
+	2.表达能力差。
++ 因为只有底层的特征，很难识别出不同目标，高层的特征依靠手工设计很难得到。而根据经验来说，一般网络神经元和层数越多，表达能力越强。
+
 ## Project
 + https://github.com/fchollet/deep-learning-models
+
+## Computer Version
++ 金字塔注意力机制：一种利用底层像素与高级特征的语义分割网络
 
 ## Attention
 - Attention is all you need
@@ -16,11 +29,8 @@
 + 变分自编码器（VAE）
 	+ http://www.sohu.com/a/167703579_642762
 
-
-
 ## Some blogs
 + https://blog.csdn.net/u012526120/article/list/2?
-
 
 ## Basic Problems
 - Neural Network
@@ -33,9 +43,6 @@
 	- Convolutional/Pooling Layer
 - cost function
 - Optimization
-
-
-
 
 ## Train Setting
 - Batch-size

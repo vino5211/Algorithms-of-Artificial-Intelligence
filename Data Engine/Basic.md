@@ -1,0 +1,12 @@
+# Data Engine Basic
+### 非结构数据和结构数据
+
+### 非关系型数据库和关系型数据库
+
+### 结构化数据标记
++ 一般采用json-ld 格式
++ 对非结构化数据进行组织时, 一般使用schema.org 定义的类型和属性作为标记(比如json-ld),且此标记要公开
+
+### Schema.org 
++ https://www.ibm.com/developerworks/cn/web/wa-schemaorg1/index.html
+	+ 最重要的是，这样做可以使您的页面更容易访问，更容易通过搜索引擎、AI 助手和相关 Web 应用程序找到。您不需要学习任何新的开发系统或工具来使用标记，而且在几小时内就可以快速上手

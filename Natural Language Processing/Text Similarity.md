@@ -1,5 +1,3 @@
-[TOC]
-
 # Text Similarity
 
 ## 余弦相似度
