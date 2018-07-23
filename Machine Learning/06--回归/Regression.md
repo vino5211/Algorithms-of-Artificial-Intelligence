@@ -1,10 +1,8 @@
-[TOC]
-
-# ML-Regressiong
+# ML-Regression
 
 ## Reference
 
-## sigmod
+## sigmoid
 + https://zhuanlan.zhihu.com/p/30116307
 
 ## Logistic distribution

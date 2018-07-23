@@ -19,7 +19,7 @@
 + D. hinge loss
 	+ $l(f(x^n),\ {\hat y}^n) = max(0, 1 - f(x^n) \times {\hat y}^n)$
 
-<img src="/home/apollo/Pictures/SVM1.png" width="500px" height="500px" />
+<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM1.png" width="500px" height="500px" />
 
 + 对比
 	+ A 不适合做loss 函数， 如图红线当横坐标取极大时，loss也趋向极大
@@ -35,14 +35,14 @@
 	+ 尽管不是全局可微分的，但可以分段计算导数，之后进行gradient descent
 	+ 类似 relu, maxout
 	
-        <img src="/home/apollo/Pictures/SVM2.png" width="300px" height="300px" />
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM2.png" width="300px" height="300px" />
 	
 	+ 注意公式中最后一个i
 	+ loss 对 $w_i$ 的偏导数 可以看成所有输入样本第i维的线性组合
 
 ## 推到至常见SVM的解释
 
-<img src="/home/apollo/Pictures/SVM3.png" width="300px" height="300px" />
+<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM3.png" width="300px" height="300px" />
 
 + (???) QP 问题，二次规划
 
@@ -52,11 +52,11 @@
 + (LHY ML 2017)
 	+ 如下图 $x^n$ 为训练数据中的某一样本，x 为输入样本
 
-	<img src="/home/apollo/Pictures/SVM4.png" width="300px" height="300px" />
+	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM4.png" width="300px" height="300px" />
 
 	+ K 表示 核函数, 当前图中仅仅表示内积
         
-        <img src="/home/apollo/Pictures/SVM5.png" width="300px" height="300px" />
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM5.png" width="300px" height="300px" />
 
 ## Kernel
 + 在一些情况下，在低维空间中无法完成分类操作（不可分），需要将低维空间映射到高维空间，即在内积之前可以对 z 和 x 进行变化, 即$[\phi(z),\phi(x)]$。(中括号表示内积)
@@ -64,9 +64,12 @@
 
 + Demo
 	+ Radial Basis Function Kernel (RBF)
-	<img src="/home/apollo/Pictures/SVM6.png" width="300px" height="300px" />
+	
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM6.png" width="300px" height="300px" />
+	
 	+ Sigmoid Kernel
-	<img src="/home/apollo/Pictures/SVM7.png" width="300px" height="300px" />
+	
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/SVM7.png" width="300px" height="300px" />
 
 + 核函数的判定
 
