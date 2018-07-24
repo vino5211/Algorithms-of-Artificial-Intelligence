@@ -41,100 +41,93 @@
 		- MLE,MAE
 		- Evaluate
 			- accuracy
-		- P,R,F1
-		- ROC,AUC
-- Generating Model
-	- HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
-- Disccriminating Model
-	- SVM,NN,LR,CRF
-	- Bayes（Plan）
-- ZZH C7
-- 
-	- Cluster
-- (U)性能度量
-- 距离计算
-- 原型聚类
-	- Kmeans
+			- P,R,F1
+			- ROC,AUC
+		- Generating Model
+			- HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
+		- Disccriminating Model
+			- SVM,NN,LR,CRF
+- Bayes（Plan）
+	- ZZH C7 	
+- Cluster
+	- (U)性能度量
+	- 距离计算
+	- 原型聚类
+		- Kmeans
 	- (U)学习向量量化
 	- (U)高斯混合聚类
-- 密度聚类
-- 层次聚类
+	- 密度聚类
+	- 层次聚类
 	- (U)HAC
 	- Dimension Reduction(有点乱，需要整理)
-- PCA
-	- code
-- Manifold Learning
-	- LLE
-		- (U) code
-	- t-SNE
+	- PCA
 		- code
+	- Manifold Learning
+		- LLE
+		- t-SNE
 	- (U) Laplacian Eigenmaps
-- Auto Encoder
-	- Ensemble
-- Bagging
-- Boosting
-- RF
-- Adaboost
-- GBDT
-- XGboost
-- LightGBM
-	- KNN
-- weak
-	- LDA(线性判别分析)
-	- LR
-- Undo
-	- Regression
-- Undo
-	- SVM
-- Hinge loss
-- (U)Kernel
-	- Topic Model
-- LSA
-- pLSA
-- LDA(Latent Dirichlet Allocation)
+	- Auto Encoder
+- Ensemble
+	- Bagging
+	- Boosting
+	- RF
+	- Adaboost
+	- GBDT
+	- XGboost
+	- LightGBM
+- KNN
+- LDA(线性判别分析)
+- LR
+- Regression
+- SVM
+	- Hinge loss
+	- (U)Kernel
+- Topic Model
+	- LSA
+	- pLSA
+	- LDA(Latent Dirichlet Allocation)
 - Deep Learning
 	- to be added
 - NLP
 	- (U) Basic
-- Co-occurrence matrix
-- TF-IDF
-- stem(词干提取)
-- lemma(词型还原)
-	- CLF（ a cool name）
-- implemented by (a cool name)
-	- Embedding
-- (U)fine tune
-- word2vec
+	- Co-occurrence matrix
+	- TF-IDF
+	- stem(词干提取)
+	- lemma(词型还原)
+- CLF（ a cool name）
+	- implemented by (a cool name)
+- Embedding
+	- (U)fine tune
+	- word2vec
 	- gensim train
-- glove
-	- download en
-- fasttext
-	- download zh
-	- (U) Principle of algorithm
-	- Knowledge Extract
-	- Language Model
-	- Recommended System
-	- RC(QA)
-	- Semantic Analysis
-	- Sentiment Analysis
-	- Sequence Label
-- Seg
-- Pos
-- NER
-	- Syntax Analysis
+	- glove
+		- download en
+	- fasttext
+		- download zh
+		- (U) Principle of algorithm
+- Knowledge Extract
+- Language Model
+- Recommended System
+- Reading Comprehension/Question Answer
+- Semantic Analysis
+- Sentiment Analysis
+- Sequence Labeling
+	- Seg
+	- Pos
+	- NER
+- Syntax Analysis
 
 - PGM
 	- HMM
-- forward and backward probability compute
-- EM
-- viterbi
+		- forward and backward probability compute
+		- EM
+		- viterbi
 	- CRF
-- Feature Vector $\phi$
-- CRF++
+		- Feature Vector $\phi$
+		- CRF++
 	- (U)Structure SVM
 	- example of HMM v.s. CRF
 	- example of CRF v.s. DL+CRF
-	- (???)why CRF is better than CRF
-	- LHY 书 CRF 部分学习
+	- (???)why CRF is better than HMM
 - (U) RL
 - (U) Transfor Learning
