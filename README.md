@@ -17,36 +17,36 @@
 
 ### Outline
 - This repository contains following files:
-- AlgorithmTree
-	- The curent summary of the algorithm encountered
-	- update new algorithm to this file
-	- maintain levle : A
-	- strength : medium
-- Genetic Algorithm
-	- Chinese Name : 遗传算法
-	- strength : weak
-	- problem : 算法原理和应用场景不清楚，感觉有一定的可解释性
-- (U)Math
-	- Deriavtive
-	- Least Suqares
-	- Linear Algebra
-	- Matrix factorization
-	- SVD
-		- Parameter Estimation
-		- Probability
+#### AlgorithmTree
+- The curent summary of the algorithm encountered
+- update new algorithm to this file
+- maintain levle : A
+- strength : medium
+#### Genetic Algorithm
+- Chinese Name : 遗传算法
+- strength : weak
+- problem : 算法原理和应用场景不清楚，感觉有一定的可解释性
+#### (U)Math
+- Deriavtive
+- Least Suqares
+- Linear Algebra
+- Matrix factorization
+- SVD
+        - Parameter Estimation
+        - Probability
 
-- Machine Learning
-	- tips : Implement following method in Holy Miner
-	- Basic
-		- MLE,MAE
-		- Evaluate
-			- accuracy
-			- P,R,F1
-			- ROC,AUC
-		- Generating Model
-			- HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
-		- Disccriminating Model
-			- SVM,NN,LR,CRF
+#### Machine Learning
+- tips : Implement following method in Holy Miner
+- Basic
+        - MLE,MAE
+        - Evaluate
+                - accuracy
+                - P,R,F1
+                - ROC,AUC
+        - Generating Model
+                - HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
+        - Disccriminating Model
+                - SVM,NN,LR,CRF
 - Bayes（Plan）
 	- ZZH C7 	
 - Cluster
@@ -59,7 +59,7 @@
 	- 密度聚类
 	- 层次聚类
 	- (U)HAC
-	- Dimension Reduction(有点乱，需要整理)
+- Dimension Reduction(有点乱，需要整理)
 	- PCA
 		- code
 	- Manifold Learning
@@ -86,10 +86,12 @@
 	- LSA
 	- pLSA
 	- LDA(Latent Dirichlet Allocation)
-- Deep Learning
-	- to be added
-- NLP
-	- (U) Basic
+
+#### Deep Learning
+- to be added
+
+#### NLP
+- (U) Basic
 	- Co-occurrence matrix
 	- TF-IDF
 	- stem(词干提取)
@@ -129,5 +131,7 @@
 	- example of HMM v.s. CRF
 	- example of CRF v.s. DL+CRF
 	- (???)why CRF is better than HMM
-- (U) RL
-- (U) Transfor Learning
+
+#### (U) Reinforce Learing
+
+#### (U) Transfer Learning
