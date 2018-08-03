@@ -6,7 +6,7 @@
 - organize the required knowledge(math, ml, dl, rl, nlp, cv theory) in projects
 - build a knowledge base of state of art artifical intelligence work，reach the boundaries of current research
 
-### abbreviations
+### Abbreviations
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
     - CU : Self Clear up（default）
     - Math : Math
@@ -16,27 +16,26 @@
     - OR : Operation Record
 
 ### Outline
-- This repository contains following files:
-#### AlgorithmTree
-- The curent summary of the algorithm encountered
-- update new algorithm to this file
-- maintain levle : A
-- strength : medium
-#### Genetic Algorithm
-- Chinese Name : 遗传算法
-- strength : weak
-- problem : 算法原理和应用场景不清楚，感觉有一定的可解释性
-#### (U)Math
-- Deriavtive
-- Least Suqares
-- Linear Algebra
-- Matrix factorization
-- SVD
-        - Parameter Estimation
-        - Probability
+###### Data Engine(Unfinished)
+- Data Crawler
+- Database
+- Data Visualization and Data Distribution
+- Data Engine
 
-#### Machine Learning
-- tips : Implement following method in Holy Miner
+##### Math(Unfinished)
+- Advanced Mathematics
+	- Deriavtive
+- Linear Algebra
+	- Matrix factorization
+		- SVD
+- Probability   
+ 	- Parameter Estimation
+ 		- MLE
+ 		- EM
+ 	- Gaussian
+
+##### Machine Learning
+- tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
 - Basic
         - MLE,MAE
         - Evaluate
@@ -44,94 +43,105 @@
                 - P,R,F1
                 - ROC,AUC
         - Generating Model
-                - HMM、高斯混合模型GMM、LDA、PLSA、Naive Bayes
+                - HMM、GMM、LDA、PLSA、Naive Bayes
         - Disccriminating Model
-                - SVM,NN,LR,CRF
-- Bayes（Plan）
-	- ZZH C7 	
-- Cluster
-	- (U)性能度量
-	- 距离计算
-	- 原型聚类
+                - LR,SVM,NN,CRF
+- Sample Problem
+	- Sample Unbalance
+	- Sample Generation
+		- Transfer & Translate
+- Classification
+	- Diff for Classifier
+	- How to choose Classifier
+	- KNN
+	- LDA(Linear discriminant analysis)
+	- LR/SVM
+	- Naive Bayes
+		- 机器学习周志华 Chapter 7
+	- Ensemble
+		- Decision Tree
+		- Boosting
+			- Adaboost
+			- AdaBoost + Decision = Boosting Decision Tree
+			- Gradient Boosting Decision Tree = GDBT
+			- XGBoost
+			- LightBGM
+		- Bagging
+			- Bagging + Decision Tree = Random Forest
+		- Stack	
+
+- Clustering(Unfinished)
+	- Performance metric fo Clustering
+		- Distance calculation(距离计算)
+	- Prototype clustering
 		- Kmeans
-	- (U)学习向量量化
-	- (U)高斯混合聚类
-	- 密度聚类
-	- 层次聚类
-	- (U)HAC
-- Dimension Reduction(有点乱，需要整理)
+	- Learning vector quantization(学习向量量化)
+	- Gaussian hybrid clustering
+	- Density clustering
+	- Hierarchical clustering
+
+- Dimension Reduction
 	- PCA
-		- code
 	- Manifold Learning
 		- LLE
 		- t-SNE
-	- (U) Laplacian Eigenmaps
+	- Laplacian Eigenmaps(Unfinished)
 	- Auto Encoder
-- Ensemble
-	- Bagging
-	- Boosting
-	- RF
-	- Adaboost
-	- GBDT
-	- XGboost
-	- LightGBM
-- KNN
-- LDA(线性判别分析)
-- LR
+
 - Regression
-- SVM
-	- Hinge loss
-	- (U)Kernel
+
 - Topic Model
 	- LSA
 	- pLSA
 	- LDA(Latent Dirichlet Allocation)
 
-#### Deep Learning
-- to be added
+##### Deep Learning
+- Perceptron and Back propagation
+- Tuning method
+- Regularization method
+- Optimizer method
+- Initialization strategy
+- Data standardization
+- End2End
+- CNNs
+- RNNS
+- HighWay
+- ResNet
+- DenseNet
+- Capsule
+- GANs
+- VAEs
+- Tensorflow
+- Tensorboard
+- Keras
+- Numpy
 
-#### NLP
-- (U) Basic
-	- Co-occurrence matrix
-	- TF-IDF
-	- stem(词干提取)
-	- lemma(词型还原)
-- CLF（ a cool name）
-	- implemented by (a cool name)
-- Embedding
-	- (U)fine tune
-	- word2vec
-	- gensim train
-	- glove
-		- download en
-	- fasttext
-		- download zh
-		- (U) Principle of algorithm
-- Knowledge Extract
+##### NLP
 - Language Model
-- Recommended System
-- Reading Comprehension/Question Answer
-- Semantic Analysis
-- Sentiment Analysis
+- Text Represent
+	- Embedding
+- Text Similarity
+- Text Clustering
+- Text Classification
 - Sequence Labeling
-	- Seg
-	- Pos
-	- NER
-- Syntax Analysis
+- Knowledge Base
+- Question Answering/Reading Comprehension
+- Dialog System
 
-- PGM
-	- HMM
-		- forward and backward probability compute
-		- EM
-		- viterbi
-	- CRF
-		- Feature Vector $\phi$
-		- CRF++
-	- (U)Structure SVM
-	- example of HMM v.s. CRF
-	- example of CRF v.s. DL+CRF
-	- (???)why CRF is better than HMM
+##### Graph Model
+- Probability Graph Model
+- HMM
+	- forward and backward probability compute
+	- EM
+	- viterbi
+- CRF
+	- Feature Vector $\phi$
+	- CRF++
+- Structure SVM((Unfinished))
+- Diff between HMM and CRF
 
-#### (U) Reinforce Learing
+##### Reinforce Learing(Unfinished)
 
-#### (U) Transfer Learning
+##### Transfer Learning(Unfinished)
+
+##### Genetic Algorithm(Unfinished)

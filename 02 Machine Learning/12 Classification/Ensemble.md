@@ -20,9 +20,9 @@
 ## Bagging
 + 解释
 	+ 简单model 有较大bias 较小得variance
-    + 复杂model 较小bias 较大variance
-    + 将多个复杂得model 求平均值，bias 得平均值基本不变，variance 可能接近正确值
-    + 其主要思想是将弱分类器组装成一个强分类器。在PAC（概率近似正确）学习框架下，则一定可以将弱分类器组装成一个强分类器。
+	+ 复杂model 较小bias 较大variance
+	+ 将多个复杂得model 求平均值，bias 得平均值基本不变，variance 可能接近正确值
+	+ 其主要思想是将弱分类器组装成一个强分类器。在PAC（概率近似正确）学习框架下，则一定可以将弱分类器组装成一个强分类器。
 + 训练：有放回抽样N份数据，将数据经过一个复杂得分类器，将N个结果投票或求平均
 + 测试：测试数据经过N个分类器，将N个结果投票(分类)或求平均（回归）
 + 使用前提：一个 model 很复杂，可能存在overfitting, 例如 Decision Tree(NN 相对不容易Overfitting)
