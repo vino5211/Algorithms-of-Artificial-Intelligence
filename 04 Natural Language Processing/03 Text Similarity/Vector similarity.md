@@ -1,5 +1,3 @@
-[TOC]
-
 # Vector similarity
 
 ## Reference
@@ -7,7 +5,10 @@
     + http://dataunion.org/11710.html
 + 向量的相似性的常用方法
     https://wenku.baidu.com/view/3da98708876fb84ae45c3b3567ec102de2bddfaa.html
-    
+
+## 余弦相似度
+## 汉明距离
+
 ## 内积
 ＋　内积　对应坐标相乘再相加
 + 内积／模积　＝　余咸相似度
