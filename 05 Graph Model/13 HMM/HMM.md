@@ -4,9 +4,9 @@
     - Text Seg
     - Text Pos
 
-#### Definition
+### Definition
 - Two basic assumption：
-    1. Homogeneous markov assumption
+    1. Homogeneous markov assumption(齐次马尔可夫假设)
         - The current state is only related to the previous state
     2. Observational independence assumption
         - The current observation is only related to the current state
