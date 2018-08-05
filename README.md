@@ -16,7 +16,7 @@
     - OR : Operation Record
 
 ### Outline
-###### Data Engine(Unfinished)
+##### Data Engine(Unfinished)
 - Data Crawler
 - Database
 - Data Visualization and Data Distribution
@@ -37,15 +37,15 @@
 ##### Machine Learning
 - tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
 - Basic
-        - MLE,MAE
-        - Evaluate
-                - accuracy
-                - P,R,F1
-                - ROC,AUC
-        - Generating Model
-                - HMM、GMM、LDA、PLSA、Naive Bayes
-        - Disccriminating Model
-                - LR,SVM,NN,CRF
+	- MLE,MAE
+	- Evaluate
+ 		- accuracy
+ 		- P,R,F1
+ 		- ROC,AUC
+	- Generating Model
+		- HMM、GMM、LDA、PLSA、Naive Bayes
+	- Disccriminating Model
+		- LR,SVM,NN,CRF
 - Sample Problem
 	- Sample Unbalance
 	- Sample Generation
