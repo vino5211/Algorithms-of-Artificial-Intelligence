@@ -1,33 +1,17 @@
 # Recurrent Neural Network
 
 ## Papers
-- Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN
-	- 本文使用 ReLU 等非饱和激活函数使网络变得更具有鲁棒性，可以处理很长的序列（超过 5000 个时间步），可以构建很深的网络（实验中用了 21 层）。在各种任务中取得了比 LSTM 更好的效果。
-	- 论文链接：https://www.paperweekly.site/papers/1757
-	- 代码链接：https://github.com/batzner/indrnn
+##### Sliced Recurrent Neural Networks
++ 上海交大 Coling 2018
++ 对RNN进行加速, 可达到136倍
++ 原理: SRNN 把RNN序列分成每份K份, 这样每一份可以各自独立运行(并行)
 
-## Recurrent Network
-## Feedforward v.s. Recurrent
+##### Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN
+- 本文使用 ReLU 等非饱和激活函数使网络变得更具有鲁棒性，可以处理很长的序列（超过 5000 个时间步），可以构建很深的网络（实验中用了 21 层）。在各种任务中取得了比 LSTM 更好的效果。
+- 论文链接：https://www.paperweekly.site/papers/1757
+- 代码链接：https://github.com/batzner/indrnn
 
-## GRU
-## GRU -> Highway Network 
-+ Training very deep networks
-## Residual Network
-+ Deep Residual Learning for image recoognition
-
-## LSTM
-+ 有详细的数学推到：零基础入门深度学习(6) - 长短时记忆网络(LSTM)
-	+ https://www.zybuluo.com/hanbingtao/note/581764
-## AT-LSTM
-+ Attention LSTM
-+ https://zhuanlan.zhihu.com/p/23615176
-## Grid LSTM
-## Tree LSTM
-
-## Recursive Network
-## Matrix-Vector Recursive Network
-
-## Application : Sentiment Analysis
+### Application : Sentiment Analysis
 + Recurrent Structure
 	+ word sequence as input
 	+ use rnn represent the sentence embedding
@@ -36,12 +20,10 @@
 	+ 按照文法结构的顺序两两结合
 	+ Recursive Neural Tensro Network
 
-## Application : Sentence relatedness(句子是不是同样的意思)
+##### Application : Sentence relatedness(句子是不是同样的意思)
 + Recursive Neural Network
 
 ---
-
-## Detail
 ### RNN
 ![](https://pic4.zhimg.com/80/2a37bd4e9b12bcc19e045eaf22fea4e5_hd.jpg)
 
