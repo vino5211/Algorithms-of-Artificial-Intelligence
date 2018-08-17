@@ -1,4 +1,4 @@
-# 强化学习知识大讲堂 笔记
+# Markov Decision Processes
 - http://www.algorithmdog.com/series/rl-series
 - 一、马尔可夫决策过程(Markov Decision Processes, MDP)
 - 组成

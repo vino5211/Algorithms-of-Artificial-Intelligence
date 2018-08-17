@@ -1,12 +1,9 @@
-## Reference
+# Solution of Overfitting
+
+### Reference
 + https://blog.csdn.net/scutjy2015/article/details/72810730
-## underfitting
-+ 增加网络的复杂度（深度）
-+ 降低learning rate
-+ 优化数据集
-+ 增加网络的非线性度（ReLu）
-+ 采用batch normalization
-## overfitting
+
+### overfitting
 + 丰富数据
 	+ 更多的数据 好于 更好的网络结构
 + 增加网络的稀疏度

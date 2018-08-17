@@ -1,6 +1,6 @@
 # Machine-Learing SVM
 
-## idea
+### key idea
 + Hinge loss
 + Kernel
 
@@ -85,3 +85,18 @@
 ## 支持向量回归（SVR）
 
 ## 其他方法中应用核函数
+
+### LR 与 SVM 的区别与联系
++ 联系:
+	+ 一般都是处理二分类问题
+	+ 都可以添加不同的正则项
++ 区别:
+	+ loss
+		+ LR : logistical loss 
+		+ SVM : hinge loss, 只考虑support vectors
+	+ LR 
+		+ 简单,好理解,大规模线性分类时比较方便
+		+ LR 能做的 SVM 也可以做, 有点准确率可能不然SVM
+	+ SVM 
+		+ 使用复杂核函数计算支持向量时, 简化模型和计算
+		+ SVM能做的, 有的LR做不了
