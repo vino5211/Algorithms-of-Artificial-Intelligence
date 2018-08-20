@@ -1,10 +1,10 @@
 # Math - Matrix Factorization
 
-## Reference
+### Reference
 + LHY ML 2017 Video 24
 
 
-## Matrix Factorization for Topic Model
+### Matrix Factorization for Topic Model
 ![](/home/apollo/Pictures/MF1.png)
 
 + 个别数据缺失
