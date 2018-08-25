@@ -4,8 +4,10 @@
 + https://blog.csdn.net/scutjy2015/article/details/72810730
 
 ### overfitting
-+ 丰富数据
-	+ 更多的数据 好于 更好的网络结构
++ 数据集扩增
+	+ 原有数据增加
+	+ 原有数据加随机噪声
+	+ 重新采样
 + 增加网络的稀疏度
 	+ ?
 + 降低网络的复杂度（深度）
@@ -20,4 +22,4 @@
 + Early stopping
 	+ https://www.jianshu.com/p/9ab695d91459
 + 适当降低Learning rate
-+ 适当减少epoch的次数
++ 交叉验证

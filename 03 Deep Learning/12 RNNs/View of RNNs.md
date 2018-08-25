@@ -1,4 +1,4 @@
-# Recurrent Neural Network
+# View of RNNs
 
 ## Papers
 ##### Sliced Recurrent Neural Networks
@@ -26,6 +26,11 @@
 ---
 ### RNN
 ![](https://pic4.zhimg.com/80/2a37bd4e9b12bcc19e045eaf22fea4e5_hd.jpg)
++ one2one : 一个输入（单一标签）对应一个输出（单一标签）
++ one2many : 一个输入对应多个输出，即这个架构多用于图片的对象识别，即输入一个图片，输出一个文本序列
++ many2one : 多个输入对应一个输出，多用于文本分类或视频分类，即输入一段文本或视频片段，输出类别
++ many2many : 这种结构广泛的用于机器翻译，输入一个文本，输出另一种语言的文本
++ many2many : 这种广泛的用于序列标注
 
 ### RNN 梯度爆炸/梯度消失
 + https://www.zhihu.com/question/34878706
@@ -49,16 +54,4 @@
 + 输出：每个时刻的输出是一个概率分布向量，其中最大值的下标决定了输出哪个词。
 + units 含义:Keras中使用LSTM层时设置的units参数是什么
 	+ https://www.cnblogs.com/bnuvincent/p/8280541.html
-	```
-    keras.layers.recurrent.LSTM(units, activation='tanh', recurrent_activation='hard_sigmoid', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', unit_forget_bias=True, kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0)
-    ```
-    ```
-    model = Sequential()
 
-    model.add(LSTM(32, return_sequences=True, stateful=True,batch_input_shape=(batch_size, timesteps, data_dim)))
-    model.add(LSTM(32, return_sequences=True, stateful=True))
-    model.add(LSTM(32, stateful=True))
-    model.add(Dense(num_classes, activation='softmax'))
-
- 	类似上述代码中，数字'32'的含义。
-    ```

@@ -18,7 +18,7 @@
 + ![](/home/apollo/Pictures/MF4.png)
 
 
-+ Latent semantic anslysis(LSA)
++ Latent semantic analysis(LSA)
 	+ ![](/home/apollo/Pictures/TopM1.png)
 + Probability latent semantic analysis(PLSA)
 
