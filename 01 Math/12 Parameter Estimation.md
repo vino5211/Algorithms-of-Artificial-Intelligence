@@ -1,10 +1,23 @@
 # Math-Parameter Estimation
 
-## Reference
+### Reference
 1. EM及高斯混合模型
     + http://www.cnblogs.com/zhangchaoyang/articles/2624882.html
 
-## Maximum Likelihood Estimation
+### 参数估计
++ MLE
++ EM
+- 机器学习基本理论 : 详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解
+- 似然与极大似然估计
+	- https://zhuanlan.zhihu.com/p/22092462
+	- 概率是在特定环境下某件事情发生的可能性
+	- 而似然刚好相反，是在确定的结果下去推测产生这个结果的可能环境（参数）
+	- ![](https://www.zhihu.com/equation?tex=%5Cmathcal%7BL%7D%28%5Ctheta%7Cx%29+%3DP%28x%7C%5Ctheta%29)
+	- 解释了硬币问题的似然估计方法
+- 入门 | 什么是最大似然估计、最大后验估计以及贝叶斯参数估计
+	- 机器之心
+
+### Maximum Likelihood Estimation
 + 要选择一个最佳参数θ*，使得从训练集中观察到和情况出现的概率最大。即模型：
     $$ \theta^{*} = arg\ \underset{\theta}{max}\ Pr(X=x;\theta)$$
 + 举例如下图
@@ -21,7 +34,7 @@
 + 取log
     + 想要求最大值，就要求导，log后面跟的概率函数一般都是指数函数，或者是连乘的形式，取对数之后，如果是指数函数，可以直接将指数部分取出来，化掉log(log(e^x)=x),或者累加乘积变成累加和：log(a*b)=loga+logb
 
-## Expectation Maximization
+### Expectation Maximization
 + EM是一种迭代算法，它试图找到一系列的估计参数θ(0),θ(1),θ(2),....使得训练数据的marginal likelihood是不断增加的，即：
     $$
     \prod_{j=1}^{|x|}\ \sum_{y\epsilon\gamma} Pr)(X = x, Y=y ; \theta^{i+1})\ \geq \prod_{j=1}^{|x|}\ \sum_{y\epsilon\gamma} Pr)(X = x, Y=y ; \theta^{i})

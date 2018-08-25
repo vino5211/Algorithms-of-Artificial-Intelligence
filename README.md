@@ -3,8 +3,9 @@
 - make cool things
 
 ### There are two main functions of this repository:
-- organize the required knowledge(math, ml, dl, rl, nlp, cv theory) in projects
-- build a knowledge base of state of art artifical intelligence work，reach the boundaries of current research
+- Combing basic knowledge of Math, Machine Learing, Deep Learing, Natural Language Processing, Graph Model, Bayesian Theory
+- Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learing
+- View state of art artifical intelligence work，reach the boundaries of current research
 
 ### Abbreviations
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
@@ -17,10 +18,16 @@
 
 ### Outline
 ##### Data Engine(Unfinished)
+- tips : Implement following method in [Data-Engine](https://github.com/Apollo2Mars/DataEngine)
 - Data Crawler
+	- java Crawler
+- Data Clean
 - Database
-- Data Visualization and Data Distribution
+	- mongoDB
 - Data Engine
+	- Crawler data for training model
+	- model's results guide Clawer to work more effective
+- Data Visualization and Data Distribution
 
 ##### Math(Unfinished)
 - Advanced Mathematics
@@ -32,20 +39,13 @@
  	- Parameter Estimation
  		- MLE
  		- EM
- 	- Gaussian
+ 	- Hypothetical Test
+- Riemann Geometry
+- Gaussian
+- Information Theory
 
 ##### Machine Learning
 - tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
-- Basic
-	- MLE,MAE
-	- Evaluate
- 		- accuracy
- 		- P,R,F1
- 		- ROC,AUC
-	- Generating Model
-		- HMM、GMM、LDA、PLSA、Naive Bayes
-	- Disccriminating Model
-		- LR,SVM,NN,CRF
 - Sample Problem
 	- Sample Unbalance
 	- Sample Generation

@@ -1,12 +1,4 @@
-# ML- Basic
-## Evaluate
-+ https://www.zhihu.com/question/30643044
-+ accuracy
-+ P R F1
-+ ROC/AUC
-	+ https://www.douban.com/note/284051363/
-
-## 判别模型和生成模型
+### 判别模型和生成模型
 + Reference
 	+ http://www.cnblogs.com/zhangchaoyang/articles/7100083.html
 	+ http://www.cnblogs.com/kaituorensheng/p/3379170.html
@@ -30,20 +22,3 @@
 	+ 可以生成样本，反应样本本身的相似度
 	+ 比如LDA中得到了p(zk|di)就相当于得到了文档向量，可以去计算向量之间的相似度。
 + 当含有隐含变量时，也可以用生成模型，但不能用判别模型。比如HMM、GMM、LDA、PLSA模型都可以用EM算法求解。
-
-## loss function
-+ 机器学习部分参照 svm 中得loss
-+ PGM 部分参照 PGM 中得推导
-
-## 参数估计
-+ MLE
-+ EM
-- 机器学习基本理论 : 详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解
-- 似然与极大似然估计
-	- https://zhuanlan.zhihu.com/p/22092462
-	- 概率是在特定环境下某件事情发生的可能性
-	- 而似然刚好相反，是在确定的结果下去推测产生这个结果的可能环境（参数）
-	- ![](https://www.zhihu.com/equation?tex=%5Cmathcal%7BL%7D%28%5Ctheta%7Cx%29+%3DP%28x%7C%5Ctheta%29)
-	- 解释了硬币问题的似然估计方法
-- 入门 | 什么是最大似然估计、最大后验估计以及贝叶斯参数估计
-	- 机器之心
