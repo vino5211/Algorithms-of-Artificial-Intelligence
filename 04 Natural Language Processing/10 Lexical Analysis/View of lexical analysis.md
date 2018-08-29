@@ -1,4 +1,6 @@
 # View of Sequence Labeling
+### 人民日报语料下载
+
 ### NCRF++:An Open-source Neural Sequence Labeling Toolkit
 + NCRF++ 被设计用来快速实现带有CRF层的不同神经序列标注模型
 + 可编辑配置文件灵活建立模型
