@@ -2,7 +2,7 @@
 ### Target
 - make cool things
 
-### There are two main functions of this repository:
+### There are some main functions of this repository:
 - Combing basic knowledge of Math, Machine Learing, Deep Learing, Natural Language Processing, Graph Model, Bayesian Theory
 - Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learing
 - View state of art artifical intelligence work，reach the boundaries of current research
@@ -18,93 +18,121 @@
 
 ### Outline
 ##### Data Engine(Unfinished)
+- key : find some books, projects about Data Engine
 - tips : Implement following method in [Data-Engine](https://github.com/Apollo2Mars/DataEngine)
-- Data Crawler
+- Step 1 : Data Crawler
 	- java Crawler
-- Data Clean
-- Database
-	- mongoDB
-- Data Engine
+	- python Crawler(Next to do)
 	- Crawler data for training model
 	- model's results guide Clawer to work more effective
-- Data Visualization and Data Distribution
+- Step 2 : Data Clean
+	- stop words(En,zh resources) (Next to do)
+	- some tricks(Next to do)
+- Step 3 : Data Organizer
+	- Transform data on the web into structured data (Next to do)
+- Step 4 : Database
+	- mongoDB
+- Step 5 : Data Visualization and Data Distribution
+
+##### Search engine(Next to do)
+- from DataBase
+- from KnowledgeBase
+- from BigText, BigCorpus
+- from Web by DataEngine
 
 ##### Math(Unfinished)
 - Advanced Mathematics
 	- Deriavtive
-- Linear Algebra
-	- Matrix factorization
-		- SVD
+- Algebra
+	- Linear Algebra
 - Probability   
  	- Parameter Estimation
  		- MLE
  		- EM
  	- Hypothetical Test
-- Riemann Geometry
+- Geometry
+	- Euclidean geometry
+	- Riemann Geometry
 - Gaussian
 - Information Theory
 
 ##### Machine Learning
 - tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
-- Sample Problem
-	- Sample Unbalance
+- Model Evaluation and Selection
+- Some Tricks
+	- Sample Problem
+		- Sample Unbalance
+		- Little Sample
 	- Sample Generation
 		- Transfer & Translate
-- Classification
-	- Diff for Classifier
-	- How to choose Classifier
-	- KNN
-	- LDA(Linear discriminant analysis)
-	- LR/SVM
+	- Data Smoothing
+- Linear Model
+	- Linear Regression
+	- Logistic Regression
+	- Linear Discriminant
+	- Linear SVM
+	- Multi Classification 
+	- Unbalance Classification
+- SVM
+	- Hinge Loss
+	- Kernal 
+	- SVR
+- Bayesian Theory
+	- Bayesian Decision Theory
 	- Naive Bayes
-		- 机器学习周志华 Chapter 7
-	- Ensemble
-		- Decision Tree
-		- Boosting
-			- Adaboost
-			- AdaBoost + Decision = Boosting Decision Tree
-			- Gradient Boosting Decision Tree = GDBT
-			- XGBoost
-			- LightBGM
-		- Bagging
-			- Bagging + Decision Tree = Random Forest
-		- Stack	
-
-- Clustering(Unfinished)
+	- Semi Naive Bayes
+	- Bayesian Net
+	- MLE
+	- Maximum Entropy
+	- EM
+	- Maximum A Posteriori
+- Ensembel Learning
+	- Decision Tree
+	- Random Forest
+	- Adaboost
+	- Gradient Boosting
+	- GBDT
+	- XGboost
+	- LightGBM
+- Feature Selection
+- Sparse Representation
+- Regression
+- Classification
+	- Diff for Clf
+	- NBSVM
+	- KNN
+- Clustering
 	- Performance metric fo Clustering
-		- Distance calculation(距离计算)
+	- Distance calculation(距离计算)
 	- Prototype clustering
 		- Kmeans
 	- Learning vector quantization(学习向量量化)
 	- Gaussian hybrid clustering
 	- Density clustering
-	- Hierarchical clustering
-
-- Dimension Reduction
+	- Hierarchical clustering 
+- Diemnsion Reduction
 	- PCA
 	- Manifold Learning
 		- LLE
 		- t-SNE
 	- Laplacian Eigenmaps(Unfinished)
-	- Auto Encoder
-
-- Regression
-
+	- Auto Encoder 
 - Topic Model
 	- LSA
 	- pLSA
-	- LDA(Latent Dirichlet Allocation)
+	- LDA(Latent Dirichlet Allocation) 
+- Semi-supervised
 
 ##### Deep Learning
 - Perceptron and Back propagation
 - Tuning method
-- Regularization method
-- Optimizer method
-- Initialization strategy
-- Data standardization
-- End2End
-- CNNs
+	- Regularization method
+	- Optimizer method
+	- Initialization strategy
+	- Data standardization
 - RNNS
+- CNNs
+- End2End
 - HighWay
 - ResNet
 - DenseNet
@@ -128,20 +156,20 @@
 - Question Answering/Reading Comprehension
 - Dialog System
 
-##### Graph Model
-- Probability Graph Model
-- HMM
-	- forward and backward probability compute
-	- EM
-	- viterbi
-- CRF
-	- Feature Vector $\phi$
-	- CRF++
+##### Graph Model/Probability Graph Model/Structure Learning
++ directed graphical model (Also known as Bayesian Network)
+    + Static Bayesian networks
+    + Dynamic Bayesian networks
+        + Hidden Markov Model
+        + Kalman filter
++ Undirection graphical models
+    + Markov networks(Also known as Markov random field)
+        + Gibbs Boltzman machine
+        + Conditional random field
 - Structure SVM((Unfinished))
-- Diff between HMM and CRF
+- Viterbi
 
-##### Reinforce Learing(Unfinished)
-
-##### Transfer Learning(Unfinished)
-
-##### Genetic Algorithm(Unfinished)
+##### Next to do
+- Reinforce Learing(Unfinished)
+- Transfer Learning(Unfinished)
+- Genetic Algorithm(Unfinished)
