@@ -1,10 +1,15 @@
-## PCA
+# PCA
+
+### 推导过程
 + 见纸质笔记
-<img src="/home/apollo/Pictures/DR2.png" width="500px" height="500px" />
-<img src="/home/apollo/Pictures/DR3.png" width="500px" height="500px" />
+
+<img src="/home/apollo/Pictures/DR2.png" width="400px" height="250px" />
+
+<img src="/home/apollo/Pictures/DR3.png" width="400px" height="250px" />
 
 + 左右同时乘以 $(w^1)^T$
-<img src="/home/apollo/Pictures/DR4.png" width="500px" height="500px" />
+
+<img src="/home/apollo/Pictures/DR4.png" width="400px" height="250px" />
 
 
 + 协方差矩阵

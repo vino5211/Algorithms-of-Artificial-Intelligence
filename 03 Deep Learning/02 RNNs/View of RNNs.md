@@ -1,12 +1,11 @@
 # View of RNNs
 
-## Papers
-##### Sliced Recurrent Neural Networks
+#### Sliced Recurrent Neural Networks
 + 上海交大 Coling 2018
 + 对RNN进行加速, 可达到136倍
 + 原理: SRNN 把RNN序列分成每份K份, 这样每一份可以各自独立运行(并行)
 
-##### Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN
+#### Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN
 - 本文使用 ReLU 等非饱和激活函数使网络变得更具有鲁棒性，可以处理很长的序列（超过 5000 个时间步），可以构建很深的网络（实验中用了 21 层）。在各种任务中取得了比 LSTM 更好的效果。
 - 论文链接：https://www.paperweekly.site/papers/1757
 - 代码链接：https://github.com/batzner/indrnn
@@ -24,6 +23,8 @@
 + Recursive Neural Network
 
 ---
+### RNN是怎么从单层网络一步一步构造的的?
++ https://zhuanlan.zhihu.com/p/31537794
 ### RNN
 ![](https://pic4.zhimg.com/80/2a37bd4e9b12bcc19e045eaf22fea4e5_hd.jpg)
 + one2one : 一个输入（单一标签）对应一个输出（单一标签）
@@ -45,9 +46,10 @@
     LSTM相对普通RNN多了加和，为避免梯度消散提供了可能。线性自连接的memory是关键。
 + RNN中为什么要采用tanh而不是ReLu作为激活函数？
 	+ https://www.zhihu.com/question/61265076
-+ 为什么在CNN等结构中将原先的sigmoid、tanh换成ReLU可以取得比较好的效果？
-  为什么在RNN中，将tanh换成ReLU不能取得类似的效果？
-  + https://www.zhihu.com/question/61265076
++ 为什么在CNN等结构中将原先的sigmoid、tanh换成ReLU可以取得比较好的效果？为什么在RNN中，将tanh换成ReLU不能取得类似的效果？
+	+ https://www.zhihu.com/question/61265076
++ RNN中为什么要采用tanh而不是ReLu作为激活函数？
+	+ https://www.zhihu.com/question/61265076
 
 ### units/输出维度/隐藏大小
 + 输入：每个时刻的输入都是一个向量，它的长度是输入层神经元的个数（units）。在你的问题中，这个向量就是embedding向量。它的长度与时间步的个数（即句子的长度）没有关系。
@@ -55,3 +57,5 @@
 + units 含义:Keras中使用LSTM层时设置的units参数是什么
 	+ https://www.cnblogs.com/bnuvincent/p/8280541.html
 
+### 104.RNN、LSTM、GRU区别 
++ https://zhuanlan.zhihu.com/p/31551936

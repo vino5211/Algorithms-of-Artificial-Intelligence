@@ -49,3 +49,8 @@
 + pick a threshold
 	+ in follow picture, green line(a threshold) make data to 4 clusters, blue get 3 clusters
 ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/HAC1.png)
+
+---
+### 90.影响聚类算法结果的主要因素有（B、C、D ）。
++ https://zhuanlan.zhihu.com/p/31444054
++ A.已知类别的样本质量； B.分类准则； C.特征选取； D.模式相似性测度
