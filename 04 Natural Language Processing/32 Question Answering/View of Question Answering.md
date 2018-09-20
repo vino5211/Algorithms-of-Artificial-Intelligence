@@ -1,12 +1,4 @@
 # View of Question Answering
-## Some Projects
-#### LSTM 中文
-- https://github.com/S-H-Y-GitHub/QA
-- 本项目通过建立双向长短期记忆网络模型，实现了在多个句子中找到给定问题的答案所在的句子这一功能。在使用了互联网第三方资源的前提下，用training.data中的数据训练得到的模型对develop.data进行验证，MRR可达0.75以上
-- MRR
-	- 是一个国际上通用的对搜索算法进行评价的机制，即第一个结果匹配，分数为1，第二个匹配分数为0.5，第n个匹配分数为1/n，如果没有匹配的句子分数为0。最终的分数为所有得分之和
-
----
 
 ## Some Books
 #### 基于知识的智能问答技术　冯岩松
@@ -17,19 +9,19 @@
 ### 近期有哪些值得读的QA论文？| 专题论文解读(作者丨徐阿衡 学校丨卡耐基梅隆大学硕士)
 + https://www.jiqizhixin.com/articles/2018-06-11-14
 
-#### (FastQA) Making Neural QA as Simple as Possible but not Simpler
+### (FastQA) Making Neural QA as Simple as Possible but not Simpler
 + 论文 | Making Neural QA as Simple as Possible but not Simpler
 + 链接 | https://www.paperweekly.site/papers/835
 + 作者 | Dirk Weissenborn / Georg Wiese / Laura Seiffe
 + 阅读理解系列的框架很多大同小异，但这篇 paper 真心觉得精彩，虽然并不是最新最 state-of-art。
 
-#### GDAN
+### GDAN
 - 论文 | Semi-Supervised QA with Generative Domain-Adaptive Nets
 - 链接 | https://www.paperweekly.site/papers/576
 - 作者 | Zhilin Yang / Junjie Hu / Ruslan Salakhutdinov / William W. Cohen
 - GDAN，Question Generation 和 Question Answering 相结合，利用少量的有标注的 QA 对 + 大量的无标注的 QA 对来训练 QA 模型。
 
-#### QANet
+### QANet
 - 论文 | QANet - Combining Local Convolution with Global Self-Attention for Reading Comprehension
 - 链接 | https://www.paperweekly.site/papers/1901
 - 源码 | https://github.com/NLPLearn/QANet
@@ -40,10 +32,7 @@
 	- 2. 数据增强方面通过神经翻译模型（把英语翻译成外语（德语/法语）再翻译回英语）的方式来扩充训练语料，增加文本多样性。
 		- 其实目前多数 NLP 的任务都可以用 word vector + RNN + attention 的结构来取得不错的效果，虽然我挺偏好 CNN 并坚定相信 CNN 在 NLP 中的作用（捕捉局部相关性&方便并行），但多数情况下也是跟着主流走并没有完全舍弃过 RNN，这篇论文还是给了我们很多想象空间的。
 
-#### (Question Generation) Machine Comprehension by Text-to-Text Neural Question Generation
-- 论文 | Machine Comprehension by Text-to-Text Neural Question Generation
-- 链接 | https://www.paperweekly.site/papers/330
-- 作者 | Xingdi Yuan / Tong Wang / Caglar Gulcehre / Alessandro Sordoni / Philip Bachman / Sandeep Subramanian / Saizheng Zhang / Adam Trischler
+
 
 ### SQuAD 数据集的各种解决方案
 + https://www.sohu.com/a/142040203_500659
@@ -138,3 +127,11 @@
 	- https://www.paperweekly.site/papers/1734
 - 代码链接
 	- https://github.com/rajarshd/TextKBQA
+
+
+## Some Projects
+### LSTM 中文
+- https://github.com/S-H-Y-GitHub/QA
+- 本项目通过建立双向长短期记忆网络模型，实现了在多个句子中找到给定问题的答案所在的句子这一功能。在使用了互联网第三方资源的前提下，用training.data中的数据训练得到的模型对develop.data进行验证，MRR可达0.75以上
+- MRR
+	- 是一个国际上通用的对搜索算法进行评价的机制，即第一个结果匹配，分数为1，第二个匹配分数为0.5，第n个匹配分数为1/n，如果没有匹配的句子分数为0。最终的分数为所有得分之和

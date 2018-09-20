@@ -1,6 +1,14 @@
 # View of NLP
 ### Data
-+ [相关NLP数据集](https://github.com/Apollo2Mars/View/blob/master/List-Data.md)
++　[相关NLP数据集](https://github.com/Apollo2Mars/View/blob/master/List-Data.md)
+
+### Some projects
++ 中文词法分析 :　http:github.com/baidu/lac
+	+ SEG, POS, 词法分析
++ 情感分词　： http:github.com/baidu/Senta
+	+ bow, cnn, gru, lstm, bilstm
++ AnyQ : http:github.com/baidu/AnyQ
+	+ 提供FAQ框架, 语义相似性计算模型
 
 ### QA相关资源/数据集/论文列表
 - https://blog.csdn.net/amds123/article/details/72758936
@@ -45,12 +53,11 @@
 - 关键字替换和抽取
 
 ### MatchZoo 
-- MatchZoo is a toolkit for text matching. It was developed to facilitate the designing, comparing, and sharing of deep text matching models.
+    - MatchZoo is a toolkit for text matching. It was developed to facilitate the designing, comparing, and sharing of deep text matching models.
 - Sockeye: A Toolkit for Neural Machine Translation
-- 一个开源的产品级神经机器翻译框架，构建在 MXNet 平台上。
-- 论文链接：https://www.paperweekly.site/papers/1374**
-- 代码链接：https://github.com/awslabs/sockeye**
-
+    - 一个开源的产品级神经机器翻译框架，构建在 MXNet 平台上。
+    - 论文链接：https://www.paperweekly.site/papers/1374**
+    - 代码链接：https://github.com/awslabs/sockeye**
 
 ### Grammer Model
 - Deep AND-OR Grammar Networks for Visual Recognition
@@ -63,18 +70,15 @@
     - 本文是一篇综述文章，用知识图谱来解决机器翻译问题。
     - 论文链接：http://www.paperweekly.site/papers/1229
 
-
-
 ### Short Text Expand
 - End-to-end Learning for Short Text Expansion
     - 本文第一次用了 end to end 模型来做 short text expansion 这个 task，方法上用了 memory network 来提升性能，在多个数据集上证明了方法的效果；Short text expansion 对很多问题都有帮助，所以这篇 paper 解决的问题是有意义的。
         - 通过在多个数据集上的实验证明了 model 的可靠性，设计的方法非常直观，很 intuitive。
         - 论文链接：https://www.paperweekly.site/papers/1313
-        - 
+
 ### Transfer 
 - Fast.ai推出NLP最新迁移学习方法「微调语言模型」，可将误差减少超过20%！
     - Fine-tuned Language Models for Text Classification
-
 
 
 

@@ -9,3 +9,8 @@
 	+ 从图片生成问题 
 3. Semi-supervised QA with generative domain-adaptive nets 
 	+ 用 domain-adaptive networks 的方法做 QA 的数据增强
+
+### (Question Generation) Machine Comprehension by Text-to-Text Neural Question Generation
+- 论文 | Machine Comprehension by Text-to-Text Neural Question Generation
+- 链接 | https://www.paperweekly.site/papers/330
+- 作者 | Xingdi Yuan / Tong Wang / Caglar Gulcehre / Alessandro Sordoni / Philip Bachman / Sandeep Subramanian / Saizheng Zhang / Adam Trischler

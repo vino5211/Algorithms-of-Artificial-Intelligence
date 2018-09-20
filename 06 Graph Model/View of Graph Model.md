@@ -12,3 +12,7 @@
 ### Deep Inductive Network Representation Learning
 + Adobe Research, Google, Intel Labs WWW2018
 + 通用的归纳图表示学习架构DeepGL
+
+### Graph Edit Distance Computation via Graph Neural Networks
++ 改进了现有的网络图计算方法 GED/MCS 的时间复杂度较高的问题
++ **首次将神经网络引入图计算中**
