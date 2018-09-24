@@ -1,30 +1,16 @@
+# View of Regularization
 
-# 正则函数　Regularization
+### Reference
++ https://zhuanlan.zhihu.com/p/32194445
++ https://zhuanlan.zhihu.com/p/33058988	
+	+ Max Normal 
 
-## 过拟合产生
-+ ZHH ML P252 P129
-	+ 当样本特征较多，而样本数较少时，很容易陷入过拟合
-
-
-+ L2 岭回归(ridge regression)
-
-+ L1 缓解过拟合的同时，可以进行特征选择(LASSO)
-	+ L1 正则化的求解方法
-		+ 近端梯度下降
-
-## 权重递减　Weight Decay
-+ 正则函数为权重的平方和
-+ 与岭回归(L2)使用的技巧一样
-
-## 贝叶斯的思路
-+ 将权重的先验分布的对数作为正则项
-
----
+### 可视化方式, 画出过拟合和欠拟合的图像, loss接近为正常拟合
++ https://www.tuicool.com/articles/VNzqmu6
 
 ## 正则化
 + http://blog.sina.com.cn/s/blog_8267db980102wryn.html
-+ 如何判断LSTM模型中的过拟合和欠拟合
-	+ https://www.tuicool.com/articles/VNzqmu6
+
 
 + 深度学习-过拟合(Andrew Ng. DL 笔记)
 	+ http://www.shuang0420.com/2017/08/29/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E8%BF%87%E6%8B%9F%E5%90%88(Andrew%20Ng.%20DL%20%E7%AC%94%E8%AE%B0)/

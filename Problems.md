@@ -21,3 +21,7 @@
 + Bayesian Deep Learning
 + Semi Bayesian 
 + Bayesian Net
+
+### DL/Tuning Method
++ 当前整理不够深刻, 还需要梳理
++ 一些自动调参的方法需要了解一下
