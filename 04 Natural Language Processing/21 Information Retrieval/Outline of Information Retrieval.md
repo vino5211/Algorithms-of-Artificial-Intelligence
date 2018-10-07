@@ -1,6 +1,8 @@
 # Outline of Information Retrieval
 
 ### Reference
++ Text Similarity
+	+ https://github.com/Apollo2Mars/Knowledge/tree/master/04%20Natural%20Language%20Processing/03%20Text%20Similarity
 
 ### Outline
 (1) 基于内容(content-based)的特定领域(domain-specific)度量方法，如匹配文本相似度，计算项集合的重叠区域等； 
