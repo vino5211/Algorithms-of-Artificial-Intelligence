@@ -1,4 +1,4 @@
-# View of Semantic Analysis
+# Outline of Semantic Analysis
 
 ### Reference
 + 统计自然语言处理 第9章
