@@ -1,5 +1,6 @@
-# 2.LHY Video
-## Model-free Approach
+# Outline of Reinforce Learning
+
+### Model-free Approach
 + Policy-based
 	+ Learning an Actor（学习动作来执行）
 	+ on-policy : the agent learned and the agent interacting with the environment is the same(自己打篮球)
