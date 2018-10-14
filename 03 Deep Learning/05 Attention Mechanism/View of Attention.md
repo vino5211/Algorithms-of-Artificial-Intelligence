@@ -12,6 +12,9 @@
 	+ Blog
 		+ http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/
 
+### Transformer
++ https://www.sohu.com/a/168933829_465914
+
 ### 强制前向AM
 ### 加性注意力（additive attention）
 ### 乘法（点积）注意力（multiplicative attention）
