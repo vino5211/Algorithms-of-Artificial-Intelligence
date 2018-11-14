@@ -13,9 +13,9 @@
             + $log P(s|t)$ : Log probability of word given tag s ()
             + $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
 	    
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "200" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "200" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "200" height = "200" div align=center />
 	    
 	    + Define Feature Vector
 	    
