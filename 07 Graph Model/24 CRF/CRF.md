@@ -9,7 +9,7 @@
         + In HMM $P(x,y) = P(y_1|\ start)\ \prod_{l=1}^{L-1} P(y_{l+1}|y_l)\ P(end|y_L)\ \prod^{L}_{l=1}P(x_l|y_l)$
         + $log P(x,y) = logP(y_1 | start) + \sum_{l=1}^{L-1}logP(y_{l+1}|y_l) + log P(end|y_L) + \sum_{l=1}^{L} logP(x_l|y_l)$
         + the last item of last formula
-            + $\sum_{l=1}^{L} logP(x_l|y_l)$ = \sum_{s,t} log P(s|t) \times N_{s,t}(x,y)$
+            + $\sum_{l=1}^{L} logP(x_l|y_l) = \sum_{s,t} log P(s|t) \times N_{s,t}(x,y)$
             + $log P(s|t)$ : Log probability of word given tag s ()
             + $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
             ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png)
