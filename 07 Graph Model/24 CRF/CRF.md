@@ -12,13 +12,16 @@
             + $\sum_{l=1}^{L} logP(x_l|y_l) = \sum_{s,t} log P(s|t) \times N_{s,t}(x,y)$
             + $log P(s|t)$ : Log probability of word given tag s ()
             + $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
+	    
 	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
 	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
 	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "300" height = "200" div align=center />
-        + Define Feature Vector
-            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM4.png)
-            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM5.png)
-            ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM6.png) 
+	    
+	    + Define Feature Vector
+	    
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM4.png" width = "300" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM5.png" width = "300" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM6.png" width = "300" height = "200" div align=center />
 
 - Training
     - cost function like crosss entropy
