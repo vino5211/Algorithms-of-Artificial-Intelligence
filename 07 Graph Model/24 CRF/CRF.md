@@ -25,7 +25,7 @@
 
 - Training
     - cost function like crosss entropy
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM7.png)
+    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM7.png" width = "400" height = "200" div align=center />
         - Maximize what we boserve in training data
         - Minimize what we dont observe in training data
     - gredient Assent
