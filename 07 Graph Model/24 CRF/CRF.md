@@ -19,9 +19,9 @@
 	    
 	    + Define Feature Vector
 	    
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM4.png" width = "300" height = "200" div align=center />
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM5.png" width = "300" height = "200" div align=center />
-	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM6.png" width = "300" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM4.png" width = "200" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM5.png" width = "200" height = "200" div align=center />
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM6.png" width = "200" height = "200" div align=center />
 
 - Training
     - cost function like crosss entropy
