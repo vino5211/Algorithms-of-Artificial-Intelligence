@@ -12,6 +12,7 @@
             + $\sum_{l=1}^{L} logP(x_l|y_l) = \sum_{s,t} log P(s|t) \times N_{s,t}(x,y)$
             + $log P(s|t)$ : Log probability of word given tag s ()
             + $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
+	    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png" width = "100" height = "100" div align=right />
             ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM1.png)
             ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM2.png)
             ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM3.png)
