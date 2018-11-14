@@ -25,30 +25,42 @@
 
 - Training
     - cost function like crosss entropy
-    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM7.png" width = "400" height = "200" div align=center />
+    
+    <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM7.png" width = "200" height = "200" div align=center />
+    
         - Maximize what we boserve in training data
         - Minimize what we dont observe in training data
     - gredient Assent
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM8.png)
+    
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM8.png" width = "200" height = "200" div align=center />
+	
     - process
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM9.png)
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM10.png)
+    
+        <img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM9.png" width = "200" height = "200" div align=center />
+	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM10.png" width = "200" height = "200" div align=center />
+    
     - right - wrong
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM11.png)
-
+    
+    	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM11.png" width = "200" height = "200" div align=center />
 
 - Inference
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM12.png)
+
+	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM12.png" width = "200" height = "200" div align=center />
+    
 - CRF v.s. HMM
     - adjust P(a|V) -> 0.1
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM13.png)
+    
+    	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM13.png" width = "200" height = "200" div align=center />
+    
 - Synthetic Data
     - First paper purpose CRF
     - comparing HMM and CRF
-    ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM14.png)
+    
+    	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM14.png" width = "200" height = "200" div align=center />
 
 - CRF Summary
-   ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM15.png) 
+   
+   	<img src="https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/PGM15.png" width = "200" height = "200" div align=center />
 
 - CRF的定义与形式
 	- 定义
