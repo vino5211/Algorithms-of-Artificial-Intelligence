@@ -148,6 +148,7 @@
 - Language Model
 - Text Represent
 	- Embedding
+- Combine LM and Embedding
 - Text Similarity
 - Text Clustering
 - Text Classification
