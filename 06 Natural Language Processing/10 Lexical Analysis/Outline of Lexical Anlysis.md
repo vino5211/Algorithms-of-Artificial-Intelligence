@@ -1,9 +1,15 @@
 # Outline of Lexical Analysis
 
-## Reference
+###
++ Bidirectional LSTM-CRF Models for Sequence Tagging
++ Neural Architectures for Named Entity Recognition
++ Character-Based LSTM-CRF with Radical-Level Features for Chinese Named Entity Recognition
++ https://github.com/guillaumegenthial/sequence_tagging
+
+### Reference
 + 统计自然语言处理 Chapter 7
 
-## Seg
+### Seg
 + 常用分词方法总结分析
 	+ https://blog.csdn.net/cuixianpeng/article/details/43234235
 + 分词：最大匹配算法（Maximum Matching）
@@ -19,7 +25,7 @@
 			(4) 当扫描content[5]的时候，发现"中华民族从"并不是词表中的词，也不是词的前缀。因此可以切分出前面最大的词——"中华民族"。
 			由此可见，最大匹配出的词必须保证下一个扫描不是词表中的词或词的前缀才可以结束。
 
-## Pos tagging
+### Pos tagging
 + Label set
 	+ https://www.biaodianfu.com/pos-tagging-set.html
 
@@ -28,8 +34,9 @@
 	+ 基于统计模型的词性标注方法
 	+ 基于规则的词性标注方法
 
-## NER
+### NER
 
 ## BiLSTM+CRF
 + Reference
 	+ https://www.zhihu.com/question/46688107?sort=created
+
