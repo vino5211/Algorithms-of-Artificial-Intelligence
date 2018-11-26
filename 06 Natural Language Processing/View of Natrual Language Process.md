@@ -2,6 +2,9 @@
 ### Data
 + [相关NLP数据集](https://github.com/Apollo2Mars/View/blob/master/List-Data.md)
 
+### CoNLL X
+- CoNLL是一个由SIGNLL(ACL's Special Interest Group on Natural Language Learning: 计算语言学协会的自然语言学习特别兴趣小组）组织的顶级会议。CoNLL X (如CoNLL 2006)是它定义的语言学数据格式
+
 ### QA相关资源/数据集/论文列表
 - https://blog.csdn.net/amds123/article/details/72758936
 
@@ -63,14 +66,12 @@
     - 本文是一篇综述文章，用知识图谱来解决机器翻译问题。
     - 论文链接：http://www.paperweekly.site/papers/1229
 
-
-
 ### Short Text Expand
 - End-to-end Learning for Short Text Expansion
     - 本文第一次用了 end to end 模型来做 short text expansion 这个 task，方法上用了 memory network 来提升性能，在多个数据集上证明了方法的效果；Short text expansion 对很多问题都有帮助，所以这篇 paper 解决的问题是有意义的。
         - 通过在多个数据集上的实验证明了 model 的可靠性，设计的方法非常直观，很 intuitive。
         - 论文链接：https://www.paperweekly.site/papers/1313
-        - 
+        
 ### Transfer 
 - Fast.ai推出NLP最新迁移学习方法「微调语言模型」，可将误差减少超过20%！
     - Fine-tuned Language Models for Text Classification
