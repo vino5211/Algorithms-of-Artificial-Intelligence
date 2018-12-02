@@ -149,17 +149,18 @@ Yang Wang and Qiang Ji. [A Dynamic Conditional Random Field Model for Object Seg
 ### Linear-Chain CRF Definition
 
 + Definition
-	+ $$ P(I_i | O, I_1, ..., I_{i-1}, I_{i+1}, ..., I_T) = P(I_i | O,  I_{i-1}, I_{i+1})$$
+  + $$ P(I_i | O, I_1, ..., I_{i-1}, I_{i+1}, ..., I_T) = P(I_i | O,  I_{i-1}, I_{i+1})$$
+  + 加图
 
-+  HMM formula
++ HMM formula
   + $ y = arg\ max_{y \in Y}^{} p(y|x) = arg\ max_{y \in Y}^{} \frac{p(x, y)}{p(x)} = arg\ max_{y \in Y}^{} p(x, y)$
-+  简化形式
++ 简化形式
     +  $$P(y|x) = \frac{P(x,y)} { \sum_{y'} P(x, y')}$$
     +  $P(x,y)\ \epsilon \ exp(w\ \cdot\ \phi (x,y) )$
         +  $\phi$ (x,y) is a feature vector
         +  w is the weight vector to be learned from training data
-+  参数化形式
-+  矩阵形式
++ 参数化形式
++ 矩阵形式
 
 ### Problem One ：Probability calculation
 
@@ -214,25 +215,27 @@ Yang Wang and Qiang Ji. [A Dynamic Conditional Random Field Model for Object Seg
 
             + 当前的特征模板的大小是 39， 具体值如下：
 
-                | O，我 |      | B-LOC |      | I-LOC |      |      |      |
-                | ----- | ---- | ----- | ---- | ----- | ---- | ---- | ---- |
-                | O，在 |      |       |      |       |      |      |      |
-                | O，北 |      |       |      |       |      |      |      |
-                | O，京 |      |       |      |       |      |      |      |
-                | O，的 |      |       |      |       |      |      |      |
-                | O，部 |      |       |      |       |      |      |      |
-                | O，朝 |      |       |      |       |      |      |      |
-                | O，阳 |      |       |      |       |      |      |      |
-                |       |      |       |      |       |      |      |      |
-                |       |      |       |      |       |      |      |      |
+                | O，我 |      | B-LOC, 我 |      | I-LOC |      |      |      |
+                | ----- | ---- | --------- | ---- | ----- | ---- | ---- | ---- |
+                | O，在 |      |           |      |       |      |      |      |
+                | O，北 |      |           |      |       |      |      |      |
+                | O，京 |      |           |      |       |      |      |      |
+                | O，的 |      |           |      |       |      |      |      |
+                | O，部 |      |           |      |       |      |      |      |
+                | O，朝 |      |           |      |       |      |      |      |
+                | O，阳 |      |           |      |       |      |      |      |
+                |       |      |           |      |       |      |      |      |
+                |       |      |           |      |       |      |      |      |
+
 
 
 ### Problem Two ：Training
 
 - cost function like crosss entropy
+  - **need check**
   - $$P(y|x) = \frac{P(x,y)}{\sum_{y^`} P(x,y^{`})}$$
-  	- Maximize what we boserve in training data
-  	- Minimize what we dont observe in training data
+    - Maximize what we boserve in training data
+    - Minimize what we dont observe in training data
   - $$logP(\hat{y} ^ {n}|x^n) = log P(x^n, \hat{y}^n) - log\sum_{y^{`}} P(x^n,y^{`})$$
 - gredient assent
     - $$\theta \rightarrow \theta + \eta \bigtriangledown O(\theta)$$
@@ -241,6 +244,8 @@ Yang Wang and Qiang Ji. [A Dynamic Conditional Random Field Model for Object Seg
 - 改进的迭代尺度法
 - 拟牛顿法
     - 条件随机场的BFGS算法
+
+
 
 ### Problem Three ：Inference
 
