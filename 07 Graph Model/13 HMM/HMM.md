@@ -1,287 +1,282 @@
 # Hidden Markov Model
-- problems that can be solved by the HMM
-    - Speech Recognition
-    - Text Seg
-    - Text Pos
+[TOC]
+
+### Reference
+
++ 李开复1988年的博士论文发表了第一个基于隐马尔科夫模型（HMM）的语音识别系统Sphinx，被《商业周刊》评为1988年美国最重要的科技发明
+	+ 出处请见[KaifuLeeHMM](http://tech.sina.com.cn/zl/post/detail/it/2014-04-09/pid_8446205.htm#483253-tsina-1-23485-1cf60a7c37a7bc296a2ba7aba0120190)
++ https://yanyiwu.com/work/2014/04/07/hmm-segment-xiangjie.html
+
+
+### Application Scenario
+
+- Speech Recognition
+	- EM
+- Text Sequence Labeling
+	- SEG/POS/NER
 
 ### Definition
-- Two basic assumption：
-    1. Homogeneous markov assumption(齐次马尔可夫假设)
+
++ Parameters of HMM
+
+	+ length of text : T
+
+		+ **t is text subscript**
+
+	+ word set : WS
+
+	+ number of word set : M
+
+	+ hidden state set : HS
+
+	+ number of hidden state set : N
+
+		+ **i, j are hidden state subscript**
+
+	+ Initial state probability vector : $\pi​$
+
+	+ State transition probability matrix : A ( dimension is : N * N )
+		$$
+		\left\{
+		\begin{matrix}
+		a_{I_1 I_1} & a_{I_1 I_2} & ... & a_{I_1 I_N} \\
+		a_{I_2 I_1} & a_{I_2 I_2} & ... & a_{I_2 I_N} \\
+		... & ... & ... & ... \\
+		a_{I_N I_1} & a_{I_N I_2} & ... & a_{I_N I_N}
+		\end{matrix}
+		\right\} \tag{2}
+		$$
+
+	+ Observation probability matrix ： B(dimension is : M * N)
+		$$
+		\left\{
+		\begin{matrix}
+		b_{I_1 O_1} & b_{I_1 O_2} & ... & b_{I_1 O_M} \\
+		b_{I_2 O_1} & b_{I_2 O_2} & ... & b_{I_2 O_M} \\
+		... & ... & ... & ... \\
+		b_{I_N O_1} & b_{I_N O_2} & ... & b_{I_N O_M}
+		\end{matrix}
+		\right\} \tag{2}
+		$$
+
+	+ HMM can be expressed as $\lambda = (\pi, A, B)$
+
++ Structure of HMM
+
+	+ Hidden State Sequence
+		+ $${I_1, I_2,...,I_T}$$
+	+ Observation State Sequence
+		+ $O_1,  O_2, ... , O_T$
+
+	![](http://www.codeproject.com/KB/recipes/559535/gerative-discriminative.png)
+
+- Basic assumption：
+
+    - Markov assumption : 有限历史假设
+        - $$P(I_t|I_{t-1},I_{t-2},... ,I_1) = P(I_t|I_{t-1})$$
         - The current state is only related to the previous state
-    2. Observational independence assumption
-        - The current observation is only related to the current state
+    - Homogeneous  assumption : 齐次性假设
+        - $$P(I_t|I_{t-1}) = P(I_r|I_{r-1})$$
+        - 状态和当前时刻无关
 
-- parameters of HMM
-    - Initial state probability vector : $\pi$
-    - State transition probability matrix : A
-    - Observation probability matrix ： B
-    - HMM can be expressed as $\lambda = (\pi, A, B)$
+    + Observational independence assumption : 观测值独立假设 
+    	+ The current observation is only related to the current state
+    	+ $$P(O_t|I_t, I_{t-1},...,I_1) = P(O_t|I_t)$$
 
-#### probability algorithm
-- direct calculation
-    - Given $\lambda = (\pi, A, B)$ and observation sequence $O =(o_1, o_2, ..., o_T)$, Calculate the probability of $O =(o_1, o_2, ..., o_T)$'s occurrence
-    - Probability of state sequence  $I =(i_1, i_2, ..., i_T)$ is as follow :
-    $$ P( I | \lambda) = \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}$$
-    - Given state sequence $I =(i_1, i_2, ..., i_T)$, probability of observation sequence $O =(o_1, o_2, ..., o_T)$ is as follow:
-    $$ P( O | I, \lambda) = b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)$$
+### Problem One ：Probability Algorithm
+
++ Define of problem
+	+ Given $\lambda = (\pi, A, B)$ and observation sequence $O =(O_1, O_2, ..., O_T)$
+	+ Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
+	+ 求已知观测序列在当前参数情况下出现的概率
+
+- Solution A ：direct calculation
+    - Probability of state sequence  $I =(I_1, I_2, ..., I_T)$ is as follow :
+      $$
+      P( I | \lambda) = \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T}
+      $$
+
+    - Given state sequence $I =(I_1, I_2, ..., I_T)$, probability of observation sequence $O =(O_1, O_2, ..., O_T) $is as follow:
+      $$
+      P( O | I, \lambda) = b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T}
+      $$
+
     - Joint probability that state sequence and obserbvation sequence generate together :
-    $$ P( O, I | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
-        \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}
-        b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)
-    $$
+      $$
+      P( O, I | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
+        \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T} b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T}
+      $$
+
     - Drawback of this method
-        - A large amount of calculation : $O(TN^T)$
+        - A large amount of calculation :$O(TN^T)$
+          - **need check**
         - forward-backward algorithm will be more effective
 
-- forward-backward algorithm
-    - forward algorithm
+- Solution B : forward-backward algorithm
+    - B-1 : forward algorithm
         - Definition 
-        $$\alpha_t(i) = P(o_1, o_2,...,o_t,i_t=q_i|\lambda)$$
+
+          + $$\alpha_t(I_t) = P(O_1, O_2,...,O_t, I_t|\lambda)$$
+
         - Process
-            - input : $\lambda$ and O
-            - output : $P(O|\lambda)$
-            1. Initial value
-                $$ \alpha_1(i) = \pi_ib_i(o_1)$$
-                $ o_1 $ is fixed by observation sequence
-            2. Recursive
-                - as t = 1, 2,...,T-1
-                $$ \alpha_{t+1}(i) = [ \sum_{j=1}^{N} \alpha_t(j) \alpha_{ji}]b_i(o_{t+1})\  ,\ i=1,2,...,N $$
 
-            3. Termination
-                $$ P(O|\lambda) = \sum_{j=1}^{N} \alpha_T(i)$$
+            - Initial value
+                + $$ \alpha_1(I_1) = \pi_{I_1}b_{I_1 O_1}$$
+                + Observation State Sequence is {$$O_1$$}
+            - Recursive, as t = 1, 2,...,T-1
+                - $$ \alpha_{t+1}(I_{t+1}) = \{ \sum_{state}^{HS} \alpha_t(state)  a_{state\  I_{t+1}  } \} b_{I_{t+1}}(O_{t+1})$$
 
-        - advantage
-            - A less amount of calculation $O(N^2 T)$, not $O(TN^T)$
-    
-        + example
-            + ball and box model, $\lambda = (\pi, A, B)$, state set = {1,2,3}, obversivation set = {red, white}
-            
-            + Three different boxes and different ratios of red balls and white balls in each box
+            + Termination
+              $$ P(O|\lambda) = \sum_{state}^{HS} \alpha_T(state)$$
 
-            ![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuIh8LD2rKr3AD5JYqYtAJCye0VECK7Z6IbnS81KAkYdvvNaWeUUx5Ya1XOoGXMRk1GaPewfAKE9oICrB0Te40000)
-            
-            + transition matrix A : 
-             $$A = \begin{bmatrix} 0.5 \ 0.2 \ 0.3;\\ 0.3 \ 0.5 \ 0.2;\\ 0.2 \ 0.3 \ 0.5; \end{bmatrix}$$
+    + B-2 : backward algorithm
+      + Definition
+          + $\beta_t(I_t) = P(O_{t+1},O_{t+2},...,O_T|I_t,\lambda)$
+      + Process
+          + initial value
+              + $\beta_T(state)=1,\ state \in HS$
+          + Recursive, as t = T-1, T-2,...,1
+              + $$ \beta_{t}(I_t) =\{ \sum_{state}^{HS} a_{I_t\ state}\ b_{state\ O_{t+1}} \ \beta_{t+1}(state) \}$$
+          + Termination
+              + $$ P(O|\lambda) = \sum_{state}^{HS} \pi_{state} \ b_{state}(o_1) \ \beta_1(state)$$
+    + B-3 : forward-backward algorithm
+        + $$ P(O|\lambda) = \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_t(i)\ a_{ij}\ b_j(o_{t+1})\ \beta_{t+1}(j),  t=1, 2, ..., T-1$$
+    + advantage
+        - A less amount of calculation $O(N^2 T)$, not $O(TN^T)$
 
-            + obversition matrix B : 
-             $$ B = \begin{bmatrix} 0.5 \ 0.5;\\ 0.4 \ 0.6;\\ 
-                0.7 \ 0.3;\end{bmatrix} $$
-    
-            + T = 3, O = {red, white, red}, $\pi = [0.2, 0.4, 0.4]$
-    
-            + **calculation process:**
-                + initval value
-                    + observe red
-                    + choose box 1 : $\alpha_1(1)$ = 02 * 0.5 = 0.10
-                    + choose box 2 : $\alpha_1(2)$ = 0.4 * 0.4 = 0.16
-                    + choose box 3 : $\alpha_1(3)$ = 0.4 * 0.7 = 0.28
-                + Recursive
-                    + meaning of the symbol
-                        o_1 = red, o_2 = white, o_3 = red
 
-                        $ \alpha_1(1)*a_{11}$  means from box 1 to box 1
-                        
-                        $ \alpha_1(2)*a_{21}$  means from box 2 to box 1
-                        
-                        $ \alpha_1(3)*a_{31}$  means from box 3 to box 1
-                        
-                        $b_1(o_1)$ means in box 1 select red(o_1)
-                        
-                        $b_1(o_3)$ means in box 1 select red(o_3)
-                        
-                        $b_3(o_2)$ means in box 3 select white(o_2)
 
-                    + T=2, observed = white
-                        - T=2, box(state)=1
-                        
-                        $\alpha_2(1) = (\alpha_1(1)*a_{11}+\alpha_1(2)*a_{21}+\alpha_1(3)*a_{31})*b_1(o_2) = (0.10*0.5 + 0.16*0.3 + 0.28*0.3)*0.5 = 0.077$
+### Problem Two ：Train
 
-                        - T=2, box(state)=2
-                         
-                        $\alpha_2(2) = (\alpha_1(1)*a_{12}+\alpha_1(2)*a_{22}+\alpha_1(3)*a_{32})*b_2(o_2) = (0.10*0.2 + 0.16*0.5 + 0.28*0.3)*0.6 = 0.1104$
-                        
-                        - T=2, box(state)=3 
-                        
-                        $\alpha_2(1) = 0.0606$
-                                
-                    + T=3, observed = red
-                        * T=3, box(state)=1 : $\alpha_3(1)$ = 0.04187
-                        * T=3, box(state)=2 : $\alpha_3(1)$ = 0.03551
-                        * T=3, box(state)=3 : $\alpha_3(1)$ = 0.05284
-                        
-                    + Termination
-                            
-                        $P(O|\lambda) = \sum_{i=1}^{3} \alpha_3(i)$ = 0.13022
-
-    + backward algorithm
-        + Definition
-            $$\beta_t(i) = P(o_t+1,o_t+2,...,o_T|i_t=q_i,\lambda)$$
-        + Process
-            + input : $\lambda$ and O
-            + output : $P(O|\lambda)$
-            1. initial value
-                $$\beta_T(i)=1,\ i=1,2,...,N$$
-            2. as t = T-1, T-2,...,1
-                $$ \beta_{t}(i) = \sum_{j=1}^{N} a_{ij}\ b_j(o_{t+1}) \ \beta_{t+1}(j),\ i=1,2,...,N $$
-            3. Termination
-                $$ P(O|\lambda) = \sum_{i=1}^{N} \pi_{i} \ b_i(o_1) \ \beta_1(i)$$
-        + example
-            + pass
-
-    + forward-backward algorithm
-        $$ P(O|\lambda) = \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_t(i)\ a_{ij}\ b_j(o_{t+1})\ \beta_{t+1}(j)$$
-
-#### Train
-- Supervised learning methods (MLE)
-    - Assume that training data has been given $\{(O_1,I_1),(O_2,I_2),...,(O_T,I_T)\}$, T is the sequence length
+- Solution A：Supervised learning methods (MLE)
+    - Assume that training data has been given $\{(O_1,I_1),(O_2,I_2),...,(O_T,I_T)\}$
     - Use maximum likelihood estimation to estimate HMM parameters
-    1. estimation of transition matrix
-    2. estiamtion of observation matrix
-    3. estimation of initial value
+      - estimation of transition matrix
+      - estiamtion of observation matrix
+      - estimation of initial value
+    - For Text Sequence Labeling
 
 
-- Unsuperised learning methods (Unknown label is a hidden variable， EM)
-    - Baum-Welch algorithm(Also known as expectation maximization algorithm (EM))
-    - Estimation formula of Baum-Welch model parameters 
-    1. Determine the log-likelihood function of complete data
-        + observation data $O=(o_1,o_2,...o_T)$
-        + hidden data $I=(i_1,i_2,...,i_T)$
-        + complete data $(O,I)={o_1,o_2,...o_T,i_1,i_2,...,i_T}$
-        + log-likelihood function of complete data $log P(O,I|\lambda)$
+- Solution B：Unsuperised learning methods (Unknown label is a hidden variable， EM)
+    - Baum-Welch algorithm
 
-    2. E-Step
-    	+ reference : cross entropy
+    	- Also known as expectation maximization algorithm (EM)
 
-            ![](https://images2015.cnblogs.com/blog/517947/201702/517947-20170223095747882-1710070465.png) 
+    - For Speech Recognition
 
-        + Find Q function(Why define like this?) 
-            $$Q(\lambda, \bar{\lambda}) = \sum_I logP(O,I|\lambda)P(O,I|\bar\lambda)$$
-            + $\bar{\lambda}$ is the current estimate of the hmm parameter
-            + $\lambda$ is the hmm parameter to maximize
 
-        + Due to 
-            $$ P( O, T | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
-                \pi_{i_1} a_{i_1i_2}a_{i_2i_3}...a_{i_{T-1} i_T}
-                b_{i_1}(o_1)b_{i_2}(o_2)...b_{i_T}(o_T)
-            $$
-        
-        + So
-            $$Q(\lambda, \bar{\lambda}) = \sum_{I}log\pi_{i_1}P(O,I|\lambda)) + \sum_{I}\{\sum_{t=1}^{T-1}log a_{i_ti_{t+1}}\}P(O,I|\lambda)) + \sum_{I}\{\sum_{t=1}^{T-1}log b_{i_t}(o_t)\}P(O,I|\lambda))\ \ \ (1-1)$$
-    
-    3. M-Step
-        + Maximize Q Function to Find Model Parameters $\pi, A, B$
-        + Maximize the three terms above
-            + First Item 
-                + $\sum_{I}log\pi_{i_1}P(O,I|\lambda)) = \sum_{i=1}^{N}log\pi_iP(O,i_1=i|\bar\lambda )$
-                + Constraints are $\sum_{i=1}^{N} \pi_i =1$
-                + Lagrangian multiplier method
-                    $$ L =  \sum_{i=1}^{N}log\pi_iP(O,i_1=i|\bar\lambda ) + \gamma\{\sum_{i=1}^{N} \pi_i =1\}$$
-                    + Get Partial derivative
-                    $$ \frac{\partial L}{\partial \pi_i} = 0 \ \ \ (1-2)$$
-                    + Get 
-                    $$ P(O,i_1=i|\bar\lambda ) + \gamma\pi_i $$
-                    + Sum i then get
-                    $$ \gamma = - P(O|\bar\lambda) $$
-                    + Bring into Formula 1-2 then get
-                    $$ \pi_i = \frac{P(O,i_1=i| \bar\lambda )}{P(O|\bar\lambda))}\ \ \ (1-3)$$
-            
-            + Second Item
-                + Constraints are $\sum_{j=1}^N a_{ij} =1$
-                + Get 
-                    $$ a_{ij} = \frac{ \sum_{t=1}^{T-1} P(O,i_t=i,i_t+1 =j | \bar\lambda )}{P(O,i_t = i|\bar\lambda))}\ \ \ (1-4)$$
-            
-            + Third Item
-                + Constraints are $\sum_{j=1}^{N} b_j(k) =1$
-                    $$ b_{j}(k) = \frac{ \sum_{t=1}^{T-1} P(O,i_t=j | \bar\lambda ) I(o_t = v_k)}{P(O,i_t = j|\bar\lambda))}\ \ \ (1-5)$$
-    
-    4. Baum-Welch model parameter estimation formula
-            
-#### Inference
-- Approximation algorithm
+### Problem Three：Inference
+
++ Define
+	+ 给定O和$$\lambda$$， 求I
+
+- Solution A ：Approximation algorithm
     - The idea of this algorithm is Select the most likely state $i^{*}_{t}$ at each time t
-        + Given O and $\lambda$, then the probability of being in state q_i at time t is
-            $$\gamma_{t}(i) = \frac{\alpha_t(i) \beta_t(i)}{P(O|\lambda)} = \frac{\alpha_t(i) \beta_t(i)}{\sum_{j=1}^{N}\alpha_t(j) \beta_t(j)}$$
+        + Given O and $\lambda$, then the probability of being in state $q_i$ at time t is
+        	+ $$\gamma_{t}(i) = \frac{\alpha_t(i) \beta_t(i)}{P(O|\lambda)} = \frac{\alpha_t(i) \beta_t(i)}{\sum_{j=1}^{N}\alpha_t(j) \beta_t(j)}$$
         + The most likely state $i^{*}_{t}$ is
-            $$ i^{*}_{t} = arg\ \underset{1\leq i \leq N}{max} [\gamma_t(i)], t = 1,2,...,T$$
+        	+ $$ i^{*}_{t} = arg\ \underset{1\leq i \leq N}{max} [\gamma_t(i)], t = 1,2,...,T$$
 
-- Viterbi algorithm
+- Solution B：Viterbi algorithm
     - Overview
         - The viterbi algorithm uses dynamic programming to solve the HMM inference problem
         - The path with the greatest probability, which corresponds to a sequence of states
         - 根据这一原理，从t=1时刻开始，递推的计算在时刻状态为i的各条路径的最大概率，直到时刻t=T状态为i的各条路径的最大概率
-        - 时刻t=T的最大概率即最有路径的概率$p^*$ ，最优路径的终止节点为$i^*_T$ 
-        - 从终止节点开始由后向前得到各个节点，进而得到最有路径
-    
-    - key in formula 
-        - t is Timing subscript
-        - i, j are State subscript
-        - $o_1,...,o_T$ is Observation label
+        - 时刻t=T的最大概率即最有路径的概率$p^*$，最优路径的终止节点为${i^*}_T$ 
+        - 从终止节点开始由后向前得到各个节点，进而得到最优路径
 
     - Detail
-        - Define variable $\delta$
+        - Define variable $$\delta$$
             - The time is t, the state is i, the maximum value of the path (path consisit of $i_1,...,i_{t_1}$), variable is $i_1,...,i_{t_1}$
-            $$\delta_t(i) = \underset{i_1,i_2,...,i_{t-1}}{max} P(i_t=i,i_{t-1}...,i_1,o_t,...,o_1|\lambda) $$
-            $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
-        
-        - Define variable $\varphi $
-            - The time is t, the state is i, maximum probability path is $i_1,...,i_{t_1}$
+              $$\delta_t(i) = \underset{i_1,i_2,...,i_{t-1}}{max} P(i_t=i,i_{t-1}...,i_1,o_t,...,o_1|\lambda) $$
+              $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
+
+        - Define variable $$\varphi $$
+            - The time is t, the state is i, maximum probability path is i_1,...,i_{t_1}
             - the value fo state t-1 is as follow, the range of values is $1\leq j \leq N$
-            $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
-    
+            - $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
+
     - Summary of viterbi
-        - input : $\lambda = (A, B, \pi)$ and O
-        - output : Optimal path
-        1. initial
-            
-            $$\delta_1(i) = \pi_i b_i(o_1)$$
-            
-            $$\varphi_1(i) = 0$$
+        - input : $\lambda = (A, B, \pi) $ and O
+        - output : optimal path
 
-        2. Recursive
-            $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
-            $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
-        3. Termination
-            $$ P^{\star} = \underset{1\leq j \leq N}{max} \delta_T(i)$$
-            $$ i_T^{\star} = arg \underset{1\leq j \leq N}{max} [\delta_T(i)]$$
-    
-    - Example
-        - condition 
-            - $\lambda = (A, B, \pi)$
-            - A : $$ A = \begin{bmatrix} 0.5 \ 0.2  \ 0.3\\ 0.3 \ 0.5 \ 0.2  \\ 0.2 \ 0.3 \ 0.5\end{bmatrix}$$
-            - B : $$ B = \begin{bmatrix} 0.5 \ 0.5 \\ 0.4 \ 0.6\\ 0.7 \ 0.3 \end{bmatrix} $$
-            - $\pi = [0.2, 0.4, 0.4]$ 
-            - T = 3
-            - O = {red, white, red}
-        
-        - question : Finding the optimal state sequence?
-        
-        - process
-            - initial
-                - $\delta_1(1) = 0.1$, $\delta_1(2)=0.16$, $\delta_1(3)=0.28$
-                - $\varphi_1(1) = 0$, $\varphi_1(2) = 0 $, $\varphi_1(3) = 0$
-            
-            - resursive
-                - $\delta_2(1) = \underset{1\leq i \leq 3}{max} [\delta_1(j) a_{ji}]b_1(o_2)0.028$, $\varphi_2(1) = 3$
-                - $\delta_2(2) = 0.0504$, $\varphi_2(2) = 3$
-                - $\delta_2(3) = 0.042$, $\varphi_2(3) = 3$
-                - $\delta_3(1) = 0.00756$, $\varphi_3(1)=2$
-                - $\delta_3(2) = 0.01008$, $\varphi_3(2)=2$
-                - $\delta_3(3) = 0.0147$, $\varphi_3(3)=2$
-            
-            - termination
-                - $P^{\star} = \underset{1\leq i \leq 3}{max}  \delta_3(i) = \delta_3(3) = 0.0147$
-                - $i_3^{\star} = 3$
-                    - t=2, $i_2^{\star} = 3$
-                    - t=1, $i_1^{\star} = 3$
-                - optimal state sequence is (3,3,3)
+        	+ initial
 
-#### Drawbacks of HMM
-- correct result is $(x,\hat y)$ 
-- cant ensure $P(x,\hat y) > P(x,y)$, y is other label
-- example
-    - P(V|N)=9/10, P(D|N)=1/10
-    - P(a|V)=1/2, P(a|D)= 1
-    - N -> V --> c 9
+        		$$\delta_1(i) = \pi_i b_i(o_1)$$
+
+        		$$\varphi_1(i) = 0$$
+
+        	+ Recursive
+
+        		$$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
+
+        		$$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
+
+        	+ Termination
+
+        		$$P^{\star} = \underset{1\leq j \leq N}{max} \delta_T(i)$$
+        		$$ i_T^{\star} = arg \underset{1\leq j \leq N}{max} [\delta_T(i)]$$
+
+
+
+### Demo of HMM
+
+- How to do NER?
+
+	- given x, find y
+	- $ y = arg\ max_{y \in Y}^{} p(y|x) = arg\ max_{y \in Y}^{} \frac{p(x, y)}{p(x)} = arg\ max_{y \in Y}^{} p(x, y)$
+
+- 文本长度为7{张，三，在， 北， 京， 朝， 阳}
+
+	- Observation State Set:
+		-  {张，三，在， 北， 京， 朝， 阳}
+
+- 5种标签{O, B-PER, I-PER, B-LOC, I-LOC}
+
+	- Hidden State Set:
+
+		- {O, B-PER，I-PER，B-LOC, I-LOC}
+
+	- 第一个隐状态取得标签的可能是由$\pi$ 决定：
+
+		| First Hidden State | 概率值 |
+		| ------------------ | ------ |
+		| O                  | 0.4    |
+		| B-PER              | 0.3    |
+		| I-PER              | 0      |
+		| B-LOC              | 0.3    |
+		| I-LOC              | 0      |
+
+	- Current Hidden State 转移到 Next Hidden State， 由转移矩阵A决定：
+
+		| Current Hidden State/Next Hidden State | O    | B-PER | I-PER | B-LOC | I-LOC | <END> |
+		| -------------------------------------- | ---- | ----- | ----- | ----- | ----- | ----- |
+		| <BEG>                                  | 0.8  |       |       |       |       |       |
+		| O                                      |      | 0.5   |       |       |       |       |
+		| B-PER                                  |      |       | 0.5   |       |       |       |
+		| I-PER                                  |      |       |       | 0.8   |       |       |
+		| B-LOC                                  |      |       |       |       | 0.5   |       |
+		| I-LOC                                  |      |       |       |       |       | 0.8   |
+
+	- Current Hidden State 输出到 Current Observation State,  由状态矩阵B决定：
+
+		| Current Hidden State/Current Observation State | 我   | 在   | 北   | 京   | 朝   | 阳   |
+		| ---------------------------------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
+		| O                                              |      |      |      |      |      |      |
+		| B-PER                                          |      |      |      |      |      |      |
+		| I-PER                                          |      |      |      |      |      |      |
+		| B-LOC                                          |      |      |      |      |      |      |
+		| I-LOC                                          |      |      |      |      |      |      |
+
+
+
+### Drawbacks of HMM
+
+- 假设正确结果为  (x, $\hat y$) , 不能保证 P(x,$\hat y$) > P(x,y)
+- 例子
+    - P(我|O)=9/10, P(北|O)=1/10
+    - P(北|B)=1/2, P(a|B)= 1
+    - O -> B --> c 9
     - P -> V --> a 9
     - N -> D --> a 1
     - request N -> ? --> a
@@ -292,5 +287,5 @@
 - More complex model can deal with this problem
 - However, CRF can deal with this problem based on the same model
 
-#### Benefit of HMM
+### Benefit of HMM
 - Suitable for training data is small 
