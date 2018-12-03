@@ -1,110 +1,121 @@
-# Hidden Markov Model
 [TOC]
+
+# Hidden Markov Model
 
 ### Reference
 
 + 李开复1988年的博士论文发表了第一个基于隐马尔科夫模型（HMM）的语音识别系统Sphinx，被《商业周刊》评为1988年美国最重要的科技发明
-	+ 出处请见[KaifuLeeHMM](http://tech.sina.com.cn/zl/post/detail/it/2014-04-09/pid_8446205.htm#483253-tsina-1-23485-1cf60a7c37a7bc296a2ba7aba0120190)
+  + 出处请见[KaifuLeeHMM](http://tech.sina.com.cn/zl/post/detail/it/2014-04-09/pid_8446205.htm#483253-tsina-1-23485-1cf60a7c37a7bc296a2ba7aba0120190)
 + https://yanyiwu.com/work/2014/04/07/hmm-segment-xiangjie.html
 
 
 ### Application Scenario
 
 - Speech Recognition
-	- EM
+  - EM
 - Text Sequence Labeling
-	- SEG/POS/NER
+  - SEG/POS/NER
 
 ### Definition
 
 + Parameters of HMM
 
-	+ length of text : T
+  + length of text : T
 
-		+ **t is text subscript**
+    + **t is text subscript**
 
-	+ word set : WS
+  + word set : WS
 
-	+ number of word set : M
+  + number of word set : M
 
-	+ hidden state set : HS
+  + hidden state set : HS
 
-	+ number of hidden state set : N
+  + number of hidden state set : N
 
-		+ **i, j are hidden state subscript**
+    + **i, j are hidden state subscript**
 
-	+ Initial state probability vector : $\pi​$
+  + Initial state probability vector : $\pi$
 
-	+ State transition probability matrix : A ( dimension is : N * N )
-		$$
-		\left\{
-		\begin{matrix}
-		a_{I_1 I_1} & a_{I_1 I_2} & ... & a_{I_1 I_N} \\
-		a_{I_2 I_1} & a_{I_2 I_2} & ... & a_{I_2 I_N} \\
-		... & ... & ... & ... \\
-		a_{I_N I_1} & a_{I_N I_2} & ... & a_{I_N I_N}
-		\end{matrix}
-		\right\} \tag{2}
-		$$
+  + State transition probability matrix : A ( dimension is : N * N )
+    $$
+    \left\{
+    \begin{matrix}
+    a_{I_1 I_1} & a_{I_1 I_2} & ... & a_{I_1 I_N} \\
+    a_{I_2 I_1} & a_{I_2 I_2} & ... & a_{I_2 I_N} \\
+    ... & ... & ... & ... \\
+    a_{I_N I_1} & a_{I_N I_2} & ... & a_{I_N I_N}
+    \end{matrix}
+    \right\} \tag{1}
+    $$
 
-	+ Observation probability matrix ： B(dimension is : M * N)
-		$$
-		\left\{
-		\begin{matrix}
-		b_{I_1 O_1} & b_{I_1 O_2} & ... & b_{I_1 O_M} \\
-		b_{I_2 O_1} & b_{I_2 O_2} & ... & b_{I_2 O_M} \\
-		... & ... & ... & ... \\
-		b_{I_N O_1} & b_{I_N O_2} & ... & b_{I_N O_M}
-		\end{matrix}
-		\right\} \tag{2}
-		$$
+  + Observation probability matrix ： B(dimension is : M * N)
+    $$
+    \left\{
+    \begin{matrix}
+    b_{I_1 O_1} & b_{I_1 O_2} & ... & b_{I_1 O_M} \\
+    b_{I_2 O_1} & b_{I_2 O_2} & ... & b_{I_2 O_M} \\
+    ... & ... & ... & ... \\
+    b_{I_N O_1} & b_{I_N O_2} & ... & b_{I_N O_M}
+    \end{matrix}
+    \right\} \tag{2}
+    $$
 
-	+ HMM can be expressed as $\lambda = (\pi, A, B)$
+  + HMM can be expressed as $\lambda = (\pi, A, B)$
 
 + Structure of HMM
 
-	+ Hidden State Sequence
-		+ $${I_1, I_2,...,I_T}$$
-	+ Observation State Sequence
-		+ $O_1,  O_2, ... , O_T$
+  + Hidden State Sequence
+    + $${I_1, I_2,...,I_T}$$
+  + Observation State Sequence
+    + $O_1,  O_2, ... , O_T$
 
-	![](http://www.codeproject.com/KB/recipes/559535/gerative-discriminative.png)
+  ![](http://www.codeproject.com/KB/recipes/559535/gerative-discriminative.png)
 
 - Basic assumption：
 
     - Markov assumption : 有限历史假设
-        - $$P(I_t|I_{t-1},I_{t-2},... ,I_1) = P(I_t|I_{t-1})$$
+
         - The current state is only related to the previous state
+
+        ​	
+        $$
+        P(I_t|I_{t-1},I_{t-2},... ,I_1) = P(I_t|I_{t-1}) \tag{3}
+        $$
+
     - Homogeneous  assumption : 齐次性假设
-        - $$P(I_t|I_{t-1}) = P(I_r|I_{r-1})$$
-        - 状态和当前时刻无关
+        $$
+        P(I_t|I_{t-1}) = P(I_r|I_{r-1}) \tag{4}
+        $$
+
 
     + Observational independence assumption : 观测值独立假设 
-    	+ The current observation is only related to the current state
-    	+ $$P(O_t|I_t, I_{t-1},...,I_1) = P(O_t|I_t)$$
+      + The current observation is only related to the current state
+      	$$
+      	P(O_t|I_t, I_{t-1},...,I_1) = P(O_t|I_t) \tag{5}
+      	$$
+
 
 ### Problem One ：Probability Algorithm
 
 + Define of problem
-	+ Given $\lambda = (\pi, A, B)$ and observation sequence $O =(O_1, O_2, ..., O_T)$
-	+ Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
-	+ 求已知观测序列在当前参数情况下出现的概率
+  + Given $\lambda = (\pi, A, B)$ and observation sequence $O =(O_1, O_2, ..., O_T)$
+  + Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
 
 - Solution A ：direct calculation
     - Probability of state sequence  $I =(I_1, I_2, ..., I_T)$ is as follow :
       $$
-      P( I | \lambda) = \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T}
+      P( I | \lambda) = \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T} \tag{6}
       $$
 
     - Given state sequence $I =(I_1, I_2, ..., I_T)$, probability of observation sequence $O =(O_1, O_2, ..., O_T) $is as follow:
       $$
-      P( O | I, \lambda) = b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T}
+      P( O | I, \lambda) = b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T} \tag{7}
       $$
 
     - Joint probability that state sequence and obserbvation sequence generate together :
       $$
       P( O, I | \lambda) = P( O | I, \lambda) P( I | \lambda) = 
-        \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T} b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T}
+        \pi_{I_1} a_{I_1I_2}a_{I_2I_3}...a_{I_{T-1} I_T} b_{I_1 O_1}b_{I_2 O_2}...b_{I_T O_T} \tag{8}
       $$
 
     - Drawback of this method
@@ -139,9 +150,14 @@
               + $$ \beta_{t}(I_t) =\{ \sum_{state}^{HS} a_{I_t\ state}\ b_{state\ O_{t+1}} \ \beta_{t+1}(state) \}$$
           + Termination
               + $$ P(O|\lambda) = \sum_{state}^{HS} \pi_{state} \ b_{state}(o_1) \ \beta_1(state)$$
+
     + B-3 : forward-backward algorithm
-        + $$ P(O|\lambda) = \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_t(i)\ a_{ij}\ b_j(o_{t+1})\ \beta_{t+1}(j),  t=1, 2, ..., T-1$$
+        $$
+        P(O|\lambda) = \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_t(i)\ a_{ij}\ b_j(o_{t+1})\ \beta_{t+1}(j),  t=1, 2, ..., T-1 \tag{9}
+        $$
+
     + advantage
+
         - A less amount of calculation $O(N^2 T)$, not $O(TN^T)$
 
 
@@ -160,7 +176,7 @@
 - Solution B：Unsuperised learning methods (Unknown label is a hidden variable， EM)
     - Baum-Welch algorithm
 
-    	- Also known as expectation maximization algorithm (EM)
+      - Also known as expectation maximization algorithm (EM)
 
     - For Speech Recognition
 
@@ -168,14 +184,14 @@
 ### Problem Three：Inference
 
 + Define
-	+ 给定O和$$\lambda$$， 求I
+  + 给定O和$$\lambda$$， 求I
 
 - Solution A ：Approximation algorithm
     - The idea of this algorithm is Select the most likely state $i^{*}_{t}$ at each time t
         + Given O and $\lambda$, then the probability of being in state $q_i$ at time t is
-        	+ $$\gamma_{t}(i) = \frac{\alpha_t(i) \beta_t(i)}{P(O|\lambda)} = \frac{\alpha_t(i) \beta_t(i)}{\sum_{j=1}^{N}\alpha_t(j) \beta_t(j)}$$
+          + $$\gamma_{t}(i) = \frac{\alpha_t(i) \beta_t(i)}{P(O|\lambda)} = \frac{\alpha_t(i) \beta_t(i)}{\sum_{j=1}^{N}\alpha_t(j) \beta_t(j)}$$
         + The most likely state $i^{*}_{t}$ is
-        	+ $$ i^{*}_{t} = arg\ \underset{1\leq i \leq N}{max} [\gamma_t(i)], t = 1,2,...,T$$
+          + $$ i^{*}_{t} = arg\ \underset{1\leq i \leq N}{max} [\gamma_t(i)], t = 1,2,...,T$$
 
 - Solution B：Viterbi algorithm
     - Overview
@@ -200,22 +216,22 @@
         - input : $\lambda = (A, B, \pi) $ and O
         - output : optimal path
 
-        	+ initial
+          + initial
 
-        		$$\delta_1(i) = \pi_i b_i(o_1)$$
+            $$\delta_1(i) = \pi_i b_i(o_1)$$
 
-        		$$\varphi_1(i) = 0$$
+            $$\varphi_1(i) = 0$$
 
-        	+ Recursive
+          + Recursive
 
-        		$$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
+            $$ \delta_{t+1}(i) = \underset{1\leq j \leq N}{max} [\delta_t(i) a_{ji}]b_i(o_{t+1})$$
 
-        		$$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
+            $$  \varphi_t(i) = arg \underset{1\leq j \leq N}{max} [\delta_{t-1}(j) a_{ji}] $$
 
-        	+ Termination
+          + Termination
 
-        		$$P^{\star} = \underset{1\leq j \leq N}{max} \delta_T(i)$$
-        		$$ i_T^{\star} = arg \underset{1\leq j \leq N}{max} [\delta_T(i)]$$
+            $$P^{\star} = \underset{1\leq j \leq N}{max} \delta_T(i)$$
+            $$ i_T^{\star} = arg \underset{1\leq j \leq N}{max} [\delta_T(i)]$$
 
 
 
@@ -223,50 +239,50 @@
 
 - How to do NER?
 
-	- given x, find y
-	- $ y = arg\ max_{y \in Y}^{} p(y|x) = arg\ max_{y \in Y}^{} \frac{p(x, y)}{p(x)} = arg\ max_{y \in Y}^{} p(x, y)$
+  - given x, find y
+  - $ y = arg\ max_{y \in Y}^{} p(y|x) = arg\ max_{y \in Y}^{} \frac{p(x, y)}{p(x)} = arg\ max_{y \in Y}^{} p(x, y)$
 
 - 文本长度为7{张，三，在， 北， 京， 朝， 阳}
 
-	- Observation State Set:
-		-  {张，三，在， 北， 京， 朝， 阳}
+  - Observation State Set:
+    -  {张，三，在， 北， 京， 朝， 阳}
 
 - 5种标签{O, B-PER, I-PER, B-LOC, I-LOC}
 
-	- Hidden State Set:
+  - Hidden State Set:
 
-		- {O, B-PER，I-PER，B-LOC, I-LOC}
+    - {O, B-PER，I-PER，B-LOC, I-LOC}
 
-	- 第一个隐状态取得标签的可能是由$\pi$ 决定：
+  - 第一个隐状态取得标签的可能是由$\pi$ 决定：
 
-		| First Hidden State | 概率值 |
-		| ------------------ | ------ |
-		| O                  | 0.4    |
-		| B-PER              | 0.3    |
-		| I-PER              | 0      |
-		| B-LOC              | 0.3    |
-		| I-LOC              | 0      |
+    | First Hidden State | 概率值 |
+    | ------------------ | ------ |
+    | O                  | 0.4    |
+    | B-PER              | 0.3    |
+    | I-PER              | 0      |
+    | B-LOC              | 0.3    |
+    | I-LOC              | 0      |
 
-	- Current Hidden State 转移到 Next Hidden State， 由转移矩阵A决定：
+  - Current Hidden State 转移到 Next Hidden State， 由转移矩阵A决定：
 
-		| Current Hidden State/Next Hidden State | O    | B-PER | I-PER | B-LOC | I-LOC | <END> |
-		| -------------------------------------- | ---- | ----- | ----- | ----- | ----- | ----- |
-		| <BEG>                                  | 0.8  |       |       |       |       |       |
-		| O                                      |      | 0.5   |       |       |       |       |
-		| B-PER                                  |      |       | 0.5   |       |       |       |
-		| I-PER                                  |      |       |       | 0.8   |       |       |
-		| B-LOC                                  |      |       |       |       | 0.5   |       |
-		| I-LOC                                  |      |       |       |       |       | 0.8   |
+    | Current Hidden State/Next Hidden State | O    | B-PER | I-PER | B-LOC | I-LOC | <END> |
+    | -------------------------------------- | ---- | ----- | ----- | ----- | ----- | ----- |
+    | <BEG>                                  | 0.8  |       |       |       |       |       |
+    | O                                      |      | 0.5   |       |       |       |       |
+    | B-PER                                  |      |       | 0.5   |       |       |       |
+    | I-PER                                  |      |       |       | 0.8   |       |       |
+    | B-LOC                                  |      |       |       |       | 0.5   |       |
+    | I-LOC                                  |      |       |       |       |       | 0.8   |
 
-	- Current Hidden State 输出到 Current Observation State,  由状态矩阵B决定：
+  - Current Hidden State 输出到 Current Observation State,  由状态矩阵B决定：
 
-		| Current Hidden State/Current Observation State | 我   | 在   | 北   | 京   | 朝   | 阳   |
-		| ---------------------------------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
-		| O                                              |      |      |      |      |      |      |
-		| B-PER                                          |      |      |      |      |      |      |
-		| I-PER                                          |      |      |      |      |      |      |
-		| B-LOC                                          |      |      |      |      |      |      |
-		| I-LOC                                          |      |      |      |      |      |      |
+    | Current Hidden State/Current Observation State | 我   | 在   | 北   | 京   | 朝   | 阳   |
+    | ---------------------------------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | O                                              |      |      |      |      |      |      |
+    | B-PER                                          |      |      |      |      |      |      |
+    | I-PER                                          |      |      |      |      |      |      |
+    | B-LOC                                          |      |      |      |      |      |      |
+    | I-LOC                                          |      |      |      |      |      |      |
 
 
 

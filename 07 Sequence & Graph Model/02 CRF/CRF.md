@@ -1,8 +1,6 @@
-# Markov networks - CRF
-
 [TOC]
 
-
+# Markov networks - CRF
 
 ### Reference
 
@@ -10,6 +8,7 @@
 + 关于条件随机场的参考文献及其他资料，Hanna Wallach在05年整理和维护的这个页面“[conditional random fields](http://www.inference.phy.cam.ac.uk/hmw26/crf/)”非常不错，其中涵盖了自01年CRF提出以来的很多经典论文（不过似乎只到05年，之后并未更新）以及几个相关的工具包(不过也没有包括CRF++）
 + https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers
 + https://www.bilibili.com/video/av10590361/?p=35
++ https://www.cnblogs.com/pinard/p/7048333.html
 
 
 
@@ -153,86 +152,79 @@ Yang Wang and Qiang Ji. [A Dynamic Conditional Random Field Model for Object Seg
   + 加图
 
 + HMM formula
+
   + $ y = arg\ max_{y \in Y}^{} p(y|x) = arg\ max_{y \in Y}^{} \frac{p(x, y)}{p(x)} = arg\ max_{y \in Y}^{} p(x, y)$
-+ 简化形式
-    +  $$P(y|x) = \frac{P(x,y)} { \sum_{y'} P(x, y')}$$
-    +  $P(x,y)\ \epsilon \ exp(w\ \cdot\ \phi (x,y) )$
-        +  $\phi$ (x,y) is a feature vector
-        +  w is the weight vector to be learned from training data
-+ 参数化形式
-+ 矩阵形式
+
 
 ### Problem One ：Probability calculation
 
-+ Diff from HMM  ：P(x,y) for CRF
++ Defination
+	+ Given **parameters** and observation sequence $O =(O_1, O_2, ..., O_T)$
+	+ Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
 
-    + In HMM $P(x,y) = P(y_1|\ start)\ \prod_{l=1}^{L-1} P(y_{l+1}|y_l)\ P(end|y_L)\ \prod^{L}_{l=1}P(x_l|y_l)$
-    + $log P(x,y) = logP(y_1 | start) + \sum_{l=1}^{L-1}logP(y_{l+1}|y_l) + log P(end|y_L) + \sum_{l=1}^{L} logP(x_l|y_l)$
++ Diff from HMM  ：P(O, I) for CRF
+
+    + In HMM
+    	$$
+    	P(O,I) = P(I_1|\ start)\ \prod_{t=1}^{T-1} P(I_{t+1}|I_t)\ P(end|I_T)\ \prod^{L}_{t=1}P(O_t|I_t) \tag{1}
+    	$$
+
+    	$$
+    	log P(O,I) = logP(I_1 | start) + \sum_{t=1}^{T-1}logP(I_{t+1}|I_t) + log P(end|I_T) + \sum_{t=1}^{T} logP(O_t|I_t) \tag{2}
+    	$$
 
 + Feature Vector $$\phi(x,y)$$
 
-    + relation between tags and words $$N_{x,t}(x,y)$$
-        + the last item of last formula ：
-            - $\sum_{l=1}^{L} logP(x_l|y_l) = \sum_{s,t} log P(t|s) \times N_{s,t}(x,y)$
-            	- y = {O, B-LOC, I-LOC } = s
-            	- x  = text = t
-            - $log P(t|s)$ : Log probability of word t given tag s 
-            - $N_{s,t}(x,y)$ : Number fo tag s and word t appears together in (x,y)
+    + relation between tags and words 
+
+        + weight : 
+
+            + $N_{s,t}(O, I)$ : Number fo tag s and word w appears together in (O, I)
+            + demo
+                + O = {北京的中心的位置}，I={B-LOC，I-LOC， O，O，O， O，O， O}
+                + $$N_{s='O'\ t='的‘} (O, I ) = 2$$
+
+        + feature
+
+            + $log P(t|s)$ : Log probability of **word w given state s **
+
+            $$
+            \sum_{t=1}^{T} logP(O_t|I_t) = \sum_{s,w} log P(w|s) \times N_{s,w}(O,I) \tag{3}
+            $$
+
     + relation between tags
-        + if there are |T| possible tags
-            + all feature number is |T|\*|T| + 2\*|T|  
 
-+ Demo
+        + weight
 
-    + text = {我在北京的北部的朝阳}，{O, O，B-LOC， I-LOC，O，B-LOC，I-LOC，O，B-LOC，I-LOC}
+            + $$N_{s,s^`}(O, I)$$
 
-    + text set = { '我'， ‘在’， ‘北’， ‘京’，‘的’，‘部’，‘朝’，‘阳’} 
+        + feature
+            $$
+            logP(I_1 | start) + \sum_{t=1}^{T-1}logP(I_{t+1}|I_t) + log P(end|I_T) = \sum_{s,s^`} log P(s^`|s) \times N_{s,s^`}(O, I) \tag{4}
+            $$
 
-    + Feature Vector
 
-        + relation between words and tags
+        + if there are T possible tags, all feature number between tags is T\*T + 2\*T  
 
-            |       | 我   | 在   | 北   | 京   | 的   | 部   | 朝   | 阳   |
-            | ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-            | O     | 1    | 1    |      |      | 2    | 1    |      |      |
-            | B-LOC |      |      | 2    |      |      |      | 1    |      |
-            | I-LOC |      |      |      | 1    |      |      |      | 1    |
++ 简化形式
 
-        + relation between tags
 
-            |       | O                | B-LOC                    | I-LOC                     | <END>     |
-            | ----- | ---------------- | ------------------------ | ------------------------- | --------- |
-            | <BEG> | {'BEG我'}        |                          |                           | NULL      |
-            | O     | {‘我在’}         | {‘在北’，‘的北’，‘的朝’} |                           |           |
-            | B-LOC |                  |                          | {‘北京’，‘北部’， ‘朝阳’} |           |
-            | I-LOC | {‘京的’，‘部的’} |                          |                           | {‘阳END’} |
+    $$
+    P(O,I)\ \epsilon \ exp(w\ \cdot\ \phi (O,I) ) \tag {5}
+    $$
 
-        + 总的 特征模板数
++ 参数化形式
+    $$
+    log P(O,I) = \sum_{s,w} log P(w|s) \times N_{s,w}(O,I) + \sum_{s,s^`} log P(s^`|s) \times N_{s,s^`}(O, I) \tag{6}
+    $$
 
-            + 3*8 = 24
-
-            + 3*3 + 2\*3 = 15
-
-            + 当前的特征模板的大小是 39， 具体值如下：
-
-                | O，我 |      | B-LOC, 我 |      | I-LOC |      |      |      |
-                | ----- | ---- | --------- | ---- | ----- | ---- | ---- | ---- |
-                | O，在 |      |           |      |       |      |      |      |
-                | O，北 |      |           |      |       |      |      |      |
-                | O，京 |      |           |      |       |      |      |      |
-                | O，的 |      |           |      |       |      |      |      |
-                | O，部 |      |           |      |       |      |      |      |
-                | O，朝 |      |           |      |       |      |      |      |
-                | O，阳 |      |           |      |       |      |      |      |
-                |       |      |           |      |       |      |      |      |
-                |       |      |           |      |       |      |      |      |
++ 矩阵形式	
 
 
 
-### Problem Two ：Training
+### Problem Two ：Training(Doing)
 
 - cost function like crosss entropy
-  - **need check**
   - $$P(y|x) = \frac{P(x,y)}{\sum_{y^`} P(x,y^{`})}$$
     - Maximize what we boserve in training data
     - Minimize what we dont observe in training data
@@ -247,9 +239,63 @@ Yang Wang and Qiang Ji. [A Dynamic Conditional Random Field Model for Object Seg
 
 
 
-### Problem Three ：Inference
+### Problem Three ：Inference(Doing)
 
 + $$ y = arg\ max\ P(y|x) = arg\ max\ P(x,y) $$
+
 + viterbi
 
+
+### Demo(Doing)
+
+- texts
+
+	- 我在北京的北部的朝阳
+	- 北极熊生活在冰川以北
+
+- tags
+
+	- {O, O，B-LOC， I-LOC，O，B-LOC，I-LOC，O，B-LOC，I-LOC}
+	- {O，O，O，O，O，O，O，O，O，O}
+
+- text set = { '我'， ‘在’， ‘北’， ‘京’，‘的’，‘部’，‘朝’，‘阳’} 
+
+- Feature Vector
+
+	- relation between words and tags
+
+		|       | 我   | 在   | 北   | 京   | 的   | 部   | 朝   | 阳   |
+		| ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+		| O     | 1    | 1    |      |      | 2    | 1    |      |      |
+		| B-LOC |      |      | 2    |      |      |      | 1    |      |
+		| I-LOC |      |      |      | 1    |      |      |      | 1    |
+
+	- relation between tags
+
+		|       | O                | B-LOC                    | I-LOC                     | <END>     |
+		| ----- | ---------------- | ------------------------ | ------------------------- | --------- |
+		| <BEG> | {'BEG我'}        |                          |                           | NULL      |
+		| O     | {‘我在’}         | {‘在北’，‘的北’，‘的朝’} |                           |           |
+		| B-LOC |                  |                          | {‘北京’，‘北部’， ‘朝阳’} |           |
+		| I-LOC | {‘京的’，‘部的’} |                          |                           | {‘阳END’} |
+
+	- 总的 特征模板数
+
+		- 3*8 = 24
+
+		- 3*3 + 2\*3 = 15
+
+		- 当前的特征模板的大小是 39， 具体值如下：
+
+			| O，我 |      | B-LOC, 我 |      | I-LOC |      |      |      |
+			| ----- | ---- | --------- | ---- | ----- | ---- | ---- | ---- |
+			| O，在 |      |           |      |       |      |      |      |
+			| O，北 |      |           |      |       |      |      |      |
+			| O，京 |      |           |      |       |      |      |      |
+			| O，的 |      |           |      |       |      |      |      |
+			| O，部 |      |           |      |       |      |      |      |
+			| O，朝 |      |           |      |       |      |      |      |
+			| O，阳 |      |           |      |       |      |      |      |
+			|       |      |           |      |       |      |      |      |
+			|       |      |           |      |       |      |      |      |
 
