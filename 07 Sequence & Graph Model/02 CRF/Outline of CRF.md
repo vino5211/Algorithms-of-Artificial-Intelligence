@@ -9,12 +9,13 @@
 + https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&context=cis_papers
 + https://www.bilibili.com/video/av10590361/?p=35
 + https://www.cnblogs.com/pinard/p/7048333.html
++ 李航 统计学习方法 第11章 条件随机场
 
 
 
 ### CRF Definition
 
-+ $$ P(Y_v| X, Y_w, w \neq v) =  P(Y_v | X, Y_w, w \sim  v)​$$
++ $$ P(Y_v| X, Y_w, w \neq v) =  P(Y_v | X, Y_w, w \sim  v)$$
 
 + $$ w \sim  v $$ 表示在 G=(V, E) 中与节点v相关的节点
 + $$ w \neq v $$ 表示在 G=(V, E) 中与节点v不同的节点
@@ -35,8 +36,8 @@
 ### Problem One ：Probability calculation
 
 + Defination
-	+ Given **parameters** and observation sequence $O =(O_1, O_2, ..., O_T)$
-	+ Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
+  + Given **parameters** and observation sequence $O =(O_1, O_2, ..., O_T)$
+  + Calculate the probability of $O =(O_1, O_2, ..., O_T)$'s occurrence
 
 + Diff from HMM  ：P(O, I) for CRF
 
@@ -80,16 +81,13 @@
             $$
 
 
-
-
         + if there are T possible tags, all feature number between tags is T\*T + 2\*T  
 
 + 简化形式
+	$$
+	P(O,I)\ \epsilon \ exp(w\ \cdot\ \phi (O,I) ) \tag {5}
+	$$
 
-
-    $$
-    P(O,I)\ \epsilon \ exp(w\ \cdot\ \phi (O,I) ) \tag {5}
-    $$
 
 + 参数化形式
     $$
@@ -98,6 +96,7 @@
 
 + 矩阵形式	
 
+    + pass
 
 
 ### Problem Two ：Training(Doing)
@@ -120,60 +119,54 @@
 ### Problem Three ：Inference(Doing)
 
 + $$ y = arg\ max\ P(y|x) = arg\ max\ P(x,y) ​$$
-
 + viterbi
++ Demo
 
 
 ### Demo(Doing)
 
 - texts
 
-	- 我在北京的北部的朝阳
-	- 北极熊生活在冰川以北
+  - 我在北京的北部的朝阳
+  - 北极熊生活在冰川以北
 
 - tags
 
-	- {O, O，B-LOC， I-LOC，O，B-LOC，I-LOC，O，B-LOC，I-LOC}
-	- {O，O，O，O，O，O，O，O，O，O}
+  - {O, O，B-LOC， I-LOC，O，B-LOC，I-LOC，O，B-LOC，I-LOC}
+  - {O，O，O，O，O，O，O，O，O，O}
 
 - text set = { '我'， ‘在’， ‘北’， ‘京’，‘的’，‘部’，‘朝’，‘阳’} 
 
 - Feature Vector
 
-	- relation between words and tags
+  - 以下表格中的数值，是预料中统计的特征出现的次数
 
-		|       | 我   | 在   | 北   | 京   | 的   | 部   | 朝   | 阳   |
-		| ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-		| O     | 1    | 1    |      |      | 2    | 1    |      |      |
-		| B-LOC |      |      | 2    |      |      |      | 1    |      |
-		| I-LOC |      |      |      | 1    |      |      |      | 1    |
+  - relation between words and tags（通过DL 的方法，实际上是在建模这部分数据，下一个表格）
 
-	- relation between tags
+    |       | 我   | 在   | 北   | 京   | 的   | 部   | 朝   | 阳   |
+    | ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | O     | 1    | 1    |      |      | 2    | 1    |      |      |
+    | B-LOC |      |      | 2    |      |      |      | 1    |      |
+    | I-LOC |      |      |      | 1    |      |      |      | 1    |
 
-		|       | O                | B-LOC                    | I-LOC                     | <END>     |
-		| ----- | ---------------- | ------------------------ | ------------------------- | --------- |
-		| <BEG> | {'BEG我'}        |                          |                           | NULL      |
-		| O     | {‘我在’}         | {‘在北’，‘的北’，‘的朝’} |                           |           |
-		| B-LOC |                  |                          | {‘北京’，‘北部’， ‘朝阳’} |           |
-		| I-LOC | {‘京的’，‘部的’} |                          |                           | {‘阳END’} |
+  - relation between tags
 
-	- 总的 特征模板数
+    |       | O                | B-LOC                    | I-LOC                     | <END>     |
+    | ----- | ---------------- | ------------------------ | ------------------------- | --------- |
+    | <BEG> | {'BEG我'}        |                          |                           | NULL      |
+    | O     | {‘我在’}         | {‘在北’，‘的北’，‘的朝’} |                           |           |
+    | B-LOC |                  |                          | {‘北京’，‘北部’， ‘朝阳’} |           |
+    | I-LOC | {‘京的’，‘部的’} |                          |                           | {‘阳END’} |
 
-		- 3*8 = 24
+  - 总的 特征模板数
 
-		- 3*3 + 2\*3 = 15
+    - 3*8 = 24
 
-		- 当前的特征模板的大小是 39， 具体值如下：
+    - 3*3 + 2\*3 = 15
 
-			| O，我 |      | B-LOC, 我 |      | I-LOC |      |      |      |
-			| ----- | ---- | --------- | ---- | ----- | ---- | ---- | ---- |
-			| O，在 |      |           |      |       |      |      |      |
-			| O，北 |      |           |      |       |      |      |      |
-			| O，京 |      |           |      |       |      |      |      |
-			| O，的 |      |           |      |       |      |      |      |
-			| O，部 |      |           |      |       |      |      |      |
-			| O，朝 |      |           |      |       |      |      |      |
-			| O，阳 |      |           |      |       |      |      |      |
-			|       |      |           |      |       |      |      |      |
-			|       |      |           |      |       |      |      |      |
 
+### Next to do
+
++ 完善特征demo
++ Training
++ Inference

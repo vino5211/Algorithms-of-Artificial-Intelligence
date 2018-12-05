@@ -1,6 +1,8 @@
 [TOC]
 
-# Combine Deep Learning and CRF
+# Bi-RNN 
+
+and CRF
 
 ### Reference
 
@@ -16,20 +18,11 @@
 
 + 这是目前学术界比较流行的做法，BILSTM＋CRF是为了结合以上两个模型的优点
 + cnn
-	+ CNN主要是处理英文的情况，英文单词是由更细粒度的字母组成，这些字母潜藏着一些特征（例如：前缀后缀特征），通过CNN的卷积操作提取这些特征，在中文中可能并不适用（中文单字无法分解，除非是基于分词后），这里简单举一个例子，例如词性标注场景，单词football与basketball被标为名词的概率较高， 这里后缀ball就是类似这种特征。
+  + CNN主要是处理英文的情况，英文单词是由更细粒度的字母组成，这些字母潜藏着一些特征（例如：前缀后缀特征），通过CNN的卷积操作提取这些特征，在中文中可能并不适用（中文单字无法分解，除非是基于分词后），这里简单举一个例子，例如词性标注场景，单词football与basketball被标为名词的概率较高， 这里后缀ball就是类似这种特征。
 + BILSTM+CRF的Tensorflow版本：https://github.com/chilynn/sequence-labeling，主要参考了GitHub - glample/tagger: Named Entity Recognition Tool的实现，tagger是基于theano实现的，每一轮的参数更新是基于一个样本的sgd，训练速度比较慢。sequence-labeling是基于tensorflow实现的，将sgd改成mini-batch sgd，由于batch中每个样本的长度不一，训练前需要padding，最后的loss是通过mask进行计算（根据每个样本的真实长度进行计算）
 + 参考论文：
-	- https://arxiv.org/pdf/1603.01360v3.pdf
-	- https://arxiv.org/pdf/1603.01354v5.pdf
-	- http://arxiv.org/pdf/1508.01991v1.pdf
-
-
-
-### IDCNN + CRF
-
-### Seq2Seq + CRF
-
-### Lattice LSTM + CRF
-
-+ Yue Zhang  and Jie Yang. [Chinese NER Using Lattice LSTM](https://arxiv.org/pdf/1805.02023.pdf), ACL 2018
+  - https://arxiv.org/pdf/1603.01360v3.pdf
+  - https://arxiv.org/pdf/1603.01354v5.pdf
+  - http://arxiv.org/pdf/1508.01991v1.pdf
++ 另外，引用知乎用户“穆文”的回答，从网络结构上来讲，Bi-LSTM-CRF套用的还是CRF这个大框架，只不过把LSTM在每个tt时刻在第ii个tag上的输出，看作是CRF特征函数里的“点函数”（只与当前位置有关的特征函数），然后“边函数”（与前后位置有关的特征函数）还是用CRF自带的。这样就将线性链CRF里原始的w∗fw∗f这种形式的特征函数（线性）变成LSTM的输出f1f1（非线性），这就在原始CRF中引入了非线性，可以更好的拟合数据。
 

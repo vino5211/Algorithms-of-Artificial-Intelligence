@@ -1,11 +1,5 @@
 # View of Graph Model
 
-
-
-### HMM, MEMM, CRF 比较
-
-+ https://www.cnblogs.com/hellochennan/p/6624509.html
-
 ### 概率图模型学习理论及其应用
 
 + https://max.book118.com/html/2016/0304/36880806.shtm
