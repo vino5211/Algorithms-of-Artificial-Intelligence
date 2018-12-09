@@ -1,164 +1,183 @@
-# Knowledge
-## Target
-- make cool things
+[TOC]
 
-### There are some main functions of this repository:
+
+
+# Knowledge
+
+### Target
+
+- Make cool things
+
 - Combing basic knowledge of Math, Machine Learing, Deep Learing, Natural Language Processing, Graph Model, Bayesian Theory
 - Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learing
 - View state of art artifical intelligence work，reach the boundaries of current research
 
 ### Abbreviations
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
-    - CU : Self Clear up（default）
     - Math : Math
     - ML : Machine Learning
     - DL : Deep Learning
     - NLP : Natural language processing
     - OR : Operation Record
 
-### Outline
-##### Data Engine(Unfinished)
-- key : find some books, projects about Data Engine
-- tips : Implement following method in [Data-Engine](https://github.com/Apollo2Mars/DataEngine)
-- Step 1 : Data Crawler
-	- java Crawler
-	- python Crawler(Next to do)
-	- Crawler data for training model
-	- model's results guide Clawer to work more effective
-- Step 2 : Data Clean
-	- stop words(En,zh resources) (Next to do)
-	- some tricks(Next to do)
+### Data Engine(Doing)
+- Key : find some papers, books, projects about Data Engine
+- Tips : Implement following method in [Data-Engine](https://github.com/Apollo2Mars/DataEngine)
+- Step 1 : Information Collector
+  - Java Crawler
+  - Crawler data for training model
+  - model's results guide Clawer to work more effective
+- Step 2 : Data Clean（Strong algorithm do not need data clean)
 - Step 3 : Data Organizer
-	- Transform data on the web into structured data (Next to do)
+  - Transform data on the web into structured data (Next to do)
 - Step 4 : Database
-	- mongoDB
+  - mongoDB
 - Step 5 : Data Visualization and Data Distribution
 
-##### Search engine(Next to do)
+### Search Engine(Next to do)
 - from DataBase
-- from KnowledgeBase
-- from BigText, BigCorpus
+- from Knowledge Base
+- from Huge Corpus
 - from Web by DataEngine
 
-##### Math(Unfinished)
+### Math
 - Advanced Mathematics
-	- Deriavtive
+  - Deriavtive
 - Algebra
-	- Linear Algebra
-- Probability   
- 	- Parameter Estimation
- 		- MLE
- 		- EM
- 	- Hypothetical Test
+  - Linear Algebra
+- Probability
+  - Gaussian   
+    - Parameter Estimation
+         - MLE
+         - EM
+    - Hypothetical Test
 - Geometry
-	- Euclidean geometry
-	- Riemann Geometry
-- Gaussian
+  - Euclidean geometry
+  - Riemann Geometry
 - Information Theory
 
-##### Machine Learning
-- tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
+### Machine Learning
+- Tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
+
 - Model Evaluation and Selection
+
 - Some Tricks
-	- Sample Problem
-		- Sample Unbalance
-		- Little Sample
-	- Sample Generation
-		- Transfer & Translate
-	- Data Smoothing
+  - Sample Problem
+  	- Sample Unbalance
+  	- Little Sample
+  - Sample Generation
+  	- Transfer & Translate
+  - Data Smoothing
+
 - Linear Model
-	- Linear Regression
-	- Logistic Regression
-	- Linear Discriminant
-	- Linear SVM
-	- Multi Classification 
-	- Unbalance Classification
+  - Linear Regression
+  - Logistic Regression
+  - Linear Discriminant
+  - Linear SVM
+  - Multi Classification 
+  - Unbalance Classification
+
 - SVM
-	- Hinge Loss
-	- Kernal 
-	- SVR
+  - Hinge Loss
+  - Kernal 
+  - SVR
+
 - Bayesian Theory
-	- Bayesian Decision Theory
-	- Naive Bayes
-	- Semi Naive Bayes
-	- Bayesian Net
-	- MLE
-	- Maximum Entropy
-	- EM
-	- Maximum A Posteriori
-- Ensembel Learning
-	- Decision Tree
-	- Random Forest
-	- Adaboost
-	- Gradient Boosting
-	- GBDT
-	- XGboost
-	- LightGBM
+
+  - Bayesian Decision Theory
+  - Naive Bayes
+  - Semi Naive Bayes
+  - Bayesian Net
+
+- ###### Ensemble Learing
+
+  - Decision Tree
+  - Random Forest
+  - Adaboost
+  - Gradient Boosting
+  - GBDT
+  - XGboost
+  - LightGBM
+
 - Feature Selection
+
 - Sparse Representation
+
 - Regression
+
 - Classification
-	- Diff for Clf
-	- NBSVM
-	- KNN
+  - **Difference of classfication methods**
+  - NBSVM
+  - KNN
+
 - Clustering
-	- Performance metric fo Clustering
-	- Distance calculation(距离计算)
-	- Prototype clustering
-		- Kmeans
-	- Learning vector quantization(学习向量量化)
-	- Gaussian hybrid clustering
-	- Density clustering
-	- Hierarchical clustering 
+  - Performance metric fo Clustering
+  - Distance calculation
+  - Prototype clustering
+  	- Kmeans
+  - Learning vector quantization(学习向量量化)
+  - Gaussian hybrid clustering
+  - Density clustering
+  - Hierarchical clustering 
+
 - Diemnsion Reduction
-	- PCA
-	- Manifold Learning
-		- LLE
-		- t-SNE
-	- Laplacian Eigenmaps(Unfinished)
-	- Auto Encoder 
+  - PCA
+  - Manifold Learning
+  	- LLE
+  	- t-SNE
+  - Laplacian Eigenmaps(Unfinished)
+  - Auto Encoder 
+
 - Topic Model
-	- LSA
-	- pLSA
-	- LDA(Latent Dirichlet Allocation) 
+  - LSA
+  - pLSA
+  - LDA(Latent Dirichlet Allocation) 
+
 - Semi-supervised
 
-##### Deep Learning
+### Deep Learning
 - Perceptron and Back propagation
-- Tuning method
-	- Regularization method
-	- Optimizer method
-	- Initialization strategy
-	- Data standardization
-- RNNS
-- CNNs
-- End2End
-- HighWay
-- ResNet
-- DenseNet
-- Capsule
-- GANs
-- VAEs
-- Tensorflow
-- Tensorboard
-- Keras
-- Numpy
 
-##### NLP
+- Tuning method
+  - Regularization method
+  - Optimizer method
+  - Initialization strategy
+  - Data standardization
+
+- RNNS
+
+- CNNs
+
+- End2End
+
+- HighWay
+
+- ResNet
+
+- DenseNet
+
+- Capsule
+
+- GANs
+
+- ###### VAEs
+
+### Nature Language Processing
 - Language Model
 - Text Represent
-	- Embedding
+  - Embedding
 - Combine LM and Embedding
 - Text Similarity
 - Text Clustering
 - Text Classification
 - Sequence Labeling
 - Knowledge Base
-- Question Answering/Reading Comprehension
+- Question Answering
+- Reading Comprehension
 - Dialog System
 
-##### Graph Model/Probability Graph Model/Structure Learning
-+ directed graphical model (Also known as Bayesian Network)
+### Graph Model/Probability Graph Model/Structure Learning
++ Directed graphical model (Also known as Bayesian Network)
     + Static Bayesian networks
     + Dynamic Bayesian networks
         + Hidden Markov Model
@@ -170,7 +189,7 @@
 - Structure SVM((Unfinished))
 - Viterbi
 
-##### Next to do
+### Next to do
 - Reinforce Learing(Unfinished)
 - Transfer Learning(Unfinished)
 - Genetic Algorithm(Unfinished)
