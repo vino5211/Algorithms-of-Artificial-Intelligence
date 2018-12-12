@@ -1,5 +1,8 @@
 # View of Graph Model
 
++ SOTA of Sequence Labeling
+	+ Kevin Clark, Minh-Thang Luong, Christopher D Manning and Quoc V Le. 2018. Semi-supervised sequence modeling with cross-view training. arXiv preprint arXiv:1809.08370.
+
 ### 概率图模型学习理论及其应用
 
 + https://max.book118.com/html/2016/0304/36880806.shtm

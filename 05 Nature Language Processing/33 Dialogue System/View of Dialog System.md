@@ -1,6 +1,25 @@
 # View of Dialog System
 
+### Links
+
++ https://speechlab.sjtu.edu.cn/pages/sz128/homepage/year/08/21/SLU-review-introduction/
+
+### Algorithm
+
++ MDP 
++ POMDP
++ Reinforcement learning
++ end2end
+
+### 对话管理的一些思考
+
++ https://yq.aliyun.com/articles/276269
++ ![](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/fd3925caf61526910ed7145058a05635.png)
+
++ ![](http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/fd3925caf61526910ed7145058a05635.png)
+
 ### 知乎专栏:基于深度学习的对话系统
+
 + https://zhuanlan.zhihu.com/c_143965981
 + https://blog.csdn.net/irving_zhang/article/details/78865708
 
