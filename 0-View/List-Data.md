@@ -5,6 +5,9 @@
 + 阅读理解与问答数据集 https://zhuanlan.zhihu.com/p/30308726
 + https://www.quora.com/Datasets-How-can-I-get-corpus-of-a-question-answering-website-like-Quora-or-Yahoo-Answers-or-Stack-Overflow-for-analyzing-answer-quality
 
++ wikidata
+	+ https://www.wikidata.org/wiki/Wikidata:Main_Page
+
 ### NLP-Basic
 + IMDB Reviews
 	+ 这是一个电影爱好者的梦寐以求的数据集。它意味着二元情感分类，并具有比此领域以前的任何数据集更多的数据。除了训练和测试评估示例之外，还有更多未标记的数据可供使用。包括文本和预处理的词袋格式。
