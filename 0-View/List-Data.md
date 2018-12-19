@@ -142,14 +142,14 @@
 		+ 目前阿里、微软团队并列第一，其中EM得分微软（r-net+融合模型）更高，F1得分阿里（SLQA+融合模型）更高。但是他们在EM成绩上都击败了“人类表现”
 		+ 一共有107,785问题，以及配套的 536 篇文章
 			+ 数据集的具体构建如下：
-                1. 文章是随机sample的wiki百科，一共有536篇wiki被选中。而每篇wiki，会被切成段落，最终生成了23215个自然段。之后就对这23215个自然段进行阅读理解，或者说自动问答。
-                2. 之后斯坦福，利用众包的方式，进行了给定文章，提问题并给答案的人工标注。他们将这两万多个段落给不同人，要求对每个段落提五个问题。
-                3. 让另一些人对提的这个问题用文中最短的片段给予答案，如果不会或者答案没有在文章中出现可以不给。之后经过他们的验证，人们所提的问题在问题类型分布上足够多样，并且有很多需要推理的问题，也就意味着这个集合十分有难度。如下图所示，作者列出了该数据集答案的类别分布，我们可以看到 日期，人名，地点，数字等都被囊括，且比例相当。
-                4. 这个数据集的评测标准有两个：
-                    第一：F1
-                ​    第二：EM。
-                    ​        EM是完全匹配的缩写，必须机器给出的和人给出的一样才算正确。哪怕有一个字母不一样，也会算错。而F1是将答案的短语切成词，和人的答案一起算recall，Precision和F1，即如果你match了一些词但不全对，仍然算分。
-                5. 为了这个数据集，他们还做了一个baseline，是通过提特征，用LR算法将特征组合，最终达到了40.4的em和51的f1。而现在IBM和新加坡管理大学利用深度学习模型，均突破了这个算法。可以想见，在不远的将来会有更多人对阅读理解发起挑战，自然语言的英雄也必将诞生。甚至会有算法超过人的准确度。
+            ​    1. 文章是随机sample的wiki百科，一共有536篇wiki被选中。而每篇wiki，会被切成段落，最终生成了23215个自然段。之后就对这23215个自然段进行阅读理解，或者说自动问答。
+            ​    2. 之后斯坦福，利用众包的方式，进行了给定文章，提问题并给答案的人工标注。他们将这两万多个段落给不同人，要求对每个段落提五个问题。
+            ​    3. 让另一些人对提的这个问题用文中最短的片段给予答案，如果不会或者答案没有在文章中出现可以不给。之后经过他们的验证，人们所提的问题在问题类型分布上足够多样，并且有很多需要推理的问题，也就意味着这个集合十分有难度。如下图所示，作者列出了该数据集答案的类别分布，我们可以看到 日期，人名，地点，数字等都被囊括，且比例相当。
+            ​    4. 这个数据集的评测标准有两个：
+            ​        第一：F1
+            ​    ​    第二：EM。
+            ​        ​        EM是完全匹配的缩写，必须机器给出的和人给出的一样才算正确。哪怕有一个字母不一样，也会算错。而F1是将答案的短语切成词，和人的答案一起算recall，Precision和F1，即如果你match了一些词但不全对，仍然算分。
+            ​    5. 为了这个数据集，他们还做了一个baseline，是通过提特征，用LR算法将特征组合，最终达到了40.4的em和51的f1。而现在IBM和新加坡管理大学利用深度学习模型，均突破了这个算法。可以想见，在不远的将来会有更多人对阅读理解发起挑战，自然语言的英雄也必将诞生。甚至会有算法超过人的准确度。
 + MS MARCO
     + 相比SQuAD，MARCO的挑战难度更大，因为它需要测试者提交的模型具备理解复杂文档、回答复杂问题的能力。
     + 据了解，对于每一个问题，MARCO 提供多篇来自搜索结果的网页文档，系统需要通过阅读这些文档来回答用户提出的问题。但是，文档中是否含有答案，以及答案具体在哪一篇文档中，都需要系统自己来判断解决。更有趣的是，有一部分问题无法在文档中直接找到答案，需要阅读理解模型自己做出判断；MARCO 也不限制答案必须是文档中的片段，很多问题的答案必须经过多篇文档综合提炼得到。这对机器阅读理解提出了更高的要求，需要机器具备综合理解多文档信息、聚合生成问题答案的能力。
@@ -369,3 +369,41 @@ http://yahoolabs.tumblr.com/post/89783581601/one-hundred-million-creative-common
 100多个有趣的数据集 
 http://www.csdn.net/article/2014-06-06/2820111-100-Interesting-Data-Sets-for-Statistics
 
+
+
+# Datasets for Natural Language Processing
+
+This is a list of datasets/corpora for NLP tasks, in reverse chronological order. Suggestions and pull requests are welcome. The goal is to make this a collaborative effort to maintain an updated list of quality datasets.
+
+# Areas
+
+- [Question Answering](https://github.com/karthikncode/nlp-datasets#question-answering)
+- [Dialogue Systems](https://github.com/karthikncode/nlp-datasets#dialogue-systems)
+- [Goal-Oriented Dialogue Systems](https://github.com/karthikncode/nlp-datasets#goal-oriented-dialogue-systems)
+
+## Question Answering
+
+- **(NLVR)** A Corpus of Natural Language for Visual Reasoning, 2017 [[paper\]](http://yoavartzi.com/pub/slya-acl.2017.pdf) [[data\]](http://lic.nlp.cornell.edu/nlvr)
+- **(MS MARCO)** MS MARCO: A Human Generated MAchine Reading COmprehension Dataset, 2016 [[paper\]](https://arxiv.org/abs/1611.09268) [[data\]](http://www.msmarco.org/)
+- **(NewsQA)** NewsQA: A Machine Comprehension Dataset, 2016 [[paper\]](https://arxiv.org/abs/1611.09830) [[data\]](https://github.com/Maluuba/newsqa)
+- **(SQuAD)** SQuAD: 100,000+ Questions for Machine Comprehension of Text, 2016 [[paper\]](http://arxiv.org/abs/1606.05250) [[data\]](http://stanford-qa.com/)
+- **(GraphQuestions)** On Generating Characteristic-rich Question Sets for QA Evaluation, 2016 [[paper\]](http://cs.ucsb.edu/~ysu/papers/emnlp16_graphquestions.pdf) [[data\]](https://github.com/ysu1989/GraphQuestions)
+- **(Story Cloze)** A Corpus and Cloze Evaluation for Deeper Understanding of Commonsense Stories, 2016 [[paper\]](http://arxiv.org/abs/1604.01696) [[data\]](http://cs.rochester.edu/nlp/rocstories)
+- **(Children's Book Test)** The Goldilocks Principle: Reading Children's Books with Explicit Memory Representations, 2015 [[paper\]](http://arxiv.org/abs/1511.02301) [[data\]](http://www.thespermwhale.com/jaseweston/babi/CBTest.tgz)
+- **(SimpleQuestions)** Large-scale Simple Question Answering with Memory Networks, 2015 [[paper\]](http://arxiv.org/pdf/1506.02075v1.pdf) [[data\]](https://www.dropbox.com/s/tohrsllcfy7rch4/SimpleQuestions_v2.tgz)
+- **(WikiQA)** WikiQA: A Challenge Dataset for Open-Domain Question Answering, 2015 [[paper\]](http://research.microsoft.com/pubs/252176/YangYihMeek_EMNLP-15_WikiQA.pdf) [[data\]](http://research.microsoft.com/en-US/downloads/4495da01-db8c-4041-a7f6-7984a4f6a905/default.aspx)
+- **(CNN-DailyMail)** Teaching Machines to Read and Comprehend, 2015 [[paper\]](http://arxiv.org/abs/1506.03340) [[code to generate\]](https://github.com/deepmind/rc-data) [[data\]](http://cs.nyu.edu/~kcho/DMQA/)
+- **(QuizBowl)** A Neural Network for Factoid Question Answering over Paragraphs, 2014 [[paper\]](https://www.cs.umd.edu/~miyyer/pubs/2014_qb_rnn.pdf) [[data\]](https://www.cs.umd.edu/~miyyer/qblearn/index.html)
+- **(MCTest)** MCTest: A Challenge Dataset for the Open-Domain Machine Comprehension of Text, 2013 [[paper\]](http://research.microsoft.com/en-us/um/redmond/projects/mctest/MCTest_EMNLP2013.pdf) [[data\]](http://research.microsoft.com/en-us/um/redmond/projects/mctest/data.html)[[alternate data link\]](https://github.com/mcobzarenco/mctest/tree/master/data/MCTest)
+- **(QASent)** What is the Jeopardy model? A quasisynchronous grammar for QA, 2007 [[paper\]](http://homes.cs.washington.edu/~nasmith/papers/wang+smith+mitamura.emnlp07.pdf) [[data\]](http://cs.stanford.edu/people/mengqiu/data/qg-emnlp07-data.tgz)
+
+## Dialogue Systems
+
+- **(Ubuntu Dialogue Corpus)** The Ubuntu Dialogue Corpus : A Large Dataset for Research in Unstructured Multi-Turn Dialogue Systems, 2015 [[paper\]](http://arxiv.org/abs/1506.08909) [[data\]](https://github.com/rkadlec/ubuntu-ranking-dataset-creator)
+
+## Goal-Oriented Dialogue Systems
+
+- **(Frames)** Frames: A Corpus for Adding Memory to Goal-Oriented Dialogue Systems, 2016 [[paper\]](https://arxiv.org/abs/1704.00057) [[data\]](http://datasets.maluuba.com/Frames)
+- **(DSTC 2 & 3)** Dialog State Tracking Challenge 2 & 3, 2013 [[paper\]](http://camdial.org/~mh521/dstc/downloads/handbook.pdf) [[data\]](http://camdial.org/~mh521/dstc/)
+
+ 
