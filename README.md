@@ -1,13 +1,9 @@
 [TOC]
 
-
-
 # Knowledge
 
 ### Target
-
 - Make cool things
-
 - Combing basic knowledge of Math, Machine Learing, Deep Learing, Natural Language Processing, Graph Model, Bayesian Theory
 - Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learing
 - View state of art artifical intelligence work，reach the boundaries of current research
@@ -20,25 +16,7 @@
     - NLP : Natural language processing
     - OR : Operation Record
 
-### Data Engine(Doing)
-- Key : find some papers, books, projects about Data Engine
-- Tips : Implement following method in [Data-Engine](https://github.com/Apollo2Mars/DataEngine)
-- Step 1 : Information Collector
-  - Java Crawler
-  - Crawler data for training model
-  - model's results guide Clawer to work more effective
-- Step 2 : Data Clean（Strong algorithm do not need data clean)
-- Step 3 : Data Organizer
-  - Transform data on the web into structured data (Next to do)
-- Step 4 : Database
-  - mongoDB
-- Step 5 : Data Visualization and Data Distribution
-
-### Search Engine(Next to do)
-- from DataBase
-- from Knowledge Base
-- from Huge Corpus
-- from Web by DataEngine
+### View
 
 ### Math
 - Advanced Mathematics
@@ -56,11 +34,12 @@
   - Riemann Geometry
 - Information Theory
 
+### Optimization
+
+
 ### Machine Learning
 - Tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
-
 - Model Evaluation and Selection
-
 - Some Tricks
   - Sample Problem
   	- Sample Unbalance
@@ -68,7 +47,6 @@
   - Sample Generation
   	- Transfer & Translate
   - Data Smoothing
-
 - Linear Model
   - Linear Regression
   - Logistic Regression
@@ -76,21 +54,16 @@
   - Linear SVM
   - Multi Classification 
   - Unbalance Classification
-
 - SVM
   - Hinge Loss
   - Kernal 
   - SVR
-
 - Bayesian Theory
-
   - Bayesian Decision Theory
   - Naive Bayes
   - Semi Naive Bayes
   - Bayesian Net
-
-- ###### Ensemble Learing
-
+- Ensemble Learning
   - Decision Tree
   - Random Forest
   - Adaboost
@@ -98,18 +71,13 @@
   - GBDT
   - XGboost
   - LightGBM
-
 - Feature Selection
-
 - Sparse Representation
-
 - Regression
-
 - Classification
   - **Difference of classfication methods**
   - NBSVM
   - KNN
-
 - Clustering
   - Performance metric fo Clustering
   - Distance calculation
@@ -119,7 +87,6 @@
   - Gaussian hybrid clustering
   - Density clustering
   - Hierarchical clustering 
-
 - Diemnsion Reduction
   - PCA
   - Manifold Learning
@@ -127,40 +94,28 @@
   	- t-SNE
   - Laplacian Eigenmaps(Unfinished)
   - Auto Encoder 
-
 - Topic Model
   - LSA
   - pLSA
   - LDA(Latent Dirichlet Allocation) 
-
 - Semi-supervised
 
 ### Deep Learning
 - Perceptron and Back propagation
-
 - Tuning method
   - Regularization method
   - Optimizer method
   - Initialization strategy
   - Data standardization
-
 - RNNS
-
 - CNNs
-
 - End2End
-
 - HighWay
-
 - ResNet
-
 - DenseNet
-
 - Capsule
-
 - GANs
-
-- ###### VAEs
+- VAEs
 
 ### Nature Language Processing
 - Language Model
@@ -176,7 +131,7 @@
 - Reading Comprehension
 - Dialog System
 
-### Graph Model/Probability Graph Model/Structure Learning
+### Sequence Graph Model
 + Directed graphical model (Also known as Bayesian Network)
     + Static Bayesian networks
     + Dynamic Bayesian networks
@@ -189,7 +144,3 @@
 - Structure SVM((Unfinished))
 - Viterbi
 
-### Next to do
-- Reinforce Learing(Unfinished)
-- Transfer Learning(Unfinished)
-- Genetic Algorithm(Unfinished)
