@@ -1,3 +1,5 @@
 
  + (***)「知识表示学习」专题论文推荐 | 每周论文清单
-	- https://zhuanlan.zhihu.com/p/33606964
+  - https://zhuanlan.zhihu.com/p/33606964
++ AAAI 2019|基于不同粒度语言联合训练的表示学习
+
