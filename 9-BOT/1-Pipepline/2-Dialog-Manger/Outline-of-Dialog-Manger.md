@@ -1,7 +1,5 @@
 [TOC]
 
-# Mulit-Turns Dialog System
-
 # Target
 
 ### Tricks
@@ -25,36 +23,11 @@
 
 ### User Portrait
 
++ Pass
+
 ### Clarification
 
-# Demo
-
-+ Demo A
-
-  ```
-  User ：播放赵雷的歌
-  User ：播放成都
-  DM : 播放赵雷的成都
-  ```
-
-+ Demo B：多轮提槽
-
-  + QQ音乐中搜索'阿刁'
-  	+ 张韶涵 - 阿刁
-  	+ 赵雷 - 阿刁
-
-  ```
-  User : 介绍一下赵雷
-  User ：播放阿刁
-  ```
-
-+ Demo C：（有待设计NLG）
-
-  ```
-  User : 我想听成都
-  Bot : 谁的？
-  User ：赵雷的
-  ```
++ Pass
 
 
 
@@ -62,61 +35,7 @@
 
 ![](http://www.crownpku.com/images/201709/5.jpg)
 
-# NLU
-
-### 槽
-
-- 词槽
-	- 利用用户话中的关键词填写的槽
-- 接口槽
-	- 利用用户画像及其他场景信息填写的槽
-- Demo
-	- “我明天要坐火车去上海”
-	- 词槽：
-		- 出发时间：“明天”
-		- 目的地：“上海”
-	- 接口槽
-		- 出发地：当前位置
-- 同一个槽有多种填写方式
-- 槽填写的优先级
-	- 尝试填写词槽
-	- 若失败，尝试填写第一接口槽『用户日程表中隐含的出发地』
-	- 若失败，尝试填写第二接口槽『用户当前所在位置』
-	- 若失败，判断是否该槽必填
-	- 若必填，反问用户，重填词槽 *若非必填，则针对该槽组的填槽过程结束
-
-### 槽的属性：**可默认填写/不可默认填写**
-
-- 可默认填写（非必填）
-- 不可默认填写（必填）
-
-### **槽的属性：澄清话术**
-
-### **槽的属性：澄清顺序**
-
-### **槽的属性：平级槽或依赖槽**
-
-- 平级槽：
-	- 打车三槽
-- 依赖槽
-	- 手机号码槽
-
-### 槽位
-
-- 槽是由槽位构成的，一种槽位是一种填槽的方式
-
-- 出发点的槽
-  - 槽位1：上下文
-  - 槽位2：直接询问
-  - 槽位3：GPS定位
-
-### 序列标注
-
-+ deep belief network(DBNs), 取得了优于CRF baseline 的效果
-	+ https://arxiv.org/pdf/1711.01731.pdf
-		+ 参考文献15和17
-
-# Dialog System
+# Dialogue Manger
 
 + Task 1 : Dialog State Update
   + Dialog state encode every information relevant to the system
@@ -164,11 +83,11 @@
   - DM 的**设计理念：**
 
   - **完整性**
-    具备建模各种类型对话的能力（不仅仅是slot filling）
+    + 具备建模各种类型对话的能力（不仅仅是slot filling）
   - **独立性**
-    当设计（变更）一个场景时，不需要考虑当前场景跳转到其他场景的情况
+    + 当设计（变更）一个场景时，不需要考虑当前场景跳转到其他场景的情况
   - **模块化**
-    一些常用的业务组件(如：确认，slot filling，翻页等)，能呈模块化复用(同时允许业务自定义内部的多种属性)
+    + 一些常用的业务组件(如：确认，slot filling，翻页等)，能呈模块化复用(同时允许业务自定义内部的多种属性)
 
 + DM 里可以有很多小的 dialogs，这些 dialogs 的特点是：
 
@@ -190,7 +109,30 @@
 
 + dialog stack 会存放目前已经被激活但还没完成的 dialog。dialog 一旦完成就会被 pop 出去
 
-# Dialog state tracking
+# Dialogue state tracking
+
+## Define of state
+
++ 状态表示
++ 状态跟踪
+
+## Input and output
+
++ input
+  + $$U_n$$ : n 时刻的意图和槽值对，也叫用户Action
+  + $$A_{n-1}$$ : n-1 时刻的系统Action
+  + $$S_{n-1}$$ : n-1 时刻的状态
+
++ Output
+
+  +  $$S_n$$ : n 时刻的状态
+  + $$ S_n = \{G_n, H_n, H_n\}$$ 
+    + $$G_n$$ 是用户目标
+    + $$U_n$$ 同上
+    + $$H_n$$ 是聊天历史
+      + $$H_n= U_0, A_0, U_1, A_1, ..., U_{n-1}, A_{n-1}$$
+  + $$ S_n = f(S_{n-1}, A_{n-1}, U_n)$$ 
+
 
 ## Rule Methods
 
@@ -247,7 +189,7 @@
 
 ### Frame-based Approaches
 
-- 通过允许多条路径更灵活的获取信息，拓展了**FSM**
+- **通过允许多条路径更灵活的获取信息，拓展了FSM**
 - 将对话构建成一个**填槽**的过程
 - 槽就是多轮对话过程中将初步用户意图转化为明确用户指令所需要补全的信息
 - 一个槽与任务处理中所需要获取的一种信息相对应
@@ -279,18 +221,30 @@
 - 对frame model 进行了改进
 - 有了层次结构
 - 能应对更复杂的信息获取
-- 能支持话题切换、回退、退出
+- **能支持话题切换、回退、退出**
 - 要素
-  - product
+  - product:反应了System 与 BOT 都同意的信息
     - 树的结构
     - 反应为完成这个任务需要所有信息的顺序
     - 相比Tree and FSM approach, 这里的产品数(product tree)的创新在于它是动态的，可以在session中对树进行一系列操作比如加一个子树或挪动子树
-  - process
-    - agenda
-    - handler
-- http://link.zhihu.com/?target=http%3A//www.cs.cmu.edu/%7Exw/asru99-agenda.pdf
+  - agenda:确定与主题相关的任务并去完成
+  - handler:在紧密耦合的信息集上管理对话行为
+- AN AGENDA-BASED DIALOG MANAGEMENT ARCHITECTURE FOR SPOKEN LANGUAGE SYSTEMS
+  - http://link.zhihu.com/?target=http%3A//www.cs.cmu.edu/%7Exw/asru99-agenda.pdf
+- CMU Communicator
+  - http://www.speech.cs.cmu.edu/Communicator/index.html
+- https://blog.csdn.net/weixin_38358881/article/details/81868346
+
+### RavenClaw
+
++ <http://www.cs.brandeis.edu/~cs115/CS115_docs/RavenClaw_Hierarchical_tasks.pdf>
 
 ### Information State Approaches
+
++ Information State-Based Dialogue Management
+
++ An ISU Dialogue System Exhibiting Reinforcement Learning of Dialogue Policies:Generic
+  + This prototype is the first “InformationState Update”(ISU)dialoguesystemtoexhibitreinforcement
 
 - 提出的背景
 
@@ -340,6 +294,8 @@
     - Soar
     - AT&T MATCH system
 
+- Dialogue Move Engine
+
 ### Plan-based Approaches
 
 - BDI(Belief, Desire, Intention)模型
@@ -351,9 +307,41 @@
   - Perrault and Allen 1980 和 Allen and Perrault 1980 将 BDI 应用于理解，特别是间接言语语效的理解，本质上是对 Searle 1975 的 speech acts 给出了可计算的形式体系
 - 概念
   - goals
-  - actions
+  - actions7
   - plan construction
   - plan inference
+
++ Back to the Future for Dialogue Research: A Position Paper
+  + https://arxiv.org/pdf/1812.01144.pdf
+
+```
+However, except for hand-built examples, current virtual
+assistant systems are not typically providing such assistance. In order to build systems that can engage humans in
+collaborative plan-based dialogue, research is needed on
+planning, plan recognition, and reasoning about people’s
+mental and social states (beliefs, desires, goals, intentions,
+permissions, obligations, etc.), and their relation to conventional behavior. Plan recognition involves observing actions and inferring the (structure of) reasons why those actions were performed, often to enable the actor to perform
+still other actions (Allen & Perrault, 1980; Geib & Goldman, 2009; Sukthankar, et al., 2014). Belief-desire-intention (BDI) theory (Cohen & Levesque, 1990) and architectures (Bratman et al., 1988) within the subfield of MultiAgent Systems are intimately related to dialogue processing. Prior research, including our own, has developed
+prototypes of the above collaborative processing, and has
+shown that such collaborative BDI architectures and epistemic reasoning can form the basis for dialogue managers
+(Allen & Perrault, 1980; Cohen & Perrault, 1979; Sadek et
+al., 1997).
+However, though the BDI approach has been researched
+for many years, with few exceptions (e.g., Allen’s group at
+the University of Rochester/IHMC (Galescu et al., 2018)),
+it has not seen recent system application to collaborative
+dialogue. Our recent plan-based dialogue manager prototype (which I will demonstrate at the workshop) uses the
+same planner to reason about physical and speech acts, enabling the system to plan yes/no and wh-questions when
+the user is believed to know the answers1
+, to make requests
+when the system wants the effect and the user is believed
+to be able to perform the requested action, to inform the
+user of facts the user is not believed to already know, to
+suggest actions that the user may want that would further
+the user’s goals, etc. 
+```
+
+
 
 ## Statistical Methods
 
@@ -410,25 +398,245 @@
 - ALC 2018 **Fully NBT**
   - ![](https://pic1.zhimg.com/80/v2-f093af74079578025955f63b6bfe1c24_hd.jpg)
 
+
+
+## Transfor Learning in DST
+
++ Pass
+
 # Dialog policy optimization
 
-+ 根据当前对话状态做出下一步反应
+## Demo
+
 + 线上购物的场景中，若上一步识别出的对话状态是“Recommendation”，那下一就会有推荐的action
+
+## Papers
+
 + 有监督学习
-	+ rule-based agent 来做热启动，然后监督学习会在rule生成的action上进行
-	+ Learning to respond with deep neural networks for retrieval-based humancomputer conversation system. 
+  + rule-based agent 来做热启动，然后监督学习会在rule生成的action上进行
+  + Learning to respond with deep neural networks for retrieval-based human computer conversation system. 
+
 + 端到端强化学习
-	+ Strategic dialogue management via deep reinforcement learning. arxiv.org, 2015
 
-# NLG
+  + Strategic dialogue management via deep reinforcement learning. arxiv.org, 2015
 
-- 闲聊：对于闲聊机器人来讲，往往在大量语料上用一个seq2seq的生成模型，直接生成反馈给用户的自然语言
-- 垂直领域的以任务为目标的客服chatbot中往往不适用
-- 客户需要的是准确的解决问题的答案
++ **End-to-End Reinforcement Learning of Dialogue Agents for Information Access**
+
+  ```
+  6.1 Policy-Value Based
+  
+  6.1.1 Grid based Q-function
+  
+  k-nearest neighbor monte-carlo control algorithm for pomdp-based dialogue systems. In Proceedings of the SIGDIAL 2009 Conference. Lefevre et al., SIGDIAL 2009
+  
+  
+  
+  6.1.2 Linear model Q-function
+  
+  Reinforcement learning for dialog management using least-squares policy iteration and fast feature selection. Li et al., Interspeech 2009
+  
+  
+  
+  6.1.3 Gaussian Process based Q-function
+  
+  Gaussian processes for pomdp-based dialogue manager optimization. IEEE/ACM Transactions on Audio, Speech, 2014. Gaši ́c et al. 2014
+  
+  
+  
+  6.1.4 Neural Network based Q-function
+  
+  Off-policy learning in large-scale pomdpbased dialogue systems. In 2012 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). Daubigney et al., 2012
+  
+  
+  
+  6.2 Policy-Policy Based
+  
+  6.2.1 Softmax policy function
+  
+  Natural actor and belief critic: Reinforcement algorithm for learning parameters of dialogue systems modelled as pomdps. ACM Transactions on Speech and Language Processing (TSLP), 7(3):6, 2011. Jurcícek et al. 2011
+  
+  6. 2.2 Neural network policy function
+  
+  Continuously learning neural dialogue management. Su et al. 2016
+  
+  A network-based end-to-end trainable task-oriented dialogue system. Wen et al. 2016b
+  
+  
+  
+  6.3 Policy-Actor Critic
+  
+  6.3.1 A Q-function is used as critic and a policy function is used as actor.
+  
+  Sample-efficient Actor-Critic Reinforcement Learning with Supervised Data for Dialogue Management ,Su et al., SIGDIAL 2017
+  
+  
+  
+  6.4 Transfer learning for Policy
+  
+  6.4.1 Linear Model transfer for Q-learning
+  
+  Transfer learning for user adaptation in spoken dialogue systems. In Proceedings of the 2016 International Conference on Autonomous Agents & Multiagent Systems. Genevay and Laroche 2016
+  
+  
+  
+  6.4.2 Gaussian Process transfer for Q-learning
+  
+  Incremental on-line adaptation of POMDP-based dialogue managers to extended domains. In Proceedings of the 15th Annual Conference of the International Speech Communication 2014.
+  
+  POMDP-based dialogue manager adaptation to extended domains. In Proceedings of the 14th Annual Meeting of the Special Interest Group on Discourse and Dialogue, 2013.
+  
+  Distributed dialogue policies for multi domain statistical dialogue management. In 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). Gaši ́c et al. 2015
+  
+  
+  
+  6.4.3 Bayesian Committee Machine transfer for Q-learning
+  
+  Policy committee for adaptation in multi-domain spoken dialogue systems. 2015. Gaši ́c et al. 2015b
+  
+  
+  
+  6. 5 Neural Dialogue Manager
+  
+  Deep Q-network for training DM policy
+  
+  End-to-End Task-Completion Neural Dialogue Systems, Li et al., 2017 IJCNLP
+  
+  
+  
+  6.6 SL + RL for Sample Efficiency
+  
+  Sample-efficient Actor-Critic Reinforcement Learning with Supervised Data for Dialogue Management ,Su et al., SIGDIAL 2017
+  
+  
+  
+  6.7 Online Training
+  
+  Policy learning from real users
+  
+  6.7.1 Infer reward directly from dialogues
+  
+  Learning from Real Users: Rating Dialogue Success with Neural Networks for Reinforcement Learning in Spoken Dialogue Systems, Su et al., Interspeech 2015
+  
+  
+  
+  6. 7.2 User rating
+  
+  On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems, Su et al., ACL 2016
+  
+  
+  
+  6. 8 Interactive RL for DM
+  
+  Interpreting Interactive Feedback
+  
+  Interactive reinforcement learning for task-oriented dialogue management, Shah et al., 2016
+  ```
+
+
+### Frams
+
++  如何定义 state（what the user want）
++ 如何定义 action （what the system action）
+
+![](https://pic1.zhimg.com/80/v2-1a9acb0290b6bef15302acab1ace9594_hd.jpg)
+
+![](https://pic3.zhimg.com/80/v2-86717d0836eccdd4927732fcd2530302_hd.jpg)
+
+## Define of Act
+
++ 用户的act
+  + 对应SLU的 Domain， Intent， Slot 处理
++ 系统的act
+  + 表明在限制条件下（之前积累的目标，对话历史等）系统要做的工作
+  + 不追求当前收益的最大化，而是未来收益最大化
+
+## Input and output
+
++ Input
+  + $$ S_n = \{G_n, H_n, H_n\}$$ 
++ Output
+  + $$A_n = \{ D_n, \{A_i, V_i\}\}$$
+    + $$D_n$$ : 对话类型
+    + $$A_i $$  和 $$ V_i$$ 是第i轮对话的attribute 和 value
+
+ 
+
+## Demo of DST and DPL
+
+![](https://pic4.zhimg.com/80/v2-bd6aec9b2f142166660827d5aaab3617_hd.jpg)
+
+![](https://pic4.zhimg.com/80/v2-77cdd10bed9d338acc160fdec9400c13_hd.jpg)
+
+![](https://pic3.zhimg.com/80/v2-acd3355d080fc290a76ce12263eef3da_hd.jpg)
 
 
 
-# User Modeling
+## Frams
+
+![](https://pic4.zhimg.com/80/v2-67539902b4d8f61b8986c3f3f1d18c0b_hd.jpg)
+
+![](https://pic4.zhimg.com/80/v2-5bc09e56e620003e6d338731fae7f0f3_hd.jpg)
 
 
 
+## Rule-based Method
+
+## DRL-Based Method
+
+![](https://pic4.zhimg.com/80/v2-2153a653bbf90431fce9bd006798d8db_hd.jpg)
+
+### Value Based DPL
+
++ k-Nearest Neighbor Monte-Carlo Control Algorithm for POMDP-based Dialogue Systems
+
+  + K 近邻 + 蒙特卡洛 + POMDP(部分可观察马尔可夫决策过程)
+  + SIGDAL 2009
+  + 适于在一些场景下的工程实现，因为本方法适合加规则和trick
+
+  ![](https://pic1.zhimg.com/80/v2-80a0d99107e96c6cba15a3ab37f93b74_hd.jpg)
+
++ Gaussian processes for POMDP-based dialogue manager optimisation
+  + 高斯过程  + POMDP
++ Reinforcement Learning for Dialog Management using Least-Squares Policy
+  Iteration and Fast Feature Selection
+  + LSPI-FFS：最小二乘+ 快速特征选择
+  + 效率高，可以从静态预料库或在线学习
+  + 可以更好的处理在对话模拟中评估的大量特征(???)
+  +  当时的SOTA（2009）
++ OFF-POLICY LEARNING IN LARGE-SCALE POMDP-BASED DIALOGUE SYSTEMS
+  + POMDP + 离线学习
+  + 提出了一个样本有效，在线和非策略的方法来学习最优策略
+  + 结合一个紧凑的非线性函数表示（多层感知机），能够处理大规模系统。（在线学习的方式一般规模都比较受限）
+
+### Policy-Based DPL
+
++ Natural Actor and Belief Critic: Reinforcement algorithm for learning parameters of dialogue systems modelled as POMDPs
++ A Network-based End-to-End Trainable Task-oriented Dialogue System
+  + 2016
+  + 端到端任务型对话开创性工作，质量很高
++ Continuously Learning Neural Dialogue Management
+  + 与上文是同一波作者
+  + DM中的持续学习
+  + 从监督学习开始，利用强化学习不断改进
+
+### Actor Critic DPL
+
++ Pass
+
+###  Transfor-based DPL
+
++ Pass
+
+### Online-Leading DPL
+
++ Pass
+
+### DPL Framework comparison
+
+![](https://pic4.zhimg.com/80/v2-913f6f2a861e2b584598a582e947e5d7_hd.jpg)
+
+
+
+## Evaluation for Dialogue Policy Learing
+
+![](https://pic2.zhimg.com/80/v2-e7f4915993cfe36f980c4a2cff098039_hd.jpg)
