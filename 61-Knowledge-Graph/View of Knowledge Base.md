@@ -1,3 +1,0 @@
-# View of Knowledge Base
-
-### 

@@ -1,0 +1,5 @@
+# View of SLU
+
++ https://speechlab.sjtu.edu.cn/pages/sz128/homepage/year/08/21/SLU-review-introduction/
++ ![](https://speechlab.sjtu.edu.cn/pages/sz128/homepage/images/SLU-review/1best_nbest.png)
+

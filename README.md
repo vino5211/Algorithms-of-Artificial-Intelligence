@@ -10,43 +10,14 @@
 
 ### Abbreviations
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
-    - Math : Math
     - ML : Machine Learning
     - DL : Deep Learning
     - NLP : Natural language processing
-    - OR : Operation Record
-
-### View
-
-### Math
-- Advanced Mathematics
-  - Deriavtive
-- Algebra
-  - Linear Algebra
-- Probability
-  - Gaussian   
-    - Parameter Estimation
-         - MLE
-         - EM
-    - Hypothetical Test
-- Geometry
-  - Euclidean geometry
-  - Riemann Geometry
-- Information Theory
-
-### Optimization
 
 
 ### Machine Learning
-- Tips : Implement following method in [Machine-Learning-Projects](https://github.com/Apollo2Mars/Machine-Learning-Projects)
 - Model Evaluation and Selection
-- Some Tricks
-  - Sample Problem
-  	- Sample Unbalance
-  	- Little Sample
-  - Sample Generation
-  	- Transfer & Translate
-  - Data Smoothing
+- Feature Selection
 - Linear Model
   - Linear Regression
   - Logistic Regression
@@ -58,35 +29,7 @@
   - Hinge Loss
   - Kernal 
   - SVR
-- Bayesian Theory
-  - Bayesian Decision Theory
-  - Naive Bayes
-  - Semi Naive Bayes
-  - Bayesian Net
-- Ensemble Learning
-  - Decision Tree
-  - Random Forest
-  - Adaboost
-  - Gradient Boosting
-  - GBDT
-  - XGboost
-  - LightGBM
-- Feature Selection
 - Sparse Representation
-- Regression
-- Classification
-  - **Difference of classfication methods**
-  - NBSVM
-  - KNN
-- Clustering
-  - Performance metric fo Clustering
-  - Distance calculation
-  - Prototype clustering
-  	- Kmeans
-  - Learning vector quantization(学习向量量化)
-  - Gaussian hybrid clustering
-  - Density clustering
-  - Hierarchical clustering 
 - Diemnsion Reduction
   - PCA
   - Manifold Learning
@@ -99,6 +42,28 @@
   - pLSA
   - LDA(Latent Dirichlet Allocation) 
 - Semi-supervised
+- Un-superivised
+	- Clustering
+		- Performance metric fo Clustering
+		- Distance calculation
+		- Prototype clustering
+			- Kmeans
+		- Learning vector quantization(学习向量量化)
+		- Gaussian hybrid clustering
+		- Density clustering
+		- Hierarchical clustering 
+
+
+
+### Ensemble Learning
+
+- Decision Tree
+- Random Forest
+- Adaboost
+- Gradient Boosting
+- GBDT
+- XGboost
+- LightGBM
 
 ### Deep Learning
 - Perceptron and Back propagation
@@ -126,12 +91,15 @@
 - Text Clustering
 - Text Classification
 - Sequence Labeling
-- Knowledge Base
-- Question Answering
-- Reading Comprehension
-- Dialog System
 
 ### Sequence Graph Model
+
++ Bayesian Theory
+	+ Bayesian Decision Theory
+	+ Naive Bayes
+	+ Semi Naive Bayes
+	+ Bayesian Net
+
 + Directed graphical model (Also known as Bayesian Network)
     + Static Bayesian networks
     + Dynamic Bayesian networks
@@ -143,4 +111,17 @@
         + Conditional random field
 - Structure SVM((Unfinished))
 - Viterbi
+
+### Reinforce Learing
+
+### Transfor Learning
+
+### Neural Evoluation
+
+### Bot
+
+- Knowledge Base
+- Question Answering
+- Reading Comprehension
+- Dialog System
 
