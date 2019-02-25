@@ -9,15 +9,8 @@
 - Quick NLP
 	- Quick NLP 是一个基于深度学习的自然语言处理库，该项目的灵感来源于 Fast.ai 系列课程。它具备和 Fast.ai 同样的接口，并对其进行扩展，使各类 NLP 模型能够更为快速简单地运行。
 
-
-### Data
-+ [相关NLP数据集](https://github.com/Apollo2Mars/View/blob/master/List-Data.md)
-
 ### CoNLL X
 - CoNLL是一个由SIGNLL(ACL's Special Interest Group on Natural Language Learning: 计算语言学协会的自然语言学习特别兴趣小组）组织的顶级会议。CoNLL X (如CoNLL 2006)是它定义的语言学数据格式
-
-### QA相关资源/数据集/论文列表
-- https://blog.csdn.net/amds123/article/details/72758936
 
 ### 2017年值得读的NLP论文
 - Attention is all you need

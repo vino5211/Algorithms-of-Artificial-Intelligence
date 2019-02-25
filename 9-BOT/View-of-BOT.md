@@ -1,11 +1,7 @@
 # Paper
 
-### Review
-
 + The Dialog State Tracking Challenge Series: A Review
 + MACHINE LEARNING FOR DIALOG STATE TRACKING: A REVIEW
-
-
 
 + [A Survey of Available Corpora for Building Data-Driven Dialogue Systems](http://link.zhihu.com/?target=http%3A//arxiv.org/pdf/1512.05742.pdf)
 + [A Neural Conversational Model](http://link.zhihu.com/?target=http%3A//cn.arxiv.org/pdf/1506.05869.pdf)
@@ -32,9 +28,12 @@
 
 
 
+# Projects
+
++ https://github.com/vyraun/chatbot-MemN2N-tensorflow.git
+
 # Reference
 
-+ 
 + https://www.leiphone.com/news/201704/8ofqhd0UEJVjgWHv.html
   + 开放域-闲聊
   + 任务型
@@ -66,15 +65,12 @@
   - Finite-State Machine Systems有限状态机：（用户使用预定义的模板提问，系统之响应能力范围之内的问题），这种方法的缺点是完全依赖于对框架slot的填充，而无法决定对话的进程和状态（用户接受建议、拒绝等）
   - State-based Systems：主要包含系统状态（上下文信息、用户意图、对话进程等）和系统行动两（基于state采取action）个部分。MDP、POMDP等模型。
   - Question-Answering (QA) Based Dialogue Systems：factoid QA-based，个人助手，需要回答各种各样的问题并且进行交互式对话。目前的研究点主要包括，bot如何通过对话进行自学习、对于out-of-vocab的词汇应该学会问，即学会与人交流、如何通过在线反馈学习（犯错时调整、正确时加强）
-
 - 对话系统下的口语语义理解
   - https://speechlab.sjtu.edu.cn/pages/sz128/homepage/year/08/21/SLU-review-introduction/
 - 对话系统原理和实践
   - https://blog.csdn.net/m0epnwstyk4/article/details/79285961
-
 - 对话管理的一些思考
   - https://yq.aliyun.com/articles/276269
-
 - 知乎专栏:基于深度学习的对话系统
   - https://zhuanlan.zhihu.com/c_143965981
   - https://blog.csdn.net/irving_zhang/article/details/78865708
@@ -83,8 +79,9 @@
   - https://zhuanlan.zhihu.com/p/32716205
 - 浅谈垂直领域的chatbot
   - http://www.crownpku.com/2017/09/27/%E6%B5%85%E8%B0%88%E5%9E%82%E7%9B%B4%E9%A2%86%E5%9F%9F%E7%9A%84chatbot.html
-
 - http://link.zhihu.com/?target=http%3A//lwc.daanvanesch.nl/openaccess.php)
+- 使聊天机器人的对话更有营养
+  - https://blog.csdn.net/aliceyangxi1987/article/details/76128058
 
 ### Others
 
