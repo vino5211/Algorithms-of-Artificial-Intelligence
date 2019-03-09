@@ -1,13 +1,13 @@
 # BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding
 
-### Learn step
+## Learn step
 + Tansformer
 + 
 
-### Reference
+## Reference
 
 
-### Abstract
+## Abstract
 + 与ELMo 比较
 + Unlike recent language representation models (Peters et al., 2018; Radford
 et al., 2018), BERT is designed to pre-train deep bidirectional representations by jointly conditioning on both left and right context in all layers.
@@ -15,7 +15,7 @@ et al., 2018), BERT is designed to pre-train deep bidirectional representations 
 + 预训练的BERT能够仅仅用一层output layer进行fine-turn, 就可以在许多任务上取得SOTA(start of the art) 的结果, 并不需要针对特殊任务进行特殊的调整
 
 
-### Introduction
+## Introduction
 + 使用语言模型进行预训练可以提高许多NLP任务的性能
 	+ Dai and Le, 2015
 	+ Peters et al.2017, 2018
@@ -36,14 +36,14 @@ et al., 2018), BERT is designed to pre-train deep bidirectional representations 
 
 ### 预训练language representation 的两种策略
 + feature based
-	+ ELMo(Peters et al., 2018)
-		+ use **task-specific** architecture that include pre-trained representations as additional features representation
-		+ use shallow concatenation of independently trained left-to-right and right-to-left LMs
+  + ELMo(Peters et al., 2018) [Deep contextualized word representations](https://arxiv.org/abs/1802.05365)
+    + use **task-specific** architecture that include pre-trained representations as additional features representation
+    + use shallow concatenation of independently trained left-to-right and right-to-left LMs
 + fine tuning
-	+ Generative Pre-trained Transformer(OpenAI GPT)
-		+ introduces minimal task-specific parameters, and is trained on the
-downstream tasks by simply fine-tuning the pre-trained parameters
-		+ left-to-right
+  + Generative Pre-trained Transformer(OpenAI GPT) [Improving Language Understanding by Generative Pre-Training](https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf)
+  	+ introduces minimal task-specific parameters, and is trained on the
+  downstream tasks by simply fine-tuning the pre-trained parameters
+  	+ left-to-right
 
 ### 语言模型的缺陷(无向, 限制了在预训练中的使用)
 + The major limitation is that standard language models are **unidirectional**, and this limits the choice of architectures that can be used during pre-training
@@ -70,7 +70,7 @@ downstream tasks by simply fine-tuning the pre-trained parameters
 	+ extensive ablations
 		+ goo.gl/language/bert
 
-### Related Work
+## Related Work
 + review the most popular approaches of pre-training general language represenattions
 + Feature-based Appraoches
 	+ non-neural
@@ -101,7 +101,7 @@ from scratch
 	+ 在CV领域, transfer learning 对 预训练同样发挥了巨大作用
 		+ Deng et al.,2009; Yosinski et al., 2014
 
-### BERT
+## BERT
 + BERT v.s. OpenAI GPT v.s. ELMo
 + ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/DR1.png)
 
