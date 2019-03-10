@@ -1,5 +1,9 @@
 # View of Reinforce Learning
 
+## Projects
+
++ [awesome reinforcement learning zh](https://github.com/wiseodd/generative-models)
+
 + 强化学习大讲堂
 	+ https://zhuanlan.zhihu.com/sharerl
 

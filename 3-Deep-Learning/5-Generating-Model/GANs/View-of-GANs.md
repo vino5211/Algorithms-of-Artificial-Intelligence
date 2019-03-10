@@ -25,9 +25,8 @@
 + 17种GAN变体的Keras实现
 	+ https://blog.csdn.net/JohinieLi/article/details/79595146 
 + 干货｜生成式对抗网络GAN的研究进展与展望
-	+ http://www.sohu.com/a/167048525_642762
-	
-	
+  + http://www.sohu.com/a/167048525_642762
+
 + Ian Goodfellow推荐的10篇GAN进展跟踪文献
 	+ https://weibo.com/ttarticle/p/show?id=2309404212119326295632
 	+ 1. Progressive GANs: Progressive Growing of GANs for Improved Quality, Stability, and Variation
