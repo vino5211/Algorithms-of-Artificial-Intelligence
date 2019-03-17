@@ -243,5 +243,11 @@
 + Pointer Network
 + Capsule
 + GAN
+  + 文本生成
 + BERT/Transformer
 
+
+
+# Next
+
++ 各个子文件夹README.md 和 jupyter 编写

@@ -1,8 +1,4 @@
-#Trick of Corpus
-
-### 可视化
-
-+ 有这5小段代码在手，轻松实现数据可视化（Python+Matplotlib）
+# Trick of Corpus
 
 ### 小样本不平衡样本
 
@@ -17,9 +13,3 @@
 ### View of Corpus too big
 
 + https://www.leiphone.com/news/201705/sghfB2wSub6W01Jy.html
-
-
-
-### 数据平滑
-
-### 数据增强
