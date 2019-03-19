@@ -8,8 +8,19 @@
   - http://blog.csdn.net/a819825294/article/details/51188740
 + XGB
   - https://www.cnblogs.com/harvey888/p/7203256.html
-+  [5] Ensemble learning 概述
++ [5] Ensemble learning 概述
   + http://www.datakit.cn/blog/2014/11/02/Ensemble_learning.html#stacking
+
+- 模型融合方法概述
+  - https://zhuanlan.zhihu.com/p/25836678
+- KAGGLE ENSEMBLING GUIDE
+  - https://mlwave.com/kaggle-ensembling-guide/
+- HUMAN ENSEMBLE LEARNING
+  - https://mlwave.com/kaggle-ensembling-guide/
+- 如何在Kaggle 中进入前10%
+  - https://dnc1994.com/2016/04/rank-10-percent-in-first-kaggle-competition/
+
+
 
 ## Concept
 + Bootstraping: 名字来自成语“pull up by your own bootstraps”，意思是依靠你自己的资源，称为自助法，它是一种有放回的抽样方法，它是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。其核心思想和基本步骤如下：

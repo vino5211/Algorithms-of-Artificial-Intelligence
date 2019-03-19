@@ -13,6 +13,15 @@
 		+ 封闭世界假设
 		+ train(有标记数据 + 未标记数据C)， predict(未标记数据D)
 		+ C is D
+        
+## 半监督文本分类
++ https://zhuanlan.zhihu.com/p/45207079
++ https://www.jianshu.com/p/5884cffc3100
++ https://www.jianshu.com/p/a21817a81890
+
+## Reference
++ https://www.cnblogs.com/WegZumHimmel/p/7880229.html
+
 ## 半监督SVM
 
 ## 图半监督

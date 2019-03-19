@@ -83,8 +83,6 @@
 - 论文链接
 	- https://www.paperweekly.site/papers/1759
 
-### 机器阅读理解相关论文汇总（截止2017年底）
-- https://www.zybuluo.com/ShawnNg/note/622592
 
 ### 百度NLP团队登顶MARCO阅读理解测试排行榜
 - http://tech.qq.com/a/20180222/008569.htm
