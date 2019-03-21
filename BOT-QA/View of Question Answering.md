@@ -29,8 +29,10 @@
 	- 1. 模型方面创新的用 CNN+attention 来完成阅读理解任务。
 		- 在编码层放弃了 RNN，只采用 CNN 和 self-attention。CNN 捕捉文本的局部结构信息（ local interactions），self-attention 捕捉全局关系（ global interactions），在没有牺牲准确率的情况下，加速了训练（训练速度提升了 3x-13x，预测速度提升 4x-9x）。
 
+
 	- 2. 数据增强方面通过神经翻译模型（把英语翻译成外语（德语/法语）再翻译回英语）的方式来扩充训练语料，增加文本多样性。
 		- 其实目前多数 NLP 的任务都可以用 word vector + RNN + attention 的结构来取得不错的效果，虽然我挺偏好 CNN 并坚定相信 CNN 在 NLP 中的作用（捕捉局部相关性&方便并行），但多数情况下也是跟着主流走并没有完全舍弃过 RNN，这篇论文还是给了我们很多想象空间的。
+
 
 
 
