@@ -1,5 +1,29 @@
 # View of Classification
 
+
+### Reference
+- [1] 各种机器学习的应用场景分别是什么？
+	- https://www.zhihu.com/question/26726794
+- 学员分享 | 一篇文章带你看懂 Keras 文本分类实现
+	- http://www.sohu.com/a/196194216_704222
+- Keras之文本分类实现
+	- https://zhuanlan.zhihu.com/p/29201491
+- 机器学习算法集锦：从贝叶斯到深度学习及各自优缺点
+	+ https://zhuanlan.zhihu.com/p/25327755
+- Andraw Ng
+	+ https://www.coursera.org/learn/machine-learning
+- scikit-learn algorithm cheat-sheet
+
+<img src="https://pic1.zhimg.com/80/d8d479d57d050e32c1d77bb859d61ce2_hd.jpg" width="600px" height="200px" />
+
+- 各种机器学习的应用场景分别是什么？例如，k近邻,贝叶斯，决策树，svm，逻辑斯蒂回归和最大熵模型
+	+ https://www.zhihu.com/question/26726794
+	
+        <img src="https://pic3.zhimg.com/v2-7c6c25406abcba766ed618c226a49f92_r.jpg" width="600px" height="200px" />
+
+- 文本分类概述
+	- http://f.dataguru.cn/thread-705305-1-1.html
+
 ### 文本分类的整理
 
 + <https://zhuanlan.zhihu.com/p/34212945>

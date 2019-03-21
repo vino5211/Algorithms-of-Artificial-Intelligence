@@ -1,32 +1,20 @@
 # Current Solution for Text Classification
 
-### Others
-+ Co-occurrence matrix
-+ Word bag model
-+ TF-IDF
+## 分类性能评测
++ 正确率，召回率，F-score
++ 微平均
+	+ 根据总数据计算 P, R，F
++ 宏平均
+	+ 计算出每个类得，再求平均值
++ 平衡点
++ 11点平均正确率
+	+ https://blog.csdn.net/u010367506/article/details/38777909
 
-### Reference
-- [1] 各种机器学习的应用场景分别是什么？
-	- https://www.zhihu.com/question/26726794
-- 学员分享 | 一篇文章带你看懂 Keras 文本分类实现
-	- http://www.sohu.com/a/196194216_704222
-- Keras之文本分类实现
-	- https://zhuanlan.zhihu.com/p/29201491
-- 机器学习算法集锦：从贝叶斯到深度学习及各自优缺点
-	+ https://zhuanlan.zhihu.com/p/25327755
-- Andraw Ng
-	+ https://www.coursera.org/learn/machine-learning
-- scikit-learn algorithm cheat-sheet
+## 相关数据集及SOTA方法
+- pass
 
-<img src="https://pic1.zhimg.com/80/d8d479d57d050e32c1d77bb859d61ce2_hd.jpg" width="600px" height="200px" />
 
-- 各种机器学习的应用场景分别是什么？例如，k近邻,贝叶斯，决策树，svm，逻辑斯蒂回归和最大熵模型
-	+ https://www.zhihu.com/question/26726794
-	
-        <img src="https://pic3.zhimg.com/v2-7c6c25406abcba766ed618c226a49f92_r.jpg" width="600px" height="200px" />
-
-- 文本分类概述
-	- http://f.dataguru.cn/thread-705305-1-1.html
+## Traditional Classifications Algorithms
 
 ### 文本关键词
 + TFIDF
@@ -79,16 +67,12 @@
 
 ### 文本数据分布
 
-### 分类器选择
+### 传统分类器
 
-### 分类性能评测
-+ 正确率，召回率，F-score
-+ 微平均
-	+ 根据总数据计算 P, R，F
-+ 宏平均
-	+ 计算出每个类得，再求平均值
-+ 平衡点
-+ 11点平均正确率
-	+ https://blog.csdn.net/u010367506/article/details/38777909
-### 相关数据集及SOTA方法
-- pass
+## DL Classification Algorithms
+### Fasttext
+### TextCNN
+### HAN
+### DPCNN
+### 
+
