@@ -39,16 +39,10 @@
 - DL/cnn ：（1）CNN 缺失较多需要添加 （2）TextCNN and Variants
 - DL/NER ： （1）特征评价指标 （2）相关比赛/数据集整理 （3）代码整理
 - Tuning ： 当前整理不够深刻, 还需要梳理 一些自动调参的方法需要了解一
-- DeepWalk
-- LINE
-- SDNE
-- RandomWalk
 - MAP/MLE 细化
 - 变分
 - 蒙特卡洛
-- Bayesian Deep Learning
-- Semi Bayesian 
-- Bayesian Net
+- EM/MLE
 
 ### Abbreviations
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
@@ -167,6 +161,8 @@
 #### Network
 - DeepWalk
 - RandomWalk
+- LINE
+- SDNE
 
 #### Knowledge Base
 - DataSet
