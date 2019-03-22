@@ -1,5 +1,5 @@
 # Loss Function
-## Reference
+### Reference
 + https://blog.csdn.net/u014595019/article/details/52562159
 + keras-loss
 	+ https://blog.csdn.net/lien0906/article/details/78429768
@@ -18,23 +18,23 @@
 + 交叉熵代价函数(损失函数)及其求导推导
 	+ https://blog.csdn.net/jasonzzj/article/details/52017438
 
-## 二次代价函数(均方差MSE) 的缺点 与 交叉熵代价函数的改进
+### 二次代价函数(均方差MSE) 的缺点 与 交叉熵代价函数的改进
 + 针对s型激活函数, CE 比 MSE 会更快收敛
 + https://www.bilibili.com/video/av20542427/?p=11
 	+ 推导过程有待说明
 + 交叉熵不包括激活函数的导数，更为合理
 
-## 均方差（MSE）
-+  $ C = \frac{1}{2n} \sum_{x} {|| y(x) - a^L(x)||}^2$
-+  $ \frac{\partial C}{\partial w} = (a-y) \delta^{'}(z)x$
-+  $ \frac{\partial C}{\partial b} = (a-y) \delta^{'}(z)$
+### 均方差（MSE）
++  $$ C = \frac{1}{2n} \sum_{x} {|| y(x) - a^L(x)||}^2$$
++  $$ \frac{\partial C}{\partial w} = (a-y) \delta^{'}(z)x$$
++  $$ \frac{\partial C}{\partial b} = (a-y) \delta^{'}(z)$$
 + 应用在实数值域连续变量的回归问题上,并且对参差较大的情况给予更多权重
 
-## 平均绝对差(MAE)
+### 平均绝对差(MAE)
 +　应用在实数值域连续变量的回归问题上,　*在时间序列预测问题上也较为常用 *
 +　在误差函数中, 每个误差对总体误差的贡献与其误差的绝对值成线性比例关系
 
-## 交叉熵损失(Cross Entorpy)  针对 S 型激活函数
+### 交叉熵损失(Cross Entorpy)  针对 S 型激活函数
 + $ C = - \frac{1}{n} \sum_{x} [ylna + (1-y)ln(1-a)]$
 + $ \frac{\partial C}{\partial w_j} = \frac{1}{n} \sum_{x} x_j(\delta(z)-y)$
 +  $ \frac{\partial C}{\partial b} = \frac{1}{n} \sum_{x}( \delta(z) - y)$
@@ -72,9 +72,9 @@
 		- $CE = - \sum_{i=1}^{n} y_i * log(\hat y_i) $
 
 
-## tensorflow loss
+### tensorflow loss
 
-## keras loss
+### keras loss
 + mean_squared_error或mse
 + mean_absolute_error或mae
 + mean_absolute_percentage_error或mape
