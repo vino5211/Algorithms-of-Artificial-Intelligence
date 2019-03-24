@@ -1,4 +1,4 @@
-# Outline of Knowledge Base
+# Summary of Knowledge Base
 ### https://www.jianshu.com/p/cd937f20bf55
 知识图谱的定义
 知识图谱在国内属于一个比较新兴的概念，国内目前paper都比较少，应用方主要集中在BAT这类手握海量数据的企业，这个概念是google在2012年提出的，当时主要是为了将传统的keyword-base搜索模型向基于语义的搜索升级。知识图谱可以用来更好的查询复杂的关联信息，从语义层面理解用户意图，改进搜索质量。

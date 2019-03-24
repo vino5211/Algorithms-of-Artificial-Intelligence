@@ -23,6 +23,8 @@
 - 代码复现
 - 思路整理
 - 各个子文件夹README.md 和 jupyter 编写
+- 第一层文件夹下的Readme.md 是 Outline
+- 其余文件夹下的Readme.md 是View
 
 ### Doing
 + Attention
