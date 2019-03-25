@@ -61,20 +61,19 @@
       $$ \alpha = w^T_{S} [h;u;h \odot u] ​$$
 
     + 计算context-to-query attention, 对于context中的词,按attention系数计算query中的词的 加权和 作为当前词的 **query aware representation**
+
       $$ \alpha_t = softmax(St:) \in R^J $$
 
       $$ {\widetilde U}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}  $$
 
-      
-
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
-      $$ b = softmax(max_{col}(S)) $$
-      $$ \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}$$
-      $$ \widetilde{H} = tile(\widetilde{h})  $$
+      $$ b = softmax(max_{col}(S)) ​$$
+      $$ \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}​$$
+      $$ \widetilde{H} = tile(\widetilde{h})  ​$$
 
     + final query-aware-representation of context
-      $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} )$$
-      $$ \beta(h;\widetilde{u};\widetilde{h}) = [h;\widetilde{u};h\odot\widetilde{u};h\odot\widetilde{h}] \in R^{8d}$$
+      $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} )​$$
+      $$ \beta(h;\widetilde{u};\widetilde{h}) = [h;\widetilde{u};h\odot\widetilde{u};h\odot\widetilde{h}] \in R^{8d}​$$
   + Modeling Layer
 
     + 过Bi-LSTM 得到 M
