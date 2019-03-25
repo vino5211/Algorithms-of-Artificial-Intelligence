@@ -21,7 +21,7 @@
 + Children's Book Test
 + BookTest
 
-## Mertic
+## Metric
 + MAP
 + MRR
     + 是一个国际上通用的对搜索算法进行评价的机制，即第一个结果匹配，分数为1，第二个匹配分数为0.5，第n个匹配分数为1/n，如果没有匹配的句子分数为0
@@ -42,9 +42,10 @@
 ## Problems
 
 ## Papers(sort by type, year, dataset)
-### Extractive ＱＡ
+### Extractive QA
+
 ##### [BiDAF-ICLR2017](https://arxiv.org/pdf/1611.01603.pdf)
-![BiDAF](https://img-blog.csdn.net/20181015145727446?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMTEzMTg5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/20181015145727446?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMTEzMTg5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 + Abstract
   + 同时计算contex2query 和 query2context, 注意力的计算在时序上是独立的,并会flow到下一层
   + 避免了过早的summary 造成的信息丢失
@@ -70,9 +71,13 @@
 
       $$\alpha_t = softmax(St:) \in R^J​$$
 
-      $$ {\widetilde{U}}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J} ​$$
+    + 产生的结果
 
-      
+       $$ \sum \alpha_{ij} U_{:j} R\in^{2d*J} ​$$
+
+       $${\widetilde{U}}_{:t} = $$
+
+       
 
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
 
@@ -100,7 +105,7 @@
 
   + results
 
-    ![SQuAD 1](https://pic2.zhimg.com/80/v2-12e684f49462f029ed79665913875a6d_hd.jpg)
+    ![SQuAD](https://pic2.zhimg.com/80/v2-12e684f49462f029ed79665913875a6d_hd.jpg)
     ![CNN/Dialy Mail](https://pic1.zhimg.com/80/v2-8b37a915752550f910af352c56bad5b8_hd.jpg)
 
 ##### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
@@ -128,9 +133,9 @@
 
 ![](https://www.msra.cn/wp-content/uploads/news/blogs/2017/05/images/machine-text-comprehension-20170508-4.jpg)
 
-#### 检索式ＱＡ
+#### 检索式 QA
 
-#### 生成式ＱＡ
+#### 生成式QA
 
 ##### Search QA
 

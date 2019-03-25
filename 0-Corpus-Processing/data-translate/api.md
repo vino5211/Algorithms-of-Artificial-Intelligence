@@ -11,6 +11,8 @@
 
 
 ### google
++ https://pypi.org/project/googletrans/
+  + 有待测试
 
 + goslate
 
