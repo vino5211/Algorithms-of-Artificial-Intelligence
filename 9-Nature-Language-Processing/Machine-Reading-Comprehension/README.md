@@ -71,7 +71,9 @@
 
       $$\alpha_t = softmax(St:) \in R^J​$$
 
-      $$ {\widetilde{U}}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J} $$
+      $$ {\widetilde U}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J} $$
+
+      $${\widetilde{U}}_{:t}​$$
 
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
 
