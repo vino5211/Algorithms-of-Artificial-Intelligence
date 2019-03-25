@@ -67,10 +67,6 @@
        $$ \alpha = w^T_{S} [h;u;h \odot u] $$		
 
     + 计算context-to-query attention, 对于context中的词,按attention系数计算query中的词的 加权和 作为当前词的 **query aware representation**
-
-      $$ \alpha_t = softmax(St:) \in R^J ​$$
-
-      $$ {\widetilde{U}}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}  ​$$
       $$
       \begin{align*}
       \alpha_t = softmax(St:) \in R^J \\
