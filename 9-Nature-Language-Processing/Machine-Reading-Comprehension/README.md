@@ -57,30 +57,31 @@
     + 输出context $H \in R^{2d*T}$, query $Q \in R^{d*J}$
   + Attention Flow Layer
     + 计算context和query词和词两两之间的相似性 
-      $$ S_{tj} = \alpha(H_{:j}, U_{:j}) ​$$
-      $$ \alpha = w^T_{S} [h;u;h \odot u] ​$$
+      	+ $$ S_{tj} = \alpha(H_{:j}, U_{:j}) $$
+      	+ $$ \alpha = w^T_{S} [h;u;h \odot u] $$		
 
     + 计算context-to-query attention, 对于context中的词,按attention系数计算query中的词的 加权和 作为当前词的 **query aware representation**
 
-      $$ \alpha_t = softmax(St:) \in R^J $$
+      ​	$$ \alpha_t = softmax(St:) \in R^J ​$$
 
-      $$ {\widetilde U}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}  $$
+      ​	$$	 {\widetilde U}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}  ​$$
 
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
-      $$ b = softmax(max_{col}(S)) ​$$
-      $$ \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}​$$
-      $$ \widetilde{H} = tile(\widetilde{h})  ​$$
+      $$ b = softmax(max_{col}(S)) $$
+      $$ \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}$$
+      $$ \widetilde{H} = tile(\widetilde{h})  $$
 
     + final query-aware-representation of context
-      $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} )​$$
-      $$ \beta(h;\widetilde{u};\widetilde{h}) = [h;\widetilde{u};h\odot\widetilde{u};h\odot\widetilde{h}] \in R^{8d}​$$
+
+      + $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} )
+      + $$ \beta(h;\widetilde{u};\widetilde{h}) = [h;\widetilde{u};h\odot\widetilde{u};h\odot\widetilde{h}] \in R^{8d}​$$
   + Modeling Layer
 
     + 过Bi-LSTM 得到 M
   + Output Layer
-    $$ p^1 = softmax(w^T_(p1)[G;M]$$
-    $$ p^2 = softmax(w^T_(p1)[G;M_2]$$
-    $$ L(\theta) = - \frac{1}{N} \sum_i^{N} log(p^1_{y^1_i}) + log(p^2_{y^2_i})$$
+    $$ p^1 = softmax(w^T_(p1)[G;M]​$$
+    $$ p^2 = softmax(w^T_(p1)[G;M_2]​$$
+    $$ L(\theta) = - \frac{1}{N} \sum_i^{N} log(p^1_{y^1_i}) + log(p^2_{y^2_i})​$$
   + results
 
         ![SQuAD 1](https://pic2.zhimg.com/80/v2-12e684f49462f029ed79665913875a6d_hd.jpg)
