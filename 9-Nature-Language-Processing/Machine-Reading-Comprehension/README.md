@@ -74,13 +74,13 @@
 
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
 
-      $$ b = softmax(max_{col}(S)) ​$$
-      $$ \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}​$$
-      $$ \widetilde{H} = tile(\widetilde{h})  ​$$	
+      $$ b = softmax(max_{col}(S))
+      \widetilde{h} = \sum_t b_t H_{:t}  \in R^{2d}
+      \widetilde{H} = tile(\widetilde{h}) $$	
 
     + final query-aware-representation of context
 
-      $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} ) ​$$
+      $$ G_{:t} = \beta(H:t, \widetilde{U}_{:t}, \widetilde{H}_{:t} ) $$
 
       $$ \beta(h;\widetilde{u};\widetilde{h}) = [h;\widetilde{u};h\odot\widetilde{u};h\odot\widetilde{h}] \in R^{8d}$$	
 
