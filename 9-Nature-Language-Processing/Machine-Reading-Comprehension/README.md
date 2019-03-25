@@ -71,7 +71,7 @@
 
       $$\alpha_t = softmax(St:) \in R^J​$$
 
-      $$ {\widetilde U}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J} $$
+      $$ \widetilde U_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J} ​$$
 
       $${\widetilde{U}}_{:t}​$$
 
