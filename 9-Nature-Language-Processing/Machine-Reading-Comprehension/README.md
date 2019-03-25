@@ -68,9 +68,15 @@
 
     + 计算context-to-query attention, 对于context中的词,按attention系数计算query中的词的 加权和 作为当前词的 **query aware representation**
 
-      $$ \alpha_t = softmax(St:) \in R^J $$
+      $$ \alpha_t = softmax(St:) \in R^J ​$$
 
       $$ {\widetilde{U}}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}  ​$$
+      $$
+      \begin{align*}
+      \alpha_t = softmax(St:) \in R^J \\
+      {\widetilde{U}}_{:t} = \sum \alpha_{ij} U_{:j} R\in^{2d*J}
+      \end{align*}
+      $$
 
     + 计算query-to-context attention, 计算 query 和 每个 context 的最大相似度, query和context的相似度是query所有词里面和context相似度最大的, 然后计算context 的加权和
 
@@ -90,7 +96,7 @@
 
   + Output Layer
 
-    $$ p^1 = softmax(w^T_(p1)[G;M]$$
+    $$ p^1 = softmax(w^T_(p1)[G;M]​$$
 
     $$ p^2 = softmax(w^T_(p1)[G;M_2]$$
 
