@@ -57,7 +57,7 @@
 
   + Contextual Embedding Layer
     + 使用Bi-LSTM整合Highway的输出，表达词间关系
-    + 输出context $H \in R^{2d*T}$, query $Q \in R^{d*J}$
+    + 输出context $ H \in R^{2d*T} $, query $ Q \in R^{d*J} $
 
   + Attention Flow Layer
     + 计算context和query词和词两两之间的相似性 
