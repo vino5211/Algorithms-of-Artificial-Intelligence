@@ -4,3 +4,6 @@
   - 基线模型 : average word2vec
   - 自编码器的结果比我们的基线模型要差一些（这可能是因为所用的数据集相对较小的缘故）。
   - skip-thought 向量模型语言模型都利用语境来预测句子表征，并得到了最佳结果
+- 斯坦福AI实验室机器学习编程新范式：弱监督
+
+  - http://www.zhuanzhi.ai/document/caeef0bf297a370eb60f63538f78aad5

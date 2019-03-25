@@ -103,23 +103,39 @@
     ![CNN/Dialy Mail](https://pic1.zhimg.com/80/v2-8b37a915752550f910af352c56bad5b8_hd.jpg)
 
 ##### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
-![M-LSTM](https://img-blog.csdn.net/2018050321103273?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI4OTI5Mzk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![M-LSTM](https://img.mukewang.com/5ac370b700015cfa16040904.png)
 + Abstract
-	+ LSTM 编码原文的上下文信息
-	+ Match-LSTM 匹配原文和问题
-	+ Answer-Pointer :　使用Ptr网络, 预测答案
-		+ Sequence Model :　答案是不连续的
-		+ Boundary Model : 答案是连续的, 在SQuAD数据集上 Boundary 比 Sequence 的效果要好
+  + LSTM 编码原文的上下文信息
+  + Match-LSTM 匹配原文和问题
+  + Answer-Pointer :　使用Ptr网络, 预测答案
+  	+ Sequence Model :　答案是不连续的
+  	+ Boundary Model : 答案是连续的, 在SQuAD数据集上 Boundary 比 Sequence 的效果要好
+
 + Framework
-	+ LSTM Preprocessing Layer
-		+ 使用embedding表示Question 和 Context, 在使用单向LSTM编码,得到hidden state 表示 
-	+ Mathc-LSTM Layer
-		+ 类似文本蕴含:前提H, 假设T, M-LSTM序列化的经过假设的每一个词,然后预测前提是否继承自假设
-		+ 文本问答中, question 当做 H, context当做T, 可以看成带着问题去段落中找答案(利用soft-attention)
+  + LSTM Preprocessing Layer
+
+    + 使用embedding表示Question 和 Context, 在使用单向LSTM编码,得到hidden state 表示 , l 是隐变量长度
+
+      $$ H^P = \vec{LSTM}(P) \in R^{l *P}​$$
+
+      $$H^Q = \vec {LSTM}(Q) \in R^{l *Q}​$$
+
+      
+  + Match-LSTM Layer
+    + 类似文本蕴含:前提H, 假设T, M-LSTM序列化的经过假设的每一个词,然后预测前提是否继承自假设
+    + 文本问答中, question 当做 H, context当做T, 可以看成带着问题去段落中找答案(利用soft-attention)
+
+  + Answer Pointer Layer
+
 + Results
-	![](https://img-blog.csdn.net/20180503220923886?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI4OTI5Mzk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  	  
+  ![](https://img.mukewang.com/5ac37472000179ad15620702.png)  	  
+
 + Others
-	+ https://github.com/shuohangwang/SeqMatchSeq
+
+  + [代码研读](https://www.cnblogs.com/terencezhou/p/9772451.html)
+  + https://github.com/MurtyShikhar/Question-Answering
+  + https://github.com/shuohangwang/SeqMatchSeq
 
 ##### R-NET
 + https://blog.csdn.net/jyh764790374/article/details/80247204
