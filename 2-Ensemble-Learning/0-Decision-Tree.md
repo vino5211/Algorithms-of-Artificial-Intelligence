@@ -1,6 +1,7 @@
 # Decision Tree
 
 ## Reference
+
 + https://blog.csdn.net/u012328159/article/details/70184415 
 
 ## Tips
@@ -11,7 +12,7 @@
 + 样本集的信息熵(information entropy) : 
 
   + 样本集D中第k类样本所占的权重比例是$p_k$, K 为总类别数据， Ent(D)越小，则D的纯度越高（数据为1类是，信息熵为0， 纯度最大）
-    $$ Ent(D) = - \sum_{k=1}^{K} p_k log_2 {p_k} $$
+    $$ Ent(D) = - \sum_{k=1}^{K} p_k log_2 {p_k} ​$$
 
 + 信息增益
 

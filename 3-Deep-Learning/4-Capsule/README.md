@@ -1,14 +1,19 @@
-# Outline of capsule network
+# Summary
 
 ## Reference
 
 + https://zhuanlan.zhihu.com/p/33244896
++ https://zhuanlan.zhihu.com/p/33556066
+
+
+
+## Tips
 
 + Capsule 的革命在于：**它提出了一种新的“vector** **in** **vector out”的传递方案，并且这种方案在很大程度上是可解释的**
 
-+ 帆船和房子的对比
++ Demo
 
-  ![]https://pic3.zhimg.com/80/v2-20fb3442f470fdeb59bfa4954e84122e_hd.jpg)
+  ![](https://pic3.zhimg.com/80/v2-20fb3442f470fdeb59bfa4954e84122e_hd.jpg)
 
   + 对于测试样本“帆船”，CNN的“三角形”和“四边形”的feature map都会被激活，即该图片中包含了三角形和四边形，就认为这是一个房子。所以说，CNN仅仅考虑了“有没有”的问题，没有考虑feature map的结构关系。这个结构关系包括位置，角度等等
 
@@ -26,8 +31,4 @@
   + 图片信息推理
   + 图片描述生成
   + 文本挖掘：替代n-gram 进行建模
-
-
-
-# Matrix Capsule with EM Routing
 
