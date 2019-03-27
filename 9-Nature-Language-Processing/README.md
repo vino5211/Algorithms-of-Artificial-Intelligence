@@ -1,11 +1,16 @@
-# Outline of Natrual Language Process
+# Summary of Natrual Language Process
 
-### Tasks
-- NLP 主要任务 ： 分类、匹配、翻译、结构化预测、与序贯决策过程
+## Tasks
+- NLP 主要任务
+	- 分类
+	- 匹配
+	- 翻译
+	- 结构化预测
+	- 与序贯决策过程
 - 对于前四个任务，深度学习方法的表现优于或显著优于传统方法
 
 
-### Natural Language Generation 
+## Natural Language Generation 
 + 给定一段上下文(context)， 生成一段与context相关的目标文本(target)
 + 典型的例子包括:
     + 语言模型 : context是当前内容, 生成接下来的内容
