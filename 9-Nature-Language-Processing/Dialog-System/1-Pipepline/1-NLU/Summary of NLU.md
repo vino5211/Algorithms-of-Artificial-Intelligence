@@ -17,7 +17,7 @@
     + CNN/BERT : None
     + Fasttext : Standfor Core NLP（Fasttext 分词之后的效果好于不分词的效果）
   + Punctuation
-    + 保留
+    + 保留所有标点
   + Number
     + 连续的数字变为<NUM>
     + 也可按文本的长度转化为对应的token
@@ -30,6 +30,9 @@
     + <NUM>
     + <PAD>
     + <UNK>
+
++ Data Augmentation
++ 
 
 ### Metric
 + Accuracy
@@ -90,6 +93,7 @@
   + 输入是文本序列(词序列 或 字序列)
   + 输出的是这个文本序列属于不同类别的概率
 + Hierachical Softmax
+
   + 利用霍夫曼编码的方式编码Label（尤其适用用类别不平衡的情况）
 
 + N-Gram

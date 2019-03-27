@@ -12,6 +12,9 @@
 
 ## Trick of Augmentation
 
++ confusion matrix
+  + 观察混淆矩阵，找到需要重点增强的类别
+
 + random drop and shuffle
   + 提升数据量
   + code：<https://github.com/dupanfei1/deeplearning-util/blob/master/nlp/augment.py>
@@ -62,9 +65,11 @@
 + 停用词
 
 + 数据平衡
-
   + 数据量不平衡
   + 数据多样性不平衡
+
++ 调整比例权重
+  + https://www.jiqizhixin.com/articles/021704?from=synced&keyword=%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8D%E5%B9%B3%E8%A1%A1
 
   
 

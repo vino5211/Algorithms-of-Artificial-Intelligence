@@ -9,6 +9,8 @@
 - Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learning
 - Looking for a better information representation
 - How to build Logic ?
+  - 导入先验知识
+  - 大规模检索发现（RL）
 - How to automate the search for information training network
 - How to represent Information? Matrix or Graph, even more complex Data Structure?
 - Probability Graph Model and Knowledge

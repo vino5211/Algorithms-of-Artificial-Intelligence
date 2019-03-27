@@ -1,6 +1,7 @@
 # Language Model
 
 ## Reference
+
 + [1] https://docs.google.com/presentation/d/1h51R4pMeZkS_CCdU0taBkQucUnPeyucQX433lsw8bVk/edit#slide=id.g1ea65cc3ed_1_578
 + LHY DeepLearning Y2017 4
 + 2003年，Bengio等人发表了一篇开创性的文章：A neural probabilistic language model
