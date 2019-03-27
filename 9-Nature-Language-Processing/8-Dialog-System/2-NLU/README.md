@@ -1,52 +1,193 @@
-# NLU
+# Summary of NLU
 
-### 槽
+## Domain Classification
+### Data
++ Data Labeling
+  + 自搭建标注系统(Active Learning) 
+  + 使用其他开源的标注工具BRAT
++ Data Statistics and Visualization
+  + 纠错脚本：标注数据是否存在格式错误和前后标注不一致
+  + 统计脚本：
+    + 文本平均长度统计
+    + 类别数量统计
+    + 标注重复统计
+    + 训练集测试集交叉统计
++ Data Preprocessing
+  + Segment
+    + CNN/BERT : None
+    + Fasttext : Standfor Core NLP（Fasttext 分词之后的效果好于不分词的效果）
+  + Punctuation
+    + 保留所有标点
+  + Number
+    + 连续的数字变为\<NUM>
+    + 也可按文本的长度转化为对应的token
+  + Stopwords
+    + None
+  + Dict
+    + BERT : 单独的字典
+    + Others ：Tencent Pretrained Embeeding 中自带的字典
+  + Normalizaion
+    + \<NUM>
+    + \<PAD>
+    + \<UNK>
+  + Augmentation
+    + Oversampling
+    + Undersampling
+    + Back-Translate
 
-- 词槽
-  - 利用用户话中的关键词填写的槽
-- 接口槽
-  - 利用用户画像及其他场景信息填写的槽
-- Demo
-  - “我明天要坐火车去上海”
-  - 词槽：
-    - 出发时间：“明天”
-    - 目的地：“上海”
-  - 接口槽
-    - 出发地：当前位置
-- 同一个槽有多种填写方式
-- 槽填写的优先级
-  - 尝试填写词槽
-  - 若失败，尝试填写第一接口槽『用户日程表中隐含的出发地』
-  - 若失败，尝试填写第二接口槽『用户当前所在位置』
-  - 若失败，判断是否该槽必填
-  - 若必填，反问用户，重填词槽 *若非必填，则针对该槽组的填槽过程结束
+### Metric
++ Accuracy
++ P/R/F1
 
-### 槽的属性：**可默认填写/不可默认填写**
+### Model
 
-- 可默认填写（非必填）
-- 不可默认填写（必填）
+##### [Text CNN](https://arxiv.org/abs/1408.5882)
 
-### **槽的属性：澄清话术**
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fwv4l4e186j30qd0cjmxx.jpg)
 
-### **槽的属性：澄清顺序**
++ Framework
+  + Embedding Layer
+    - Tencent Embedding
+    - Fune-tuning
+    - Dim 200
+  + Convolution Layer
+    + 卷积窗口的长度是词向量维度，宽度是定义的窗口大小
+    + Filter size [4, 3, 2]
+    + Filter number 256
+  + Max Pooling Layer
+    + 卷积之后的结果经过 max-pooling 进行特征选择和降维， 得到输入句子的表示
+  + Results
+    + 句子的表示 通过Dense后有两种方式得到最终的结果
+      + Sigmoid(Multi Label)
+      + Softmax(Single Label)
++ Experiment and Optimization
+  + Hyper Parameters
+    + Epoch
+    + Early Stopping
+    + Dropout
++ Varients
+  + CNN 的变体
 
-### **槽的属性：平级槽或依赖槽**
+##### Text RNN
 
-- 平级槽：
-  - 打车三槽
-- 依赖槽
-  - 手机号码槽
+![](../../../../../../Downloads/1540354954203.png)
 
-### 槽位
++ Framwork
+  + Embedding
+    + 同CNN
+  + BiLSTM
+    + 将前向最后一个单元的Hidden state 和 反向最后一个单元的Hidden State 进行拼接
+  + Results
+    + 同CNN
 
-- 槽是由槽位构成的，一种槽位是一种填槽的方式
-- 出发点的槽
-  - 槽位1：上下文
-  - 槽位2：直接询问
-  - 槽位3：GPS定位
+##### [Fasttext](https://fasttext.cc/)
 
-### 序列标注
++ Tips
 
-- deep belief network(DBNs), 取得了优于CRF baseline 的效果
-  - https://arxiv.org/pdf/1711.01731.pdf
-    - 参考文献15和17
+  + 不能跨平台，在不同的平台下要重新编译
+
++ Framework
+
+  ![](http://www.datagrand.com/blog/wp-content/uploads/2018/01/beepress-beepress-weixin-zhihu-jianshu-plugin-2-4-2-2635-1516863566-2.jpeg)
+
++ Input and Output
+  + 输入是文本序列(词序列 或 字序列)
+  + 输出的是这个文本序列属于不同类别的概率
++ Hierachical Softmax
+
+  + 利用霍夫曼编码的方式编码Label（尤其适用用类别不平衡的情况）
+
++ N-Gram
+  + 原始的是Word Bog， 没有词序信息， 因此加入了N-Gram
+  + 为了提高效率，低频的N-Gram 特征要去掉
+
+##### Capsule
+
++ Tips
+
++ Framework
+
+  + What is Capsule？
+
+    ![capsule](../../../../../../Downloads/v2-fb59965e7924f11351380c9a741664a0_hd.jpg)
+
+  + Dynamic Routing
+
+    + pass
+
+##### BERT
+
++ Tips
+
+  + 模型较大，延时较长
+
++ Framework
+
+  ![](../../../../../../Downloads/v2-d942b566bde7c44704b7d03a1b596c0c_hd.jpg)
+
+  + Embedding
+
+    ![](../../../../../../Downloads/v2-11505b394299037e999d12997e9d1789_hd.jpg)
+
+  + Masked LM
+
+    + Musk 一部分词， 使用上下文预测当前词， 预训练语言模型
+
+  + Results
+
+    + Dense 
+    + DNNs
+
+### Summary of Classification
+
+| Model        | Tips                          |
+| ------------ | ----------------------------- |
+| TextCNN      | 短文本                        |
+| RNN          | 长文本                        |
+| Fastext      | 多类别，大数据量              |
+| Capsule      | scalar to vector， 训练较慢   |
+| Bert + Dense | 效果较好                      |
+| Bert + DNNs  | 效果最好， 模型较大，延时较长 |
+
+
+
+## Slot Filling
+
+## Data
+
++ Data Labeling
+  + 同 Classification
++ Data Convert
+  + 标注数据转训练数据
+
+## Metric
+
++ Type
++ Span
++ Overlap
++ Extract
+
+### Model
+
+##### [Bi-LSTM-CRF](https://arxiv.org/pdf/1508.01991.pdf)
+
+![](../../../../../../Downloads/v2-178d7bdd4b2b64bf54a9e6e7d0aedb47_hd.jpg)
+
++ Framework
+  + Embedding 
+    + 信息的原始表示，大部分任务中，随机的embedding 与 预训练的embeeding差别不大
+  + Bi-LSTM 
+    + 通过双向的LSTM表示句子信息
+  + CRF 
+    + 学习标签之间的转移概率和发射概率，进一步约束Bi-LSTM输出的结果 
++ Results
+  + pass
+
+## Summary of Slot Filling
+
+| Model            | Tips                 |
+| ---------------- | -------------------- |
+| Bi-LSTM CRF      | 工业界普遍使用的方法 |
+| IDCNN CRF        | 未横向比较           |
+| Seq2Seq + CRF    | 未横向比较           |
+| Lattice-LSTM CRF | SOTA                 |

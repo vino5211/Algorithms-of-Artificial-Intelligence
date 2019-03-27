@@ -1,5 +1,6 @@
-# View of MAP
-### Reference
+# Summary of Probability Theory
+
+## MLE MAP
 + https://blog.csdn.net/yH0VLDe8VG8ep9VGe/article/details/78999639
 + 频率学派 - Frequentist - Maximum Likelihood Estimation (MLE，最大似然估计)
 
