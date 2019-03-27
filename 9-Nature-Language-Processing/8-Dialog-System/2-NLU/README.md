@@ -70,7 +70,7 @@
 
 ##### Text RNN
 
-![](../../../../../../Downloads/1540354954203.png)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1g1hi3f0gbvj30r80f6adv.jpg)
 
 + Framwork
   + Embedding
@@ -109,7 +109,7 @@
 
   + What is Capsule？
 
-    ![capsule](../../../../../../Downloads/v2-fb59965e7924f11351380c9a741664a0_hd.jpg)
+    ![capsule](https://ws2.sinaimg.cn/large/006tKfTcly1g1hi3lmrqbj30k00art9a.jpg)
 
   + Dynamic Routing
 
@@ -123,11 +123,11 @@
 
 + Framework
 
-  ![](../../../../../../Downloads/v2-d942b566bde7c44704b7d03a1b596c0c_hd.jpg)
+  ![](https://ws1.sinaimg.cn/large/006tKfTcly1g1hi3rch3nj30k004ydge.jpg)
 
   + Embedding
 
-    ![](../../../../../../Downloads/v2-11505b394299037e999d12997e9d1789_hd.jpg)
+    ![](https://ws4.sinaimg.cn/large/006tKfTcly1g1hi3u8lszj30k006fmxr.jpg)
 
   + Masked LM
 
@@ -171,7 +171,7 @@
 
 ##### [Bi-LSTM-CRF](https://arxiv.org/pdf/1508.01991.pdf)
 
-![](../../../../../../Downloads/v2-178d7bdd4b2b64bf54a9e6e7d0aedb47_hd.jpg)
+![](https://ws4.sinaimg.cn/large/006tKfTcly1g1hi3yezuuj30an07i3yu.jpg)
 
 + Framework
   + Embedding 
