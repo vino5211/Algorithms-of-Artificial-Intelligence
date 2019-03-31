@@ -29,6 +29,8 @@
 + NDCG
 + EM
 + F1
++ ROUGE-L
++ BLEU-L
 
 ## Idea 
 + Open domain
@@ -121,7 +123,6 @@
 
       $$H^Q = \vec {LSTM}(Q) \in R^{l *Q}​$$
 
-      
   + Match-LSTM Layer
     + 类似文本蕴含:前提H, 假设T, M-LSTM序列化的经过假设的每一个词,然后预测前提是否继承自假设
     + 文本问答中, question 当做 H, context当做T, 可以看成带着问题去段落中找答案(利用soft-attention)
@@ -146,23 +147,3 @@
 #### 检索式 QA
 
 #### 生成式QA
-
-##### Search QA
-
-##### Knowledge QA
-
-##### Factoid QA
-
-##### No-Factoid QA
-
-##### Open Domain QA
-
-##### Close Style QA
-
-##### Language Model QA (文字生成)
-
-##### Community QA 
-
-##### Semantic parsing for QA
-
-
