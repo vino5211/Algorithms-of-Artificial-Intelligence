@@ -21,7 +21,7 @@
 
 + Demo
 
-  ![](https://pic3.zhimg.com/80/v2-20fb3442f470fdeb59bfa4954e84122e_hd.jpg)
+  ![](https://ws4.sinaimg.cn/large/006tKfTcly1g1ihxmp4z7j307e02owea.jpg)
 
   + 对于测试样本“帆船”，CNN的“三角形”和“四边形”的feature map都会被激活，即该图片中包含了三角形和四边形，就认为这是一个房子。所以说，CNN仅仅考虑了“有没有”的问题，没有考虑feature map的结构关系。这个结构关系包括位置，角度等等
 
@@ -48,12 +48,14 @@
 
 ### How Capsule work？
 
-![](https://www.jqr.com/editor/830/764/83076481-5a13de22cef95)
+![](https://ws3.sinaimg.cn/large/006tKfTcly1g1ihyj0plfj30m80d2753.jpg)
 
 + 输入向量的矩阵乘法
 + 输入向量的标量加权
 + 加权输入向量之和
 + 向量到向量的非线性变换
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1g1iin9a7w3j30rs0dudmw.jpg)
 
 ### Dynamic Route
 
@@ -61,11 +63,48 @@
 
 + 算法原理
 
-  ![](https://www.jqr.com/editor/200/860/2008606155-5a20fa541df79)
+  ![](https://ws1.sinaimg.cn/large/006tKfTcly1g1ii0a1qzgj30rs086gmd.jpg)
 
-  
+  + 输入 : 第l层的capsule 输出状态 $\hat{u}_j$, 迭代次数$r$, 层数$l$
+  + 输出 : $v_j$
+  + 需要学习的参数 ：$c_{ij}$
+  + 步骤
+    + 首先初始化 $b_{ij}​$ 为 0
+    + 迭代 r 次
+      + 对 $b_{ij}$ 按行做 softmax， 得到 $b_{i}$
+      + 遍历 $l$ 层 的所有 capsule 对 第 $l$ + 1 层的 第j 个capsule，进行映射， $s_j = \sum_i c_{ij} \hat{u}_{j|i}$
+      + 通过 squash 进行压缩，得到 $v_j$
+      + 更新参数 
+        + 查看了每个高层胶囊j，然后检查每个输入并根据公式更新相应的权重bij
+        + 胶囊j的当前输出和从低层胶囊i处接收的输入的点积，加上旧权重，等于新权重
+        + 点积检测胶囊的输入和输出之间的相似性
+        + 低层胶囊将其输出发送给具有类似输出的高层胶囊， 点积刻画了这一相似性
+  + 迭代次数
+    + 一般三次，太多的话会导致过拟合
 
+### Framework
 
++ 编码器
+
+  ![编码器结构](https://ws1.sinaimg.cn/large/006tKfTcly1g1ijgxkgv1j30rs088gm6.jpg)
+
+  + 卷积层
+
+  + PrimaryCaps(主胶囊)
+
+  + DigitCaps(数字胶囊)
+
+  + 损失函数
+
+    ![](https://ws4.sinaimg.cn/large/006tKfTcly1g1ijjiorr9j30rs0953z5.jpg)
+
++ 解码器
+
+  ![](https://ws3.sinaimg.cn/large/006tKfTcly1g1ijl5sft1j30jg08pq39.jpg)
+
+  + 全连接层1
+  + 全连接层2
+  + 全连接层3
 
 ## Next
 

@@ -1,6 +1,7 @@
 # BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding
 
 ## Learn step
+
 + Tansformer
 + 
 
@@ -103,7 +104,8 @@ from scratch
 
 ## BERT
 + BERT v.s. OpenAI GPT v.s. ELMo
-+ ![](https://github.com/Apollo2Mars/Knowledge/blob/master/Pictures/DR1.png)
+
+  ![](https://ws2.sinaimg.cn/large/006tKfTcly1g1ima1j4wjj30k004ydge.jpg)
 
 ##### Model Architecture
 + BERT’s model architecture is a multi-layer bidirectional Transformer encoder based on the original implementation described in Vaswani et al.(2017) and released in the tensor2tensor library

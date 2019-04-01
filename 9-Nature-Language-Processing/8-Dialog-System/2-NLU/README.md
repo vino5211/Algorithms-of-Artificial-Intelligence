@@ -1,7 +1,9 @@
 # Summary of NLU
 
 ## Domain Classification
+
 ### Data
+
 + Data Labeling
   + 自搭建标注系统(Active Learning) 
   + 使用其他开源的标注工具BRAT
@@ -16,20 +18,21 @@
   + Segment
     + CNN/BERT : None
     + Fasttext : Standfor Core NLP（Fasttext 分词之后的效果好于不分词的效果）
-  + Punctuation
-    + 保留所有标点
-  + Number
-    + 连续的数字变为\<NUM>
-    + 也可按文本的长度转化为对应的token
   + Stopwords
     + None
   + Dict
     + BERT : 单独的字典
     + Others ：Tencent Pretrained Embeeding 中自带的字典
-  + Normalizaion
-    + \<NUM>
-    + \<PAD>
-    + \<UNK>
+    + 字典统一
+      + \<NUM>
+      + \<PAD>
+      + \<UNK>
+  + Normalization
+    + Punctuation
+      - 保留所有标点
+    + Number
+      - 连续的数字变为\<NUM>
+      - 也可按文本的长度转化为对应的token
   + Augmentation
     + Oversampling
     + Undersampling
@@ -111,9 +114,30 @@
 
     ![capsule](https://ws2.sinaimg.cn/large/006tKfTcly1g1hi3lmrqbj30k00art9a.jpg)
 
-  + Dynamic Routing
+  + Dynamic Route
 
-    + pass
+    - 底层胶囊将输出发送给对此表示”同意”的高层胶囊
+
+    - 算法原理
+
+      ![](https://ws1.sinaimg.cn/large/006tKfTcly1g1ii0a1qzgj30rs086gmd.jpg)
+
+      - 输入 : 第l层的capsule 输出状态 $\hat{u}_j$, 迭代次数$r$, 层数$l$
+      - 输出 : $v_j$
+      - 需要学习的参数 ：$c_{ij}$
+      - 步骤
+        - 首先初始化 $b_{ij}$ 为 0
+        - 迭代 r 次
+          - 对 $b_{ij}$ 按行做 softmax， 得到 $b_{i}$
+          - 遍历 $l$ 层 的所有 capsule 对 第 $l$ + 1 层的 第j 个capsule，进行映射， $s_j = \sum_i c_{ij} \hat{u}_{j|i}$
+          - 通过 squash 进行压缩，得到 $v_j$
+          - 更新参数 
+            - 查看了每个高层胶囊j，然后检查每个输入并根据公式更新相应的权重bij
+            - 胶囊j的当前输出和从低层胶囊i处接收的输入的点积，加上旧权重，等于新权重
+            - 点积检测胶囊的输入和输出之间的相似性
+            - 低层胶囊将其输出发送给具有类似输出的高层胶囊， 点积刻画了这一相似性
+      - 迭代次数
+        - 一般三次，太多的话会导致过拟合
 
 ##### BERT
 
@@ -137,6 +161,8 @@
 
     + Dense 
     + DNNs
+      + CNN
+      + LSTM
 
 ### Summary of Classification
 
@@ -151,16 +177,16 @@
 
 
 
-## Slot Filling
+# Slot Filling
 
-## Data
+### Data
 
 + Data Labeling
   + 同 Classification
 + Data Convert
   + 标注数据转训练数据
 
-## Metric
+### Metric
 
 + Type
 + Span
@@ -183,11 +209,12 @@
 + Results
   + pass
 
-## Summary of Slot Filling
+### Summary of Slot Filling
 
 | Model            | Tips                 |
 | ---------------- | -------------------- |
 | Bi-LSTM CRF      | 工业界普遍使用的方法 |
 | IDCNN CRF        | 未横向比较           |
 | Seq2Seq + CRF    | 未横向比较           |
+| DBN              | 未横向比较           |
 | Lattice-LSTM CRF | SOTA                 |
