@@ -9,17 +9,28 @@
 - Plan to carding some knowledge of Genetic Algorithm, Transfer Learning, Reinforce Learning, Manifold Learning, Semi-supervised Learning
 - Looking for a better information representation
 - How to build Logic ?
-  - 导入先验知识
-  - 大规模检索发现（RL）
+  - Experience:Importing prior knowledge
+  	- Supervised Learning
+  	- Knowledge Base
+  - Exploration:Large-scale search found
+  	- Information Retrieval
+  	- Reinforce Learning
 - How to automate the search for information training network
 - How to represent Information? Matrix or Graph, even more complex Data Structure?
 - Probability Graph Model and Knowledge
-- 从生物进化的角度思考ANN的进化
-- 整体端到端无监督，多任务学习有监督和半监督
-    - 无监督
-        - BERT OPEN-GPT
-    - 多任务
-        - Mulit-Task DNN
+- Thinking about ANN from the perspective of biological evoluation
+    - Reverse engineering of the brain
+    - Neural Evoluation
+    - Simulated annealing/Ant Cology/Particle swarm
+### Next Project
+
++ Unsupervised Learning
+
+- Multi-Task Learing
+- share low layer dimension
+- Graph model
+- not just BP
+
 ### Main work
 - 公式推导
 - 代码复现
@@ -34,18 +45,18 @@
 + Pointer Network
 + Capsule
 + GAN
-  + 文本生成
+  + Text Generation
 + BERT/Transformer
 + Reinforce Learning
 + Transfor Leaning
 
 ### Problems
-- DL/cnn ：（1）CNN 缺失较多需要添加 （2）TextCNN and Variants
-- DL/NER ： （1）特征评价指标 （2）相关比赛/数据集整理 （3）代码整理
-- Tuning ： 当前整理不够深刻, 还需要梳理 一些自动调参的方法需要了解一
-- MAP/MLE 细化
-- 变分
-- 蒙特卡洛
+- DL/NER 
+	- Metric/dataset
+- Auto-ML/NAS
+- MAP/MLE 
+- VAE/GAN
+- Monte Carlo
 - EM/MLE
 
 ### Abbreviations
