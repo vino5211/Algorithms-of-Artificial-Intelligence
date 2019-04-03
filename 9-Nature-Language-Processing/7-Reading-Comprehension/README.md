@@ -8,6 +8,9 @@
 + [2017年　以前的论文和数据集整理](https://www.zybuluo.com/ShawnNg/note/622592)
 + [2018年　清华77篇机器阅读理解论文](http://www.zhuanzhi.ai/document/87418ceee95a21622d1d7a21f71a894a)
 + 2019 年　有待整理
++ [SQuAD 的一些模型](<http://www.zhuanzhi.ai/document/d6a0038bb0143a6805370adb58bf68be>)
+  + R-NET
+  + SLQA
 
 ## LeaderBoard(sort by dataset)
 + SQuAD
@@ -30,7 +33,7 @@
 + EM
 + F1
 + ROUGE-L
-+ BLEU-L
++ BLEU
 
 ## Idea 
 + Open domain
@@ -41,7 +44,11 @@
         
 ## Doing
 
++ BERT/AOA
+
 ## Problems
+
++ pass
 
 ## Papers(sort by type, year, dataset)
 ### Extractive QA
@@ -138,12 +145,21 @@
   + https://github.com/MurtyShikhar/Question-Answering
   + https://github.com/shuohangwang/SeqMatchSeq
 
-##### R-NET
+##### [R-NET ACL 2017 MSRA](<https://www.microsoft.com/en-us/research/wp-content/uploads/2017/05/r-net.pdf>)
 
-+ https://blog.csdn.net/jyh764790374/article/details/80247204
-+ https://blog.csdn.net/sparkexpert/article/details/79141584
+![](https://ws3.sinaimg.cn/large/006tKfTcly1g1pcrgzkffj318p0tctc0.jpg)
 
-![](https://www.msra.cn/wp-content/uploads/news/blogs/2017/05/images/machine-text-comprehension-20170508-4.jpg)
++ Abstract
+  + 借鉴 Match-LSTM 和 Pointer Network的思想
++ Framework
+  + Question and Passage Encoder
+    + Word Embedding(Glove) + Char Embedding 
+    + Question Encoder $$u^Q_t$$
+    + Passage Encoder $$u_t^Q$$
+  + Gated Attention-Based Recurrent Network
+    + 
+  + Self-Matching Attention
+  + Output Layer
 
 #### 检索式 QA
 

@@ -10,14 +10,24 @@
   - 与序贯决策过程
 - 对于前四个任务，深度学习方法的表现优于或显著优于传统方法
 
+## Problem
++ why nlp layer moer shallow than CV
 
 
 ## IDEA
 
 + 把语法模型和深度神经网络模型结合起来，设计的模型同时兼顾特征的 exploration and exploitation（探索和利用），并在网络的深度和宽度上保持平衡
 + 多模态，多任务
++ Deep NLP
+  + 重复利用现有的先验知识
+  + 更复杂的模型拟合NLP的场景
+  + 更有效的优化方法进行大规模检索试验
 
+## Reference
 
++ [NLP-progress](https://github.com/Apollo2Mars/NLP-progress)
+
++ 
 
 ## Natural Language Generation
 
