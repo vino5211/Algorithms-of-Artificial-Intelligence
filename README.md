@@ -22,11 +22,14 @@
     - Reverse engineering of the brain
     - Neural Evoluation
     - Simulated annealing/Ant Cology/Particle swarm
+
+
+
 ### Next Project
 
 + Unsupervised Learning
 
-- Multi-Task Learing
+- Multi-Task Learning
 - share low layer dimension
 - Graph model
 - not just BP
