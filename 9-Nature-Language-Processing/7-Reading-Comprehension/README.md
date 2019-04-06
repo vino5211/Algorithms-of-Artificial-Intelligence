@@ -5,6 +5,7 @@
 + Read Paper and Write Note
 
 # Reference
+
 + [2017年　以前的论文和数据集整理](https://www.zybuluo.com/ShawnNg/note/622592)
 + [2018年　清华77篇机器阅读理解论文](http://www.zhuanzhi.ai/document/87418ceee95a21622d1d7a21f71a894a)
 + 2019 年　有待整理
@@ -24,7 +25,7 @@
 + Children's Book Test
 + BookTest
 
-Metric
+# Metric
 
 + MAP
 + MRR
@@ -52,18 +53,18 @@ Doing
 
 + pass
 
-
-
 # Universial Framework
 
 + Answer Layer
 	+ 
 
 # Papers(sort by type, year, dataset)
+
 ## Extractive QA
 
 ### [BiDAF-ICLR2017](https://arxiv.org/pdf/1611.01603.pdf)
-![](https://img-blog.csdn.net/20181015145727446?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMTEzMTg5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1g1t3uklag5j31ak0t8gs0.jpg)
 + Abstract
   + 同时计算contex2query 和 query2context, 注意力的计算在时序上是独立的,并会flow到下一层
   + 避免了过早的summary 造成的信息丢失
@@ -122,7 +123,7 @@ Doing
 
 ### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
 
-![M-LSTM](https://img.mukewang.com/5ac370b700015cfa16040904.png)
+![M-LSTM](https://ws2.sinaimg.cn/large/006tNc79ly1g1t3urvg0fj318k0p4ajq.jpg)
 + Abstract
   + LSTM 编码原文的上下文信息
   + Match-LSTM 匹配原文和问题
@@ -164,7 +165,6 @@ Doing
     + Question Encoder $$u^Q_t$$
     + Passage Encoder $$u_t^Q$$
   + Gated Attention-Based Recurrent Network
-    + 
   + Self-Matching Attention
   + Output Layer
 

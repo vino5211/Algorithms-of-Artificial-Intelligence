@@ -54,14 +54,14 @@
 - query 和某个document $x_i$计算 Match, 得到$a_i$
 - 由 $x_i$ 和 $a_i$ 的加权求和 得到 抽取出的信息, 并介入DNN网络, 得到最终Answer
 
-![](/home/apollo/Pictures/Mem2.png)
+![](https://ws3.sinaimg.cn/large/006tNc79ly1g1t3rr6cztj30m80gl3ze.jpg)
 
 ## Complex Framework
 
 - 计算Match 的时候使用 $x_i$
 - 加权求和的时候使用$h_i$
 - 使用两种不同的文本表示, 最终得到的结果较好
-	![](/home/apollo/Pictures/Mem1.png)
+	![](https://ws4.sinaimg.cn/large/006tNc79ly1g1t3s67ollj30m80gl3ze.jpg)
 
 + Hopping
 	+ 将Extract Information 作为 Query 的 vector 再次输入
@@ -119,8 +119,8 @@
 + Pointer Network 可以看做是　Seq2Seq　+ Attention 的简化版 
 + Seq2Seq 无法解决输出序列的词汇表随着输入序列长度的改变而改变的问题，如寻找突包，对于这类问题，输出往往是输入集合的子集
 + 基于以上问题，　Pointer Network 设计了类似于编程语言中的指针，每个指针对应一个输入序列中的一个元素，从而可以直接操作序列而不需要特意设定输出词汇表（传统的seq2seq 需要设计词汇表）
-  ![](https://pic3.zhimg.com/80/v2-8d34877424a3d47dc760c3947119813e_hd.jpg)
-+ 上图是是给定$$p1$$ 到$$p4$$四个二维点的坐标, 要找到一个凸包, 显然答案是$$p_1 -> p_4 -> p_2 -> p_1 $$
+  ![](https://ws4.sinaimg.cn/large/006tNc79ly1g1t3kgdx5wj30gr08wt95.jpg)
++ 上图是是给定$$p1​$$ 到$$p4​$$四个二维点的坐标, 要找到一个凸包, 显然答案是$$p_1 -> p_4 -> p_2 -> p_1 ​$$
 + 左侧图a是传统的seq2seq的做法(不太理解)
   + 把四个点的坐标作为输入序列输入进去
   + 提供一个词汇表[start, 1, 2, 3, 4, end]
