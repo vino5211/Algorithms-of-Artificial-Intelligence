@@ -44,9 +44,9 @@
 
 ### Doing
 + Attention
+	+ 
 + Memmory
 + Pointer Network
-+ Capsule
 + GAN
   + Text Generation
 + BERT/Transformer
@@ -144,6 +144,11 @@
 - Capsule
 - GANs
 - VAEs
+
+### AutoML
+
++ Neural Architecture Search(NAS) :  网络结构超参数
++ Hyperparameter optimization(HO) :训练超参数
 
 ### Semi-supervised
 

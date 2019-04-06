@@ -1,10 +1,10 @@
 # Summary of Machine Reading Comprehension
 
-## Target
+# Target
 + Clean up current algorithms of Reading Comprehension and Question Answering
 + Read Paper and Write Note
 
-## Reference
+# Reference
 + [2017年　以前的论文和数据集整理](https://www.zybuluo.com/ShawnNg/note/622592)
 + [2018年　清华77篇机器阅读理解论文](http://www.zhuanzhi.ai/document/87418ceee95a21622d1d7a21f71a894a)
 + 2019 年　有待整理
@@ -12,7 +12,7 @@
   + R-NET
   + SLQA
 
-## LeaderBoard(sort by dataset)
+# LeaderBoard(sort by dataset)
 + SQuAD
     + BiDAF
     + r-NET
@@ -24,7 +24,8 @@
 + Children's Book Test
 + BookTest
 
-## Metric
+Metric
+
 + MAP
 + MRR
     + 是一个国际上通用的对搜索算法进行评价的机制，即第一个结果匹配，分数为1，第二个匹配分数为0.5，第n个匹配分数为1/n，如果没有匹配的句子分数为0
@@ -35,25 +36,33 @@
 + ROUGE-L
 + BLEU
 
-## Idea 
+# Idea 
 + Open domain
     + 检索
         + 检索得到主要的关键词
     + 答案生成
         + 模型将关键词输出为一句话
         
-## Doing
+
+Doing
 
 + BERT/AOA
 
-## Problems
+# Problems
 
 + pass
 
-## Papers(sort by type, year, dataset)
-### Extractive QA
 
-##### [BiDAF-ICLR2017](https://arxiv.org/pdf/1611.01603.pdf)
+
+# Universial Framework
+
++ Answer Layer
+	+ 
+
+# Papers(sort by type, year, dataset)
+## Extractive QA
+
+### [BiDAF-ICLR2017](https://arxiv.org/pdf/1611.01603.pdf)
 ![](https://img-blog.csdn.net/20181015145727446?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyMTEzMTg5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 + Abstract
   + 同时计算contex2query 和 query2context, 注意力的计算在时序上是独立的,并会flow到下一层
@@ -111,7 +120,7 @@
     ![SQuAD](https://pic2.zhimg.com/80/v2-12e684f49462f029ed79665913875a6d_hd.jpg)
     ![CNN/Dialy Mail](https://pic1.zhimg.com/80/v2-8b37a915752550f910af352c56bad5b8_hd.jpg)
 
-##### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
+### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
 
 ![M-LSTM](https://img.mukewang.com/5ac370b700015cfa16040904.png)
 + Abstract
@@ -136,16 +145,14 @@
 
   + Answer Pointer Layer
 
+  	+ Sequence Model
+  	+ Boundary Model
+
 + Results
   ![](https://img.mukewang.com/5ac37472000179ad15620702.png)  	  
 
-+ Others
 
-  + [代码研读](https://www.cnblogs.com/terencezhou/p/9772451.html)
-  + https://github.com/MurtyShikhar/Question-Answering
-  + https://github.com/shuohangwang/SeqMatchSeq
-
-##### [R-NET ACL 2017 MSRA](<https://www.microsoft.com/en-us/research/wp-content/uploads/2017/05/r-net.pdf>)
+### [R-NET ACL 2017 MSRA](<https://www.microsoft.com/en-us/research/wp-content/uploads/2017/05/r-net.pdf>)
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1g1pcrgzkffj318p0tctc0.jpg)
 
@@ -161,6 +168,6 @@
   + Self-Matching Attention
   + Output Layer
 
-#### 检索式 QA
+## Search QA
 
-#### 生成式QA
+## Generative QA
