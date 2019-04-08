@@ -1,4 +1,4 @@
-# Summary of Attention
+# Summary of Attention Mechanism
 
 # Attention Mechanism in CV
 
@@ -22,6 +22,13 @@
 
 # Encoder-Decoder
 
+# Reference
+
++ Survey
+	+ [Attention, please! A Critical Review  of Neural Attention Models in Natural Language Processing](https://arxiv.org/pdf/1902.02181.pdf)
+	+ [An Attentive Survey of Attention Models](https://arxiv.org/pdf/1904.02874.pdf)
+	![](https://ws3.sinaimg.cn/large/006tNc79ly1g1vd70uok6j30lk0a5q4x.jpg)
+
 ## Tips
 
 + What is match?
@@ -42,6 +49,12 @@
 ## Framework
 
 + picture
+
+
+
+## Taxonomy of Attention
+
+
 
 # Memory Network
 

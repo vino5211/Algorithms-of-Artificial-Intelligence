@@ -23,7 +23,8 @@
     - Neural Evoluation
     - Simulated annealing/Ant Cology/Particle swarm
 
-
+### IDEA
++ modeling structure information
 
 ### Next Project
 
