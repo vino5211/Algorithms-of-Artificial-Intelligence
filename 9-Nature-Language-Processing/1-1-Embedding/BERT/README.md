@@ -1,22 +1,14 @@
 # BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding
 
-## Learn step
-
-+ Tansformer
-+ 
-
-## Reference
 
 
-## Abstract
-+ 与ELMo 比较
-+ Unlike recent language representation models (Peters et al., 2018; Radford
-et al., 2018), BERT is designed to pre-train deep bidirectional representations by jointly conditioning on both left and right context in all layers.
+# Abstract
+
 + 通过所有层的上下文来预训练深度双向的表示
 + 预训练的BERT能够仅仅用一层output layer进行fine-turn, 就可以在许多任务上取得SOTA(start of the art) 的结果, 并不需要针对特殊任务进行特殊的调整
 
+# Introduction
 
-## Introduction
 + 使用语言模型进行预训练可以提高许多NLP任务的性能
 	+ Dai and Le, 2015
 	+ Peters et al.2017, 2018
@@ -36,6 +28,7 @@ et al., 2018), BERT is designed to pre-train deep bidirectional representations 
 		+ SQuAD question answering
 
 ### 预训练language representation 的两种策略
+
 + feature based
   + ELMo(Peters et al., 2018) [Deep contextualized word representations](https://arxiv.org/abs/1802.05365)
     + use **task-specific** architecture that include pre-trained representations as additional features representation
@@ -71,42 +64,51 @@ et al., 2018), BERT is designed to pre-train deep bidirectional representations 
 	+ extensive ablations
 		+ goo.gl/language/bert
 
-## Related Work
+# Related Work
+
 + review the most popular approaches of pre-training general language represenattions
 + Feature-based Appraoches
-	+ non-neural
-	+ neural
-	+ coarser granularities
-		+ sentence embedding
-		+ paragrqph embedding
-		+ As with traditional word embeddings,these learned representations are also typically used as features in a downstream model.
-	+ ELMo
-		+ 从LM中提取上下文敏感的特征
-		+ ELMo advances the state-of-the-art for several major NLP bench-
-marks (Peters et al., 2018) including question 
-			+ answering (Rajpurkar et al., 2016) on SQuAD
-			+ sentiment analysis (Socher et al., 2013)
-			+ and named entity recognition (Tjong Kim Sang and De Meul-
-der, 2003).
+  + non-neural methods
+    + pass
+  + neural methods
+    + pass
+  + coarser granularities(更粗的粒度)
+    + sentence embedding
+    + paragrqph embedding
+    + As with traditional word embeddings,these learned representations are also typically used as features in a downstream model.
+  + ELMo
+    + 使用biLM(双向语言模型) 建模
+      + 单词的复杂特征
+      + 单词的当前上下文中的表示
+    + ELMo advances the state-of-the-art for several major NLP bench-
+      marks (Peters et al., 2018) including question 
+      + answering (Rajpurkar et al., 2016) on SQuAD
+      + sentiment analysis (Socher et al., 2013)
+      + and named entity recognition (Tjong Kim Sang and De Meul-
+      der, 2003).
 + Fine tuning Approaches
-	+ 在LM进行迁移学习有个趋势是预训练一些关于LM objective 的 model architecture, 在进行有监督的fine-tuning 之前
-	+ The advantage of these approaches is that few parameters need to be learned
-from scratch
-	+ OpenAI GPT (Radford et al., 2018) achieved previously state-of-the-art results on many sentencelevel tasks from the GLUE benchmark (Wang et al., 2018).
+  + 在LM进行迁移学习有个趋势是预训练一些关于LM objective 的 model architecture, 在进行有监督的fine-tuning 之前
+  + The advantage of these approaches is that few parameters need to be learned
+  from scratch
+  + OpenAI GPT (Radford et al., 2018) achieved previously state-of-the-art results on many sentencelevel tasks from the GLUE benchmark (Wang et al., 2018).
 
 + Transfer Learning from Supervised Data 
-	+ 无监督训练的好处是可以使用无限制的数据
-	+ 有一些工作显示了transfer 对监督学习的改进
-		+ natural language inference (Conneau et al., 2017)
-		+ machine translation (McCann et al., 2017)
-	+ 在CV领域, transfer learning 对 预训练同样发挥了巨大作用
-		+ Deng et al.,2009; Yosinski et al., 2014
+  + 无监督训练的好处是可以使用无限制的数据
+  + 有一些工作显示了transfer 对监督学习的改进
+    + natural language inference (Conneau et al., 2017)
+    + machine translation (McCann et al., 2017)
+  + 在CV领域, transfer learning 对 预训练同样发挥了巨大作用
+    + Deng et al.,2009; Yosinski et al., 2014
 
-## BERT
-+ BERT v.s. OpenAI GPT v.s. ELMo
++ BERT v.s. ELMo v.s. OpenGPT
 
   ![](https://ws2.sinaimg.cn/large/006tKfTcly1g1ima1j4wjj30k004ydge.jpg)
+
+# BERT
 
 ##### Model Architecture
 + BERT’s model architecture is a multi-layer bidirectional Transformer encoder based on the original implementation described in Vaswani et al.(2017) and released in the tensor2tensor library
 + Transformer
+
+# Experiment
+
