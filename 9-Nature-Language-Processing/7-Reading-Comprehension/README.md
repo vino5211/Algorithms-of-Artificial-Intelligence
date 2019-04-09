@@ -1,6 +1,7 @@
 # Summary of Machine Reading Comprehension
 
 # Target
+
 + Clean up current algorithms of Reading Comprehension and Question Answering
 + Read Paper and Write Note
 
@@ -56,7 +57,6 @@ Doing
 # Universial Framework
 
 + Answer Layer
-	+ 
 
 # Papers(sort by type, year, dataset)
 
@@ -118,8 +118,13 @@ Doing
 
   + results
 
-    ![SQuAD](https://pic2.zhimg.com/80/v2-12e684f49462f029ed79665913875a6d_hd.jpg)
-    ![CNN/Dialy Mail](https://pic1.zhimg.com/80/v2-8b37a915752550f910af352c56bad5b8_hd.jpg)
+    + SQuAD
+
+    ![SQuAD](https://ws2.sinaimg.cn/large/006tNc79ly1g1w7p64a07j30k006e0tm.jpg)
+
+    + CNN/DailyMail
+
+    ![CNN/Dialy Mail](https://ws3.sinaimg.cn/large/006tNc79ly1g1w7q415szj30k00asdh8.jpg)
 
 ### [Matching-LSTM](https://arxiv.org/pdf/1608.07905.pdf)
 
