@@ -1,8 +1,8 @@
 [TOC]
 
-# Algorithm of Artificial Intelligence
+# Algorithms of Artificial Intelligence
 
-### Target
+# Target
 
 + View state of art artificial intelligence work，reach the boundaries of current research
 - Organize the basic ideas and methods in the filed of AI, including Math, Machine Learning, Deep Learinng, Natural Language Processing, Graph Model, Bayesian Theory
@@ -15,7 +15,7 @@
   - Exploration:Large-scale search found
   	- Information Retrieval
   	- Reinforce Learning
-- How to automate the search for information training network
+- How to automate the search for information training network?
 - How to represent Information? Matrix or Graph, even more complex Data Structure?
 - Probability Graph Model and Knowledge
 - Thinking about ANN from the perspective of biological evoluation
@@ -23,53 +23,59 @@
     - Neural Evoluation
     - Simulated annealing/Ant Cology/Particle swarm
 
-### IDEA
-+ modeling structure information
++ Modeling structure information
++ Multi-task
++ Pretrained Embedding
+  - use prior knowledge to accelerate bert convergance
+  - more complex architecture
+  - multi-task learning
 
-### Next Project
-
-+ Unsupervised Learning
-
-- Multi-Task Learning
-- share low layer dimension
 - Graph model
-- not just BP
+- not just BP(FFN)
 
-### Main work
-- 公式推导
-- 代码复现
-- 思路整理
-- 各个子文件夹README.md 和 jupyter 编写
-- 第一层文件夹下的Readme.md 是 Outline
-- 其余文件夹下的Readme.md 是View
+# Main work
 
-### Doing
-+ Attention
-	+ 
-+ Memmory
-+ Pointer Network
++ Organize new knowledge into current repository
+
+- Foumula derivation
+- Code reproduction
+  - jupyter
+- READE.md
+  - Summary : in top level folder
+  - View : in other layer folders
+
+# Doing
+
++ Code reproduction
+  + Memory
+  + Neural Turning Machine
+  + Pointer
+
 + GAN
   + Text Generation
-+ BERT/Transformer
-+ Reinforce Learning
-+ Transfor Leaning
++ Unsupervised Learning
+  + Pretrained Embedding
+    + use prior knowledge to accelerate bert convergance
+    + more complex architecture
+    + multi-task learning
 
-### Problems
-- DL/NER 
-	- Metric/dataset
+# Undo
+
 - Auto-ML/NAS
 - MAP/MLE 
 - VAE/GAN
 - Monte Carlo
 - EM/MLE
 
-### Abbreviations
+# Abbreviations
+
 - To better distinguish file types, the abbreviations in filenames have the following meanings:
     - ML : Machine Learning
     - DL : Deep Learning
     - NLP : Natural language processing
 
-### Corpus Preprocessing
+# Corpus Preprocessing
+
 - Data Augmentation
 - Data Clean
 - Data Smooth
@@ -77,11 +83,12 @@
 - Data Visualization
 - README.md (Done, Add Link)
 
-### NLP-Tools
+# NLP-Tools
 
-### Neural Evoluation
+# Neural Evoluation
 
-### Traditional Machine Learning
+# Traditional Machine Learning
+
 - Basic
     - Perceptron
     - Activation
@@ -115,7 +122,8 @@
 - EM
 - MLE
 
-### Ensemble Learning
+# Ensemble Learning
+
 - Bagging
 - Boosting
 - Blending
@@ -129,7 +137,8 @@
 - LightGBM
 - ThunderGBM
 
-### Deep Learning
+# Deep Learning
+
 - Perceptron and Back propagation
 - Tuning method
   - Regularization method
@@ -146,31 +155,35 @@
 - GANs
 - VAEs
 
-### AutoML
+# AutoML
 
-+ Neural Architecture Search(NAS) :  网络结构超参数
-+ Hyperparameter optimization(HO) :训练超参数
++ Neural Architecture Search(NAS) : Network Architecture Hyperparameters
++ Hyperparameter optimization(HO) :Model Training Hyperparameters
 
-### Semi-supervised
+# Semi-supervised
 
-### Un-superivised
+# Un-superivised
+
 - Clustering
 - Performance metric fo Clustering
 - Distance calculation
 - Prototype clustering
     - Kmeans
-- Learning vector quantization(学习向量量化)
+- Learning vector quantization
 - Gaussian hybrid clustering
 - Density clustering
 - Hierarchical clustering 
 
-### Sequence Graph Network Model
-#### Bayesian Theory
+# Sequence Graph Network Model
+
+# Bayesian Theory
+
 + Bayesian Decision Theory
 + Naive Bayes
 + Semi Naive Bayes
 + Bayesian Net
-#### Sequnece & Graph Model
+# Sequnece & Graph Model
+
 + Directed graphical model (Also known as Bayesian Network)
     + Static Bayesian networks
     + Dynamic Bayesian networks
@@ -182,24 +195,29 @@
         + Conditional random field
 - Structure SVM((Unfinished))
 - Viterbi
-#### Network
+# Network
+
 - DeepWalk
 - RandomWalk
 - LINE
 - SDNE
 
-#### Knowledge Base
+# Knowledge Base
+
 - DataSet
 
-### Reinforce Learing
+# Reinforce Learing
 
-### Transfor Learning
+# Transfor Learning
 
-### Nature Language Processing
-#### Target
+# Nature Language Processing
+
+## Target
+
 - Record SOTA algorithms
 - Record dataset, projects, papers in README.md
-#### outline
+## outline
+
 - Repersent Learning
     - Sparse Representation
     - Similarity
@@ -223,7 +241,3 @@
         - DM
         - NLG
    - End2End
-#### Projects Review
-+ BERT
-+ Open-GPT 2
-+ MT-DNN
